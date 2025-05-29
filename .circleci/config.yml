@@ -58,6 +58,8 @@ workflows:
   build_and_test:
     jobs:
       - build:
+          # TODO: In the main repo remove the filters
+          # so that build is run on all branches
           filters:
             branches:
               only: main

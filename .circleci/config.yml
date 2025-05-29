@@ -32,7 +32,7 @@ jobs:
 
       - run:
           name: Install dependencies
-          working_directory: /frontend
+          working_directory: ~/repo/frontend/
           command: |
             pnpm config set store-dir .pnpm-store
             pnpm install
@@ -45,12 +45,12 @@ jobs:
 
       - run:
           name: Run tests
-          working_directory: /frontend
+          working_directory: ~/repo/frontend/
           command: pnpm run test
 
       - run:
           name: Build project
-          working_directory: /frontend
+          working_directory: ~/repo/frontend/
           command: pnpm run build
 
 workflows:

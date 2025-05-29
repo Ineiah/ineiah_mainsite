@@ -4,9 +4,13 @@ jobs:
   build:
     docker:
       - image: cimg/node:18.17
-    working_directory: ~/frontend
+    working_directory: ~/ineiah/frontend
     steps:
       - checkout
+
+      - run:
+          name: Move to correct subdirectory
+          command: cd ineiah/frontend && mv * ~/ineiah/frontend || true
 
       - restore_cache:
           name: Restore pnpm cache

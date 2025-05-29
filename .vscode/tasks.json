@@ -1,0 +1,26 @@
+{
+    "version": "2.0.0",
+    "tasks": [
+        {
+            "label": "start-nuxt-sever",
+            "options": {
+                "cwd": "${workspaceFolder}/frontend"
+            },
+            "type": "shell",
+            "command": "pnpm",
+            "args": ["run", "dev"],
+            "isBackground": true,
+            "problemMatcher": {
+                "owner": "custom",
+                "pattern":{
+                    "regexp": ".*"
+                },
+                "background": {
+                    "activeOnStart": true,
+                    "beginsPattern": ".*",
+                    "endsPattern": "Devtools:"
+                }
+            }
+        }
+    ]
+}

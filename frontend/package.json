@@ -7,7 +7,11 @@
     "dev": "nuxt dev",
     "generate": "nuxt generate",
     "preview": "nuxt preview",
-    "postinstall": "nuxt prepare"
+    "postinstall": "nuxt prepare",
+    "test": "npx vitest run",
+    "test:vi": "npx vitest watch",
+    "test:nuxt": "npx vitest run --project nuxt",
+    "test:unit": "npx vitest run --project unit"
   },
   "dependencies": {
     "@nuxt/eslint": "1.4.1",

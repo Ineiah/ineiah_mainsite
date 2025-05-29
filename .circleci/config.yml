@@ -24,7 +24,7 @@ jobs:
 
       - run:
           name: Install dependencies
-          working_directory: ~/repo/ineiah/frontend
+          working_directory: ~/ineiah/frontend
           command: |
             pnpm config set store-dir .pnpm-store
             pnpm install

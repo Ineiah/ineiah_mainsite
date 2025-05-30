@@ -1,7 +1,22 @@
 <template>
-  <div>
-    Nuxt
-  </div>
+  <section id="story">
+    <BaseJumbotron src="/hero/hair4.jpg" lead="Notre histoire" subtitle="Découvrez tout ou partie de notre histoire" />
+
+    <!-- Quote -->
+    <div class="p-20 bg-slate-100 w-full text-center">
+      <h1 class="text-2xl md:text-4xl max-w-4xl md:mx-auto font-bold space-x-5">
+        <Icon name="fa-solid:quote-left" />
+        <span>Hairstudio by Anissa c'est avant tout une histoire de passion et d'humanité !</span>
+        <Icon name="fa-solid:quote-right" />
+      </h1>
+    </div>
+
+    <div class="px-2 md:px-10 my-10">
+      <StoryCard />
+      <StoryCard class="my-5" />
+      <StoryCard />
+    </div>
+  </section>
 </template>
 
 <script setup lang="ts">

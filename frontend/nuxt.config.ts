@@ -7,8 +7,13 @@ export default defineNuxtConfig({
   devtools: { enabled: true },
   
   ssr: true,
-
-  routeRules: {},
+  routeRules: {
+    '/': { ssr: true },
+    '/faq': { ssr: true },
+    '/nos-prestations': { ssr: true },
+    '/notre-histoire': { ssr: true },
+    '/legal/**': { ssr: true }
+  },
 
   css: ['~/assets/css/tailwind.css'],
   vite: {

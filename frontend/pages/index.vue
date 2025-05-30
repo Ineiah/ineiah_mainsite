@@ -34,21 +34,10 @@
       <h3 class="text-center text-2xl font-bold mb-5 md:mb-0" >Nos marques</h3>
 
       <div class="grid grid-cols-2 grid-rows-2 gap-4 md:grid-cols-4 md:grid-rows-none md:p-10">
-        <div class="p-3 flex justify-center">
-          <NuxtImg src="/brands/Bouclème.png" width="100px" />
-        </div>
-
-        <div class="p-3 flex justify-center">
-          <NuxtImg src="/brands/Bouclème.png" width="100px" />
-        </div>
-
-        <div class="p-3 flex justify-center">
-          <NuxtImg src="/brands/Bouclème.png" width="100px" />
-        </div>
-
-        <div class="p-3 flex justify-center">
-          <NuxtImg src="/brands/Bouclème.png" width="100px" />
-        </div>
+        <HeroBrand />
+        <HeroBrand />
+        <HeroBrand />
+        <HeroBrand />
       </div>
     </div>
 

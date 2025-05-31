@@ -6,6 +6,8 @@
     <slot />
 
     <BaseReassurance />
+
+    <BaseFooter />
   </section>
 </template>
 

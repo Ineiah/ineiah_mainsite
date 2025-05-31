@@ -1,31 +1,88 @@
 <template>
-  <section id="hero">
+  <section id="hero" class="has-[p]:space-y-5 has-[p]:leading-8 has-[h2]:leading-15">
     <!-- Hero -->
-    <div ref="heroEl" class="w-full h-[90vh] bg-center bg-no-repeat bg-cover flex items-center">
+    <div ref="heroEl" class="w-full h-[98vh] bg-center bg-no-repeat bg-cover flex items-center">
       <div id="lead" class="md:max-w-5xl md:mx-auto text-left md:text-center text-white p-5 md:p-10">
         <h1 class="text-6xl md:text-7xl font-bold mb-5">Sublime ta singularité</h1>
         <p class="text-2xl font-normal">This is a sublead that we should be using</p>
+
+        <div class="flex justify-center items-center space-x-5">
+          <ShadButton variant="outline" size="xl" class="rounded-full mt-5" as-child>
+            <NuxtLinkLocale to="/notre-histoire">
+              Prestations
+            </NuxtLinkLocale>
+          </ShadButton>
+
+          <ShadButton id="tel-hero" size="xl" class="rounded-full mt-5 bg-brand-500" as-child>
+            <a href="tel:+33">
+              Nous appeller
+            </a>
+          </ShadButton>
+        </div>
       </div>
     </div>
 
     <!-- Intermediate-1 -->
-    <div class="grid grid-rows-2 md:grid-rows-none md:grid-cols-2 auto-rows-min bg-slate-500">
+    <div class="p-15">
+      <div class="grid grid-cols-2 gap-10">
+        <div class="transition-all ease-in has-[img]:hover:zoom-in-20">
+          <NuxtImg src="/hero/hair8.jpg" class="rounded-lg aspect-square object-cover" alt="" />
+        </div>
+        
+        <div class="flex flex-col justify-center">
+          <h2 class="text-5xl font-bold brand-500 mb-10 text-brand-500">
+            Plus q'un salon, une expérience de vie
+          </h2>
+
+          <p>
+            Lorem ipsum dolor sit amet consectetur adipisicing elit. 
+            Perspiciatis accusamus possimus, consequuntur totam minus et, eaque placeat quo 
+            tempora voluptatem saepe praesentium animi, asperiores exercitationem commodi! 
+            Facere maiores quidem minima.
+          </p>
+
+          <p>
+            Lorem ipsum dolor sit amet consectetur adipisicing elit. 
+            Perspiciatis accusamus possimus, consequuntur totam minus et, eaque placeat quo 
+            tempora voluptatem saepe praesentium animi, asperiores exercitationem commodi! 
+            Facere maiores quidem minima.
+          </p>
+
+          <div>
+            <ShadButton id="tel-intermadiate-1" size="xl" class="rounded-full mt-5 bg-brand-500" as-child>
+              <a href="tel:+33">
+                Je veux me faire belle
+              </a>
+            </ShadButton>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Intermediate-2 -->
+    <div class="grid grid-rows-2 md:grid-rows-none md:grid-cols-2 auto-rows-min brand-500 mt-10 bg-brand">
       <div class="items-center md:flex md:p-10">
         <div class="p-10 text-center md:text-left md:max-w-lg">
-          <h1 class="text-3xl font-bold mb-4 md:text-4xl">
+          <h2 class="text-3xl font-bold mb-4 md:text-4xl text-brand-500">
             L'histoire de la beauté d'Inéaïah
-          </h1>
+          </h2>
           
           <p class="font-light">
             Lorem ipsum dolor sit amet, consectetur adipisicing elit. 
             Omnis obcaecati beatae velit ipsa quos sapiente at sunt. Ut blanditiis 
             dolorem, magnam animi, doloribus error dolores possimus quia eos voluptatum in!
           </p>
+          
+          <ShadButton size="xl" class="rounded-full mt-10 bg-brand-500" as-child>
+            <NuxtLinkLocale to="/notre-histoire">
+              Découvrir
+            </NuxtLinkLocale>
+          </ShadButton>
         </div>
       </div>
       
       <div class="h-auto">
-        <NuxtImg src="/hero/hair1.jpg" height="700" />
+        <NuxtImg src="/hero/hair1.jpg" class="aspect-square object-cover" alt="" />
       </div>
     </div>
 

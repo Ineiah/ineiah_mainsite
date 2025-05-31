@@ -70,12 +70,16 @@ export default defineNuxtConfig({
   },
 
   googleFonts: {
+    display: 'swap',
     families: {
       Ubuntu: {
-        wght: '100..700'
+        wght: [200, 700]
       },
       Roboto: {
-        wght: '100..700'
+        wght: [200, 700]
+      },
+      'Playfair Display': {
+        wght: [400, 400]
       }
     }
   },

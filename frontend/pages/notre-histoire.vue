@@ -12,9 +12,13 @@
     </div>
 
     <div class="px-2 md:px-10 my-10">
-      <StoryCard />
-      <StoryCard class="my-5" />
-      <StoryCard />
+      <StoryCard class="shadow-none" />
+      <StoryCard class="shadow-none my-5" invert />
+      <StoryCard class="shadow-none" />
+
+      <div class="mt-10">
+        <CardCTA />
+      </div>
     </div>
   </section>
 </template>

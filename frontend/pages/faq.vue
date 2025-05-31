@@ -4,9 +4,9 @@
 
     <div class="px-5 md:px-10 my-10">
       <div class="max-w-3xl mx-auto">
-        <ShadCard>
+        <ShadCard class="bg-brand/20">
           <ShadCardContent>
-            <h3 class="uppercase text-2xl font-semibold">
+            <h3 class="uppercase text-2xl font-semibold text-brand-500">
               Rendez-vous & Réservations
             </h3>
           </ShadCardContent>

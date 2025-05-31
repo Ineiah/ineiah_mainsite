@@ -13,7 +13,7 @@
             </NuxtLinkLocale>
           </ShadButton>
 
-          <ShadButton id="tel-hero" size="xl" class="rounded-full mt-5 bg-brand-500" as-child>
+          <ShadButton id="tel-hero" size="xl" class="rounded-full mt-5" as-child>
             <a href="tel:+33">
               Nous appeller
             </a>
@@ -73,7 +73,7 @@
             dolorem, magnam animi, doloribus error dolores possimus quia eos voluptatum in!
           </p>
           
-          <ShadButton size="xl" class="rounded-full mt-10 bg-brand-500" as-child>
+          <ShadButton size="xl" class="rounded-full mt-10" as-child>
             <NuxtLinkLocale to="/notre-histoire">
               Découvrir
             </NuxtLinkLocale>

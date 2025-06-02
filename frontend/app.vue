@@ -12,4 +12,8 @@ const isLargeScreen = useMediaQuery('(min-width: 1024px)')
 
 provide('isMobile', isMobile)
 provide('isLargeScreen', isLargeScreen)
+
+onMounted(() => {
+  document.querySelector('html')?.classList.add('bg-brand/20')
+})
 </script>

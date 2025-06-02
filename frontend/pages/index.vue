@@ -66,7 +66,7 @@
       <div class="items-center md:flex md:p-10">
         <div class="p-10 text-center md:text-left md:max-w-lg">
           <h2 class="text-3xl font-bold mb-4 md:text-5xl text-brand-500 font-title leading-15">
-            L'histoire de <span class="italic">La beauté d'Inéaïah</span>
+            L'histoire de <span class="italic">{{ businessDetails.legalName }}</span>
           </h2>
           
           <p class="font-light">
@@ -113,6 +113,8 @@
 </template>
 
 <script setup lang="ts">
+import { businessDetails } from '~/data'
+
 const i18n = useI18n()
 
 const titles: Record<string, string> = {

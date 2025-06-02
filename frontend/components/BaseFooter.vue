@@ -23,7 +23,7 @@
 
       <div class="flex flex-col items-center justify-center w-full py-4 mt-12 border-t border-brand-200 md:flex-row md:justify-between">
         <p class="block mb-4 text-sm text-center text-brand md:mb-0">
-          Copyright © 2024 <NuxtLinkLocale to="/">{{ businessDetails.legalName }}</NuxtLinkLocale>. All Rights Reserved.
+          © 2024 <NuxtLinkLocale to="/">{{ businessDetails.legalName }}</NuxtLinkLocale>. Réalisé par <a :href="businessDetails.websiteProvider.url">{{ businessDetails.websiteProvider.legalName }}</a>
         </p>
 
         <div class="flex gap-4 text-brand sm:justify-center">

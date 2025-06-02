@@ -1,5 +1,5 @@
 <template>
-  <section id="mentions-legales">
+  <section id="mentions-legales" class="mt-30">
     <div class="px-5 md:px-10 md:max-w-4xl mx-auto">
       <ShadCard class="bg-brand/0 shadow-none">
         <ShadCardContent class="has-[p]:leading-8">

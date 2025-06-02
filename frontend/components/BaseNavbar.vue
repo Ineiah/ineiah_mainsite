@@ -4,7 +4,7 @@
       <div class="relative flex h-16 items-center justify-between">
         <div class="absolute inset-y-0 left-0 flex items-center sm:hidden">
           <!-- Mobile-->
-          <button type="button" class="relative inline-flex items-center justify-center rounded-md p-2 text-brand/50 hover:bg-gray-700 hover:text-white focus:ring-2 focus:ring-white focus:outline-hidden focus:ring-inset" aria-controls="mobile-menu" aria-expanded="false">
+          <button type="button" class="relative inline-flex items-center justify-center rounded-md p-2 text-brand-400 hover:bg-brand-400 hover:text-brand focus:ring-2 focus:ring-brand focus:outline-hidden focus:ring-inset" aria-controls="mobile-menu" aria-expanded="false" @click="() => emit('mobile-menu')">
             <span class="absolute -inset-0.5"></span>
             <span class="sr-only">Open main menu</span>
             <!--
@@ -55,6 +55,10 @@
 </template>
 
 <script setup lang="ts">
+const emit = defineEmits<{
+  'mobile-menu': []
+}>()
+
 const { y } = useScroll(window)
 
 const showBackground = ref<boolean>(false)

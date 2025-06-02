@@ -1,12 +1,12 @@
 <template>
   <footer class="relative bg-brand-500 w-full">
     <div class="w-full px-8 mx-auto max-w-7xl">
-      <div class="grid justify-between grid-cols-1 gap-4 md:grid-cols-2 p-20">
+      <div class="grid justify-between grid-cols-1 gap-4 p-10 md:grid-cols-2 md:p-20">
         <h5 class="mb-6 text-xl font-semibold text-brand uppercase">
           {{ businessDetails.legalName }}
         </h5>
 
-        <div class="grid justify-between grid-cols-2 gap-4">
+        <div class="grid justify-between grid-rows-2 grid-cols-none gap-4 md:grid-cols-2 md:grid-rows-none">
           <ul v-for="section in footer.sections" :key="section.title">
             <p class="block mb-1 text-lg font-bold text-brand uppercase">
               {{ section.title }}

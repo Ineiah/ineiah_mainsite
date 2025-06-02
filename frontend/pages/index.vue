@@ -7,13 +7,13 @@
         <p class="text-2xl font-normal">This is a sublead that we should be using</p>
 
         <div class="flex flex-wrap justify-start md:flex-nowrap md:justify-center items-center space-x-5">
-          <ShadButton id="link-offer-hero" variant="outline" size="xl" class="rounded-full mt-5" as-child>
+          <ShadButton id="link-offer-hero" variant="outline" size="xl" class="rounded-full mt-10 md:mt-5 w-full md:w-auto" as-child>
             <NuxtLinkLocale to="/nos-prestations">
               Prestations
             </NuxtLinkLocale>
           </ShadButton>
 
-          <ShadButton id="tel-hero" size="xl" class="rounded-full mt-5" as-child>
+          <ShadButton id="tel-hero" size="xl" class="rounded-full mt-5 w-full md:w-auto" as-child>
             <a href="tel:+33">
               <Icon name="fa-solid:phone" />
               Nous appeller

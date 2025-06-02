@@ -76,3 +76,26 @@ export const footer: FooterSection = {
     }
   ]
 }
+
+export const mobileLinks: FooterLinks[] = [
+  {
+    name: 'Accueil',
+    to: '/'
+  },
+  {
+    name: 'Notre histoire',
+    to: '/notre-histoire'
+  },
+  {
+    name: 'Nos prestations',
+    to: '/nos-prestations'
+  },
+  {
+    name: 'Contact',
+    to: '/contact'
+  },
+  {
+    name: 'FAQ',
+    to: '/faq'
+  }
+]

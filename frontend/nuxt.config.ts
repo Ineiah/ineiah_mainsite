@@ -1,5 +1,6 @@
-import tailwindcss from '@tailwindcss/vite'
 import { defineOrganization } from 'nuxt-schema-org/schema'
+
+import tailwindcss from '@tailwindcss/vite'
 
 // https://nuxt.com/docs/api/configuration/nuxt-config
 export default defineNuxtConfig({
@@ -8,9 +9,27 @@ export default defineNuxtConfig({
   
   ssr: true,
 
-  routeRules: {},
+  site: {
+    url: process.env.NUXT_SITE_URL || 'http://localhost:3000'
+  },
+
+  app: {
+    pageTransition: {
+      name: 'page', 
+      mode: 'out-in'
+    }
+  },
+
+  routeRules: {
+    '/': { swr: 16*60 },
+    '/faq': { swr: 30*60 },
+    '/nos-prestations': { swr: 15*60 },
+    '/notre-histoire': { swr: 60*60 },
+    '/legal/**': { prerender: true }
+  },
 
   css: ['~/assets/css/tailwind.css'],
+
   vite: {
     plugins: [
       tailwindcss()
@@ -36,7 +55,10 @@ export default defineNuxtConfig({
       stripeLocale: 'fr',
 
       // What's App
-      whatsAppUrl: process.env.NUXT_WHATS_APP_URL
+      whatsAppUrl: process.env.NUXT_WHATS_APP_URL,
+
+      // Cloudfront
+      cdnBaseUrl: process.env.NUXT_CLOUDFRONT_URL || ''
     }
   },
 
@@ -65,12 +87,16 @@ export default defineNuxtConfig({
   },
 
   googleFonts: {
+    display: 'swap',
     families: {
       Ubuntu: {
-        wght: '100..700'
+        wght: [300, 700]
       },
       Roboto: {
-        wght: '100..700'
+        wght: [200, 700]
+      },
+      'Kreon': {
+        wght: [300, 700]
       }
     }
   },
@@ -108,6 +134,11 @@ export default defineNuxtConfig({
     // is set correctly to cloudefare/aws
     // https://image.nuxt.com/providers/cloudflare
     provider: 'none'
+
+    // provider: 'cloudfront',
+    // providers: {
+    //   cloudfront: {}
+    // }
   },
 
   // hooks: {
@@ -150,7 +181,7 @@ export default defineNuxtConfig({
         '@type': 'Person',
         name: 'Natasha Mory',
         jobTitle: 'Founder & CEO',
-        description: 'Natasha Mory is a certified hair stylist and wellness expert with over 10 years of experience in the beauty industry.',
+        description: 'Natasha Morel is a certified hair stylist and wellness expert with over 10 years of experience in the beauty industry.',
         image: 'https://yourdomain.com/images/founder-natasha.jpg',
         url: 'https://yourdomain.com/about',
         sameAs: [
@@ -247,17 +278,22 @@ export default defineNuxtConfig({
         analytics_storage: 'denied'
       }]
     ]
-  }
+  },
 
-  // nitro: {
-  //   storage: {
-  //     redis: {
-  //       driver: 'redis',
-  //       host: '127.0.0.1',
-  //       port: 6379,
-  //       username: '',
-  //       password: 'django-local-testing'
-  //     }
-  //   }
-  // }
+  nitro: {
+    esbuild: {
+      options: {
+        target: 'esnext'
+      }
+    },
+    storage: {
+      redis: {
+        driver: 'redis',
+        host: process.env.NUXT_REDIS_HOST,
+        port: 6379,
+        username: '',
+        password: process.env.NUXT_REDIS_PASSWORD
+      }
+    }
+  }
 })

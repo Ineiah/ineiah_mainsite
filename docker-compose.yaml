@@ -1,0 +1,35 @@
+services:
+  app:
+    build: ./frontend
+    labels:
+      - traefik
+    env_file:
+      - docker/environment/nuxt.env
+      - docker/environment/redis.env
+    depends_on:
+      - redis
+      - django
+
+  django:
+    build: ./hair_backend
+    labels:
+      - traefik
+    env_file:
+      - docker/environment/django.env
+    depends_on:
+      - db
+
+  db:
+    build: postgres:latest
+    env_file:
+      - docker/environment/postgres.env
+
+  pgadmin:
+    build: pgadmin:latest
+    env_file:
+      - docker/environment/pgadmin.env
+
+  redis:
+    build: redis:latest
+    env_file:
+      - docker/environment/redis.env

@@ -1,7 +1,17 @@
 <template>
-  <div>
-    Nuxt
-  </div>
+  <section id="prestation">
+    <BaseJumbotron src="/hero/hair7.jpg" lead="Nos prestations" subtitle="Découvrez tout ou partie de nos prestations" />
+
+    <div class="px-5 md:px-10">
+      <ServicesSection />
+      <ServicesSection />
+      <ServicesSection />
+
+      <div class="my-10">
+        <CardCTA id="tel-services" />
+      </div>      
+    </div>
+  </section>
 </template>
 
 <script setup lang="ts">

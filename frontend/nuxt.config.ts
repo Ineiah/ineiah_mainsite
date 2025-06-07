@@ -13,6 +13,13 @@ export default defineNuxtConfig({
     url: process.env.NUXT_SITE_URL || 'http://localhost:3000'
   },
 
+  app: {
+    pageTransition: {
+      name: 'page', 
+      mode: 'out-in'
+    }
+  },
+
   routeRules: {
     '/': { swr: 16*60 },
     '/faq': { swr: 30*60 },
@@ -127,6 +134,11 @@ export default defineNuxtConfig({
     // is set correctly to cloudefare/aws
     // https://image.nuxt.com/providers/cloudflare
     provider: 'none'
+
+    // provider: 'cloudfront',
+    // providers: {
+    //   cloudfront: {}
+    // }
   },
 
   // hooks: {

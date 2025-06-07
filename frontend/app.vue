@@ -1,8 +1,16 @@
 <template>
-  <section class="font-sans bg-brand/20">
+  <section class="font-sans bg-brand/20 relative">
     <NuxtLayout>
       <NuxtPage />
     </NuxtLayout>
+
+    <!-- <div class="fixed bottom-1/12 left-11/12">
+      <ShadButton size="lg" class="rounded-full">
+        <a href="tel:+">
+          <Icon name="fa-solid:phone" />
+        </a>
+      </ShadButton>
+    </div> -->
   </section>
 </template>
 
@@ -17,3 +25,17 @@ onMounted(() => {
   document.querySelector('html')?.classList.add('bg-brand/20')
 })
 </script>
+
+<style lang="scss">
+.page {
+  &-enter-active,
+  &-leave-active {
+    transition: all 0.4s;
+  }
+
+  &-enter-from,
+  &-leave-active {
+    filter: blur(1rem);
+  }
+}
+</style>

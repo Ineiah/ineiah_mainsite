@@ -1,6 +1,5 @@
 @import "tailwindcss";
 @import "tw-animate-css";
-/* @import "tailwindcss-animate"; */
 
 @custom-variant dark (&:is(.dark *));
 
@@ -61,10 +60,11 @@
   --color-brand-400: oklch(0.293 0.0532 5.86);
   --color-brand-500: oklch(0.2324 0.0572 8.48);
   --color-secondary: oklch(0.7784 0.059 149.59);
+
   --color-primary: var(--color-brand-500);
 
-  --font-sans: 'Ubuntu';
-  --font-title: 'Kreon';
+  --font-sans: 'Ubuntu', sans-serif;
+  --font-title: 'Kreon', sans-serif;
 
   --animate-accordion-down: accordion-down 0.2s ease-out;
   --animate-accordion-up: accordion-up 0.2s ease-out;

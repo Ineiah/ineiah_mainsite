@@ -84,7 +84,7 @@
       </div>
       
       <div class="h-auto">
-        <NuxtImg src="/hero/hair1.jpg" class="aspect-square object-cover" alt="" />
+        <NuxtImg src="/hero/vert1.jpeg" class="aspect-square object-cover" alt="" />
       </div>
     </div>
 

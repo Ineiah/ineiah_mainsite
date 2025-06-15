@@ -31,7 +31,7 @@
         </div>
         
         <div class="flex flex-col justify-center">
-          <h2 class="text-5xl font-bold brand-500 mb-10 text-brand-500 font-title leading-15">
+          <h2 ref="intermediateOneEl" class="text-5xl font-bold brand-500 mb-10 text-brand-500 font-title leading-15">
             Plus q'un salon, une <span class="text-brand-200">expérience</span> de vie
           </h2>
 
@@ -65,7 +65,7 @@
     <div class="grid grid-rows-2 md:grid-rows-none md:grid-cols-2 auto-rows-min brand-500 mt-10 bg-brand">
       <div class="items-center md:flex md:p-10">
         <div class="p-10 text-center md:text-left md:max-w-lg">
-          <h2 class="text-3xl font-bold mb-4 md:text-5xl text-brand-500 font-title leading-15">
+          <h2 ref="intermediateTwoEl" class="text-3xl font-bold mb-4 md:text-5xl text-brand-500 font-title leading-15">
             L'histoire de <span class="italic">{{ businessDetails.legalName }}</span>
           </h2>
           
@@ -121,7 +121,36 @@ const titles: Record<string, string> = {
   fr: 'Coupe et coiffures tout type de cheveux'
 }
 
+const animateText = ref(false)
 const heroEl = useTemplateRef('heroEl')
+const intermediateOneEl = useTemplateRef<HTMLElement>('intermediateOneEl')
+const intermediateTwoEl = useTemplateRef<HTMLElement>('intermediateTwoEl')
+
+useIntersectionObserver(intermediateOneEl, ([entry]) => {
+    if (entry?.isIntersecting) {
+      animateText.value = true
+      intermediateOneEl.value?.classList.add('animate-in', 'fade-in-50', 'slide-in-from-left-5', 'duration-500')
+    } else {
+      animateText.value = false
+      intermediateOneEl.value?.classList.remove('animate-in', 'fade-in-50', 'slide-in-from-left-5', 'duration-500')
+    }
+  }
+)
+
+useIntersectionObserver(intermediateTwoEl, ([entry]) => {
+    if (entry?.isIntersecting) {
+      intermediateTwoEl.value?.classList.add('animate-in', 'fade-in-50', 'slide-in-from-right-5', 'duration-500')
+    } else {
+      intermediateTwoEl.value?.classList.remove('animate-in', 'fade-in-50', 'slide-in-from-right-5', 'duration-500')
+    }
+  }
+)
+
+onMounted(() => {
+  if (heroEl.value) {
+    heroEl.value.style.backgroundImage = "url('/hero/hair1.jpg')"
+  }
+})
 
 defineOgImageComponent('NuxtSeo', {
   title: 'Hello OG Image 👋',
@@ -146,9 +175,4 @@ useHead({
   ]
 })
 
-onMounted(() => {
-  if (heroEl.value) {
-    heroEl.value.style.backgroundImage = "url('/hero/hair1.jpg')"
-  }
-})
 </script>

@@ -1,7 +1,7 @@
 <template>
   <section id="mentions-legales" class="mt-30">
     <div class="px-5 md:px-10 md:max-w-4xl mx-auto">
-      <ShadCard class="bg-brand/0 shadow-none">
+      <ShadCard class="bg-brand-500/0 shadow-none">
         <ShadCardContent class="has-[p]:leading-8">
           <h1 class="uppercase text-brand-200 text-3xl font-bold mb-2">
             Mentions légales
@@ -12,7 +12,7 @@
           </p>
 
           <div class="my-2 has-[p]:mb-5">
-            <p class="uppercase mt-3 mb-1 text-shadow-brand-500 font-bold">Personne morale</p>
+            <p class="uppercase mt-3 mb-1 text-brand-800 font-bold">Personne morale</p>
 
             <p>Dénomination ou raison sociale: {{ businessDetails.legalName }}</p>
             <p>Adresse du siège social: {{ businessDetails.address }}</p>
@@ -21,7 +21,7 @@
           </div>
 
           <div class="my-2 has-[p]:mb-5">
-            <p class="font-bold uppercase text-1xl text-shadow-brand-500">
+            <p class="font-bold uppercase text-1xl text-brand-800">
               Mentions légales concernant <span class="text-brand-200">le responsable éditorial du site internet</span>
             </p>
 
@@ -30,7 +30,7 @@
           </div>
           
           <div class="my-2 has-[p]:mb-5">
-            <p class="font-bold uppercase text-1xl text-shadow-brand-500">
+            <p class="font-bold uppercase text-1xl text-brand-800">
               Mentions légales concernant <span class="text-brand-200">l'hébergeur du site internet</span>
             </p>
 
@@ -40,7 +40,7 @@
           </div>
 
           <div class="my-2 has-[p]:mb-5">
-            <p class="font-bold uppercase text-1xl text-shadow-brand-500">
+            <p class="font-bold uppercase text-1xl text-brand-800">
               Mentions légales concernant <span class="text-brand-200">la creation du site internet</span>
             </p>
 
@@ -50,7 +50,7 @@
           </div>
 
           <div class="my-2 has-[p]:mb-5">
-            <p class="font-bold uppercase text-1xl text-shadow-brand-500">
+            <p class="font-bold uppercase text-1xl text-brand-800">
               Contenu multimédia du site
             </p>
 
@@ -84,7 +84,7 @@
           </div>
 
           <div class="my-2 has-[p]:mb-5">
-            <p class="font-bold uppercase text-1xl text-shadow-brand-500">
+            <p class="font-bold uppercase text-1xl text-brand-800">
               Copywright photos
             </p>
 
@@ -95,7 +95,7 @@
           </div>
 
           <div class="my-2 has-[p]:mb-5">
-            <p class="font-bold uppercase text-1xl text-shadow-brand-500">
+            <p class="font-bold uppercase text-1xl text-brand-800">
               Mis à jour
             </p>
 

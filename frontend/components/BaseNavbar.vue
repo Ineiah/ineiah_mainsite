@@ -29,7 +29,7 @@
         <div class="flex flex-1 items-center justify-center sm:items-stretch sm:justify-start">
           <div class="flex shrink-0 items-center">
             <NuxtLinkLocale to="/">
-              <NuxtImg class="h-8 w-auto" src="https://tailwindcss.com/plus-assets/img/logos/mark.svg?color=indigo&shade=500" alt="Your Company" />
+              <NuxtImg class="h-8 w-auto" src="https://tailwindcss.com/plus-assets/img/logos/mark.svg?color=indigo&shade=500" :alt="businessDetails.name" />
             </NuxtLinkLocale>
           </div>
 
@@ -48,6 +48,13 @@
               </NuxtLinkLocale>
             </div>
           </div>
+
+          <ShadButton id="tel-navbar" class="rounded-full" as-child>
+            <a href="tel:">
+              <Icon name="fa-solid:phone" />
+              Nous appeller
+            </a>
+          </ShadButton>
         </div>
       </div>
     </div>
@@ -55,6 +62,8 @@
 </template>
 
 <script setup lang="ts">
+import { businessDetails } from '~/data'
+
 const emit = defineEmits<{
   'mobile-menu': []
 }>()

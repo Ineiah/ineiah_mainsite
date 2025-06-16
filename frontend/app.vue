@@ -24,6 +24,15 @@ provide('isLargeScreen', isLargeScreen)
 onMounted(() => {
   document.querySelector('html')?.classList.add('bg-brand-pink-500/20')
 })
+
+useHead({
+  link: [
+    {
+      rel: 'canonical',
+      href: useRuntimeConfig().public.prodDomain
+    }
+  ]
+})
 </script>
 
 <style lang="scss">

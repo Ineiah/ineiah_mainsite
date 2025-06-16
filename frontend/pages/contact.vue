@@ -6,19 +6,21 @@
       <div class="max-w-4xl mx-auto">
         <ShadCard class="bg-brand-pink-500/30 shadow-none">
           <ShadCardContent>
-            <div class="space-y-2">
-              <div class="flex justify-between gap-2 mb-2">
-                <ShadInput v-model="email" placeholder="Email" />
-                <ShadInput v-model="telephone" placeholder="Téléphone" />
+            <form id="form-contact-us" @submit.prevent>
+              <div class="space-y-2">
+                <div class="flex justify-between gap-2 mb-2">
+                  <ShadInput v-model="email" placeholder="Email" />
+                  <ShadInput v-model="telephone" placeholder="Téléphone" />
+                </div>
               </div>
-            </div>
-            <ShadTextarea v-model="message" class="p-4" placeholder="message" />
+              <ShadTextarea v-model="message" class="p-4" placeholder="message" />
 
-            <div class="flex">
-              <ShadButton class="my-10 place-self-start" @click="handleSendMessage">
-                Soumettre
-              </ShadButton>
-            </div>
+              <div class="flex justify-end">
+                <ShadButton id="submit-contact-us" class="my-10 place-self-start" @click="handleSendMessage">
+                  Soumettre
+                </ShadButton>
+              </div>
+            </form>
           </ShadCardContent>
         </ShadCard>
 
@@ -37,14 +39,14 @@
               <p class="font-light mt-5 italic">Du Lundi au Vendredi - Déplacement à domicile</p>
 
               <div class="space-x-2">
-                <ShadButton class="mt-5 rounded-full" as-child>
+                <ShadButton id="tel-contact-us" class="mt-5 rounded-full" as-child>
                   <a href="tel:+33">
                     <Icon name="fa-solid:phone" />
                     Téléphone
                   </a>
                 </ShadButton>
 
-                <ShadButton class="mt-5 rounded-full" as-child>
+                <ShadButton id="email-contact-us" class="mt-5 rounded-full" as-child>
                   <a href="mail:example@gmail.com">
                     <Icon name="fa-solid:envelope" />
                     Email
@@ -53,9 +55,9 @@
               </div>
 
               <div class="inline-flex gap-2 mt-5 rounded-full shadow-none">
-                <ShadButton v-for="social in footer.socials" :key="social.name" variant="link" as-child>
+                <ShadButton v-for="social in footer.socials" :key="social.name" :id="`social-${social.name.toLowerCase()}`" variant="link" as-child>
                   <a :href="social.url" target="_blank">
-                    <Icon :name="`fa-brands:${social.icon}`" class="text-brand-500" size="20" />
+                    <Icon :name="`fa-brands:${social.icon}`" :alt="`${businessDetails.name} - ${social.name}`" class="text-brand-500" size="20" />
                   </a>
                 </ShadButton>
               </div>
@@ -68,7 +70,7 @@
 </template>
 
 <script setup lang="ts">
-import { footer } from '~/data'
+import { businessDetails, footer } from '~/data'
 
 const email = ref<string>('')
 const telephone = ref<string>('')

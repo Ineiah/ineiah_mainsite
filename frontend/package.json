@@ -15,6 +15,9 @@
     "upload:images": "aws s3 sync ./images s3://$S3_BUCKET/images/ --acl public-read",
     "deploy": "npm run upload:images && npm run generate"
   },
+  "overrides": {
+    "consola": "^3.0.0"
+  },
   "dependencies": {
     "@nuxt/eslint": "1.4.1",
     "@nuxt/fonts": "0.11.4",

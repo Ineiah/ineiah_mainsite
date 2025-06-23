@@ -27,7 +27,7 @@
     <div class="p-5 md:p-15">
       <div class="grid grid-rows-2 auto-rows-min md:grid-cols-2 md:grid-rows-none gap-10">
         <div class="transition-all ease-in has-[img]:hover:zoom-in-20">
-          <NuxtImg src="/hero/hair8.jpg" class="rounded-lg aspect-square object-cover" alt="" />
+          <img src="/hero/hair8.jpg" class="rounded-lg aspect-square object-cover" alt="" />
         </div>
         
         <div class="flex flex-col justify-center">
@@ -84,7 +84,7 @@
       </div>
       
       <div class="h-auto">
-        <NuxtImg src="/hero/vert1.jpeg" class="aspect-square object-cover" alt="" />
+        <img src="/hero/vert1.jpeg" class="aspect-square object-cover" alt="" />
       </div>
     </div>
 

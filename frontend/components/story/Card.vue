@@ -4,7 +4,7 @@
       <!-- flex-col text-center md:flex-row md:justify-around md:gap-20 md:items-center -->
       <div class="grid grid-rows-2 grid-cols-none md:grid-cols-2 md:grid-rows-none auto-cols-min gap-10">
         <div v-show="!invert">
-          <NuxtImg src="/hero/hair8.jpg" class="aspect-square object-cover rounded-lg" />
+          <img src="/hero/hair8.jpg" class="aspect-square object-cover rounded-lg" />
         </div>
 
         <!-- mt-5 md:mt-0 md:max-w-lg has-[p]:space-y-3 -->
@@ -29,7 +29,7 @@
         </div>
 
         <div v-show="invert" class="rounded-md">
-          <NuxtImg src="/hero/hair8.jpg" class="aspect-square object-cover rounded-md" />
+          <img src="/hero/hair8.jpg" class="aspect-square object-cover rounded-md" />
         </div>
       </div>
     </ShadCardContent>

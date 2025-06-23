@@ -27,7 +27,7 @@
         <div class="grid grid-rows-2 gap-2 md:grid-rows-none md:grid-cols-2 md:gap-8">
           <ShadCard class="mt-5 bg-brand-pink-500/30 shadow-none">
             <ShadCardContent>
-              <NuxtImg src="/map.jpg" class="rounded-lg" />
+              <img src="/map.jpg" class="rounded-lg" />
             </ShadCardContent>
           </ShadCard>
 

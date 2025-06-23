@@ -1,7 +1,7 @@
 <template>
   <ShadCard class="p-0 relative cursor-pointer" @click="() => showServiceDetails=!showServiceDetails" @mouseenter="() => showIndicatorPhrase=true" @mouseleave="() => showIndicatorPhrase=false">
     <ShadCardContent v-if="!showServiceDetails" class="p-0 rounded-lg">
-      <NuxtImg src="/hero/hair8.jpg" class="aspect-square object-cover rounded-lg w-[300px]" alt="" />
+      <img src="/hero/hair8.jpg" class="aspect-square object-cover rounded-lg w-[300px]" alt="" />
 
       <div class="absolute bottom-0 left-0 p-5 text-white">
         <p class="text-light text-sm">Coupe sur</p>

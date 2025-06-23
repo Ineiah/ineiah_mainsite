@@ -6,7 +6,6 @@ import tailwindcss from '@tailwindcss/vite'
 export default defineNuxtConfig({
   compatibilityDate: '2025-05-15',
   devtools: { enabled: true },
-  
   ssr: true,
 
   site: {
@@ -82,7 +81,8 @@ export default defineNuxtConfig({
     'shadcn-nuxt',
     '@vueuse/nuxt',
     'nuxt-gtag',
-    'nuxt-schema-org'
+    'nuxt-schema-org',
+    '@sentry/nuxt/module'
   ],
 
   shadcn: {
@@ -287,6 +287,14 @@ export default defineNuxtConfig({
     ]
   },
 
+  // Add this alias configuration
+  // alias: {
+  //   'vue': 'vue/dist/vue.esm-bundler.js',
+  // },
+  // Add this build configuration
+  // build: {
+  //   transpile: ['vue', '@headlessui/vue', '@heroicons/vue'],
+  // }
   nitro: {
     esbuild: {
       options: {
@@ -304,13 +312,16 @@ export default defineNuxtConfig({
     }
   },
 
-  // Add this alias configuration
-  // alias: {
-  //   'vue': 'vue/dist/vue.esm-bundler.js',
-  // },
+  sentry: {
+    sourceMapsUploadOptions: {
+      org: 'jpm-holdings',
+      project: 'dev-client'
+    },
 
-  // Add this build configuration
-  // build: {
-  //   transpile: ['vue', '@headlessui/vue', '@heroicons/vue'],
-  // }
+    autoInjectServerSentry: 'top-level-import'
+  },
+
+  sourcemap: {
+    client: 'hidden'
+  }
 })

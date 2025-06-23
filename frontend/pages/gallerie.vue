@@ -51,3 +51,7 @@
     </div>
   </section>
 </template>
+
+<script setup lang="ts">
+// Do something
+</script>

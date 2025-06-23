@@ -62,7 +62,7 @@ defineOgImageComponent('NuxtSeo', {
 
 useSeoMeta({
   title: titles[i18n.locale.value],
-  description: 'Some simple decription',
+  description: 'Sublime ta singularité',
   titleTemplate: "%s | La beauté d'Inéïah",
   ogImage: 'https://dev-client.gency313.fr/hero/hair1.jpg'
 })

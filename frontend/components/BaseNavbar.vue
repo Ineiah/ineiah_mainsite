@@ -68,17 +68,21 @@ const emit = defineEmits<{
   'mobile-menu': []
 }>()
 
-const { y } = useScroll(window)
-
 const showBackground = ref<boolean>(false)
 
-watch(y, (value) => {
-  if (value >= 100) {
-    showBackground.value = true
-  } else {
-    showBackground.value = false
-  }
-})
-
-// const isMobile = inject<boolean>('isMobile')
+if (import.meta.client) {
+  onMounted(() => {
+    const { y } = useScroll(window)
+    
+    watch(y, (value) => {
+      if (value >= 100) {
+        showBackground.value = true
+      } else {
+        showBackground.value = false
+      }
+    }, {
+      immediate: true
+    })
+  })
+}
 </script>

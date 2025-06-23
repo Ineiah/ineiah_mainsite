@@ -19,9 +19,19 @@
 </template>
 
 <script setup lang="ts">
-const { y } = useScroll(window)
-
-provide('scrollLevel', y)
+const scrollLevel = ref<number>(0)
+provide('scrollLevel', scrollLevel)
 
 const showMobileMenu = ref<boolean>(false)
+
+if (import.meta.client) {
+  onMounted(() => {
+    const { y } = useScroll(window)
+    watch(y, (value) => {
+      scrollLevel.value = value
+    }, { 
+      immediate: true
+    })
+  })
+}
 </script>

@@ -111,6 +111,9 @@ export default defineNuxtConfig({
     defaultLocale: 'fr',
     lazy: true,
     vueI18n: './i18n.config.ts',
+    // experimental: {
+    //   localeDetector: 'i18n/locale_detector.ts'
+    // },
     locales: [
       {
         code: 'fr',

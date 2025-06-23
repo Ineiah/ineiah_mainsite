@@ -47,7 +47,7 @@
 <script setup lang="ts">
 import { faqList } from '~/data'
 
-const i18n = useI18n()
+// const i18n = useI18n()
 
 const titles: Record<string, string> = {
   fr: 'Coupe et coiffures tout type de cheveux'
@@ -61,7 +61,8 @@ defineOgImageComponent('NuxtSeo', {
 })
 
 useSeoMeta({
-  title: titles[i18n.locale.value],
+  // title: titles[i18n.locale.value],
+  title: titles.fr,
   description: 'Sublime ta singularité',
   titleTemplate: "%s | La beauté d'Inéïah",
   ogImage: 'https://dev-client.gency313.fr/hero/hair1.jpg'

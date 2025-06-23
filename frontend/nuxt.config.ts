@@ -25,7 +25,8 @@ export default defineNuxtConfig({
     '/faq': { swr: 30*60 },
     '/nos-prestations': { swr: 15*60 },
     '/notre-histoire': { swr: 60*60 },
-    '/legal/**': { prerender: true }
+    // '/legal/**': { prerender: true }
+    '/legal/**': { ssr: true }
   },
 
   css: ['~/assets/css/tailwind.css'],
@@ -301,12 +302,12 @@ export default defineNuxtConfig({
   },
 
   // Add this alias configuration
-  alias: {
-    'vue': 'vue/dist/vue.esm-bundler.js',
-  },
+  // alias: {
+  //   'vue': 'vue/dist/vue.esm-bundler.js',
+  // },
 
   // Add this build configuration
-  build: {
-    transpile: ['vue', '@headlessui/vue', '@heroicons/vue'],
-  }
+  // build: {
+  //   transpile: ['vue', '@headlessui/vue', '@heroicons/vue'],
+  // }
 })

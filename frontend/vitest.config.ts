@@ -5,13 +5,7 @@ import { defineConfig } from 'vitest/config'
 export default defineVitestConfig({
   test: {
     globals: true,
-    environment: 'nuxt',
-    // environmentOptions: {
-    //   nuxt: {
-    //     domEnvironment: 'happy-dom'
-    //   }
-    // },
-    testTimeout: 1000,
+    testTimeout: 20000,
     coverage: {
       enabled: true
     },
@@ -20,7 +14,7 @@ export default defineVitestConfig({
         extends: true,
         test: {
           name: 'nuxt-pages',
-          environment: 'nuxt',
+          testTimeout: 20000,
           include: ['**/*.{spec,test}.ts']
         }
       }

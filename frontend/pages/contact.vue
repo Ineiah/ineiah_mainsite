@@ -9,11 +9,11 @@
             <form id="form-contact-us" @submit.prevent>
               <div class="space-y-2">
                 <div class="flex justify-between gap-2 mb-2">
-                  <ShadInput v-model="email" placeholder="Email" />
-                  <ShadInput v-model="telephone" placeholder="Téléphone" />
+                  <ShadInput v-model="email" id="email" placeholder="Email" />
+                  <ShadInput v-model="telephone" id="telephone" placeholder="Téléphone" />
                 </div>
               </div>
-              <ShadTextarea v-model="message" class="p-4" placeholder="message" />
+              <ShadTextarea v-model="message" id="message" class="p-4" placeholder="message" />
 
               <div class="flex justify-end">
                 <ShadButton id="submit-contact-us" class="my-10 place-self-start" @click="handleSendMessage">

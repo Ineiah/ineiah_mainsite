@@ -19,9 +19,7 @@ vi.mock('@vueuse/core', async () => {
   const actual = await vi.importActual<typeof import('@vueuse/core')>('@vueuse/core')
   return {
     ...actual,
-    useScroll: vi.fn().mockReturnValue({
-      y: 0
-    }),
+    useScroll: vi.fn().mockReturnValue({ y: 0 }),
     useIntersectionObserver: vi.fn()
   }
 })

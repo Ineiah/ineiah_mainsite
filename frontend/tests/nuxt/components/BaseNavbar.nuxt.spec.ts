@@ -1,55 +1,61 @@
 import { NuxtLinkLocale } from '#components'
-import { mountSuspended, renderSuspended } from '@nuxt/test-utils/runtime'
+import { mountSuspended } from '@nuxt/test-utils/runtime'
 import { describe, expect, it } from 'vitest'
 
 import BaseNavbar from '~/components/BaseNavbar.vue'
 
-describe.concurrent.skip('Navbar', () => {
-  it('should render navbar', async () => {
-    const component = await renderSuspended(BaseNavbar)
-    const linkEl = component.findByText('Accueil')
-    expect(linkEl).not.toBeUndefined()
-    
-    // const buttonEl = component.findByText('Nous appeller')
-    // expect(buttonEl).not.toBeUndefined()
-    // expect((await buttonEl).attributes.getNamedItem('disabled')).not.toBeNull()
+describe('Navbar', () => {
+  describe('call to action', async () => {
+    it('should contain call to action', async () => {
+      const component = await mountSuspended(BaseNavbar)
+      const cta = component.find(`[id="tel-navbar"]`)
+
+      expect(cta.exists()).toBeTruthy()
+      expect(cta.attributes('href')).toContain('tel:')
+    })
   })
 
-  it('applies bg-brand-pink-500 if show showBackground is true', async () => {
-    const y = ref(0)
-    
-    const component = await mountSuspended(BaseNavbar, {
-      global: {
-        mocks: {
-          useScroll: () => ({ y })
+  describe('fixed when scrolled', () => {
+    // TODO: Renders only the navbar so when scrolled nothing happens. This
+    // has to be tested on a page
+    it.skip('applies bg-brand-pink-500 if show showBackground is true', async () => {
+      const y = ref(100)
+      
+      const component = await mountSuspended(BaseNavbar, {
+        global: {
+          mocks: {
+            useScroll: () => ({ y })
+          }
         }
-      }
+      })
+      
+      y.value = 800
+      await nextTick()
+  
+      expect(component.classes()).toContain('bg-brand-pink-500')
+      expect(component.classes()).not.toContain('bg-transparent')
     })
-    
-    y.value = 800
-    await nextTick()
-
-    expect(component.classes()).toContain('bg-brand-pink-500')
-    expect(component.classes()).not.toContain('bg-transparent')
-  })
-
-  it('applises bg-brand-transparent if show showBackground is false', async () => {
-    const component = await mountSuspended(BaseNavbar, {
-      global: {
-        mocks: {
-          useScroll: () => ({ y: ref(0) })
+  
+    it('applises bg-brand-transparent if show showBackground is false', async () => {
+      const component = await mountSuspended(BaseNavbar, {
+        global: {
+          mocks: {
+            useScroll: () => ({ y: ref(0) })
+          }
         }
-      }
-    })
-    await nextTick()
+      })
 
-    expect(component.classes()).toContain('bg-transparent')
-    expect(component.classes()).not.toContain('bg-brand-pink-500')
+      await nextTick()
+  
+      expect(component.classes()).toContain('bg-transparent')
+      expect(component.classes()).not.toContain('bg-brand-pink-500')
+    })
   })
 
   it('emits when mobile button is clicked', async () => {
     const component = await mountSuspended(BaseNavbar)
     const button = component.get('button[aria-controls="mobile-menu"]')
+    
     await button.trigger('click')
     expect(component.emitted('mobile-menu')).toBeTruthy()
   })
@@ -57,8 +63,8 @@ describe.concurrent.skip('Navbar', () => {
   it('has all expected links', async () => {
     const component = await mountSuspended(BaseNavbar)
     const links = component.findAllComponents(NuxtLinkLocale)
-    const linkTexts = links.map(link => link.text())
 
+    const linkTexts = links.map(link => link.text())
     const expectedTexts = ['Accueil', 'Prestations', 'Notre histoire']
 
     expectedTexts.forEach(text => {
@@ -73,7 +79,7 @@ describe.concurrent.skip('Navbar', () => {
     expect(component.get('button').attributes('aria-controls')).toBe('mobile-menu')
   })
 
-  it.skip('matches snapshot', async () => {
+  it('matches snapshot', async () => {
     const component = await mountSuspended(BaseNavbar)
     expect(component.html()).toMatchSnapshot()
   })

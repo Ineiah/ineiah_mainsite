@@ -19,10 +19,6 @@ export default defineNuxtConfig({
     }
   },
 
-  // alias: {
-  //   'vue': 'vue/dist/vue.esm-bundler.js'
-  // },
-
   routeRules: {
     '/': { swr: 16*60 },
     '/faq': { swr: 30*60 },
@@ -79,7 +75,7 @@ export default defineNuxtConfig({
     '@pinia/nuxt',
     '@nuxtjs/i18n',
     '@nuxtjs/seo',
-    '@nuxtjs/google-fonts',
+    // '@nuxtjs/google-fonts',
     // '@sentry/nuxt/module,'
     '@vueuse/nuxt',
     'pinia-plugin-persistedstate',
@@ -94,21 +90,24 @@ export default defineNuxtConfig({
     componentDir: './components/ui'
   },
 
-  googleFonts: {
-    display: 'swap',
-    families: {
-      Ubuntu: {
-        wght: [300, 700]
+  fonts: {
+    provider: 'google',
+    families: [
+      {
+        name: 'Ubuntu',
+        weight: '300..700'
       },
-      Roboto: {
-        wght: [200, 700]
+      {
+        name: 'Roboto',
+        weight: '200..700'
       },
-      'Kreon': {
-        wght: [300, 700]
+      {
+        name: 'Kreon',
+        weight: '300..700'
       }
-    }
+    ]
   },
-
+  
   i18n: {
     baseUrl: './',
     langDir: './locales',

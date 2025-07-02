@@ -47,8 +47,6 @@
 <script setup lang="ts">
 import { faqList } from '~/data'
 
-// const i18n = useI18n()
-
 const titles: Record<string, string> = {
   fr: 'Coupe et coiffures tout type de cheveux'
 }

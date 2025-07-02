@@ -4,9 +4,9 @@ volumes:
 networks:
   ineiah_network:
     driver: bridge
-  myprosite_network:
-    external: true
-    name: myprosite_myprosite_network  
+  # myprosite_network:
+  #   external: true
+  #   name: myprosite_myprosite_network  
 
 services:
   ineiah:
@@ -24,11 +24,11 @@ services:
       - traefik.http.routers.ineiah.middlewares=https-redirect
       - traefik.http.middlewares.https-redirect.redirectscheme.scheme=https
       - traefik.http.middlewares.https-redirect.redirectscheme.permanent=true
-    # ports:
-    #   - 3000:3000
+    ports:
+      - 3000:3000
     networks:
       - ineiah_network
-      - myprosite_network
+      # - myprosite_network
 
   redis_dev_ineiah:
     build: ./docker/redis

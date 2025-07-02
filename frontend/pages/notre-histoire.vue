@@ -24,8 +24,6 @@
 </template>
 
 <script setup lang="ts">
-// const i18n = useI18n()
-
 const titles: Record<string, string> = {
   fr: 'Coupe et coiffures tout type de cheveux'
 }

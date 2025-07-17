@@ -2,7 +2,7 @@ import { ShadAccordionContent } from '#components'
 import { mountSuspended, renderSuspended } from '@nuxt/test-utils/runtime'
 import { fireEvent, within } from '@testing-library/vue'
 import { describe, expect, it } from 'vitest'
-import { faqList } from '~/data'
+import { faqList } from '~/app/data'
 
 import Faq from '~/pages/faq.vue'
 

@@ -89,7 +89,7 @@ export default defineNuxtConfig({
 
   shadcn: {
     prefix: 'Shad',
-    componentDir: './components/ui'
+    componentDir: '~/components/ui'
   },
 
   fonts: {

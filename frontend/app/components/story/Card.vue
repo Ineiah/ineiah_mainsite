@@ -1,5 +1,5 @@
 <template>
-  <ShadCard class="bg-brand-brown-500/20 has-[p]:leading-8">
+  <ShadCard class="bg-brand-pink-500/20 has-[p]:leading-8">
     <ShadCardContent>
       <!-- flex-col text-center md:flex-row md:justify-around md:gap-20 md:items-center -->
       <div class="grid grid-rows-2 grid-cols-none md:grid-cols-2 md:grid-rows-none auto-cols-min gap-10">
@@ -10,8 +10,8 @@
         <!-- mt-5 md:mt-0 md:max-w-lg has-[p]:space-y-3 -->
         <div class="flex md:justify-center md:items-center">
           <div>
-            <h3 class="font-semibold text-5xl mb-5 text-brand-brown-500 font-title leading-15">
-              Une <span class="italic text-brand-brown-700">expertise</span> façonnée par l'experience
+            <h3 class="font-semibold text-5xl mb-5 text-brand-pink-500 font-title leading-15">
+              Une <span class="italic text-brand-pink-700">expertise</span> façonnée par l'experience
             </h3>
             
             <p>

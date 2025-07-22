@@ -11,6 +11,8 @@ services:
   ineiah:
     build: ./frontend
     container_name: app_ineiah
+    env_file:
+      - ./docker/environment/vite.env
     labels:
       - traefik.enable=true
       - traefik.http.routers.ineiah.entrypoints=websecure

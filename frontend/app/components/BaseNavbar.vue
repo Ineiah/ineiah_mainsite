@@ -4,7 +4,7 @@
       <div class="relative flex h-16 items-center justify-between">
         <div class="absolute inset-y-0 left-0 flex items-center sm:hidden">
           <!-- Mobile-->
-          <button type="button" class="relative inline-flex items-center justify-center rounded-md p-2 text-brand-pink-700 hover:bg-brand-pink-400 hover:text-brand-pink focus:ring-2 focus:ring-brand focus:outline-hidden focus:ring-inset" aria-controls="mobile-menu" aria-expanded="false" @click="() => emit('mobile-menu')">
+          <button type="button" class="relative inline-flex items-center justify-center rounded-md p-2 text-brand-pink-700 hover:bg-brand-pink-400 hover:text-brand-pink-500 focus:ring-2 focus:ring-brand-pink-500 focus:outline-hidden focus:ring-inset" aria-controls="mobile-menu" aria-expanded="false" @click="() => emit('mobile-menu')">
             <span class="absolute -inset-0.5"></span>
             <span class="sr-only">Open main menu</span>
             <!--
@@ -34,22 +34,22 @@
           </div>
 
           <div class="hidden sm:ml-6 sm:block md:mx-auto">
-            <div class="flex space-x-4 has-[a.router-link-exact-active]:text-brand-pink-200">
-              <NuxtLinkLocale to="/" class="rounded-md px-3 py-2 text-lg font-semibold uppercase text-brand-pink-100 hover:text-brand-pink-200">
+            <div class="flex space-x-4 has-[a.router-link-exact-active]:text-brand-pink-200 has-[a]:transition-all has-[a]:ease-in-out">
+              <NuxtLinkLocale to="/" class="rounded-md px-3 py-2 text-lg font-semibold uppercase text-brand-pink-50 hover:text-brand-pink-300">
                 Accueil
               </NuxtLinkLocale>
 
-              <NuxtLinkLocale to="/nos-prestations" class="rounded-md px-3 py-2 text-lg font-semibold uppercase text-brand-pink-100 hover:text-brand-pink-200">
+              <NuxtLinkLocale to="/nos-prestations" class="rounded-md px-3 py-2 text-lg font-semibold uppercase text-brand-pink-50 hover:text-brand-pink-300">
                 Prestations
               </NuxtLinkLocale>
 
-              <NuxtLinkLocale to="/notre-histoire" class="rounded-md px-3 py-2 text-lg font-semibold uppercase text-brand-pink-100 hover:text-brand-pink-200">
+              <NuxtLinkLocale to="/notre-histoire" class="rounded-md px-3 py-2 text-lg font-semibold uppercase text-brand-pink-50 hover:text-brand-pink-300">
                 Notre histoire
               </NuxtLinkLocale>
             </div>
           </div>
 
-          <ShadButton id="tel-navbar" class="rounded-full" as-child>
+          <ShadButton id="tel-navbar" class="rounded-full hidden md:visible" as-child>
             <a href="tel:">
               <Icon name="fa-solid:phone" />
               Nous appeller

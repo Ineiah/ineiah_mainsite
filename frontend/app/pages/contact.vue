@@ -70,23 +70,33 @@
 </template>
 
 <script setup lang="ts">
+import { doc, getDoc, setDoc } from 'firebase/firestore'
 import { businessDetails, footer } from '~/data'
 
 const email = ref<string>('')
 const telephone = ref<string>('')
 const message = ref<string>('')
 
+const { $fireApp, $fireStore } = useNuxtApp()
+ 
 /**
- * Handles sending a message using N8N backend
+ * Handles sending a message to firebase database
+ * and eventually to N8N if configured
  */
-function handleSendMessage() {
-  $fetch('/contact', {
-    baseURL: 'https://example.com',
-    body: {
-      email: email.value,
-      telephone: telephone.value,
-      message: message.value
-    }
-  })
+async function handleSendMessage() {
+  const contactMessage = {
+    email: email.value,
+    telephone: telephone.value,
+    message: message.value,
+    timestamp: new Date().toISOString(),
+  }
+
+  try {
+    const contactRef = doc($fireStore, 'contact', email.value)
+    // const contactSnapshot = await getDoc(contactRef)
+    await setDoc(contactRef, contactMessage)
+  } catch (e) {
+    console.error(e)
+  }
 }
 </script>

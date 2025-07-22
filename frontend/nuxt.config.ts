@@ -61,7 +61,13 @@ export default defineNuxtConfig({
       whatsAppUrl: process.env.NUXT_WHATS_APP_URL,
 
       // Cloudfront
-      cdnBaseUrl: process.env.NUXT_CLOUDFRONT_URL || ''
+      cdnBaseUrl: process.env.NUXT_CLOUDFRONT_URL || '',
+
+      // Twilio
+      twilioAccountSid: process.env.NUXT_TWILIO_ACCOUNT_SID,
+      twilioAuthToken: process.env.NUXT_TWILIO_AUTH_TOKEN,
+      twilioPhoneNumber: process.env.NUXT_TWILIO_PHONE_NUMBER,
+      twilioToPhoneNumber: process.env.NUXT_TWILIO_TO_PHONE_NUMBER
     }
   },
 

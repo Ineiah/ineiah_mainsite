@@ -1,8 +1,7 @@
 <template>
   <ShadCard class="bg-brand-pink-500/10 has-[p]:leading-8">
     <ShadCardContent>
-      <!-- flex-col text-center md:flex-row md:justify-around md:gap-20 md:items-center -->
-      <div class="grid grid-rows-2 grid-cols-none md:grid-cols-2 md:grid-rows-none auto-cols-min gap-10">
+      <div class="grid grid-rows-2 grid-cols-none auto-rows-min md:auto-cols-min md:grid-cols-2 md:grid-rows-none gap-10">
         <div v-show="!invert">
           <img src="/hero/hair8.jpg" class="aspect-square object-cover rounded-lg" />
         </div>

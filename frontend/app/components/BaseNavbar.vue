@@ -4,7 +4,7 @@
       <div class="relative flex h-16 items-center justify-between">
         <div class="absolute inset-y-0 left-0 flex items-center sm:hidden">
           <!-- Mobile-->
-          <button type="button" class="relative inline-flex items-center justify-center rounded-md p-2 text-brand-pink-700 hover:bg-brand-pink-400 hover:text-brand-brown focus:ring-2 focus:ring-brand focus:outline-hidden focus:ring-inset" aria-controls="mobile-menu" aria-expanded="false" @click="() => emit('mobile-menu')">
+          <button type="button" class="relative inline-flex items-center justify-center rounded-md p-2 text-brand-pink-700 hover:bg-brand-pink-400 hover:text-brand-pink-500 focus:ring-2 focus:ring-brand-pink-500 focus:outline-hidden focus:ring-inset" aria-controls="mobile-menu" aria-expanded="false" @click="() => emit('mobile-menu')">
             <span class="absolute -inset-0.5"></span>
             <span class="sr-only">Open main menu</span>
             <!--
@@ -49,7 +49,7 @@
             </div>
           </div>
 
-          <ShadButton id="tel-navbar" class="rounded-full" as-child>
+          <ShadButton id="tel-navbar" class="rounded-full hidden md:visible" as-child>
             <a href="tel:">
               <Icon name="fa-solid:phone" />
               Nous appeller

@@ -20,18 +20,18 @@ export default defineNuxtConfig({
     }
   },
 
-  nitro: {
-    preset: 'vercel-edge',
-    esbuild: {
-      options: {
-        target: 'esnext'
-      }
-    }
-  },
+  // nitro: {
+  //   preset: 'vercel-edge',
+  //   esbuild: {
+  //     options: {
+  //       target: 'esnext'
+  //     }
+  //   }
+  // },
 
-  alias: {
-    'vue': 'vue/dist/vue.esm-bundler.js'
-  },
+  // alias: {
+  //   'vue': 'vue/dist/vue.esm-bundler.js'
+  // },
 
   routeRules: {
     '/': { swr: 16*60 },

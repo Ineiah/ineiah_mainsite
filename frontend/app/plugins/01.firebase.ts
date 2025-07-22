@@ -2,7 +2,7 @@ import { initializeApp } from 'firebase/app'
 import { getDatabase } from 'firebase/database'
 import { getFirestore } from 'firebase/firestore'
 
-export default defineNuxtPlugin(nuxtApp => {
+export default defineNuxtPlugin(_nuxtApp => {
   try {
     const config = useRuntimeConfig()
     const app = initializeApp({
@@ -27,13 +27,5 @@ export default defineNuxtPlugin(nuxtApp => {
     }
   } catch (e) {
     console.error('Firebase:', e)
-    
-    return {
-      provide: {
-        fireStore: null,
-        fireApp: null,
-        fireDb: null
-      }
-    }
   }
 })

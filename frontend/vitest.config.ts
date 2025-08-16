@@ -6,6 +6,9 @@ export default defineVitestConfig({
   test: {
     globals: true,
     testTimeout: 20000,
+    alias: {
+      '~': path.resolve(__dirname, 'app')
+    },
     coverage: {
       enabled: true
     },
@@ -15,7 +18,7 @@ export default defineVitestConfig({
         test: {
           name: 'nuxt-pages',
           testTimeout: 20000,
-          include: ['**/*.{spec,test}.ts']
+          include: ['nuxt/**/*.{spec,test}.ts']
         }
       }
     ]

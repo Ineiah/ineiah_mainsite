@@ -1,13 +1,5 @@
 import { vi } from 'vitest'
 import { mockComponent } from '@nuxt/test-utils/runtime'
-// import { setupTest } from '@nuxt/test-utils'
-
-// export default async () => {
-//   await setupTest({
-//     configFile: 'nuxt.config.test.ts',
-//     server: true
-//   })
-// }
 
 mockComponent('defineOgImageComponent', {
   setup(props: unknown) {

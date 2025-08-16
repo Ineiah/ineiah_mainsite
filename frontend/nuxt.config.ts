@@ -91,7 +91,7 @@ export default defineNuxtConfig({
     
     // '@sentry/nuxt/module,'
     
-    // 'pinia-plugin-persistedstate',
+    'pinia-plugin-persistedstate',
     'shadcn-nuxt',
     'nuxt-gtag',
     'nuxt-schema-org',

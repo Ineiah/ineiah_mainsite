@@ -29,10 +29,7 @@
       </ul>
 
       <ShadButton id="tel-service-xyz" class="mt-3 rounded-full" size="sm" as-child>
-        <a href="tel:+33">
-          <Icon name="fa-solid:phone" />
-          Réserver
-        </a>
+        <BaseTelephoneLink :with-icon="true" text="Réserver" />
       </ShadButton>
     </ShadCardContent>
   </ShadCard>

@@ -4,7 +4,9 @@
     <div ref="heroEl" class="w-full h-[98vh] bg-center bg-no-repeat bg-cover flex items-center">
       <div id="lead" class="md:max-w-5xl md:mx-auto text-left md:text-center text-brand-brown-50 p-5 md:p-10">
         <h1 class="text-6xl md:text-7xl font-bold mb-5 animate animate-fade-up">Sublime ta singularité</h1>
-        <p class="text-2xl font-normal">This is a sublead that we should be using</p>
+        <p class="text-2xl font-normal">
+          Lorem ipsum dolor sit, amet consectetur adipisicing elit. Maiores, consectetur. Alias saepe assumenda numquam inventore vel
+        </p>
 
         <div class="flex flex-wrap justify-start md:flex-nowrap md:justify-center items-center space-x-5">
           <ShadButton id="link-offer-hero" variant="outline" size="xl" class="rounded-full mt-10 md:mt-5 w-full md:w-auto" as-child>
@@ -84,7 +86,7 @@
       </div>
       
       <div class="h-auto">
-        <img src="/hero/vert1.jpeg" class="aspect-square object-cover" alt="" />
+        <img src="/hero/hair2.jpg" class="aspect-square object-cover" alt="" />
       </div>
     </div>
 

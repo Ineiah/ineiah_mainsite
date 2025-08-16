@@ -7,14 +7,15 @@
           {{ title }}
         </p>
 
-        <a href="tel:" class="text-brand-brown-600">
-          Contactez-nous
-        </a>
+        <BaseTelephoneLink :with-icon="false" class="text-brand-brown-600" />
       </div>
     </div>
   </div>
 </template>
 
-<script setup lang="ts"> 
+<script setup lang="ts">
+import BaseTelephoneLink from './BaseTelephoneLink.vue';
+
+ 
 const { title = 'Une équipe à ton écoute' } = defineProps<{ title?: string }>()
 </script>

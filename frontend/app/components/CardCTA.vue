@@ -18,13 +18,12 @@
           </slot>
         </p>
 
-        <ShadButton :id="id" size="xl" class="rounded-full mt-10" as-child>
-          <a href="tel:+33">
-            <Icon name="fa-solid:phone" />
+        <ShadButton :id="id" size="xl" class="rounded-full mt-10" as-child>          
+          <BaseTelephoneLink :with-icon="true">
             <slot name="action">
               Obtenir mon moment plaisir
             </slot>
-          </a>
+          </BaseTelephoneLink>
         </ShadButton>
       </div>
     </ShadCardContent>
@@ -32,12 +31,5 @@
 </template>
 
 <script setup lang="ts">
-withDefaults(
-  defineProps<{
-    id: string
-  }>(),
-  {
-    id: 'tel-offer-section'
-  }
-)
+const { id = 'tel-offer-section' } = defineProps<{ id: string }>()
 </script>

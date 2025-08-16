@@ -28,32 +28,21 @@
 
         <div class="flex flex-1 items-center justify-center sm:items-stretch sm:justify-start">
           <div class="flex shrink-0 items-center">
-            <NuxtLinkLocale to="/">
+            <NuxtLinkLocale id="nav-link-home" to="/">
               <img class="h-8 w-auto" src="https://tailwindcss.com/plus-assets/img/logos/mark.svg?color=indigo&shade=500" :alt="businessDetails.name" />
             </NuxtLinkLocale>
           </div>
 
           <div class="hidden sm:ml-6 sm:block md:mx-auto">
-            <div class="flex space-x-4 has-[a.router-link-exact-active]:text-brand-brown-200 has-[a]:transition-all has-[a]:ease-in-out">
-              <NuxtLinkLocale to="/" class="rounded-md px-3 py-2 text-lg font-semibold uppercase text-brand-brown-50 hover:text-brand-brown-300">
-                Accueil
-              </NuxtLinkLocale>
-
-              <NuxtLinkLocale to="/nos-prestations" class="rounded-md px-3 py-2 text-lg font-semibold uppercase text-brand-brown-50 hover:text-brand-brown-300">
-                Prestations
-              </NuxtLinkLocale>
-
-              <NuxtLinkLocale to="/notre-histoire" class="rounded-md px-3 py-2 text-lg font-semibold uppercase text-brand-brown-50 hover:text-brand-brown-300">
-                Notre histoire
+            <div class="flex space-x-4 has-[a]:transition-all has-[a]:ease-in-out">
+              <NuxtLinkLocale v-for="route in routes" :key="route.path" :to="route.path" :class="linkTheme" id="nav-link">
+                {{ route.title }}
               </NuxtLinkLocale>
             </div>
           </div>
 
-          <ShadButton id="tel-navbar" class="rounded-full hidden md:visible" as-child>
-            <a href="tel:">
-              <Icon name="fa-solid:phone" />
-              Nous appeller
-            </a>
+          <ShadButton id="tel-navbar" class="rounded-full md:visible" as-child>
+            <BaseTelephoneLink />
           </ShadButton>
         </div>
       </div>
@@ -86,4 +75,47 @@ if (import.meta.client) {
     })
   })
 }
+
+const routes = [
+  {
+    title: 'Accueil',
+    path: '/'
+  },
+  {
+    title: 'Prestations',
+    path: '/nos-prestations'
+  },
+  {
+    title: 'Notre histoire',
+    path: '/notre-histoire'
+  }
+]
+
+const linkTheme = ref(`
+  rounded-md px-3 py-2 text-lg font-semibold uppercase 
+  text-brand-brown-50 hover:text-brand-brown-400 relative
+`)
 </script>
+
+<style lang="css">
+a#nav-link.router-link-exact-active {
+  display: inline-block;
+  color: var(--color-brand-brown-400);
+}
+
+a#nav-link::before {
+  content: "";
+  position: absolute;
+  width: 0;
+  height: 4px;
+  bottom: 0;
+  left: 50%;
+  background-color: var(--color-brand-brown-400);
+  transition: all 0.4s;
+}
+
+a#nav-link:hover::before {
+  width: 100%;
+  left: 0;
+}
+</style>

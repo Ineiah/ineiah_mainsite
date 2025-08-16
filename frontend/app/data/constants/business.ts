@@ -9,6 +9,12 @@ export interface CloudProvider extends WebsiteProvider {
   rcs: string
 }
 
+export interface ContactPoints {
+  telephone: string
+  email: string
+  address: string
+}
+
 export interface BusinessDetails {
   name: string
   legalName: string
@@ -29,6 +35,7 @@ export interface BusinessDetails {
   editorInChief: string
   websiteProvider: WebsiteProvider
   cloudProvider: CloudProvider
+  contact: ContactPoints
 }
 
 export const businessDetails: BusinessDetails = {
@@ -63,5 +70,10 @@ export const businessDetails: BusinessDetails = {
     description: "OVH SAS est une filiale de la société OVH Groupe SA, société immatriculée au RCS de Lille",
     address: '2 rue Kellermann - 59100 Roubaix - France',
     rcs: '424 761 419 00045'
+  },
+  contact: {
+    telephone: '+1-888-555-0123',
+    email: 'contact@ineiah.com',
+    address: '15 test address, Lille'
   }
 }

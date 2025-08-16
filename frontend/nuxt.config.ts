@@ -95,7 +95,7 @@ export default defineNuxtConfig({
     // '@pinia/nuxt', //FIXME: Breaks in production
 
     '@nuxtjs/i18n',
-    // '@nuxtjs/seo',
+    '@nuxtjs/seo',
     '@vueuse/nuxt',
     
     // '@sentry/nuxt/module,'

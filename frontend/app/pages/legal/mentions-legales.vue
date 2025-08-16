@@ -118,11 +118,11 @@ const titles: Record<string, string> = {
   fr: 'Mentions légales'
 }
 
-useSeoMeta({
-  // title: titles[i18n.locale.value],
-  title: titles.fr,
-  description: 'Sublime ta singularité',
-  titleTemplate: "%s | La beauté d'Inéïah",
-  ogImage: 'http://example.com/image.jpg'
-})
+// useSeoMeta({
+//   // title: titles[i18n.locale.value],
+//   title: titles.fr,
+//   description: 'Sublime ta singularité',
+//   titleTemplate: "%s | La beauté d'Inéïah",
+//   ogImage: 'http://example.com/image.jpg'
+// })
 </script>

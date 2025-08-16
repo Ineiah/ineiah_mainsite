@@ -77,7 +77,8 @@ const email = ref<string>('')
 const telephone = ref<string>('')
 const message = ref<string>('')
 
-const { $fireApp, $fireStore } = useNuxtApp()
+// const { $fireApp, $fireStore } = useNuxtApp()
+const fireStoe = useFireStore()
  
 /**
  * Handles sending a message to firebase database

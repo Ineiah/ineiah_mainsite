@@ -85,17 +85,20 @@ export default defineNuxtConfig({
 
   modules: [
     '@nuxt/image',
-    '@nuxt/eslint',
     '@nuxt/fonts',
     '@nuxt/icon',
     '@nuxt/test-utils/module',
+    '@nuxt/eslint',
     '@nuxt/scripts',
     '@nuxt/ui',
+
     '@pinia/nuxt',
     '@nuxtjs/i18n',
     '@nuxtjs/seo',
-    // '@sentry/nuxt/module,'
     '@vueuse/nuxt',
+    
+    // '@sentry/nuxt/module,'
+    
     'pinia-plugin-persistedstate',
     'shadcn-nuxt',
     'nuxt-gtag',

@@ -156,22 +156,22 @@ const titles: Record<string, string> = {
   fr: 'Coupe et coiffures tout type de cheveux'
 }
 
-useSeoMeta({
-  // title: titles[i18n.locale.value],
-  title: titles.fr,
-  description: 'Sublime ta singularité',
-  titleTemplate: `%s | La beauté d'Inéïah`,
-  ogImage: 'https://dev-client.gency313.fr/hero/hair1.jpg'
-})
+// useSeoMeta({
+//   // title: titles[i18n.locale.value],
+//   title: titles.fr,
+//   description: 'Sublime ta singularité',
+//   titleTemplate: `%s | La beauté d'Inéïah`,
+//   ogImage: 'https://dev-client.gency313.fr/hero/hair1.jpg'
+// })
 
-useHead({
-  link: [
-    {
-      rel: 'canonical',
-      href: 'https://example.com/'
-    }
-  ]
-})
+// useHead({
+//   link: [
+//     {
+//       rel: 'canonical',
+//       href: 'https://example.com/'
+//     }
+//   ]
+// })
 
 // defineOgImageComponent('NuxtSeo', {
 //   title: `Hello OG Image 👋`,

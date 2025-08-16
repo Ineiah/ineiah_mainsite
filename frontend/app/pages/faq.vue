@@ -58,29 +58,29 @@ const titles: Record<string, string> = {
 //   colorMode: 'dark',
 // })
 
-useSeoMeta({
-  // title: titles[i18n.locale.value],
-  title: titles.fr,
-  description: 'Sublime ta singularité',
-  titleTemplate: "%s | La beauté d'Inéïah",
-  ogImage: 'https://dev-client.gency313.fr/hero/hair1.jpg'
-})
+// useSeoMeta({
+//   // title: titles[i18n.locale.value],
+//   title: titles.fr,
+//   description: 'Sublime ta singularité',
+//   titleTemplate: "%s | La beauté d'Inéïah",
+//   ogImage: 'https://dev-client.gency313.fr/hero/hair1.jpg'
+// })
 
-const questionsList = computed(() => {
-  return faqList.map(x => [...x.questions]).flat()
-})
+// const questionsList = computed(() => {
+//   return faqList.map(x => [...x.questions]).flat()
+// })
 
-useSchemaOrg([
-  {
-    '@type': 'FAQPage',
-    mainEntity: questionsList.value.map(item => ({
-      '@type': 'Question',
-      name: item.question,
-      acceptedAnswer: {
-        '@type': 'Answer',
-        text: item.answer
-      }
-    }))
-  }
-])
+// useSchemaOrg([
+//   {
+//     '@type': 'FAQPage',
+//     mainEntity: questionsList.value.map(item => ({
+//       '@type': 'Question',
+//       name: item.question,
+//       acceptedAnswer: {
+//         '@type': 'Answer',
+//         text: item.answer
+//       }
+//     }))
+//   }
+// ])
 </script>

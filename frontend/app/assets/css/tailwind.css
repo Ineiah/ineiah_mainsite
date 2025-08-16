@@ -18,6 +18,18 @@
   --color-brand-brown-800: oklch(0.3074 0.0133 10.3);
   --color-brand-brown-900: oklch(0.2283 0.008 4.12);
 
+  --color-brand-brown-secondary-50: #f1f6f5;
+  --color-brand-brown-secondary-100: #d5e4e0;
+  --color-brand-brown-secondary-200: #b9d1cb;
+  --color-brand-brown-secondary-300: #9dbfb6;
+  --color-brand-brown-secondary-400: #81ada2;
+  --color-brand-brown-secondary-500: #659a8d;
+  --color-brand-brown-secondary-600: #527e73;
+  --color-brand-brown-secondary-700: #40625a;
+  --color-brand-brown-secondary-800: #2e4640;
+  --color-brand-brown-secondary-900: #1b2a26;
+  --color-brand-brown-secondary-950: #090e0d;
+
   --color-brand-pink-50: #f6f1f2;
   --color-brand-pink-100: #f6f1f2;
   --color-brand-pink-200: #d2b8bd;

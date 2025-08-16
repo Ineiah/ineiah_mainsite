@@ -324,9 +324,9 @@ export default defineNuxtConfig({
   //   transpile: ['vue', '@headlessui/vue', '@heroicons/vue'],
   // }
 
-  alias: {
-    vue: 'vue/dist/vue.esm-bundler.js'
-  },
+  // alias: {
+  //   vue: 'vue/dist/vue.esm-bundler.js'
+  // },
 
   nitro: {
     esbuild: {

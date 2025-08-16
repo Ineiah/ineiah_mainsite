@@ -92,7 +92,7 @@ export default defineNuxtConfig({
     '@nuxt/scripts',
     '@nuxt/ui',
 
-    // '@pinia/nuxt',
+    '@pinia/nuxt',
     // '@nuxtjs/i18n',
     // '@nuxtjs/seo',
     '@vueuse/nuxt',

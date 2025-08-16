@@ -92,19 +92,19 @@ export default defineNuxtConfig({
     '@nuxt/scripts',
     '@nuxt/ui',
 
-    '@pinia/nuxt',
-    '@nuxtjs/i18n',
-    '@nuxtjs/seo',
+    // '@pinia/nuxt',
+    // '@nuxtjs/i18n',
+    // '@nuxtjs/seo',
     '@vueuse/nuxt',
     
     // '@sentry/nuxt/module,'
     
-    'pinia-plugin-persistedstate',
-    'shadcn-nuxt',
-    'nuxt-gtag',
-    'nuxt-schema-org',
-    'nuxt-og-image',
-    'nuxt-vuefire'
+    // 'pinia-plugin-persistedstate',
+    // 'shadcn-nuxt',
+    // 'nuxt-gtag',
+    // 'nuxt-schema-org',
+    // 'nuxt-og-image',
+    // 'nuxt-vuefire'
   ],
 
   shadcn: {

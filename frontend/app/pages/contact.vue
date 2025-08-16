@@ -77,9 +77,8 @@ const email = ref<string>('')
 const telephone = ref<string>('')
 const message = ref<string>('')
 
-// const { $fireApp, $fireStore } = useNuxtApp()
-const fireStoe = useFireStore()
- 
+const fireStore = useFirestore()
+
 /**
  * Handles sending a message to firebase database
  * and eventually to N8N if configured
@@ -93,7 +92,7 @@ async function handleSendMessage() {
   }
 
   try {
-    const contactRef = doc($fireStore, 'contact', email.value)
+    const contactRef = doc(fireStore, 'contact', email.value)
     // const contactSnapshot = await getDoc(contactRef)
     await setDoc(contactRef, contactMessage)
   } catch (e) {

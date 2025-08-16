@@ -48,7 +48,6 @@ export default defineNuxtConfig({
 
   vuefire: {
     config: {
-      // Firebase
       apiKey: process.env.NUXT_PUBLIC_FIREBASE_API_KEY,
       authDomain: process.env.NUXT_PUBLIC_FIREBASE_AUTH_DOMAIN,
       dbUrl: process.env.NUXT_PUBLIC_FIREBASE_DB_URL,
@@ -97,7 +96,6 @@ export default defineNuxtConfig({
     '@nuxtjs/seo',
     // '@sentry/nuxt/module,'
     '@vueuse/nuxt',
-    '@nuxtjs/tailwindcss',
     'pinia-plugin-persistedstate',
     'shadcn-nuxt',
     'nuxt-gtag',
@@ -133,12 +131,12 @@ export default defineNuxtConfig({
     baseUrl: './',
     langDir: './locales',
     defaultLocale: 'fr',
-    lazy: true,
+    // lazy: true,
     vueI18n: './i18n.config.ts',
-    bundle: {
-      // TODO: Remove on next major i18n update
-      optimizeTranslationDirective: false
-    },
+    // bundle: {
+    //   // TODO: Remove on next major i18n update
+    //   optimizeTranslationDirective: false
+    // },
     // experimental: {
     //   localeDetector: 'i18n/locale_detector.ts'
     // },
@@ -329,12 +327,12 @@ export default defineNuxtConfig({
   // },
 
   nitro: {
-    esbuild: {
-      options: {
-        target: 'esnext'
-      }
-    },
-    preset: 'vercel-edge',
+    // esbuild: {
+    //   options: {
+    //     target: 'esnext'
+    //   }
+    // },
+    // preset: 'vercel-edge',
     storage: {
       redis: {
         driver: 'redis',
@@ -356,9 +354,9 @@ export default defineNuxtConfig({
     },
 
     autoInjectServerSentry: 'top-level-import'
-  },
-
-  sourcemap: {
-    client: 'hidden'
   }
+
+  // sourcemap: {
+  //   client: 'hidden'
+  // }
 })

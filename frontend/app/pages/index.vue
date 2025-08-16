@@ -160,7 +160,7 @@ useSeoMeta({
   // title: titles[i18n.locale.value],
   title: titles.fr,
   description: 'Sublime ta singularité',
-  titleTemplate: "%s | La beauté d'Inéïah",
+  titleTemplate: `%s | La beauté d'Inéïah`,
   ogImage: 'https://dev-client.gency313.fr/hero/hair1.jpg'
 })
 
@@ -174,7 +174,7 @@ useHead({
 })
 
 // defineOgImageComponent('NuxtSeo', {
-//   title: 'Hello OG Image 👋',
+//   title: `Hello OG Image 👋`,
 //   description: 'Look at me in dark mode',
 //   theme: '#ff0000',
 //   colorMode: 'dark',

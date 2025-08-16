@@ -20,15 +20,6 @@ export default defineNuxtConfig({
     }
   },
 
-  // nitro: {
-  //   preset: 'vercel-edge',
-  //   esbuild: {
-  //     options: {
-  //       target: 'esnext'
-  //     }
-  //   }
-  // },
-
   routeRules: {
     '/': { swr: 16*60 },
     '/faq': { swr: 30*60 },
@@ -105,7 +96,7 @@ export default defineNuxtConfig({
     // 'nuxt-gtag',
     'nuxt-schema-org',
     'nuxt-og-image',
-    // 'nuxt-vuefire'
+    'nuxt-vuefire'
   ],
 
   shadcn: {
@@ -177,14 +168,6 @@ export default defineNuxtConfig({
     //   cloudfront: {}
     // }
   },
-
-  // hooks: {
-  //   'site-config:resolve': (_siteConfig) => {
-  //     if (process.env) {
-  //       // Do something
-  //     }
-  //   }
-  // },
 
   seo: {
     url: 'https://example.com',
@@ -317,26 +300,7 @@ export default defineNuxtConfig({
     ]
   },
 
-  // Add this alias configuration
-  // alias: {
-  //   'vue': 'vue/dist/vue.esm-bundler.js',
-  // },
-  // Add this build configuration
-  // build: {
-  //   transpile: ['vue', '@headlessui/vue', '@heroicons/vue'],
-  // }
-
-  // alias: {
-  //   vue: 'vue/dist/vue.esm-bundler.js'
-  // },
-
   nitro: {
-    // esbuild: {
-    //   options: {
-    //     target: 'esnext'
-    //   }
-    // },
-    // preset: 'vercel-edge',
     storage: {
       redis: {
         driver: 'redis',
@@ -359,8 +323,4 @@ export default defineNuxtConfig({
 
     autoInjectServerSentry: 'top-level-import'
   }
-
-  // sourcemap: {
-  //   client: 'hidden'
-  // }
 })

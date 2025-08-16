@@ -103,7 +103,7 @@ export default defineNuxtConfig({
     // 'pinia-plugin-persistedstate',
     'shadcn-nuxt',
     // 'nuxt-gtag',
-    // 'nuxt-schema-org',
+    'nuxt-schema-org',
     // 'nuxt-og-image',
     // 'nuxt-vuefire'
   ],

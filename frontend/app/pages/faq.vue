@@ -50,8 +50,8 @@ import { businessDetails, faqList } from '~/data'
 const i18n = useI18n()
 
 const titles: Record<typeof i18n.locale.value, string> = {
-  fr: 'Coupe et coiffures tout type de cheveux',
-  en: 'Haircuts and hairstyles for all hair types'
+  fr: 'FAQ',
+  en: 'FAQ'
 }
 
 const descriptions: Record<typeof i18n.locale.value, string> = {

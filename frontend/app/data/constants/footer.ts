@@ -35,6 +35,10 @@ export const footer: FooterSection = {
         //   to: '/legal/conditions-generales'
         // },
         {
+          name: 'Plan du site',
+          to: '/sitemap'
+        },
+        {
           name: 'Politique de confidentialité',
           to: '/legal/confidentialite'
         },

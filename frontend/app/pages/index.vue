@@ -72,10 +72,10 @@
       </h3>
 
       <div class="grid grid-cols-2 grid-rows-2 gap-4 md:grid-cols-4 md:grid-rows-none md:p-10">
-        <HeroBrand />
-        <HeroBrand />
-        <HeroBrand />
-        <HeroBrand />
+        <HeroBrand src="/brands/Bouclème.png" alt="Logo de la marque Bouclème" />
+        <HeroBrand src="/brands/Bouclème.png" alt="Logo de la marque Bouclème" />
+        <HeroBrand src="/brands/Bouclème.png" alt="Logo de la marque Bouclème" />
+        <HeroBrand src="/brands/Bouclème.png" alt="Logo de la marque Bouclème" />
       </div>
     </div>
 

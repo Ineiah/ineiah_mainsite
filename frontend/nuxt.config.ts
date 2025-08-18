@@ -10,7 +10,8 @@ export default defineNuxtConfig({
   sourcemap: false,
 
   site: {
-    url: process.env.NUXT_PUBLIC_SITE_URL || 'http://localhost:3000'
+    url: process.env.NUXT_PUBLIC_SITE_URL || 'http://localhost:3000',
+    name: "La Beauté d'Inéïah"
   },
 
   app: {

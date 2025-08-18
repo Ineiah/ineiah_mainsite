@@ -1,7 +1,8 @@
 <template>
   <section id="hero" class="has-[p]:space-y-5 has-[p]:leading-8 has-[h2]:leading-15">
     <!-- Hero -->
-    <HeroTopImage />
+    <!-- <HeroTopImage /> -->
+    <HeroTopVideo />
 
     <!-- Intermediate-1 -->
     <div class="p-5 md:p-15">

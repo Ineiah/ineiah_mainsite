@@ -1,8 +1,9 @@
 <template>
   <section id="hero" class="has-[p]:space-y-5 has-[p]:leading-8 has-[h2]:leading-15">
     <!-- Hero -->
-    <!-- <HeroTopImage /> -->
-    <HeroTopVideo />
+    <HeroTopImage />
+    <!-- <HeroTopVideo /> -->
+    <!-- <HeroTopCarousel /> -->
 
     <!-- Intermediate-1 -->
     <div class="p-5 md:p-15">
@@ -12,7 +13,7 @@
         </div>
         
         <div class="flex flex-col justify-center">
-          <h2 ref="intermediateOneEl" class="text-5xl font-bold brand-500 mb-10 text-brand-brown-500 font-title leading-15">
+          <h2 ref="intermediateOneEl" class="text-5xl font-bold mb-10 text-brand-brown-500 font-title leading-15">
             Plus q'un salon, une <span class="text-brand-brown-800">expérience</span> de vie
           </h2>
 

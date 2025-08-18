@@ -30,10 +30,10 @@ export const footer: FooterSection = {
           name: 'FAQ',
           to: '/faq'
         },
-        {
-          name: 'Conditions générales de vente',
-          to: '/legal/conditions-generales'
-        },
+        // {
+        //   name: 'Conditions générales de vente',
+        //   to: '/legal/conditions-generales'
+        // },
         {
           name: 'Politique de confidentialité',
           to: '/legal/confidentialite'

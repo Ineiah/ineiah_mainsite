@@ -20,6 +20,13 @@
     "consola": "^3.0.0"
   },
   "dependencies": {
+    "@capacitor/app": "7.0.2",
+    "@capacitor/cli": "7.4.2",
+    "@capacitor/core": "7.4.2",
+    "@capacitor/haptics": "7.0.2",
+    "@capacitor/keyboard": "7.0.2",
+    "@capacitor/share": "^7.0.2",
+    "@capacitor/status-bar": "7.0.2",
     "@firebase/app-types": "^0.9.3",
     "@nuxt/fonts": "0.11.4",
     "@nuxt/icon": "2.0.0",

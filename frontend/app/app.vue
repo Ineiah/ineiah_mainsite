@@ -17,6 +17,10 @@ onMounted(() => {
   document.querySelector('html')?.classList.add('bg-brand-brown-500/20')
 })
 
+onUnmounted(() => {
+  document.querySelector('html')?.classList.remove('bg-brand-brown-500/20')
+})
+
 useHead({
   link: [
     {

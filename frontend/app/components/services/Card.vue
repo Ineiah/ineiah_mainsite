@@ -5,7 +5,7 @@
 
       <div class="absolute bottom-0 left-0 p-5 text-brand-brown-50">
         <p class="text-light text-sm">Coupe sur</p>
-        <p class="font-semibold uppercase">cheveux sec . <span class="font-bold">120€</span></p>
+        <p class="font-semibold uppercase">cheveux sec . <span class="font-bold">{{ service.price }}€</span></p>
 
         <Transition enter-active-class="animate__animated animate__zoomIn" leave-active-class="animate__animated animate__zoomOut">
           <p v-if="showIndicatorPhrase">En savoir plus</p>
@@ -15,17 +15,14 @@
 
     <ShadCardContent class="service h-[300px] w-[300px] overflow-x-hidden text-wrap text-lightp p-8 text-sm bg-brand-brown-300 rounded-lg" v-else>
       <p class="mb-5 font-light">
-        Rafraîchissez votre coupe et donnez-lui un coup de fraîcheur avec la restructuration, 
-        qui vous apportera forme et volume en quelques coups de ciseaux ! La coupe sur cheveux secs permet de 
-        rééquilibrer les volumes, la longueur et le style de la coupe (faire une frange, couper les pointes…)
+        {{ service.description }}
       </p>
       
       <h4 class="font-bold mb-5">Contenu de la prestation</h4>
       <ul class="has-[li]:space-y-1">
-        <li class="list-disc list-inside">Diagnostic / Conseils</li>
-        <li class="list-disc list-inside">Coupe sur cheveux secs</li>
-        <li class="list-disc list-inside">Routine sur-mesure au bac et son soin profond + massage</li>
-        <li class="list-disc list-inside">Coiffage (brushing ou séchage naturel)</li>
+        <li v-for="(content, index) in serviceContent" :key="index" class="list-disc list-inside">
+          {{ content }}
+        </li>
       </ul>
 
       <ShadButton id="tel-service-xyz" class="mt-3 rounded-full" size="sm" as-child>
@@ -36,10 +33,19 @@
 </template>
 
 <script setup lang="ts">
+import type { Service, ServiceSection } from '~/data'
+
+const props = defineProps<{ service: Service }>()
+
 const showIndicatorPhrase = ref<boolean>(false)
 const showServiceDetails = ref<boolean>(false)
 
-const isMobile = inject<boolean>('isMobile')
+const serviceSection = inject<ServiceSection>('serviceSection')
+
+const serviceContent = computed(() => {
+  const globalServiceContent = serviceSection?.service_content || []
+  return [...props.service.service_content, ...globalServiceContent]
+})
 </script>
 
 <style lang="scss" scoped>

@@ -8,7 +8,7 @@
               <h1 class="font-5xl">{{ error?.statusCode }}</h1>
               <p class="font-2xl text-light">{{ error?.message }}</p>
             
-              <NuxtLinkLocale id="link-shop-error" href="/" @click="handleError">
+              <NuxtLinkLocale id="link-error" href="/" @click="handleError">
                 {{ 'Accueil' }}
               </NuxtLinkLocale>
             </ShadCardContent>

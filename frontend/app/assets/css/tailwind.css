@@ -69,10 +69,10 @@
   --popover: var(--color-brand-brown-50);
   --popover-foreground: var(--color-brand-brown-secondary-900);
   
-  --primary: var(--color-brand-brown-800);
+  --primary: var(--color-brand-brown-700);
   --primary-foreground: var(--color-brand-brown-50);
   
-  --secondary: var(--color-brand-brown-secondary-50);
+  --secondary: var(--color-brand-brown-secondary-500);
   --secondary-foreground: var(--color-brand-brown-secondary-900);
   
   --muted: oklch(0.97 0 0);

@@ -17,9 +17,9 @@
             <ShadSidebarMenuSub>
               <ShadSidebarMenuSubItem v-for="subItem in item.items" :key="subItem.title">
                 <ShadSidebarMenuSubButton as-child>
-                  <a :href="subItem.url">
+                  <NuxtLinkLocale :to="subItem.url">
                     <span>{{ subItem.title }}</span>
-                  </a>
+                  </NuxtLinkLocale>
                 </ShadSidebarMenuSubButton>
               </ShadSidebarMenuSubItem>
             </ShadSidebarMenuSub>

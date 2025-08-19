@@ -63,87 +63,72 @@ const data = {
   ],
   navMain: [
     {
-      title: "Playground",
+      title: "Pages web",
       url: "#",
       icon: SquareTerminal,
       isActive: true,
       items: [
         {
-          title: "History",
-          url: "#"
+          title: "Accueil",
+          url: "/admin"
         },
         {
-          title: "Starred",
-          url: "#"
+          title: "Nos prestations",
+          url: "/admin/prestations"
         },
         {
-          title: "Settings",
-          url: "#"
+          title: "Notre histoire",
+          url: "/admin"
+        },
+        {
+          title: "FAQ",
+          url: "/admin"
+        },
+        {
+          title: "Contact",
+          url: "/admin"
         }
       ]
     },
     {
-      title: "Models",
+      title: "SEO",
       url: "#",
       icon: Bot,
       items: [
         {
           title: "Genesis",
-          url: "#"
+          url: "/admin"
         },
         {
           title: "Explorer",
-          url: "#"
+          url: "/admin"
         },
         {
           title: "Quantum",
-          url: "#"
+          url: "/admin"
         }
       ]
     },
     {
-      title: "Documentation",
-      url: "#",
-      icon: BookOpen,
-      items: [
-        {
-          title: "Introduction",
-          url: "#"
-        },
-        {
-          title: "Get Started",
-          url: "#"
-        },
-        {
-          title: "Tutorials",
-          url: "#"
-        },
-        {
-          title: "Changelog",
-          url: "#"
-        }
-      ]
-    },
-    {
-      title: "Settings",
+      title: "Réglages",
       url: "#",
       icon: Settings2,
       items: [
         {
           title: "General",
-          url: "#"
+          url: "/admin"
         },
         {
           title: "Team",
-          url: "#"
+          url: "/admin"
         },
         {
           title: "Billing",
-          url: "#"
+          url: "/admin"
         },
         {
           title: "Limits",
-          url: "#"
+          url: "/admin"
         }
       ]
     }

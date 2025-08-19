@@ -1,12 +1,16 @@
 <template>
-  <section id="index">
-    Admin
+  <section id="index" class="ps-[400px] space-y-2">
+    <admin-edition-cta-block id="hero" block-title="hero" />
+    <admin-edition-cta-block id="block-1" block-title="Block #1" />
+    <admin-edition-cta-block id="block-2" block-title="Block #2" />
+    <admin-edition-brands-block id="brands" block-title="Brands" />
+    <admin-edition-home-photocall id="photocall" block-title="Photocall" />
   </section>
-</template> 
+</template>
 
 <script setup lang="ts">
 definePageMeta({
-  title: "Admin",
+  title: "Admin Home",
   layout: "admin"
 })
 </script>

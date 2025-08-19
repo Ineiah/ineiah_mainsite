@@ -1,5 +1,12 @@
 <template>
-<site id="home">
-  Admin
-</site>
+  <section id="index">
+    Admin
+  </section>
 </template> 
+
+<script setup lang="ts">
+definePageMeta({
+  title: "Admin",
+  layout: "admin"
+})
+</script>

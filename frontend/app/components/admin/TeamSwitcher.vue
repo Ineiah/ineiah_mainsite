@@ -7,7 +7,7 @@
             <div class="flex aspect-square size-8 items-center justify-center rounded-lg bg-sidebar-primary text-sidebar-primary-foreground">
               <component :is="activeTeam.logo" class="size-4" />
             </div>
-            
+
             <div class="grid flex-1 text-left text-sm leading-tight">
               <span class="truncate font-semibold">
                 {{ activeTeam.name }}
@@ -30,14 +30,14 @@
             {{ team.name }}
             <ShadDropdownMenuShortcut>⌘{{ index + 1 }}</ShadDropdownMenuShortcut>
           </ShadDropdownMenuItem>
-          
+
           <ShadDropdownMenuSeparator />
-          
+
           <ShadDropdownMenuItem class="gap-2 p-2">
             <div class="flex size-6 items-center justify-center rounded-md border bg-background">
               <Plus class="size-4" />
             </div>
-            
+
             <div class="font-medium text-muted-foreground">
               Add team
             </div>
@@ -50,10 +50,10 @@
 
 
 <script setup lang="ts">
-// import type { Component } from "vue"
-
 import { ChevronsUpDown, Plus } from "lucide-vue-next"
 import { useSidebar } from '~/components/ui/sidebar'
+
+import type { Component } from "vue"
 
 const props = defineProps<{
   teams: {

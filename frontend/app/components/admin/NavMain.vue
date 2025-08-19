@@ -12,7 +12,7 @@
               <ChevronRight class="ml-auto transition-transform duration-200 group-data-[state=open]/collapsible:rotate-90" />
             </ShadSidebarMenuButton>
           </ShadCollapsibleTrigger>
-    
+
           <ShadCollapsibleContent>
             <ShadSidebarMenuSub>
               <ShadSidebarMenuSubItem v-for="subItem in item.items" :key="subItem.title">
@@ -34,21 +34,6 @@
 <script setup lang="ts">
 import type { LucideIcon } from "lucide-vue-next"
 import { ChevronRight } from "lucide-vue-next"
-// import {
-//   ShadCollapsible,
-//   ShadCollapsibleContent,
-//   ShadCollapsibleTrigger,
-// } from "@/registry/default/ui/collapsible"
-// import {
-//   ShadSidebarGroup,
-//   ShadSidebarGroupLabel,
-//   ShadSidebarMenu,
-//   ShadSidebarMenuButton,
-//   ShadSidebarMenuItem,
-//   ShadSidebarMenuSub,
-//   ShadSidebarMenuSubButton,
-//   ShadSidebarMenuSubItem,
-// } from "@/registry/default/ui/sidebar"
 
 defineProps<{
   items: {

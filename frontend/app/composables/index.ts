@@ -1,3 +1,6 @@
+/**
+ * A composable to generate dynamic IDs
+ */
 export function useDynamicId() {
   function create(value: string | null, prefix?: string): string {
     if (!value) {
@@ -23,3 +26,39 @@ export function useDynamicId() {
     create
   }
 }
+
+export const useDevComposable = createGlobalState(() => {
+  const showImage = ref<boolean>(true)
+  const showVideo = ref<boolean>(false)
+  const showCarousel = ref<boolean>(false)
+
+  watch(showImage, (newImage) => {
+    if (newImage) {
+      showImage.value = newImage
+      showVideo.value = false
+      showCarousel.value = false
+    }
+  })
+
+  watch(showVideo, (newVideo) => {
+    if (newVideo) {
+      showVideo.value = newVideo
+      showImage.value = false
+      showCarousel.value = false
+    }
+  })
+
+  watch(showCarousel, (newCarousel) => {
+    if (newCarousel) {
+      showCarousel.value = newCarousel
+      showImage.value = false
+      showVideo.value = false
+    }
+  })
+
+  return {
+    showImage,
+    showVideo,
+    showCarousel
+  }
+})

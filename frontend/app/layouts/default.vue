@@ -12,8 +12,11 @@
     <ClientOnly>
       <ModalsMobile v-model="showMobileMenu" />
     </ClientOnly>
-
+    
+    <!-- Reassurance -->
     <BaseReassurance />
+
+    <!-- Footer -->
     <BaseFooter />
   </section>
 </template>

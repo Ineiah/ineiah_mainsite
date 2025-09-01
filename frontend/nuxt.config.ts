@@ -137,7 +137,7 @@ export default defineNuxtConfig({
   },
   
   i18n: {
-    baseUrl: './',
+    // baseUrl: '/',
     langDir: './locales',
     defaultLocale: 'fr',
     // lazy: true,

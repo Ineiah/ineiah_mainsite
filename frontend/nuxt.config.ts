@@ -228,7 +228,7 @@ export default defineNuxtConfig({
         }
       },
       numberOfEmployees: {
-        '@type': 'QuantityValue',
+        '@type': 'QuantitativeValue',
         value: 1
       },
       hasOfferCatalog: {

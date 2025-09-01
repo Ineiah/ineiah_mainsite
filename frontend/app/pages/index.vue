@@ -217,7 +217,6 @@ defineOgImageComponent('NuxtSeo', {
   title: titles[i18n.locale.value],
   description: 'Sublime ta singularité',
   theme: '#ff0000',
-  colorMode: 'dark',
-  url: '/hair1.jpg'
+  colorMode: 'dark'
 })
 </script>

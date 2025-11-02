@@ -16,7 +16,7 @@
               <ShadTextarea v-model="message" id="message" class="p-4 resize-none" placeholder="message" rows="500" />
 
               <div class="flex justify-end">
-                <ShadButton id="submit-contact-us" class="my-10 place-self-start" @click="handleSendMessage">
+                <ShadButton id="submit-contact-us" :disabled="true" class="my-10 place-self-start" @click="handleSendMessage">
                   Soumettre
                 </ShadButton>
               </div>
@@ -70,8 +70,12 @@
 </template>
 
 <script setup lang="ts">
-import { doc, getDoc, setDoc } from 'firebase/firestore'
+import { doc, setDoc } from 'firebase/firestore'
 import { businessDetails, footer } from '~/data'
+
+/**
+ * Messaging
+ */
 
 const email = ref<string>('')
 const telephone = ref<string>('')
@@ -93,12 +97,19 @@ async function handleSendMessage() {
 
   try {
     const contactRef = doc(fireStore, 'contact', email.value)
-    // const contactSnapshot = await getDoc(contactRef)
     await setDoc(contactRef, contactMessage)
   } catch (e) {
     console.error(e)
   }
+
+  email.value = ''
+  telephone.value = ''
+  message.value  = ''
 }
+
+/**
+ * SEO
+ */
 
 const i18n = useI18n()
 

@@ -10,19 +10,23 @@
 
     <!-- Modals -->
     <ClientOnly>
-      <ModalsMobile v-model="showMobileMenu" />
+      <ModalsMobile v-model:show="showMobileMenu" />
     </ClientOnly>
-
+    
+    <!-- Reassurance -->
     <BaseReassurance />
+
+    <!-- Footer -->
     <BaseFooter />
   </section>
 </template>
 
 <script setup lang="ts">
 import { useScroll } from '@vueuse/core'
+import { scrollLevelKey } from '~/data'
 
 const scrollLevel = ref<number>(0)
-provide('scrollLevel', scrollLevel)
+provide(scrollLevelKey, scrollLevel)
 
 const showMobileMenu = ref<boolean>(false)
 

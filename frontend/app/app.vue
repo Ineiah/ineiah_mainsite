@@ -7,11 +7,13 @@
 </template>
 
 <script setup lang="ts">
+import { isLargeScreenKey, isMobileKey } from './data'
+
 const isMobile = useMediaQuery('(min-width: 320px)')
 const isLargeScreen = useMediaQuery('(min-width: 1024px)')
 
-provide('isMobile', isMobile)
-provide('isLargeScreen', isLargeScreen)
+provide(isMobileKey, isMobile)
+provide(isLargeScreenKey, isLargeScreen)
 
 onMounted(() => {
   document.querySelector('html')?.classList.add('bg-brand-brown-500/20', 'dark:bg-brand-brown-800')

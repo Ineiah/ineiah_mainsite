@@ -1,51 +1,16 @@
 <template>
   <section id="gallery" class="mt-30 mb-5">
-    <div class="grid grid-cols-2 md:grid-cols-4 gap-4 max-w-4xl mx-auto">
-      <div class="grid gap-4">
-        <div>
-          <img class="h-auto max-w-full rounded-lg cursor-pointer hover:opacity-80" src="https://flowbite.s3.amazonaws.com/docs/gallery/masonry/image.jpg" alt="" />
-        </div>
-        <div>
-          <img class="h-auto max-w-full rounded-lg cursor-pointer hover:opacity-80" src="https://flowbite.s3.amazonaws.com/docs/gallery/masonry/image-1.jpg" alt="" />
-        </div>
-        <div>
-          <img class="h-auto max-w-full rounded-lg cursor-pointer hover:opacity-80" src="https://flowbite.s3.amazonaws.com/docs/gallery/masonry/image-2.jpg" alt="" />
-        </div>
-      </div>
+    <div class="grid grid-cols-2 md:grid-cols-4 gap-4 max-w-7xl mx-auto my-20">
+      <div v-for="(imageBlock, i) in imageBlocks" :key="i" class="grid gap-4">
+        <div v-for="(image, x) in imageBlock" :key="x" class="relative">
+          <img class="h-auto max-w-full rounded-lg cursor-pointer hover:opacity-80" :src="image.image" :alt="image.name" />
 
-      <div class="grid gap-4">
-        <div>
-          <img class="h-auto max-w-full rounded-lg cursor-pointer hover:opacity-80" src="https://flowbite.s3.amazonaws.com/docs/gallery/masonry/image-3.jpg" alt="" />
-        </div>
-        <div>
-          <img class="h-auto max-w-full rounded-lg cursor-pointer hover:opacity-80" src="https://flowbite.s3.amazonaws.com/docs/gallery/masonry/image-4.jpg" alt="" />
-        </div>
-        <div>
-          <img class="h-auto max-w-full rounded-lg cursor-pointer hover:opacity-80" src="https://flowbite.s3.amazonaws.com/docs/gallery/masonry/image-5.jpg" alt="" />
-        </div>
-      </div>
-      
-      <div class="grid gap-4">
-        <div>
-          <img class="h-auto max-w-full rounded-lg cursor-pointer hover:opacity-80" src="https://flowbite.s3.amazonaws.com/docs/gallery/masonry/image-6.jpg" alt="" />
-        </div>
-        <div>
-          <img class="h-auto max-w-full rounded-lg cursor-pointer hover:opacity-80" src="https://flowbite.s3.amazonaws.com/docs/gallery/masonry/image-7.jpg" alt="" />
-        </div>
-        <div>
-          <img class="h-auto max-w-full rounded-lg cursor-pointer hover:opacity-80" src="https://flowbite.s3.amazonaws.com/docs/gallery/masonry/image-8.jpg" alt="" />
-        </div>
-      </div>
-      
-      <div class="grid gap-4">
-        <div>
-          <img class="h-auto max-w-full rounded-lg cursor-pointer hover:opacity-80" src="https://flowbite.s3.amazonaws.com/docs/gallery/masonry/image-9.jpg" alt="" />
-        </div>
-        <div>
-          <img class="h-auto max-w-full rounded-lg cursor-pointer hover:opacity-80" src="https://flowbite.s3.amazonaws.com/docs/gallery/masonry/image-10.jpg" alt="" />
-        </div>
-        <div>
-          <img class="h-auto max-w-full rounded-lg cursor-pointer hover:opacity-80" src="https://flowbite.s3.amazonaws.com/docs/gallery/masonry/image-11.jpg" alt="" />
+          <div id="infos" class="absolute left-2 bottom-2">
+            <p class="mt-2 text-md mb-3 uppercase font-bold text-brand-brown-900 dark:text-brand-brown-100">{{ image.name }}</p>
+            <shad-button variant="ghost" class="rounded-full" size="sm">
+              Je veux cette coupe
+            </shad-button>
+          </div>
         </div>
       </div>
     </div>
@@ -53,5 +18,67 @@
 </template>
 
 <script setup lang="ts">
-// Do something
+interface ImageBlock {
+  name: string
+  image: string
+}[]
+
+const imageBlocks: ImageBlock[][] = [
+  [
+    {
+      name: 'Some name',
+      image: 'https://flowbite.s3.amazonaws.com/docs/gallery/masonry/image.jpg'
+    },
+    {
+      name: ' Some name',
+      image: 'https://flowbite.s3.amazonaws.com/docs/gallery/masonry/image-1.jpg'
+    },
+    {
+      name: 'Some name',
+      image: 'https://flowbite.s3.amazonaws.com/docs/gallery/masonry/image-2.jpg'
+    }
+  ],
+  [
+    {
+      name: 'Some name',
+      image: 'https://flowbite.s3.amazonaws.com/docs/gallery/masonry/image-3.jpg'
+    },
+    {
+      name: 'Some name',
+      image: 'https://flowbite.s3.amazonaws.com/docs/gallery/masonry/image-4.jpg'
+    },
+    {
+      name: 'Some name',
+      image: 'https://flowbite.s3.amazonaws.com/docs/gallery/masonry/image-5.jpg'
+    }
+  ],
+  [
+    {
+      name: 'Some name',
+      image: 'https://flowbite.s3.amazonaws.com/docs/gallery/masonry/image-6.jpg'
+    },
+    {
+      name: 'Some name',
+      image: 'https://flowbite.s3.amazonaws.com/docs/gallery/masonry/image-7.jpg'
+    },
+    {
+      name: 'Some name',
+      image: 'https://flowbite.s3.amazonaws.com/docs/gallery/masonry/image-8.jpg'
+    }
+  ],
+  [
+    {
+      name: 'Some name',
+      image: 'https://flowbite.s3.amazonaws.com/docs/gallery/masonry/image-9.jpg'
+    },
+    {
+      name: 'Some name',
+      image: 'https://flowbite.s3.amazonaws.com/docs/gallery/masonry/image-10.jpg'
+    },
+    {
+      name: 'Some name',
+      image: 'https://flowbite.s3.amazonaws.com/docs/gallery/masonry/image-11.jpg'
+    }
+  ]
+]
 </script>

@@ -4,65 +4,65 @@
 
     <div class="px-5 md:px-10 my-10">
       <div class="max-w-4xl mx-auto">
-        <ShadCard class="bg-brand-brown-500/30 shadow-none">
-          <ShadCardContent>
+        <volt-card class="bg-primary-500/30 shadow-none">
+          <template #content>
             <form id="form-contact-us" @submit.prevent>
               <div class="space-y-2">
                 <div class="flex justify-between gap-2 mb-2">
-                  <ShadInput v-model="email" id="email" placeholder="Email" />
-                  <ShadInput v-model="telephone" id="telephone" placeholder="Téléphone" />
+                  <volt-input-text id="email" v-model="email" class="w-full" placeholder="Email" />
+                  <volt-input-text id="telephone" v-model="telephone" class="w-full" placeholder="Téléphone" />
                 </div>
               </div>
-              <ShadTextarea v-model="message" id="message" class="p-4 resize-none" placeholder="message" rows="500" />
+              <volt-textarea id="message" v-model="message" class="w-full" placeholder="message" rows="10" />
 
               <div class="flex justify-end">
-                <ShadButton id="submit-contact-us" :disabled="true" class="my-10 place-self-start" @click="handleSendMessage">
+                <volt-button id="submit-contact-us" :disabled="true" class="my-10 place-self-start" rounded @click="handleSendMessage">
                   Soumettre
-                </ShadButton>
+                </volt-button>
               </div>
             </form>
-          </ShadCardContent>
-        </ShadCard>
+          </template>
+        </volt-card>
 
         <div class="grid grid-rows-2 gap-2 md:grid-rows-none md:grid-cols-2 md:gap-8">
-          <ShadCard class="mt-5 bg-brand-brown-500/30 shadow-none">
-            <ShadCardContent>
-              <img src="/map.jpg" class="rounded-lg" />
-            </ShadCardContent>
-          </ShadCard>
+          <volt-card class="mt-5 bg-primary-500/30 shadow-none">
+            <template #content>
+              <img src="/map.jpg" class="rounded-lg">
+            </template>
+          </volt-card>
 
-          <ShadCard class="mt-5 bg-brand-brown-500/30 shadow-none">
-            <ShadCardContent>
-              <p class="font-bold uppercase text-brand-500">Natasha Morel</p>
+          <volt-card class="mt-5 bg-primary-500/30 shadow-none">
+            <template #content>
+              <p class="font-bold uppercase text-primary-500 dark:text-primary-200">Natasha Morel</p>
               <p>{{ businessDetails.address }}</p>
 
               <p class="font-light mt-5 italic">Du Lundi au Vendredi - Déplacement à domicile</p>
 
               <div class="space-x-2">
-                <ShadButton id="tel-contact-us" class="mt-5 rounded-full" as-child>
+                <volt-button id="tel-contact-us" class="mt-5" rounded>
                   <a href="tel:+33">
                     <Icon name="fa-solid:phone" />
                     Téléphone
                   </a>
-                </ShadButton>
+                </volt-button>
 
-                <ShadButton id="email-contact-us" class="mt-5 rounded-full" as-child>
+                <volt-button id="email-contact-us" class="mt-5" rounded>
                   <a href="mail:example@gmail.com">
                     <Icon name="fa-solid:envelope" />
                     Email
                   </a>
-                </ShadButton>
+                </volt-button>
               </div>
 
-              <div class="inline-flex gap-2 mt-5 rounded-full shadow-none">
-                <ShadButton v-for="social in footer.socials" :key="social.name" :id="`social-${social.name.toLowerCase()}`" variant="link" as-child>
+              <div class="inline-flex gap-2 mt-5 shadow-none">
+                <volt-button v-for="social in footer.socials" :id="`social-${social.name.toLowerCase()}`" :key="social.name" variant="link" rounded>
                   <a :href="social.url" target="_blank">
-                    <Icon :name="`fa-brands:${social.icon}`" :alt="`${businessDetails.name} - ${social.name}`" class="text-brand-500" size="20" />
+                    <icon :name="`fa-brands:${social.icon}`" :alt="`${businessDetails.name} - ${social.name}`" class="text-brand-500" size="20" />
                   </a>
-                </ShadButton>
+                </volt-button>
               </div>
-            </ShadCardContent>
-          </ShadCard>
+            </template>
+          </volt-card>
         </div>
       </div>
     </div>

@@ -4,12 +4,12 @@
       {{ section.name }}
     </h2>
 
-    <ShadScrollArea class="whitespace-nowrap">
+    <volt-custom-scroll-area class="whitespace-nowrap">
       <div class="flex p-4 space-x-4 w-max">
         <ServicesCard v-for="(service, serviceIndex) in section.services" :key="service.name" :service="service" :index="serviceIndex" />
       </div>
-      <ShadScrollBar orientation="horizontal" />
-    </ShadScrollArea>
+      <volt-custom-scroll-bar orientation="horizontal" />
+    </volt-custom-scroll-area>
   </div>
 </template>
 

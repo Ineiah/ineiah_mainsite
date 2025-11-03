@@ -12,7 +12,7 @@
     <ClientOnly>
       <ModalsMobile v-model:show="showMobileMenu" />
     </ClientOnly>
-    
+
     <!-- Reassurance -->
     <BaseReassurance />
 
@@ -33,7 +33,7 @@ const showMobileMenu = ref<boolean>(false)
 if (import.meta.client) {
   onMounted(() => {
     const { y } = useScroll(window)
-    
+
     watch(y, (value) => {
       scrollLevel.value = value
     }, { 

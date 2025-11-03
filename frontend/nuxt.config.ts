@@ -90,22 +90,16 @@ export default defineNuxtConfig({
     '@nuxtjs/i18n',
     '@nuxtjs/seo',
     '@vueuse/nuxt',
-    
+
     // '@sentry/nuxt/module,'
-    
+
     // 'pinia-plugin-persistedstate', // TODO: Enable when Pinia Nuxt works with Nuxt 4 otherwhise this raises an error due to absence of @pinia/nuxt
-    'shadcn-nuxt',
     'nuxt-gtag',
     'nuxt-schema-org',
     'nuxt-og-image',
     'nuxt-vuefire',
     'nuxt-ganalytics'
   ],
-
-  shadcn: {
-    prefix: 'Shad',
-    componentDir: '~/components/ui'
-  },
 
   fonts: {
     provider: 'google',

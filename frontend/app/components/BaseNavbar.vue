@@ -1,10 +1,10 @@
 <template>
-  <nav :class="{ 'bg-transparent': !showBackground, 'bg-brand-brown-500 shadow-md': showBackground }" class="fixed top-0 w-full z-50 md:py-2 transition-all ease-in-out">
+  <nav :class="{ 'bg-transparent': !showBackground, 'bg-primary-500 dark:bg-primary-800 shadow-md': showBackground }" class="fixed top-0 w-full z-50 md:py-2 transition-all ease-in-out">
     <div class="mx-auto max-w-7xl px-2 sm:px-6 lg:px-8">
       <div class="relative flex h-16 items-center justify-between">
         <div class="absolute inset-y-0 left-0 flex items-center sm:hidden">
           <!-- Mobile-->
-          <button type="button" class="relative inline-flex items-center justify-center rounded-md p-2 text-brand-brown-700 hover:bg-brand-brown-400 hover:text-brand-brown-500 focus:ring-2 focus:ring-brand-brown-500 focus:outline-hidden focus:ring-inset" aria-controls="mobile-menu" aria-expanded="false" @click="() => emit('mobile-menu')">
+          <button type="button" class="relative inline-flex items-center justify-center rounded-md p-2 text-primary-700 hover:bg-primary-400 hover:text-primary-500 focus:ring-2 focus:ring-primary-500 focus:outline-hidden focus:ring-inset" aria-controls="mobile-menu" aria-expanded="false" @click="() => emit('mobile-menu')">
             <span class="absolute -inset-0.5"></span>
             <span class="sr-only">Open main menu</span>
             <!--
@@ -41,9 +41,9 @@
             </div>
           </div>
 
-          <ShadButton id="tel-navbar" class="rounded-full hidden md:visible" as-child>
+          <volt-button id="tel-navbar" class="hidden md:visible" rounded>
             <BaseTelephoneLink />
-          </ShadButton>
+          </volt-button>
         </div>
       </div>
     </div>
@@ -97,7 +97,7 @@ const routes: BaseRoute[] = [
 
 const linkTheme = ref(`
   rounded-md px-3 py-2 text-lg font-semibold uppercase 
-  text-brand-brown-50 hover:text-brand-brown-400 relative
+  text-primary-50 hover:text-primary-400 relative
 `)
 
 const { create } = useDynamicId()
@@ -106,7 +106,7 @@ const { create } = useDynamicId()
 <style lang="css">
 a#nav-link.router-link-exact-active {
   display: inline-block;
-  color: var(--color-brand-brown-400);
+  color: var(--color-primary-400);
 }
 
 a#nav-link::before {
@@ -116,7 +116,7 @@ a#nav-link::before {
   height: 4px;
   bottom: 0;
   left: 50%;
-  background-color: var(--color-brand-brown-400);
+  background-color: var(--color-primary-400);
   transition: all 0.4s;
 }
 

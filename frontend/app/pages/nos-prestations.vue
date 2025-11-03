@@ -7,7 +7,7 @@
 
       <div class="my-10">
         <CardCTA id="tel-services" />
-      </div>      
+      </div>
     </div>
   </section>
 </template>

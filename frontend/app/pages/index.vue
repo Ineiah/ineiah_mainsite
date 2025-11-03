@@ -12,9 +12,9 @@
           <img ref="imageFirstEl" src="/hero/hair8.jpg" class="rounded-lg aspect-square object-cover" alt="" />
         </div>
 
-        <div class="flex flex-col justify-center">
-          <h2 ref="intermediateOneEl" class="text-5xl font-bold mb-10 text-brand-brown-500 font-title leading-15">
-            Plus q'un salon, une <span class="text-brand-brown-800">expérience</span> de vie
+        <div class="flex flex-col justify-center dark:text-primary-200">
+          <h2 ref="intermediateOneEl" class="text-5xl font-bold mb-10 text-primary-500 font-title leading-15">
+            Plus q'un salon, une <span class="text-primary-800 dark:text-primary-400">expérience</span> de vie
           </h2>
 
           <p>
@@ -32,19 +32,19 @@
           </p>
 
           <div>
-            <ShadButton id="tel-intermadiate-1" size="xl" class="rounded-full mt-5" as-child>
+            <volt-button id="tel-intermadiate-1" size="xl" class="mt-5" rounded>
               <BaseTelephoneLink :with-icon="true" text="Je veux me faire belle" />
-            </ShadButton>
+            </volt-button>
           </div>
         </div>
       </div>
     </div>
 
     <!-- Intermediate-2 -->
-    <div class="grid grid-rows-2 md:grid-rows-none md:grid-cols-2 auto-rows-min brand-500 mt-10 bg-brand-brown-500">
+    <div class="grid grid-rows-2 md:grid-rows-none md:grid-cols-2 auto-rows-min mt-10 bg-primary-500 dark:bg-primary-700 dark:text-primary-200">
       <div class="items-center md:flex md:p-10">
         <div class="p-10 text-center md:text-left md:max-w-lg">
-          <h2 ref="intermediateTwoEl" class="text-3xl font-bold mb-4 md:text-5xl text-brand-brown-800 font-title leading-10 md:leading-15">
+          <h2 ref="intermediateTwoEl" class="text-3xl font-bold mb-4 md:text-5xl text-primary-800 dark:text-primary-400 font-title leading-10 md:leading-15">
             L'histoire de <span class="italic">{{ businessDetails.legalName }}</span>
           </h2>
 
@@ -54,11 +54,11 @@
             dolorem, magnam animi, doloribus error dolores possimus quia eos voluptatum in!
           </p>
 
-          <ShadButton size="xl" class="rounded-full mt-10" as-child>
+          <volt-button size="large" class="mt-10" rounded>
             <NuxtLinkLocale to="/notre-histoire">
               Découvrir
             </NuxtLinkLocale>
-          </ShadButton>
+          </volt-button>
         </div>
       </div>
 
@@ -69,7 +69,7 @@
 
     <!-- Brands -->
     <div class="my-5 md:p-10">
-      <h3 class="text-center text-2xl font-bold text-brand-brown-500 mb-5 md:mb-0">
+      <h3 class="text-center text-2xl font-bold text-primary-500 mb-5 md:mb-0">
         Nos marques
       </h3>
 
@@ -91,14 +91,14 @@
 
     <dev-only>
       <!-- VideoCall -->
-      <div class="max-w-8xl mx-auto pt-20 px-20">
-        <div class="grid grid-cols-2 bg-brand-brown-200 rounded-md">
+      <!-- <div class="max-w-8xl mx-auto pt-20 px-20">
+        <div class="grid grid-cols-2 bg-primary-200 dark:bg-primary-700 dark:text-primary-200 rounded-md">
           <video class="aspect-video object-fill rounded-lg" autoplay muted loop playsinline>
             <source src="https://freelance-data-storage.s3.us-east-1.amazonaws.com/hair.mp4" type="video/mp4">
           </video>
 
           <div class="p-10 rounded-tr-md rounded-br-md flex-col justify-center content-center text-center max-w-3xl">
-            <h2 class="font-semibold uppercase text-brand-brown-800 text-4xl">
+            <h2 class="font-semibold uppercase text-primary-800 dark:text-primary-400 text-4xl">
               Une sublime restructuration de la coupe
             </h2>
 
@@ -113,12 +113,12 @@
         </div>
 
         <div>
-          <div class="p-20 text-center text-brand-brown-500">
-            <p class="font-bold mb-3 text-4xl">Rejoint le <span class="text-brand-brown-800">#curlymouvement</span></p>
+          <div class="p-20 text-center text-primary-500 dark:text-primary-200">
+            <p class="font-bold mb-3 text-4xl">Rejoint le <span class="text-primary-800 dark:text-primary-400">#curlymouvement</span></p>
             <p class="text-md">Retrouvez-nous sur instagram <a href="http://example.com" title="http://example.com">@hairstudiobyanissa</a></p>
           </div>
         </div>
-      </div>
+      </div> -->
     </dev-only>
 
     <dev-only>
@@ -128,17 +128,17 @@
           <p class="text-bold mb-4">Template settings</p>
 
           <div class="flex items-center space-x-2">
-            <shad-switch v-model="showImage" />
+            <volt-toggle-switch v-model="showImage" />
             <label for="">Image</label>
           </div>
 
           <div class="flex items-center space-x-2">
-            <shad-switch v-model="showVideo" />
+            <volt-toggle-switch v-model="showVideo" />
             <label for="">Video</label>
           </div>
 
           <div class="flex items-center space-x-2">
-            <shad-switch v-model="showCarousel" />
+            <volt-toggle-switch v-model="showCarousel" />
             <label for="">Carousel</label>
           </div>
         </div>

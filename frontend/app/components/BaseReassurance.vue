@@ -1,13 +1,13 @@
 <template>
   <div class="grid grid-rows-3 md:grid-cols-3 md:grid-rows-none p-10">
     <div v-for="item in reassurance" :key="item.title" class="p-5 md:p-10 flex items-center gap-4 md:mx-auto">
-      <Icon :name="item.icon" size="50" class="text-brand-brown-600" />
+      <Icon :name="item.icon" size="50" class="text-primary-600 dark:text-primary-200" />
       <div class="flex-col">
-        <p class="font-semibold text-brand-brown-700">
+        <p class="font-semibold text-primary-700 dark:text-primary-300">
           {{ item.title }}
         </p>
 
-        <BaseTelephoneLink :with-icon="false" text="Nous contacter" class="text-brand-brown-600 underline underline-offset-7" />
+        <BaseTelephoneLink :with-icon="false" text="Nous contacter" class="text-primary-600 dark:text-primary-200 underline underline-offset-7" />
       </div>
     </div>
   </div>

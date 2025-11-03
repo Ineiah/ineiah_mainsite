@@ -1,5 +1,5 @@
 <template>
-  <section class="font-sans bg-brand-brown-500/20 dark:bg-brand-brown-800 relative">
+  <section class="font-sans bg-primary-500/20 dark:bg-primary-800 relative">
     <NuxtLayout>
       <NuxtPage />
     </NuxtLayout>
@@ -16,11 +16,11 @@ provide(isMobileKey, isMobile)
 provide(isLargeScreenKey, isLargeScreen)
 
 onMounted(() => {
-  document.querySelector('html')?.classList.add('bg-brand-brown-500/20', 'dark:bg-brand-brown-800')
+  document.querySelector('html')?.classList.add('bg-primary-500/20', 'dark:bg-primary-800')
 })
 
 onUnmounted(() => {
-  document.querySelector('html')?.classList.remove('bg-brand-brown-500/20', 'dark:bg-brand-brown-800')
+  document.querySelector('html')?.classList.remove('bg-primary-500/20', 'dark:bg-primary-800')
 })
 
 useHead({

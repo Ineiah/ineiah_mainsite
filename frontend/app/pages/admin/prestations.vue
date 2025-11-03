@@ -2,55 +2,55 @@
   <section id="index" class="ps-[400px] space-y-2">
     <div class="grid grid-cols-12">
       <div class="col-span-12">
-        <shad-button>
+        <volt-button rounded>
           Ajouter
-        </shad-button>
+        </volt-button>
       </div>
     </div>
 
-    <shad-card class="bg-brand-brown-secondary-100">
-      <shad-card-content>
+    <volt-card class="bg-secondary-100">
+      <template #content>
         <div class="flex justify-between items-center">
           <p class="font-bold">Prestation #1</p>
 
           <div class="space-x-2">
-            <shad-button>
+            <volt-button rounded>
               <icon name="i-fa7-solid:pencil" />
-            </shad-button>
+            </volt-button>
 
-            <shad-button>
+            <volt-button rounded>
               <icon name="i-fa7-solid:trash" />
-            </shad-button>
+            </volt-button>
           </div>
         </div>
-      </shad-card-content>
-    </shad-card>
+      </template>
+    </volt-card>
 
-    <shad-card>
-      <shad-card-content>
+    <volt-card>
+      <template #content>
         <div class="space-y-2">
           <div class="grid grid-cols-2 gap-2">
-            <shad-input placeholder="Titre" />
-            <shad-input placeholder="Sous-titre" />
+            <volt-input placeholder="Titre" />
+            <volt-input placeholder="Sous-titre" />
           </div>
 
-          <shad-input placeholder="Description" />
+          <volt-input placeholder="Description" />
 
           <div class="max-w-150">
-            <shad-input placeholder="Prix" />
+            <volt-input placeholder="Prix" />
           </div>
 
           <div class="p-5 bg-background rounded-lg">
             <div class="flex justify-between gap-2 items-center">
-              <shad-input placeholder="Contenu de la prestation" />
-              <shad-button size="lg">
+              <volt-input placeholder="Contenu de la prestation" />
+              <volt-button size="lg" rounded>
                 <ion name="i-fa7-solid:plus" />
-              </shad-button>
+              </volt-button>
             </div>
           </div>
         </div>
-      </shad-card-content>
-    </shad-card>
+      </template>
+    </volt-card>
   </section>
 </template>
 

@@ -5,28 +5,28 @@
     <div class="px-5 md:px-10 my-10">
       <div class="max-w-3xl mx-auto">
         <div class="space-y-5">
-          <ShadCard v-for="section in faqList" :key="section.title" class="bg-brand-brown-500/20 shadow-none">
-            <ShadCardContent>
+          <volt-card v-for="section in faqList" :key="section.title" class="bg-primary-500/20 shadow-none">
+            <template #content>
               <h3 :id="`faq-${section.id}`" class="uppercase text-2xl font-semibold text-brand-500">
                 {{ section.title }}
               </h3>
 
-              <ShadAccordion class="w-full mt-5 space-y-3" default-value="Something" collapsible>
-                <ShadAccordionItem v-for="(item, i) in section.questions" :key="item.question" :value="item.question">
-                  <ShadAccordionTrigger :id="`faq-${section.id}-${i}`" class="text-brand-800 bg-brand-brown-400/30 px-3 text-md cursor-pointer">
+              <volt-accordion class="w-full mt-5 space-y-3" default-value="Something" collapsible>
+                <volt-accordion-panel v-for="(item, i) in section.questions" :key="item.question" :value="item.question">
+                  <volt-accordion-header :id="`faq-${section.id}-${i}`" class="text-primary-800 bg-primary-400/30 px-3 text-md cursor-pointer">
                     {{ item.question }}
-                  </ShadAccordionTrigger>
+                  </volt-accordion-header>
 
-                  <ShadAccordionContent class="px-3">
+                  <volt-accordion-content class="px-3">
                     {{ item.answer }}
-                  </ShadAccordionContent>
-                </ShadAccordionItem>
-              </ShadAccordion>
-            </ShadCardContent>
-          </ShadCard>
+                  </volt-accordion-content>
+                </volt-accordion-panel>
+              </volt-accordion>
+            </template>
+          </volt-card>
         </div>
       </div>
-      
+
       <CardCTA id="tel-faq-section" class="mt-15">
         <template #title>
           Des questions ?

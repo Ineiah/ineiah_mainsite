@@ -1,11 +1,11 @@
 <template>
   <div ref="heroEl" class="w-full h-[98vh] bg-center bg-no-repeat bg-cover flex items-center">
     <div id="lead" class="md:max-w-5xl md:mx-auto text-left md:text-center text-primary-50 dark:text-primary-200 p-5 md:p-10">
-      <h1 class="text-6xl md:text-7xl font-bold mb-5 animate animate-fade-up">
+      <h1 class="text-6xl md:text-7xl dark:text-primary-200 font-bold mb-5 animate animate-fade-up">
         Sublime ta singularité
       </h1>
 
-      <p class="text-2xl font-normal">
+      <p class="text-2xl font-normal dark:text-primary-200">
         Lorem ipsum dolor sit, amet consectetur adipisicing elit. Maiores, consectetur. Alias saepe assumenda numquam inventore vel
       </p>
 

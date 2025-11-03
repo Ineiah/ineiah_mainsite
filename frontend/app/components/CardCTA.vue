@@ -1,9 +1,10 @@
 <template>
-  <volt-card class="text-brand-brown-100 bg-cover" style="background-image:url('/hero/hair7.jpg')">
+  <!-- TODO: { backgroundImage: '/hero/hair7.jpg' } -->
+  <volt-card class="text-primary-100 bg-cover" style="background-image:url('/hero/hair7.jpg')">
     <template #content>
       <div class="p-8 md:p-20">
         <div class="flex-col justify-center mx-auto text-center max-w-7xl">
-          <h2 class="text-5xl md:text-7xl text-shadow-brand-500 font-bold mb-5 font-title">
+          <h2 class="text-5xl md:text-7xl text-shadow-primary-500 font-bold mb-5 font-title">
             <slot name="title">
               Prête à se sublimer
             </slot>

@@ -4,9 +4,10 @@
       {{ section.name }}
     </h2>
 
+    <!-- Scrollable Area -->
     <volt-custom-scroll-area class="whitespace-nowrap">
       <div class="flex p-4 space-x-4 w-max">
-        <ServicesCard v-for="(service, serviceIndex) in section.services" :key="service.name" :service="service" :index="serviceIndex" />
+        <services-card v-for="(service, serviceIndex) in section.services" :key="service.name" :service="service" :index="serviceIndex" />
       </div>
       <volt-custom-scroll-bar orientation="horizontal" />
     </volt-custom-scroll-area>
@@ -14,9 +15,13 @@
 </template>
 
 <script setup lang="ts">
-import type { ServiceSection } from '~/data'
+import { serviceSectionKey, type ServiceSection } from '~/data'
 
 const props = defineProps<{ index: number, section: ServiceSection }>()
 
-provide('serviceSection', props.section)
+/**
+ * Section
+ */
+
+provide(serviceSectionKey, props.section)
 </script>

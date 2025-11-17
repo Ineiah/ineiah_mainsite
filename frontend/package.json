@@ -39,6 +39,7 @@
     "@unhead/addons": "^2.0.19",
     "@unhead/vue": "^2.0.19",
     "@vueuse/core": "^14.0.0",
+    "@vueuse/motion": "3.0.3",
     "animate.css": "^4.1.1",
     "class-variance-authority": "^0.7.1",
     "clsx": "^2.1.1",

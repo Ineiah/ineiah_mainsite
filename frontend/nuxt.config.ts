@@ -55,7 +55,7 @@ export default defineNuxtConfig({
   runtimeConfig: {
     public: {
       prodDomain: process.env.NUXT_PUBLIC_SITE_URL || 'http://localhost:3000',
-      
+
       // Stripe
       stripeTestSecretKey: process.env.NUXT_PUBLIC_STRIPE_TEST_SECRET_KEY,
       stripeTestPublishableKey: process.env.NUXT_PUBLIC_STRIPE_TEST_PUBLISHABLE_KEY,
@@ -72,7 +72,25 @@ export default defineNuxtConfig({
       twilioAccountSid: process.env.NUXT_PUBLIC_TWILIO_ACCOUNT_SID,
       twilioAuthToken: process.env.NUXT_PUBLIC_TWILIO_AUTH_TOKEN,
       twilioPhoneNumber: process.env.NUXT_PUBLIC_TWILIO_PHONE_NUMBER,
-      twilioToPhoneNumber: process.env.NUXT_PUBLIC_TWILIO_TO_PHONE_NUMBER
+      twilioToPhoneNumber: process.env.NUXT_PUBLIC_TWILIO_TO_PHONE_NUMBER,
+
+      // Motion
+      motion: {
+        directives: {
+          'pop-bottom': {
+            initial: {
+              scale: 0,
+              opacity: 0,
+              y: 100,
+            },
+            visible: {
+              scale: 1,
+              opacity: 1,
+              y: 0,
+            }
+          }
+        }
+      }
     }
   },
 
@@ -84,13 +102,11 @@ export default defineNuxtConfig({
     '@nuxt/eslint',
     '@nuxt/scripts',
     '@nuxt/ui',
-
     // '@pinia/nuxt', //FIXME: Breaks in production
 
     '@nuxtjs/i18n',
     '@nuxtjs/seo',
     '@vueuse/nuxt',
-
     // '@sentry/nuxt/module,'
 
     // 'pinia-plugin-persistedstate', // TODO: Enable when Pinia Nuxt works with Nuxt 4 otherwhise this raises an error due to absence of @pinia/nuxt
@@ -98,7 +114,8 @@ export default defineNuxtConfig({
     'nuxt-schema-org',
     'nuxt-og-image',
     'nuxt-vuefire',
-    'nuxt-ganalytics'
+    'nuxt-ganalytics',
+    '@vueuse/motion/nuxt'
   ],
 
   fonts: {
@@ -128,7 +145,7 @@ export default defineNuxtConfig({
       id: 'GTM-TGZCVB2G'
     }
   },
-  
+
   i18n: {
     // baseUrl: '/',
     langDir: './locales',

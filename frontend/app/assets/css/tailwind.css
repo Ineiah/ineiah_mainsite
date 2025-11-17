@@ -2,6 +2,8 @@
 @import "tw-animate-css";
 @import "tailwindcss-primeui";
 
+@custom-variant dark (&:where(.p-dark, .p-dark *));
+
 @theme {
   --font-sans: 'Ubuntu', sans-serif;
   --font-title: 'Kreon', sans-serif;

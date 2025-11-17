@@ -143,6 +143,10 @@
             </nuxt-link-locale>
           </div>
 
+          <volt-label label-for="dark-mode" label="Dark mode">
+            <volt-toggle-switch id="dark-mode" v-model="darkMode" />
+          </volt-label>
+
           <div class="flex items-center space-x-2">
             <volt-toggle-switch v-model="showImage" />
             <label for="">Image</label>
@@ -203,6 +207,16 @@ if (import.meta.client) {
     observe(imageFirstEl, ['animate-in', 'zoom-in-90', 'duration-800'])
   })
 }
+
+/**
+ * Dark mode
+ */
+
+const { darkMode } = useDarkModeComposable()
+
+/**
+ * SEO
+ */
 
 const titles: Record<string, string> = {
   fr: 'Coupe et coiffures tout type de cheveux'

@@ -177,18 +177,16 @@ export default defineNuxtConfig({
   },
 
   i18n: {
-    // baseUrl: '/',
+    baseUrl: process.env.NUXT_PUBLIC_SITE_URL,
     langDir: './locales',
     defaultLocale: 'fr',
-    // lazy: true,
     vueI18n: './i18n.config.ts',
-    // bundle: {
-    //   // TODO: Remove on next major i18n update
-    //   optimizeTranslationDirective: false
-    // },
-    // experimental: {
-    //   localeDetector: 'i18n/locale_detector.ts'
-    // },
+    customRoutes: 'config',
+    pages: {
+      'nos-prestations': { fr: '/nos-prestations', en: '/our-services' },
+      'notre-histoire': { fr: '/notre-histoire', en: '/our-story' },
+      'contact': { fr: '/contact', en: '/contact' }
+    },
     locales: [
       {
         code: 'fr',
@@ -200,16 +198,12 @@ export default defineNuxtConfig({
       {
         code: 'en',
         language: 'en-US',
-        file: 'en-US.ts',
+        files: [ 'en.ts', 'en-US.ts' ],
         dir: 'ltr',
         name: 'English'
       }
     ]
   },
-
-  // pages: {
-  //   'nos-prestations': { fr: '/nos-prestations', en: '/our-services' }
-  // },
 
   image: {
     // TODO: Activate when the project images backend

@@ -5,19 +5,19 @@
     <div class="px-5 md:px-10 my-10">
       <div class="max-w-3xl mx-auto">
         <div class="space-y-5">
-          <volt-card v-for="section in faqList" :key="section.title" class="bg-surface-100 shadow-none">
+          <volt-card v-for="section in faqList" :key="section.title" class="bg-surface-50 shadow-none">
             <template #content>
-              <h3 :id="`faq-${section.id}`" class="uppercase text-3xl font-semibold text-brand-500">
+              <h3 :id="`faq-${section.id}`" class="uppercase text-3xl font-semibold text-primary-500 dark:text-primary-100">
                 {{ section.title }}
               </h3>
 
-              <volt-accordion class="w-full mt-5" default-value="Something" collapsible>
+              <volt-accordion class="w-full mt-5" default-value="0" collapsible>
                 <volt-accordion-panel v-for="(item, i) in section.questions" :key="item.question" :value="item.question">
                   <volt-accordion-header :id="`faq-${section.id}-${i}`" class="text-primary-800 bg-surface-200 text-md cursor-pointer">
                     {{ item.question }}
                   </volt-accordion-header>
 
-                  <volt-accordion-content>
+                  <volt-accordion-content :pt="{ root: 'bg-surface-100 dark:bg-surface-900 text-surface-700 dark:text-surface-0 pt-0 px-[1.125rem] pb-[1.125rem]' }">
                     <div class="p-5">
                       {{ item.answer }}
                     </div>

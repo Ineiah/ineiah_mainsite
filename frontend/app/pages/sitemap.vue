@@ -19,4 +19,8 @@
 
 <script setup lang="ts">
 import { footer } from '~/data'
+
+definePageMeta({
+  name: 'sitemap'
+})
 </script>

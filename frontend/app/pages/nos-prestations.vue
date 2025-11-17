@@ -15,6 +15,10 @@
 <script setup lang="ts">
 import { businessDetails, defaultServices } from '~/data'
 
+definePageMeta({
+  name: 'services'
+})
+
 const i18n = useI18n()
 
 const titles: Record<typeof i18n.locale.value, string> = {

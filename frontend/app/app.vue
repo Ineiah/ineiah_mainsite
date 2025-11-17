@@ -2,6 +2,13 @@
   <section class="font-sans bg-primary-100 dark:bg-primary-800 relative">
     <nuxt-layout>
       <nuxt-page />
+
+      <dev-only>
+        <client-only>
+          <cookie-banner />
+          <cookie-options :show="showOptions" />
+        </client-only>
+      </dev-only>
     </nuxt-layout>
   </section>
 </template>
@@ -17,6 +24,12 @@ const isLargeScreen = useMediaQuery('(min-width: 1024px)')
 
 useState('isMobile', () => isMobile)
 useState('isLargeScreen', () => isLargeScreen)
+
+/**
+ * Cookie
+ */
+
+const { showOptions } = useCookieComposable()
 
 /**
  * Background theme

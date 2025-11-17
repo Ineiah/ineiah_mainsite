@@ -23,6 +23,11 @@ interface ImageBlock {
   image: string
 }
 
+definePageMeta({
+  name: 'gallery'
+})
+
+
 const imageBlocks: ImageBlock[][] = [
   [
     {

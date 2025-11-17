@@ -49,6 +49,11 @@
 <script setup lang="ts">
 import { businessDetails, faqList } from '~/data'
 
+definePageMeta({
+  name: 'faq'
+})
+
+
 const i18n = useI18n()
 
 const titles: Record<typeof i18n.locale.value, string> = {

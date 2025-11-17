@@ -126,7 +126,7 @@
     <dev-only>
       <!-- Template Settings -->
       <client-only>
-        <div class="fixed p-5 right-0 top-6/12 z-50 rounded-md bg-primary-50 m-3 shadow-md space-y-2">
+        <div class="fixed p-5 right-0 top-6/12 z-50 rounded-md bg-primary-50 dark:bg-primary-500 text-surface-900 dark:text-surface-50 m-3 shadow-md space-y-2">
           <p class="font-bold mb-4">Template settings</p>
 
           <div class="space-x-2">
@@ -147,20 +147,17 @@
             <volt-toggle-switch id="dark-mode" v-model="darkMode" />
           </volt-label>
 
-          <div class="flex items-center space-x-2">
-            <volt-toggle-switch v-model="showImage" />
-            <label for="">Image</label>
-          </div>
+          <volt-label label-for="show-image" label="Show Image">
+            <volt-toggle-switch id="show-image" v-model="showImage" />
+          </volt-label>
 
-          <div class="flex items-center space-x-2">
-            <volt-toggle-switch v-model="showVideo" />
-            <label for="">Video</label>
-          </div>
+          <volt-label label-for="show-video" label="Show Video">
+            <volt-toggle-switch id="show-video" v-model="showVideo" />
+          </volt-label>
 
-          <div class="flex items-center space-x-2">
-            <volt-toggle-switch v-model="showCarousel" />
-            <label for="">Carousel</label>
-          </div>
+          <volt-label label-for="show-carousel" label="Show Carousel">
+            <volt-toggle-switch id="show-carousel" v-model="showCarousel" />
+          </volt-label>
         </div>
       </client-only>
     </dev-only>
@@ -171,6 +168,10 @@
 import { businessDetails } from '~/data'
 
 const { showImage, showCarousel, showVideo } = useDevComposable()
+
+definePageMeta({
+  name: 'home'
+})
 
 const i18n = useI18n()
 

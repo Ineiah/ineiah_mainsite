@@ -73,6 +73,11 @@
 import { doc, setDoc } from 'firebase/firestore'
 import { businessDetails, footer } from '~/data'
 
+definePageMeta({
+  name: 'contact'
+})
+
+
 const email = ref<string>('')
 const telephone = ref<string>('')
 const message = ref<string>('')

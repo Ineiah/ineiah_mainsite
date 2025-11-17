@@ -101,3 +101,18 @@ export const useDarkModeComposable = createGlobalState(() => {
     toggleDarkMode
   }
 })
+
+export const useCookieComposable = createGlobalState(() => {
+  const showBanner = useState('showCookieBanner', () => true)
+  const showOptions = useState('showCookieOptions', () => false)
+
+  const toggleShowBanner = useToggle(showBanner)
+  const toggleShowOptions = useToggle(showOptions)
+
+  return {
+    showBanner,
+    showOptions,
+    toggleShowBanner,
+    toggleShowOptions
+  }
+})

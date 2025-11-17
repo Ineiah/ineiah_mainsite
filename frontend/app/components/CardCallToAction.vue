@@ -19,13 +19,11 @@
             </slot>
           </p>
 
-          <volt-button :id="id" size="xl" class="mt-10" rounded>
-            <base-telephone-link :with-icon="true">
-              <slot name="action">
-                Obtenir mon moment plaisir
-              </slot>
-            </base-telephone-link>
-          </volt-button>
+          <base-telephone-button :id="id" size="large" class="mt-10" :with-icon="true">
+            <template #default>
+              Obtenir mon moment plaisir
+            </template>
+          </base-telephone-button>
         </div>
       </div>
     </template>

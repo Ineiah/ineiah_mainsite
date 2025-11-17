@@ -31,10 +31,12 @@
             Facere maiores quidem minima.
           </p>
 
-          <div>
-            <volt-button id="tel-intermadiate-1" size="xl" class="mt-5" rounded>
+          <div id="cta-1" class="mt-10">
+            <base-telephone-button id="tel-intermadiate-1" :with-icon="true" size="large" text="Je veux me faire belle" />
+
+            <!-- <volt-button id="tel-intermadiate-1" size="xl" class="mt-5" rounded>
               <BaseTelephoneLink :with-icon="true" text="Je veux me faire belle" />
-            </volt-button>
+            </volt-button> -->
           </div>
         </div>
       </div>

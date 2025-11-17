@@ -41,9 +41,9 @@
             </div>
           </div>
 
-          <volt-button id="tel-navbar" class="hidden md:visible" rounded>
-            <base-telephone-link />
-          </volt-button>
+          <base-telephone-button>
+            Nous rappeler
+          </base-telephone-button>
         </div>
       </div>
     </div>

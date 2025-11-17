@@ -10,18 +10,13 @@
       </p>
 
       <div class="flex flex-wrap justify-start md:flex-nowrap md:justify-center items-center space-x-5">
-        <volt-button id="link-offer-hero" variant="outline" size="xl" class="rounded-full mt-10 md:mt-5 w-full md:w-auto" rounded>
+        <volt-button id="link-offer-hero" variant="outline" size="large" class="mt-10 md:mt-5 w-full md:w-auto" rounded>
           <NuxtLinkLocale to="/nos-prestations">
             Prestations
           </NuxtLinkLocale>
         </volt-button>
 
-        <volt-button id="tel-hero" size="xl" class="mt-5 w-full md:w-auto" rounded>
-          <a href="tel:+33">
-            <Icon name="fa-solid:phone" />
-            Nous appeller
-          </a>
-        </volt-button>
+        <base-telephone-button class="mt-5 w-full md:w-auto" size="large" />
       </div>
     </div>
   </div>

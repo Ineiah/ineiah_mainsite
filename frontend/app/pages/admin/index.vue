@@ -1,5 +1,5 @@
 <template>
-  <section id="index" class="ps-[400px] space-y-2">
+  <section id="index" class="space-y-2">
     <admin-edition-cta-block id="hero" block-title="hero" />
     <admin-edition-cta-block id="block-1" block-title="Block #1" />
     <admin-edition-cta-block id="block-2" block-title="Block #2" />
@@ -10,7 +10,7 @@
 
 <script setup lang="ts">
 definePageMeta({
-  title: "Admin Home",
-  layout: "admin"
+  title: 'Admin Home',
+  layout: 'admin'
 })
 </script>

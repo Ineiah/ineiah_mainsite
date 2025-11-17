@@ -1,35 +1,17 @@
 <template>
-  <ShadSidebarProvider>
-    <AdminAppSidebar />
-
-    <ShadSidebarInset>
-      <!-- Header -->
-      <header class="flex h-16 shrink-0 items-center gap-2 transition-[width,height] ease-linear group-has-data-[collapsible=icon]/sidebar-wrapper:h-12">
-        <div class="flex items-center gap-2 px-4">
-          <ShadSidebarTrigger class="-ml-1" />
-
-          <ShadSeparator orientation="vertical" class="mr-2 h-4" />
-
-          <ShadBreadcrumb>
-            <ShadBreadcrumbList>
-              <ShadBreadcrumbItem class="hidden md:block">
-                <ShadBreadcrumbLink href="#">
-                  Building Your Application
-                </ShadBreadcrumbLink>
-              </ShadBreadcrumbItem>
-
-              <ShadBreadcrumbSeparator class="hidden md:block" />
-
-              <ShadBreadcrumbItem>
-                <ShadBreadcrumbPage>Data Fetching</ShadBreadcrumbPage>
-              </ShadBreadcrumbItem>
-            </ShadBreadcrumbList>
-          </ShadBreadcrumb>
+  <site id="admin">
+    <div class="grid grid-cols-12 relative">
+      <div class="col-span-2 relative">
+        <div class="h-screen fixed top-0 left-0 z-50 bg-primary-50">
+          Sidebar
         </div>
-      </header>
+      </div>
 
-      <!-- Content -->
-      <slot />
-    </ShadSidebarInset>
-  </ShadSidebarProvider>
+      <div class="col-span-10 p-5">
+        <div class="max-w-5xl mx-auto">
+          <slot />
+        </div>
+      </div>
+    </div>
+  </site>
 </template>

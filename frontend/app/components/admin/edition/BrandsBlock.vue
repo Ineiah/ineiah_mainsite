@@ -1,19 +1,19 @@
 <template>
-  <shad-card>
-    <shad-card-content>
+  <volt-card>
+    <template #content>
       <h3 class="font-bold text-3xl">{{ blockTitle }}</h3>
 
-      <div class="flex justify-between gap-2">
-        <shad-input placeholder="Brand Name" />
-        <shad-input type="file" placeholder="Brand Logo" />
+      <div class="flex justify-start space-y-2 gap-2">
+        <volt-input-text placeholder="Brand Name" />
+        <volt-input-text type="file" placeholder="Brand Logo" />
       </div>
 
-      <shad-button>
-        <icon name="i-fa7-solid:plus" />
+      <volt-button class="mt-4">
+        <icon name="i-lucide:plus" />
         Add Brand
-      </shad-button>
-    </shad-card-content>
-  </shad-card>
+      </volt-button>
+    </template>
+  </volt-card>
 </template>
 
 <script setup lang="ts">

@@ -1,11 +1,9 @@
 import tailwindcss from '@tailwindcss/vite'
 import { defineOrganization } from 'nuxt-schema-org/schema'
-import Aura from '@primeuix/themes/aura'
-import { definePreset } from '@primeuix/themes'
 
 // https://nuxt.com/docs/api/configuration/nuxt-config
 export default defineNuxtConfig({
-  compatibilityDate: '2025-05-15',
+  compatibilityDate: '2025-11-10',
   devtools: { enabled: true },
   ssr: true,
   sourcemap: false,
@@ -119,34 +117,6 @@ export default defineNuxtConfig({
     // '@sentry/nuxt/module,'
     // 'pinia-plugin-persistedstate', // TODO: Enable when Pinia Nuxt works with Nuxt 4 otherwhise this raises an error due to absence of @pinia/nuxt
   ],
-
-  // TODO: Does not work
-  primevue: {
-    options: {
-      theme: {
-        preset: definePreset(Aura, {
-          components: {
-            card: {
-              colorScheme: {
-                light: {
-                  root: {
-                    background: '{primary.100}',   // override your surface token
-                    color: '{surface.700}'
-                  }
-                },
-                dark: {
-                  root: {
-                    background: '{surface.950}',
-                    color: '{surface.50}'
-                  }
-                }
-              }
-            }
-          }
-        })
-      }
-    }
-  },
 
   fonts: {
     provider: 'google',

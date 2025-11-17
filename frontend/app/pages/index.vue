@@ -130,13 +130,17 @@
           <p class="font-bold mb-4">Template settings</p>
 
           <div class="space-x-2">
-            <volt-secondary-button>
-              <icon name="i-circle-flags:fr" />
-            </volt-secondary-button>
+            <nuxt-link-locale to="/" locale="fr">
+              <volt-secondary-button>
+                <icon name="i-circle-flags:fr" />
+              </volt-secondary-button>
+            </nuxt-link-locale>
 
-            <volt-secondary-button>
-              <icon name="i-circle-flags:uk" />
-            </volt-secondary-button>
+            <nuxt-link-locale to="/" locale="en">
+              <volt-secondary-button>
+                <icon name="i-circle-flags:uk" />
+              </volt-secondary-button>
+            </nuxt-link-locale>
           </div>
 
           <div class="flex items-center space-x-2">

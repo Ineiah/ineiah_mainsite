@@ -18,7 +18,7 @@
           <div class="hidden sm:ml-6 sm:block md:mx-auto">
             <div class="flex space-x-4 has-[a]:transition-all has-[a]:ease-in-out">
               <nuxt-link-locale v-for="route in routes" :id="create(route.id, 'link-nav')" :key="route.path" :to="route.path" :class="linkTheme">
-                {{ route.title }}
+                {{ $t(route.title) }}
               </nuxt-link-locale>
             </div>
           </div>

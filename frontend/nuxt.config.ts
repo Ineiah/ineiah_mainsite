@@ -17,7 +17,7 @@ export default defineNuxtConfig({
 
   app: {
     pageTransition: {
-      name: 'page', 
+      name: 'page',
       mode: 'out-in'
     }
   },
@@ -50,7 +50,7 @@ export default defineNuxtConfig({
       appId: process.env.NUXT_PUBLIC_FIREBASE_APP_ID,
       measurementId: process.env.NUXT_PUBLIC_FIREBASE_MEASUREMENT_ID,
       messageSenderId: process.env.NUXT_PUBLIC_FIREBASE_MESSAGE_SENDER_ID,
-      projectId: process.env.NUXT_PUBLIC_FIREBASE_PROJECT_ID,
+      projectId: process.env.NUXT_PUBLIC_FIREBASE_PROJECT_ID
     }
   },
 
@@ -83,12 +83,12 @@ export default defineNuxtConfig({
             initial: {
               scale: 0,
               opacity: 0,
-              y: 100,
+              y: 100
             },
             visible: {
               scale: 1,
               opacity: 1,
-              y: 0,
+              y: 0
             }
           }
         }
@@ -280,23 +280,23 @@ export default defineNuxtConfig({
             itemOffered: {
               '@type': 'Service',
               name: 'Haircut',
-              description: 'Professional haircut tailored to your style.',
-            },
+              description: 'Professional haircut tailored to your style.'
+            }
           },
           {
             '@type': 'Offer',
             itemOffered: {
               '@type': 'Service',
               name: 'Hair Coloring',
-              description: 'Full or partial hair coloring services.',
-            },
+              description: 'Full or partial hair coloring services.'
+            }
           },
           {
             '@type': 'Offer',
             itemOffered: {
               '@type': 'Service',
               name: 'Hair Styling',
-              description: 'Styling services for special occasions.',
+              description: 'Styling services for special occasions.'
             }
           }
         ]

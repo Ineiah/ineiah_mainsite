@@ -65,6 +65,7 @@ useHead({
 
 <style lang="scss">
 .page {
+
   &-enter-active,
   &-leave-active {
     transition: all 0.4s;

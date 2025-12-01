@@ -5,12 +5,36 @@ import { defineOrganization } from 'nuxt-schema-org/schema'
 export default defineNuxtConfig({
   compatibilityDate: '2025-07-15',
   devtools: { enabled: true },
-  ssr: true,
-  sourcemap: false,
+
+  modules: [
+    '@nuxt/eslint',
+    '@nuxt/fonts',
+    '@nuxt/hints',
+    '@nuxt/icon',
+    '@nuxt/image',
+    '@nuxt/scripts',
+    '@nuxt/test-utils',
+    '@nuxt/test-utils/module',
+    '@nuxtjs/seo',
+    '@nuxtjs/i18n',
+    '@pinia/nuxt',
+    '@vueuse/nuxt',
+    '@vueuse/motion/nuxt',
+    'nuxt-gtag',
+    'nuxt-vuefire',
+    'nuxt-schema-org',
+    'nuxt-og-image',
+    'nuxt-vuefire',
+    'nuxt-ganalytics',
+  ],
 
   site: {
     url: process.env.NUXT_PUBLIC_SITE_URL || 'http://localhost:3000',
     name: "La Beauté d'Inéïah"
+  },
+
+  seo: {
+    fallbackTitle: true
   },
 
   app: {
@@ -30,7 +54,9 @@ export default defineNuxtConfig({
     '/admin/**': { ssr: false }
   },
 
-  css: ['~/assets/css/tailwind.css'],
+  css: [
+    '~/assets/css/tailwind.css'
+  ],
 
   vite: {
     plugins: [
@@ -93,29 +119,6 @@ export default defineNuxtConfig({
     }
   },
 
-  modules: [
-    '@nuxt/image',
-    '@nuxt/fonts',
-    '@nuxt/icon',
-    '@nuxt/test-utils/module',
-    '@nuxt/eslint',
-    '@nuxt/scripts',
-    '@nuxt/ui',
-    '@nuxtjs/i18n',
-    '@nuxtjs/seo',
-    '@vueuse/nuxt',
-    'nuxt-gtag',
-    'nuxt-schema-org',
-    'nuxt-og-image',
-    'nuxt-vuefire',
-    'nuxt-ganalytics',
-    '@vueuse/motion/nuxt',
-    // '@sentry/nuxt/module,'
-    // '@primevue/nuxt-module' // TODO: Does not work. Remove?
-    // '@pinia/nuxt', //FIXME: Breaks in production
-    // 'pinia-plugin-persistedstate', // TODO: Enable when Pinia Nuxt works with Nuxt 4 otherwhise this raises an error due to absence of @pinia/nuxt
-  ],
-
   fonts: {
     provider: 'google',
     families: [
@@ -166,7 +169,7 @@ export default defineNuxtConfig({
       {
         code: 'en',
         language: 'en-US',
-        files: [ 'en.ts', 'en-US.ts' ],
+        files: ['en.ts', 'en-US.ts'],
         dir: 'ltr',
         name: 'English'
       }
@@ -183,10 +186,6 @@ export default defineNuxtConfig({
     // providers: {
     //   cloudfront: {}
     // }
-  },
-
-  seo: {
-    fallbackTitle: true
   },
 
   schemaOrg: {
@@ -301,47 +300,35 @@ export default defineNuxtConfig({
     })
   },
 
-  gtag: {
-    id: 'G-CVKFG2XPVG',
-    initCommands: [
-      ['config', 'default', {
-        debug: 'true',
-        currency: 'EUR',
-        ad_storage: 'denied',
-        ad_user_data: 'denied',
-        ad_personalization: 'denied',
-        analytics_storage: 'denied'
-      }]
-    ]
-  },
+  // gtag: {
+  //   id: 'G-CVKFG2XPVG',
+  //   initCommands: [
+  //     ['config', 'default', {
+  //       debug: 'true',
+  //       currency: 'EUR',
+  //       ad_storage: 'denied',
+  //       ad_user_data: 'denied',
+  //       ad_personalization: 'denied',
+  //       analytics_storage: 'denied'
+  //     }]
+  //   ]
+  // },
 
-  nitro: {
-    storage: {
-      redis: {
-        driver: 'redis',
-        host: process.env.NUXT_PUBLIC_REDIS_HOST,
-        port: 6379,
-        username: '',
-        password: process.env.NUXT_PUBLIC_REDIS_PASSWORD
-      }
-    },
-    devStorage: {
-      file: {
-        driver: 'fs',
-        base: './data/storage'
-      }
-    }
-  }
-
-  // sentry: {
-  //   disabled: process.env.NODE_ENV === 'test',
-  //   disableClientSide: process.env.NODE_ENV === 'test',
-  //   disableServerSide: process.env.NODE_ENV === 'test',
-  //   sourceMapsUploadOptions: {
-  //     org: 'jpm-holdings',
-  //     project: 'dev-client'
+  // nitro: {
+  //   storage: {
+  //     redis: {
+  //       driver: 'redis',
+  //       host: process.env.NUXT_PUBLIC_REDIS_HOST,
+  //       port: 6379,
+  //       username: '',
+  //       password: process.env.NUXT_PUBLIC_REDIS_PASSWORD
+  //     }
   //   },
-
-  //   autoInjectServerSentry: 'top-level-import'
+  //   devStorage: {
+  //     file: {
+  //       driver: 'fs',
+  //       base: './data/storage'
+  //     }
+  //   }
   // }
 })

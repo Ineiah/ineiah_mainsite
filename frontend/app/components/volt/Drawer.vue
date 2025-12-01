@@ -1,5 +1,5 @@
 <template>
-  <Drawer unstyled :pt="theme" :ptOptions="{ mergeProps: ptViewMerge }">
+  <Drawer unstyled :pt="theme" :pt-options="{ mergeProps: ptViewMerge }">
     <template #closebutton="{ closeCallback }">
       <SecondaryButton variant="text" rounded @click="closeCallback" autofocus>
         <template #icon>

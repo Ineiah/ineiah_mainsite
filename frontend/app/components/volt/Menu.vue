@@ -3,7 +3,7 @@
         ref="el"
         unstyled
         :pt="theme"
-        :ptOptions="{
+        :pt-options="{
             mergeProps: ptViewMerge
         }"
     >

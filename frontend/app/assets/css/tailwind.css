@@ -7,6 +7,18 @@
 @theme {
   --font-sans: 'Ubuntu', sans-serif;
   --font-title: 'Kreon', sans-serif;
+
+  --color-secondary-50: #f1f6f5;
+  --color-secondary-100: #d5e4e0;
+  --color-secondary-200: #b9d1cb;
+  --color-secondary-300: #9dbfb6;
+  --color-secondary-400: #81ada2;
+  --color-secondary-500: #659a8d;
+  --color-secondary-600: #527e73;
+  --color-secondary-700: #40625a;
+  --color-secondary-800: #2e4640;
+  --color-secondary-900: #1b2a26;
+  --color-secondary-950: #090e0d;
 }
 
 /* Primary and Surface Palettes */
@@ -36,19 +48,6 @@
   --p-surface-800: #42322e;
   --p-surface-900: #30231f;
   --p-surface-950: #30231f;
-
-
-  --p-secondary-50: #f1f6f5;
-  --p-secondary-100: #d5e4e0;
-  --p-secondary-200: #b9d1cb;
-  --p-secondary-300: #9dbfb6;
-  --p-secondary-400: #81ada2;
-  --p-secondary-500: #659a8d;
-  --p-secondary-600: #527e73;
-  --p-secondary-700: #40625a;
-  --p-secondary-800: #2e4640;
-  --p-secondary-900: #1b2a26;
-  --p-secondary-950: #090e0d;
 
   --p-content-border-radius: 6px;
 

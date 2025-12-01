@@ -2,7 +2,7 @@
     <ToggleSwitch
         unstyled
         :pt="theme"
-        :ptOptions="{
+        :pt-options="{
             mergeProps: ptViewMerge
         }"
     >

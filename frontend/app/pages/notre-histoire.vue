@@ -2,8 +2,8 @@
   <section id="story">
     <BaseJumbotron src="/hero/hair4.jpg" lead="Notre histoire" subtitle="Découvrez tout ou partie de notre histoire" />
 
-    <!-- Quote -->
-    <div class="p-10 md:p-20 bg-brand-brown-500 text-brand-brown-700 w-full text-center">
+    <!-- Quote TODO: Component -->
+    <div class="p-10 md:p-20 bg-primary-500 text-primary-700 dark:bg-primary-700 dark:text-primary-200 w-full text-center">
       <h1 class="text-2xl md:text-4xl max-w-4xl md:mx-auto font-bold space-x-2 md:space-x-5">
         <Icon name="fa-solid:quote-left" />
         <span>Hairstudio by Anissa c'est avant tout une histoire de passion et d'humanité !</span>
@@ -17,7 +17,7 @@
       <StoryCard class="shadow-none" />
 
       <div class="mt-10">
-        <CardCTA id="tel-story" />
+        <card-call-to-action id="tel-story" />
       </div>
     </div>
   </section>
@@ -25,6 +25,11 @@
 
 <script setup lang="ts">
 import { businessDetails } from '~/data'
+
+definePageMeta({
+  name: 'our-history'
+})
+
 
 const i18n = useI18n()
 

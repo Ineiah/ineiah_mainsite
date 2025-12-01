@@ -1,19 +1,23 @@
 <template>
   <section id="prestation">
-    <BaseJumbotron src="/hero/hair7.jpg" lead="Nos prestations" subtitle="Découvrez tout ou partie de nos prestations" />
+    <base-jumbotron src="/hero/hair7.jpg" lead="Nos prestations" subtitle="Découvrez tout ou partie de nos prestations" />
 
     <div class="px-5 md:px-10">
-      <ServicesSection v-for="(section, index) in defaultServices" :key="section.name" :index="index" :section="section" />
+      <services-section v-for="(section, index) in defaultServices" :key="section.name" :index="index" :section="section" />
 
       <div class="my-10">
-        <CardCTA id="tel-services" />
-      </div>      
+        <card-call-to-action id="tel-services" />
+      </div>
     </div>
   </section>
 </template>
 
 <script setup lang="ts">
 import { businessDetails, defaultServices } from '~/data'
+
+definePageMeta({
+  name: 'services'
+})
 
 const i18n = useI18n()
 
@@ -38,6 +42,6 @@ defineOgImageComponent('NuxtSeo', {
   title: titles[i18n.locale.value],
   description: descriptions[i18n.locale.value],
   theme: '#ff0000',
-  colorMode: 'dark',
+  colorMode: 'dark'
 })
 </script>

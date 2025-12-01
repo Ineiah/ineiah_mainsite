@@ -3,7 +3,7 @@ import { defineOrganization } from 'nuxt-schema-org/schema'
 
 // https://nuxt.com/docs/api/configuration/nuxt-config
 export default defineNuxtConfig({
-  compatibilityDate: '2025-05-15',
+  compatibilityDate: '2025-07-15',
   devtools: { enabled: true },
   ssr: true,
   sourcemap: false,
@@ -15,7 +15,7 @@ export default defineNuxtConfig({
 
   app: {
     pageTransition: {
-      name: 'page', 
+      name: 'page',
       mode: 'out-in'
     }
   },
@@ -48,14 +48,14 @@ export default defineNuxtConfig({
       appId: process.env.NUXT_PUBLIC_FIREBASE_APP_ID,
       measurementId: process.env.NUXT_PUBLIC_FIREBASE_MEASUREMENT_ID,
       messageSenderId: process.env.NUXT_PUBLIC_FIREBASE_MESSAGE_SENDER_ID,
-      projectId: process.env.NUXT_PUBLIC_FIREBASE_PROJECT_ID,
+      projectId: process.env.NUXT_PUBLIC_FIREBASE_PROJECT_ID
     }
   },
 
   runtimeConfig: {
     public: {
       prodDomain: process.env.NUXT_PUBLIC_SITE_URL || 'http://localhost:3000',
-      
+
       // Stripe
       stripeTestSecretKey: process.env.NUXT_PUBLIC_STRIPE_TEST_SECRET_KEY,
       stripeTestPublishableKey: process.env.NUXT_PUBLIC_STRIPE_TEST_PUBLISHABLE_KEY,
@@ -72,7 +72,25 @@ export default defineNuxtConfig({
       twilioAccountSid: process.env.NUXT_PUBLIC_TWILIO_ACCOUNT_SID,
       twilioAuthToken: process.env.NUXT_PUBLIC_TWILIO_AUTH_TOKEN,
       twilioPhoneNumber: process.env.NUXT_PUBLIC_TWILIO_PHONE_NUMBER,
-      twilioToPhoneNumber: process.env.NUXT_PUBLIC_TWILIO_TO_PHONE_NUMBER
+      twilioToPhoneNumber: process.env.NUXT_PUBLIC_TWILIO_TO_PHONE_NUMBER,
+
+      // Motion
+      motion: {
+        directives: {
+          'pop-bottom': {
+            initial: {
+              scale: 0,
+              opacity: 0,
+              y: 100
+            },
+            visible: {
+              scale: 1,
+              opacity: 1,
+              y: 0
+            }
+          }
+        }
+      }
     }
   },
 
@@ -84,28 +102,21 @@ export default defineNuxtConfig({
     '@nuxt/eslint',
     '@nuxt/scripts',
     '@nuxt/ui',
-
-    // '@pinia/nuxt', //FIXME: Breaks in production
-
     '@nuxtjs/i18n',
     '@nuxtjs/seo',
     '@vueuse/nuxt',
-    
-    // '@sentry/nuxt/module,'
-    
-    // 'pinia-plugin-persistedstate', // TODO: Enable when Pinia Nuxt works with Nuxt 4 otherwhise this raises an error due to absence of @pinia/nuxt
-    'shadcn-nuxt',
     'nuxt-gtag',
     'nuxt-schema-org',
     'nuxt-og-image',
     'nuxt-vuefire',
-    'nuxt-ganalytics'
-  ],
+    'nuxt-ganalytics',
+    '@vueuse/motion/nuxt',
+    '@primevue/nuxt-module' // TODO: Does not work. Remove?
 
-  shadcn: {
-    prefix: 'Shad',
-    componentDir: '~/components/ui'
-  },
+    // '@pinia/nuxt', //FIXME: Breaks in production
+    // '@sentry/nuxt/module,'
+    // 'pinia-plugin-persistedstate', // TODO: Enable when Pinia Nuxt works with Nuxt 4 otherwhise this raises an error due to absence of @pinia/nuxt
+  ],
 
   fonts: {
     provider: 'google',
@@ -134,20 +145,18 @@ export default defineNuxtConfig({
       id: 'GTM-TGZCVB2G'
     }
   },
-  
+
   i18n: {
-    // baseUrl: '/',
+    baseUrl: process.env.NUXT_PUBLIC_SITE_URL,
     langDir: './locales',
     defaultLocale: 'fr',
-    // lazy: true,
     vueI18n: './i18n.config.ts',
-    // bundle: {
-    //   // TODO: Remove on next major i18n update
-    //   optimizeTranslationDirective: false
-    // },
-    // experimental: {
-    //   localeDetector: 'i18n/locale_detector.ts'
-    // },
+    customRoutes: 'config',
+    pages: {
+      'nos-prestations': { fr: '/nos-prestations', en: '/our-services' },
+      'notre-histoire': { fr: '/notre-histoire', en: '/our-story' },
+      'contact': { fr: '/contact', en: '/contact' }
+    },
     locales: [
       {
         code: 'fr',
@@ -159,16 +168,12 @@ export default defineNuxtConfig({
       {
         code: 'en',
         language: 'en-US',
-        file: 'en-US.ts',
+        files: [ 'en.ts', 'en-US.ts' ],
         dir: 'ltr',
         name: 'English'
       }
     ]
   },
-
-  // pages: {
-  //   'nos-prestations': { fr: '/nos-prestations', en: '/our-services' }
-  // },
 
   image: {
     // TODO: Activate when the project images backend
@@ -239,23 +244,23 @@ export default defineNuxtConfig({
             itemOffered: {
               '@type': 'Service',
               name: 'Haircut',
-              description: 'Professional haircut tailored to your style.',
-            },
+              description: 'Professional haircut tailored to your style.'
+            }
           },
           {
             '@type': 'Offer',
             itemOffered: {
               '@type': 'Service',
               name: 'Hair Coloring',
-              description: 'Full or partial hair coloring services.',
-            },
+              description: 'Full or partial hair coloring services.'
+            }
           },
           {
             '@type': 'Offer',
             itemOffered: {
               '@type': 'Service',
               name: 'Hair Styling',
-              description: 'Styling services for special occasions.',
+              description: 'Styling services for special occasions.'
             }
           }
         ]

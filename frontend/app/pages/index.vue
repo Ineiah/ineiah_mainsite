@@ -7,14 +7,14 @@
 
     <!-- Intermediate-1 -->
     <div class="p-5 md:p-15">
-      <div class="grid grid-rows-2 auto-rows-min md:grid-cols-2 md:grid-rows-none gap-10">
+      <div class="grid grid-cols-1 md:grid-cols-2 gap-10">
         <div class="transition-all ease-in has-[img]:hover:zoom-in-20">
-          <img ref="imageFirstEl" src="/hero/hair8.jpg" class="rounded-lg aspect-square object-cover" alt="" />
+          <img ref="imageFirstEl" src="/hero/hair10.jpg" class="rounded-lg aspect-square object-cover" alt="">
         </div>
 
-        <div class="flex flex-col justify-center">
-          <h2 ref="intermediateOneEl" class="text-5xl font-bold mb-10 text-brand-brown-500 font-title leading-15">
-            Plus q'un salon, une <span class="text-brand-brown-800">expérience</span> de vie
+        <div class="flex flex-col justify-center dark:text-primary-200">
+          <h2 ref="intermediateOneEl" class="text-5xl font-bold mb-10 text-primary-500 font-title leading-15">
+            Plus q'un salon, une <span class="text-primary-800 dark:text-primary-400">expérience</span> de vie
           </h2>
 
           <p>
@@ -31,20 +31,18 @@
             Facere maiores quidem minima.
           </p>
 
-          <div>
-            <ShadButton id="tel-intermadiate-1" size="xl" class="rounded-full mt-5" as-child>
-              <BaseTelephoneLink :with-icon="true" text="Je veux me faire belle" />
-            </ShadButton>
+          <div id="cta-1" class="mt-10">
+            <base-telephone-button id="tel-intermadiate-1" :with-icon="true" size="large" text="Je veux me faire belle" />
           </div>
         </div>
       </div>
     </div>
 
     <!-- Intermediate-2 -->
-    <div class="grid grid-rows-2 md:grid-rows-none md:grid-cols-2 auto-rows-min brand-500 mt-10 bg-brand-brown-500">
+    <div class="grid grid-cols-1 md:grid-cols-2 auto-rows-min mt-10 bg-primary-500 dark:bg-primary-700 dark:text-primary-200">
       <div class="items-center md:flex md:p-10">
         <div class="p-10 text-center md:text-left md:max-w-lg">
-          <h2 ref="intermediateTwoEl" class="text-3xl font-bold mb-4 md:text-5xl text-brand-brown-800 font-title leading-10 md:leading-15">
+          <h2 ref="intermediateTwoEl" class="text-3xl font-bold mb-4 md:text-5xl text-primary-800 dark:text-primary-400 font-title leading-10 md:leading-15">
             L'histoire de <span class="italic">{{ businessDetails.legalName }}</span>
           </h2>
 
@@ -54,51 +52,55 @@
             dolorem, magnam animi, doloribus error dolores possimus quia eos voluptatum in!
           </p>
 
-          <ShadButton size="xl" class="rounded-full mt-10" as-child>
-            <NuxtLinkLocale to="/notre-histoire">
+          <volt-button size="large" class="mt-10" rounded>
+            <nuxt-link-locale to="/notre-histoire">
               Découvrir
-            </NuxtLinkLocale>
-          </ShadButton>
+            </nuxt-link-locale>
+          </volt-button>
         </div>
       </div>
 
       <div class="h-auto">
-        <img src="/hero/hair2.jpg" class="aspect-square object-cover" alt="" />
+        <img src="/hero/hair10.jpg" class="aspect-square object-cover" alt="">
       </div>
     </div>
 
     <!-- Brands -->
     <div class="my-5 md:p-10">
-      <h3 class="text-center text-2xl font-bold text-brand-brown-500 mb-5 md:mb-0">
+      <h3 class="text-center text-3xl font-bold text-primary-500 mb-5 md:mb-0">
         Nos marques
       </h3>
 
       <div class="grid grid-cols-2 grid-rows-2 gap-4 md:grid-cols-4 md:grid-rows-none md:p-10">
-        <HeroBrand src="/brands/Bouclème.png" alt="Logo de la marque Bouclème" />
-        <HeroBrand src="/brands/Bouclème.png" alt="Logo de la marque Bouclème" />
-        <HeroBrand src="/brands/Bouclème.png" alt="Logo de la marque Bouclème" />
-        <HeroBrand src="/brands/Bouclème.png" alt="Logo de la marque Bouclème" />
+        <hero-brand src="/brands/Bouclème.png" alt="Logo de la marque Bouclème" />
+        <hero-brand src="/brands/Bouclème.png" alt="Logo de la marque Bouclème" />
+        <hero-brand src="/brands/Bouclème.png" alt="Logo de la marque Bouclème" />
+        <hero-brand src="/brands/Bouclème.png" alt="Logo de la marque Bouclème" />
       </div>
     </div>
 
     <!-- Photocall -->
     <div class="grid grid-rows-2 grid-cols-2 gap-0 auto-rows-min rounded-md md:grid-rows-1 md:grid-cols-4">
-      <HeroPhotoCall src="/hero/hair2.jpg" alt="Some alt" title="Cheveux fins" />
-      <HeroPhotoCall src="/hero/hair3.jpg" alt="Some alt" title="Cheveux fins" />
-      <HeroPhotoCall src="/hero/hair4.jpg" alt="Some alt" title="Cheveux fins" />
-      <HeroPhotoCall src="/hero/hair5.jpg" alt="Some alt" title="Cheveux fins" />
+      <hero-photo-call src="/hero/hair10.jpg" alt="Some alt" title="Cheveux fins" />
+      <hero-photo-call src="/hero/hair3.jpg" alt="Some alt" title="Cheveux longs" />
+      <hero-photo-call src="/hero/hair12.jpg" alt="Some alt" title="Cheveux réactivés" />
+      <hero-photo-call src="/hero/hair4.jpg" alt="Some alt" title="Cheveux afro" />
     </div>
 
     <dev-only>
+      <base-product-recommendations />
+    </dev-only>
+
+    <dev-only>
       <!-- VideoCall -->
-      <div class="max-w-8xl mx-auto pt-20 px-20">
-        <div class="grid grid-cols-2 bg-brand-brown-200 rounded-md">
-          <video class="aspect-video object-fill rounded-lg" autoplay muted loop playsinline>
+      <!-- <div id="video-call-hero" class="max-w-8xl mx-auto pt-20 px-20">
+        <div class="grid grid-cols-2 bg-primary-200 dark:bg-primary-700 dark:text-primary-200 rounded-tr-lg rounded-br-lg">
+          <video class="aspect-video object-fill rounded-tl-lg rounded-bl-lg" autoplay muted loop playsinline>
             <source src="https://freelance-data-storage.s3.us-east-1.amazonaws.com/hair.mp4" type="video/mp4">
           </video>
 
           <div class="p-10 rounded-tr-md rounded-br-md flex-col justify-center content-center text-center max-w-3xl">
-            <h2 class="font-semibold uppercase text-brand-brown-800 text-4xl">
+            <h2 class="font-semibold uppercase text-primary-800 dark:text-primary-400 text-4xl">
               Une sublime restructuration de la coupe
             </h2>
 
@@ -112,35 +114,50 @@
           </div>
         </div>
 
-        <div>
-          <div class="p-20 text-center text-brand-brown-500">
-            <p class="font-bold mb-3 text-4xl">Rejoint le <span class="text-brand-brown-800">#curlymouvement</span></p>
-            <p class="text-md">Retrouvez-nous sur instagram <a href="http://example.com" title="http://example.com">@hairstudiobyanissa</a></p>
+        <div role="contentinfo">
+          <div class="p-20 text-center text-primary-500 dark:text-primary-200">
+            <p class="font-bold mb-3 text-4xl">Rejoint le <span class="text-primary-800 dark:text-primary-400">#curlymouvement</span></p>
+            <p class="text-md">Retrouvez-nous sur instagram <a :href="businessDetails.socials.instagram.url" :title="businessDetails.socials.instagram.url">{{ businessDetails.socials.instagram.handle }}</a></p>
           </div>
         </div>
-      </div>
+      </div> -->
     </dev-only>
 
     <dev-only>
       <!-- Template Settings -->
       <client-only>
-        <div class="fixed p-5 right-0 top-6/12 z-50 rounded-md bg-white m-3 shadow-md space-y-2">
-          <p class="text-bold mb-4">Template settings</p>
+        <div class="fixed p-5 right-0 top-2/12 md:top-6/12 z-50 rounded-md bg-primary-50 dark:bg-primary-500 text-surface-900 dark:text-surface-50 m-3 shadow-md space-y-2">
+          <p class="font-bold mb-4">Template settings</p>
 
-          <div class="flex items-center space-x-2">
-            <shad-switch v-model="showImage" />
-            <label for="">Image</label>
+          <div class="space-x-2">
+            <nuxt-link-locale to="/" locale="fr">
+              <volt-secondary-button>
+                <icon name="i-circle-flags:fr" />
+              </volt-secondary-button>
+            </nuxt-link-locale>
+
+            <nuxt-link-locale to="/" locale="en">
+              <volt-secondary-button>
+                <icon name="i-circle-flags:uk" />
+              </volt-secondary-button>
+            </nuxt-link-locale>
           </div>
 
-          <div class="flex items-center space-x-2">
-            <shad-switch v-model="showVideo" />
-            <label for="">Video</label>
-          </div>
+          <volt-label label-for="dark-mode" label="Dark mode">
+            <volt-toggle-switch id="dark-mode" v-model="darkMode" />
+          </volt-label>
 
-          <div class="flex items-center space-x-2">
-            <shad-switch v-model="showCarousel" />
-            <label for="">Carousel</label>
-          </div>
+          <volt-label label-for="show-image" label="Show Image">
+            <volt-toggle-switch id="show-image" v-model="showImage" />
+          </volt-label>
+
+          <volt-label label-for="show-video" label="Show Video">
+            <volt-toggle-switch id="show-video" v-model="showVideo" />
+          </volt-label>
+
+          <volt-label label-for="show-carousel" label="Show Carousel">
+            <volt-toggle-switch id="show-carousel" v-model="showCarousel" />
+          </volt-label>
         </div>
       </client-only>
     </dev-only>
@@ -148,15 +165,13 @@
 </template>
 
 <script setup lang="ts">
-/**
- * NOTE: The Hero is in client-only only for dev purposes to be able to
- * switch between different hero types. In the final proposition, remove the
- * client-only
- */
-
 import { businessDetails } from '~/data'
 
 const { showImage, showCarousel, showVideo } = useDevComposable()
+
+definePageMeta({
+  name: 'home'
+})
 
 const i18n = useI18n()
 
@@ -193,6 +208,16 @@ if (import.meta.client) {
     observe(imageFirstEl, ['animate-in', 'zoom-in-90', 'duration-800'])
   })
 }
+
+/**
+ * Dark mode
+ */
+
+const { darkMode } = useDarkModeComposable()
+
+/**
+ * SEO
+ */
 
 const titles: Record<string, string> = {
   fr: 'Coupe et coiffures tout type de cheveux'

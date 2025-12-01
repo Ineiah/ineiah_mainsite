@@ -1,3 +1,5 @@
+import { useColorMode } from "@vueuse/core"
+
 /**
  * Composable to generate dynamic IDs from string values
  */
@@ -62,5 +64,55 @@ export const useDevComposable = createGlobalState(() => {
     showImage,
     showVideo,
     showCarousel
+  }
+})
+
+/**
+ * Composable to manage dark mode state
+ */
+export const useDarkModeComposable = createGlobalState(() => {
+  const [darkMode, toggleDarkMode] = useToggle()
+
+  if (import.meta.client) {
+    const colorMode = useColorMode({
+      initialValue: 'system',
+      onChanged(mode, defaultHandler) {
+        if (mode == 'dark') {
+          document.documentElement.classList.add('p-dark')
+          defaultHandler(mode)
+        } else {
+          document.documentElement.classList.remove('p-dark')
+          defaultHandler(mode)
+        }
+      }
+    })
+
+    watch(darkMode, (newValue) => {
+      colorMode.value = newValue ? 'dark' : 'light'
+    })
+
+    onMounted(() => {
+      darkMode.value = colorMode.value === 'dark' || (colorMode.value === 'system' && window.matchMedia('(prefers-color-scheme: dark)').matches)
+    })
+  }
+
+  return {
+    darkMode,
+    toggleDarkMode
+  }
+})
+
+export const useCookieComposable = createGlobalState(() => {
+  const showBanner = useState('showCookieBanner', () => true)
+  const showOptions = useState('showCookieOptions', () => false)
+
+  const toggleShowBanner = useToggle(showBanner)
+  const toggleShowOptions = useToggle(showOptions)
+
+  return {
+    showBanner,
+    showOptions,
+    toggleShowBanner,
+    toggleShowOptions
   }
 })

@@ -1,49 +1,33 @@
 <template>
-  <nav :class="{ 'bg-transparent': !showBackground, 'bg-brand-brown-500 shadow-md': showBackground }" class="fixed top-0 w-full z-50 md:py-2 transition-all ease-in-out">
+  <nav :class="{ 'bg-primary-100/20': !showBackground, 'bg-primary-500 dark:bg-primary-800 shadow-md': showBackground }" class="fixed top-0 w-full z-50 md:py-2 transition-all ease-in-out">
     <div class="mx-auto max-w-7xl px-2 sm:px-6 lg:px-8">
       <div class="relative flex h-16 items-center justify-between">
         <div class="absolute inset-y-0 left-0 flex items-center sm:hidden">
-          <!-- Mobile-->
-          <button type="button" class="relative inline-flex items-center justify-center rounded-md p-2 text-brand-brown-700 hover:bg-brand-brown-400 hover:text-brand-brown-500 focus:ring-2 focus:ring-brand-brown-500 focus:outline-hidden focus:ring-inset" aria-controls="mobile-menu" aria-expanded="false" @click="() => emit('mobile-menu')">
-            <span class="absolute -inset-0.5"></span>
-            <span class="sr-only">Open main menu</span>
-            <!--
-              Icon when menu is closed.
-
-              Menu open: "hidden", Menu closed: "block"
-            -->
-            <svg class="block size-6" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" aria-hidden="true" data-slot="icon">
-              <path stroke-linecap="round" stroke-linejoin="round" d="M3.75 6.75h16.5M3.75 12h16.5m-16.5 5.25h16.5" />
-            </svg>
-            <!--
-              Icon when menu is open.
-
-              Menu open: "block", Menu closed: "hidden"
-            -->
-            <svg class="hidden size-6" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" aria-hidden="true" data-slot="icon">
-              <path stroke-linecap="round" stroke-linejoin="round" d="M6 18 18 6M6 6l12 12" />
-            </svg>
-          </button>
+          <volt-secondary-button aria-label="Open mobile menu" @click="$emit('mobile-menu')">
+            <icon name="i-fa7-solid:bars" />
+          </volt-secondary-button>
         </div>
 
-        <div class="flex flex-1 items-center justify-center sm:items-stretch sm:justify-start">
+        <div class="flex flex-1 items-center justify-center sm:items-stretch sm:justify-start text-primary-50 dark:text-primary-200">
           <div class="flex shrink-0 items-center">
-            <NuxtLinkLocale id="link-home-nav" to="/">
-              <img class="h-8 w-auto" src="https://tailwindcss.com/plus-assets/img/logos/mark.svg?color=indigo&shade=500" :alt="businessDetails.name" />
-            </NuxtLinkLocale>
+            <nuxt-link-locale id="link-home-nav" to="/">
+              <img class="h-8 w-auto" src="https://tailwindcss.com/plus-assets/img/logos/mark.svg?color=indigo&shade=500" :alt="businessDetails.name">
+            </nuxt-link-locale>
           </div>
 
           <div class="hidden sm:ml-6 sm:block md:mx-auto">
-            <div class="flex space-x-4 has-[a]:transition-all has-[a]:ease-in-out">
-              <NuxtLinkLocale v-for="route in routes" :key="route.path" :to="route.path" :class="linkTheme" :id="create(route.id, 'link-nav')">
-                {{ route.title }}
-              </NuxtLinkLocale>
-            </div>
+            <ul class="flex space-x-4 has-[a]:transition-all has-[a]:ease-in-out">
+              <li v-for="item in routes" :id="create(item.id, 'link-nav')" :key="item.path" class="p-2 rounded-xl has-[.router-link-exact-active]:bg-primary-100/30">
+                <nuxt-link-locale :to="item.path" :class="linkTheme">
+                  {{ $t(item.title) }}
+                </nuxt-link-locale>
+              </li>
+            </ul>
           </div>
 
-          <ShadButton id="tel-navbar" class="rounded-full hidden md:visible" as-child>
-            <BaseTelephoneLink />
-          </ShadButton>
+          <base-telephone-button v-if="isLargeScreen" class="hidden md:flex ml-auto">
+            Nous rappeler {{ isMobile }} {{ isLargeScreen }}
+          </base-telephone-button>
         </div>
       </div>
     </div>
@@ -55,16 +39,27 @@ import { useScroll } from '@vueuse/core'
 import { businessDetails } from '~/data'
 import type { BaseRoute } from '~/types'
 
-const emit = defineEmits<{
-  'mobile-menu': []
-}>()
+defineEmits<{ 'mobile-menu': [] }>()
+
+const route = useRoute()
+
+/**
+ * Mobile
+ */
+
+const isMobile = useState<boolean>('isMobile')
+const isLargeScreen = useState<boolean>('isLargeScreen')
 
 const showBackground = ref<boolean>(false)
 
 if (import.meta.client) {
   onMounted(() => {
     const { y } = useScroll(window)
-    
+
+    if (route.meta.name === 'privacy') {
+      showBackground.value = true
+    }
+
     watch(y, (value) => {
       if (value >= 100) {
         showBackground.value = true
@@ -76,6 +71,10 @@ if (import.meta.client) {
     })
   })
 }
+
+/**
+ * Routes
+ */
 
 const routes: BaseRoute[] = [
   {
@@ -95,9 +94,13 @@ const routes: BaseRoute[] = [
   }
 ]
 
+/**
+ * Theming
+ */
+
 const linkTheme = ref(`
-  rounded-md px-3 py-2 text-lg font-semibold uppercase 
-  text-brand-brown-50 hover:text-brand-brown-400 relative
+  px-3 py-2 text-lg font-semibold uppercase 
+  text-primary-50 hover:text-primary-400 relative
 `)
 
 const { create } = useDynamicId()
@@ -106,7 +109,7 @@ const { create } = useDynamicId()
 <style lang="css">
 a#nav-link.router-link-exact-active {
   display: inline-block;
-  color: var(--color-brand-brown-400);
+  color: var(--color-primary-400);
 }
 
 a#nav-link::before {
@@ -116,7 +119,7 @@ a#nav-link::before {
   height: 4px;
   bottom: 0;
   left: 50%;
-  background-color: var(--color-brand-brown-400);
+  background-color: var(--color-primary-400);
   transition: all 0.4s;
 }
 

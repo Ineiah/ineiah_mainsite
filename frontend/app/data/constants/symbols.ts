@@ -1,5 +1,7 @@
-export const isMobileKey = Symbol()
+// export const isMobileKey = Symbol('isMobile')
 
-export const isLargeScreenKey = Symbol()
+// export const isLargeScreenKey = Symbol('isLargeScreen')
 
-export const scrollLevelKey = Symbol()
+export const scrollLevelKey = Symbol('scrollLevel')
+
+export const serviceSectionKey = Symbol('serviceSection')

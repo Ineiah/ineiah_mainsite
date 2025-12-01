@@ -1,33 +1,35 @@
 <template>
   <section id="faq">
-    <BaseJumbotron src="/hero/hair4.jpg" lead="FAQ" subtitle="Nous répondons à vos questions" />
+    <base-jumbotron src="/hero/hair4.jpg" lead="FAQ" subtitle="Nous répondons à vos questions" />
 
     <div class="px-5 md:px-10 my-10">
       <div class="max-w-3xl mx-auto">
         <div class="space-y-5">
-          <ShadCard v-for="section in faqList" :key="section.title" class="bg-brand-brown-500/20 shadow-none">
-            <ShadCardContent>
-              <h3 :id="`faq-${section.id}`" class="uppercase text-2xl font-semibold text-brand-500">
+          <volt-card v-for="section in faqList" :key="section.title" class="bg-surface-50 shadow-none">
+            <template #content>
+              <h3 :id="`faq-${section.id}`" class="uppercase text-3xl font-semibold text-primary-500 dark:text-primary-100">
                 {{ section.title }}
               </h3>
 
-              <ShadAccordion class="w-full mt-5 space-y-3" default-value="Something" collapsible>
-                <ShadAccordionItem v-for="(item, i) in section.questions" :key="item.question" :value="item.question">
-                  <ShadAccordionTrigger :id="`faq-${section.id}-${i}`" class="text-brand-800 bg-brand-brown-400/30 px-3 text-md cursor-pointer">
+              <volt-accordion class="w-full mt-5" default-value="0" collapsible>
+                <volt-accordion-panel v-for="(item, i) in section.questions" :key="item.question" :value="item.question">
+                  <volt-accordion-header :id="`faq-${section.id}-${i}`" class="text-primary-800 bg-surface-200 text-md cursor-pointer">
                     {{ item.question }}
-                  </ShadAccordionTrigger>
+                  </volt-accordion-header>
 
-                  <ShadAccordionContent class="px-3">
-                    {{ item.answer }}
-                  </ShadAccordionContent>
-                </ShadAccordionItem>
-              </ShadAccordion>
-            </ShadCardContent>
-          </ShadCard>
+                  <volt-accordion-content :pt="{ root: 'bg-surface-100 dark:bg-surface-900 text-surface-700 dark:text-surface-0 pt-0 px-[1.125rem] pb-[1.125rem]' }">
+                    <div class="p-5">
+                      {{ item.answer }}
+                    </div>
+                  </volt-accordion-content>
+                </volt-accordion-panel>
+              </volt-accordion>
+            </template>
+          </volt-card>
         </div>
       </div>
-      
-      <CardCTA id="tel-faq-section" class="mt-15">
+
+      <card-call-to-action id="tel-faq-section" class="mt-15">
         <template #title>
           Des questions ?
         </template>
@@ -39,13 +41,18 @@
         <template #action>
           Nous contacter
         </template>
-      </CardCTA>
+      </card-call-to-action>
     </div>
   </section>
 </template>
 
 <script setup lang="ts">
 import { businessDetails, faqList } from '~/data'
+
+definePageMeta({
+  name: 'faq'
+})
+
 
 const i18n = useI18n()
 
@@ -86,6 +93,6 @@ defineOgImageComponent('NuxtSeo', {
   title: titles[i18n.locale.value],
   description: descriptions[i18n.locale.value],
   theme: '#ff0000',
-  colorMode: 'dark',
+  colorMode: 'dark'
 })
 </script>

@@ -25,7 +25,6 @@ export default defineNuxtConfig({
     '/faq': { swr: 30*60 },
     '/nos-prestations': { swr: 15*60 },
     '/notre-histoire': { swr: 60*60 },
-    // '/legal/**': { prerender: true }
     '/legal/**': { swr: true },
     '/contact': { swr: true },
     '/admin/**': { ssr: false }
@@ -111,10 +110,9 @@ export default defineNuxtConfig({
     'nuxt-vuefire',
     'nuxt-ganalytics',
     '@vueuse/motion/nuxt',
-    // '@primevue/nuxt-module' // TODO: Does not work. Remove?
-
-    // '@pinia/nuxt', //FIXME: Breaks in production
     // '@sentry/nuxt/module,'
+    // '@primevue/nuxt-module' // TODO: Does not work. Remove?
+    // '@pinia/nuxt', //FIXME: Breaks in production
     // 'pinia-plugin-persistedstate', // TODO: Enable when Pinia Nuxt works with Nuxt 4 otherwhise this raises an error due to absence of @pinia/nuxt
   ],
 
@@ -188,8 +186,7 @@ export default defineNuxtConfig({
   },
 
   seo: {
-    url: 'https://example.com',
-    name: "La beauté d'Inéïah"
+    fallbackTitle: true
   },
 
   schemaOrg: {
@@ -334,17 +331,17 @@ export default defineNuxtConfig({
         base: './dev-storage'
       }
     }
-  },
-
-  sentry: {
-    disabled: process.env.NODE_ENV === 'test',
-    disableClientSide: process.env.NODE_ENV === 'test',
-    disableServerSide: process.env.NODE_ENV === 'test',
-    sourceMapsUploadOptions: {
-      org: 'jpm-holdings',
-      project: 'dev-client'
-    },
-
-    autoInjectServerSentry: 'top-level-import'
   }
+
+  // sentry: {
+  //   disabled: process.env.NODE_ENV === 'test',
+  //   disableClientSide: process.env.NODE_ENV === 'test',
+  //   disableServerSide: process.env.NODE_ENV === 'test',
+  //   sourceMapsUploadOptions: {
+  //     org: 'jpm-holdings',
+  //     project: 'dev-client'
+  //   },
+
+  //   autoInjectServerSentry: 'top-level-import'
+  // }
 })

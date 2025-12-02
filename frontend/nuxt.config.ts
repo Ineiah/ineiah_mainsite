@@ -19,6 +19,7 @@ export default defineNuxtConfig({
     '@nuxtjs/i18n',
     '@pinia/nuxt',
     '@vueuse/nuxt',
+    '@vueuse/motion/nuxt',
     'nuxt-vuefire',
     'nuxt-schema-org',
     'nuxt-og-image',
@@ -44,12 +45,12 @@ export default defineNuxtConfig({
   },
 
   routeRules: {
-    // '/': { swr: 16*60 },
-    // '/faq': { swr: 30*60 },
-    // '/nos-prestations': { swr: 15*60 },
-    // '/notre-histoire': { swr: 60*60 },
-    // '/legal/**': { swr: true },
-    // '/contact': { swr: true },
+    '/': { swr: 16*60 },
+    '/faq': { swr: 30*60 },
+    '/nos-prestations': { swr: 15*60 },
+    '/notre-histoire': { swr: 60*60 },
+    '/legal/**': { swr: true },
+    '/contact': { swr: true },
     '/admin/**': { ssr: false }
   },
 
@@ -295,21 +296,21 @@ export default defineNuxtConfig({
   //   ]
   // },
 
-  // nitro: {
-  //   storage: {
-  //     redis: {
-  //       driver: 'redis',
-  //       host: process.env.NUXT_PUBLIC_REDIS_HOST,
-  //       port: 6379,
-  //       username: '',
-  //       password: process.env.NUXT_PUBLIC_REDIS_PASSWORD
-  //     }
-  //   },
-  //   devStorage: {
-  //     file: {
-  //       driver: 'fs',
-  //       base: './data/storage'
-  //     }
-  //   }
-  // }
+  nitro: {
+    storage: {
+      redis: {
+        driver: 'redis',
+        host: process.env.NUXT_PUBLIC_REDIS_HOST,
+        port: 6379,
+        username: '',
+        password: process.env.NUXT_PUBLIC_REDIS_PASSWORD
+      }
+    }
+    // devStorage: {
+    //   file: {
+    //     driver: 'fs',
+    //     base: './data/storage'
+    //   }
+    // }
+  }
 })

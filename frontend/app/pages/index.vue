@@ -9,11 +9,11 @@
     <div class="p-5 md:p-15">
       <div class="grid grid-cols-1 md:grid-cols-2 gap-10">
         <div class="transition-all ease-in has-[img]:hover:zoom-in-20">
-          <img ref="imageFirstEl" src="/hero/hair10.jpg" class="rounded-lg aspect-square object-cover" alt="">
+          <img v-motion-slide-visible-left :delay="100" src="/hero/hair10.jpg" class="rounded-lg aspect-square object-cover" alt="">
         </div>
 
-        <div class="flex flex-col justify-center dark:text-primary-200">
-          <h2 ref="intermediateOneEl" class="text-5xl font-bold mb-10 text-primary-500 font-title leading-15">
+        <div v-motion-slide-visible-right :delay="300" class="flex flex-col justify-center dark:text-primary-200">
+          <h2 class="text-5xl font-bold mb-10 text-primary-500 font-title leading-15">
             Plus q'un salon, une <span class="text-primary-800 dark:text-primary-400">expérience</span> de vie
           </h2>
 
@@ -41,8 +41,8 @@
     <!-- Intermediate-2 -->
     <div class="grid grid-cols-1 md:grid-cols-2 auto-rows-min mt-10 bg-primary-500 dark:bg-primary-700 dark:text-primary-200">
       <div class="items-center md:flex md:p-10">
-        <div class="p-10 text-center md:text-left md:max-w-lg">
-          <h2 ref="intermediateTwoEl" class="text-3xl font-bold mb-4 md:text-5xl text-primary-800 dark:text-primary-400 font-title leading-10 md:leading-15">
+        <div v-motion-slide-visible-left :delay="500" class="p-10 text-center md:text-left md:max-w-lg">
+          <h2 :delay="400" class="text-3xl font-bold mb-4 md:text-5xl text-primary-800 dark:text-primary-400 font-title leading-10 md:leading-15">
             L'histoire de <span class="italic">{{ businessDetails.legalName }}</span>
           </h2>
 
@@ -52,16 +52,17 @@
             dolorem, magnam animi, doloribus error dolores possimus quia eos voluptatum in!
           </p>
 
-          <volt-button size="large" class="mt-10" rounded>
-            <nuxt-link-locale to="/notre-histoire">
+          <nuxt-link-locale to="/notre-histoire">
+            <volt-button size="large" class="mt-10" rounded>
               Découvrir
-            </nuxt-link-locale>
-          </volt-button>
+              <icon name="fa7-solid:arrow-right" />
+            </volt-button>
+          </nuxt-link-locale>
         </div>
       </div>
 
       <div class="h-auto">
-        <img src="/hero/hair10.jpg" class="aspect-square object-cover" alt="">
+        <img v-motion-fade-visible :delay="600" src="/hero/hair10.jpg" class="aspect-square object-cover" alt="">
       </div>
     </div>
 
@@ -126,7 +127,7 @@
     <dev-only>
       <!-- Template Settings -->
       <client-only>
-        <div class="fixed p-5 right-0 top-2/12 md:top-6/12 z-50 rounded-md bg-primary-50 dark:bg-primary-500 text-surface-900 dark:text-surface-50 m-3 shadow-md space-y-2">
+        <!-- <div class="fixed p-5 right-0 top-2/12 md:top-6/12 z-50 rounded-md bg-primary-50 dark:bg-primary-500 text-surface-900 dark:text-surface-50 m-3 shadow-md space-y-2">
           <p class="font-bold mb-4">Template settings</p>
 
           <div class="space-x-2">
@@ -158,7 +159,7 @@
           <volt-label label-for="show-carousel" label="Show Carousel">
             <volt-toggle-switch id="show-carousel" v-model="showCarousel" />
           </volt-label>
-        </div>
+        </div> -->
       </client-only>
     </dev-only>
   </section>

@@ -1,6 +1,6 @@
 <template>
   <section id="recommended-products" class="px-5 py-20 md:p-20">
-    <h3 class="text-center text-3xl mb-10">Mes recommendations produits</h3>
+    <h3 class="text-center text-3xl mb-10 text-primary-500">Mes recommendations produits</h3>
 
     <div class="grid grid-rows-5 md:grid-rows-1 md:grid-cols-5 gap-5">
       <volt-card v-for="idx in 5" :key="idx" class="bg-surface-50">

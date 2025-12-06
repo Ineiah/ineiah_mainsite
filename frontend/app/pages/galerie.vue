@@ -7,9 +7,9 @@
           <p class="text-lg text-primary-50 dark:text-primary-100">Découvrez notre collection de coupes et styles réalisés par nos experts.</p>
 
           <div class="mt-5 flex justify-start gap-5 flex-wrap md:flex-nowrap">
-            <volt-input-text v-model="search" placeholder="Rechercher une coupe ou un style" class="md:w-100" />
+            <volt-input-text v-model="search" placeholder="Rechercher une coupe ou un style" class="w-full md:w-100" />
             
-            <div class="flex justify-start gap-2">
+            <div class="hidden justify-start gap-2 xl:flex">
               <volt-tag v-for="idx in 5" :key="idx" value="Cheveux italiens" class="cursor-pointer" severity="contrast" />
             </div>
           </div>
@@ -87,4 +87,10 @@ const search = ref('')
 const filteredImages = computed(() => {
   return testImages.filter(img => img.name.toLowerCase().includes(search.value.toLowerCase())) // Currently returns all images
 })
+
+// const imagesNames = computed(() => new Set(testImages.map(img => img.name)))
+
+// function setSearch(name: string) {
+//   search.value = name
+// }
 </script>

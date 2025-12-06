@@ -38,7 +38,7 @@ const testImages = [
   },
   {
     name: 'Boucles naturelles',
-    image: '/hero/hair7.jpg'
+    image: '/testimages/jpeg/customer8.jpg'
   },
   {
     name: 'Coupe pixie moderne',
@@ -46,11 +46,11 @@ const testImages = [
   },
   {
     name: 'Brushing volumineux',
-    image: '/hero/hair9.jpg'
+    image: '/testimages/jpeg/customer18.jpg'
   },
   {
     name: 'Coupe dégradée',
-    image: '/hero/hair11.jpg'
+    image: '/testimages/jpeg/customer6.jpg'
   },
   {
     name: 'Chignon élégant',
@@ -59,6 +59,10 @@ const testImages = [
   {
     name: 'Nom de la coupe',
     image: '/hero/hair6.jpg'
+  },
+  {
+    name: 'Coupe chignon',
+    image: '/testimages/jpeg/customer1.jpg'
   },
   {
     name: 'Coupe afro',
@@ -73,12 +77,8 @@ const testImages = [
     image: '/hero/hair10.jpg'
   },
   {
-    name: 'Coupe chignon',
-    image: '/hero/hair11.jpg'
-  },
-  {
     name: 'Coupe tresse',
-    image: '/hero/hair12.jpg'
+    image: '/testimages/jpeg/customer5.jpg'
   }
 ]
 

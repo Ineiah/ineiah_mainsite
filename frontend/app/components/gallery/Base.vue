@@ -13,21 +13,3 @@ function randomMotionDelays() {
   return Math.floor(Math.random() * 300)
 }
 </script>
-
-<style scoped>
-/* #image:hover {
-  animation: size 0.5s ease-in-out;
-}
-
-@keyframes size {
-  0% {
-    transform: scale(1);
-  }
-  50% {
-    transform: scale(1.05);
-  }
-  100% {
-    transform: scale(1);
-  }
-} */
-</style>

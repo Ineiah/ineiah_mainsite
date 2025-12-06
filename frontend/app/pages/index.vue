@@ -96,9 +96,8 @@
       <hero-photo-call src="/hero/hair4.jpg" alt="Some alt" title="Cheveux afro" />
     </div>
 
-    <dev-only>
-      <base-product-recommendations />
-    </dev-only>
+    <!-- Product Recommendations -->
+    <base-product-recommendations />
 
     <dev-only>
       <!-- VideoCall -->

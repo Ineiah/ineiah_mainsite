@@ -3,7 +3,7 @@
     <base-jumbotron src="/hero/hair7.jpg" lead="Nos prestations" subtitle="Découvrez tout ou partie de nos prestations" />
 
     <div class="px-5 md:px-10">
-      <services-section v-for="(section, index) in defaultServices" :key="section.name" :index="index" :section="section" />
+      <services-section v-for="(section, index) in serviceSectionFixtures" :key="section.name" :index="index" :section="section" />
 
       <div class="my-10">
         <card-call-to-action id="tel-services" />
@@ -13,6 +13,7 @@
 </template>
 
 <script setup lang="ts">
+import { serviceSectionFixtures } from '~/data/fixtures/services'
 import { businessDetails, defaultServices } from '~/data'
 
 definePageMeta({

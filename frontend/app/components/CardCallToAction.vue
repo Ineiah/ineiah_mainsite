@@ -1,5 +1,5 @@
 <template>
-  <div class="bg-center bg-cover bg-no-repeat" :style="{ backgroundImage: `url(/hero/hair11.jpg)` }">
+  <div class="bg-center bg-cover bg-no-repeat rounded-lg overflow-hidden" :style="{ backgroundImage: `url(/hero/hair11.jpg)` }">
     <div class="p-8 text-primary-100 dark:text-primary-50 md:p-20">
       <div class="flex-col justify-center mx-auto text-center max-w-7xl">
         <h2 class="text-5xl md:text-7xl font-bold mb-5 font-title">
@@ -8,7 +8,7 @@
           </slot>
         </h2>
 
-        <p class="text-light max-w-lg mx-auto">
+        <p class="font-light max-w-lg mx-auto">
           <slot>
             Lorem ipsum dolor sit amet, consectetur adipiscing elit. Velit enim eu lorem placerat consequat fusce
             suspendisse ornare duis eget. Varius aliquet ad non fermentum sociosqu praesent litora dolor dapibus varius.

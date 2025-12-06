@@ -1,28 +1,39 @@
 <template>
-  <volt-card :id="`service-${index + 1}`" class="relative bg-surface-200 cursor-pointer" @click="() => toggleServiceDetails()">
-    <template #content>
-      <div v-if="!showServiceDetails" ref="serviceEl" class="p-0 rounded-lg">
-        <nuxt-img src="/hero/hair12.jpg" class="aspect-square object-cover rounded-lg w-[300px]" alt="" />
+  <div :id="`service-${index + 1}`" class="relative bg-surface-200 cursor-pointer" @click="() => toggleServiceDetails()">
+    <div v-if="!showServiceDetails" ref="serviceEl" class="p-0 rounded-lg overflow-hidden">
+      <nuxt-img src="/hero/hair12.jpg" class="transition-all ease-in-out xl:hover:scale-105 xl:hover:rotate-2 aspect-square object-cover rounded-lg w-[300px]" alt="" />
 
-        <div class="absolute bottom-0 left-0 p-5 text-primary-50">
-          <p class="text-light text-sm">Coupe sur</p>
-          <p class="font-semibold uppercase">cheveux sec . <span class="font-bold">{{ service.price }}€</span></p>
+      <div class="absolute bottom-0 left-0 p-5 text-primary-50">
+        <p class="font-light text-sm">Coupe sur</p>
+        <p class="font-semibold uppercase">cheveux sec . <span class="font-bold">{{ service.price }}€</span></p>
 
-          <transition enter-active-class="animate__animated animate__zoomIn" leave-active-class="animate__animated animate__zoomOut">
-            <p v-if="isHovered">En savoir plus</p>
-          </transition>
-        </div>
+        <transition enter-from-class="opacity-0" enter-to-class="opacity-100 animate-fadeindown">
+          <div v-if="isHovered && !isMobile" class="flex items-center space-x-2">
+            <icon name="lucide:arrow-up-right" />
+            <p>En savoir plus</p>
+          </div>
+        </transition>
       </div>
+    </div>
 
-      <services-card-info v-else :index="index" :service="service" :service-section="serviceSection" />
+    <template v-else>
+      <services-card-info v-if="serviceSection" :index="index" :service="service" :service-section="serviceSection" />
+      <nuxt-skeleton v-else class="h-[300px] w-[300px] rounded-lg" />
     </template>
-  </volt-card>
+  </div>
 </template>
 
 <script setup lang="ts">
-import { serviceSectionKey, type Service, type ServiceSection } from '~/data'
+import { serviceSectionKey } from '~/data'
+import type { Service, ServiceSection } from '~/types'
 
 defineProps<{ index: number, service: Service }>()
+
+/**
+ * Mobile
+ */
+
+const isMobile = useMediaQuery('(max-width: 768px)')
 
 /**
  * Toggles
@@ -38,10 +49,10 @@ const serviceEl = useTemplateRef('serviceEl')
 const isHovered = ref(false)
 
  if (import.meta.client) {
-   onClickOutside(serviceEl, () => toggleServiceDetails(false))
+  onClickOutside(serviceEl, () => toggleServiceDetails(false))
 
-   const _isHovered = useElementHover(serviceEl)
-   syncRef(isHovered, _isHovered, { direction: 'ltr' })
+  const _isHovered = useElementHover(serviceEl)
+  syncRef(isHovered, _isHovered, { direction: 'rtl' })
  }
 
 /**

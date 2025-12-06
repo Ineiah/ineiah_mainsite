@@ -6,7 +6,7 @@
           <volt-card>
             <template #content>
               <h1 class="font-5xl">{{ error?.statusCode }}</h1>
-              <p class="font-2xl text-light">{{ error?.message }}</p>
+              <p class="font-2xl font-light">{{ error?.message }}</p>
 
               <nuxt-link-locale id="link-error" to="/" aria-label="Accueil" @click="handleError">
                 {{ 'Accueil' }}

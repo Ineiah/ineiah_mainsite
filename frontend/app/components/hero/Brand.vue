@@ -1,6 +1,6 @@
 <template>
   <div class="p-3 flex justify-center">
-    <img :alt="alt" :src="src" width="100px" />
+    <nuxt-img :alt="alt" :src="src" width="100px" />
   </div>
 </template>
 

@@ -38,7 +38,7 @@ const testImages = [
   },
   {
     name: 'Boucles naturelles',
-    image: '/testimages/jpeg/customer8.jpg'
+    image: '/testimages/jpeg/customer10.jpg'
   },
   {
     name: 'Coupe pixie moderne',
@@ -62,15 +62,15 @@ const testImages = [
   },
   {
     name: 'Coupe chignon',
-    image: '/testimages/jpeg/customer1.jpg'
+    image: '/testimages/jpeg/customer15.jpg'
   },
   {
     name: 'Coupe afro',
-    image: '/hero/hair7.jpg'
+    image: '/testimages/jpeg/customer11.jpg'
   },
   {
     name: 'Coupe undercut',
-    image: '/hero/hair9.jpg'
+    image: '/testimages/jpeg/customer14.jpg'
   },
   {
     name: 'Coupe bob asymétrique',

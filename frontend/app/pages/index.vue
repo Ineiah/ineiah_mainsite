@@ -7,7 +7,7 @@
 
     <!-- Intermediate-1 -->
     <div class="p-5 md:p-15 overflow-hidden">
-      <div class="grid grid-cols-1 md:grid-cols-2 gap-10">
+      <div class="grid grid-cols-1 xl:grid-cols-2 gap-10">
         <div class="transition-all ease-in has-[img]:hover:zoom-in-20">
           <client-only>
             <nuxt-img v-motion-slide-visible-left :delay="200" src="/hero/hair10.jpg" class="rounded-lg aspect-square object-cover" alt="" />
@@ -43,7 +43,7 @@
     </div>
 
     <!-- Intermediate-2 -->
-    <div class="grid grid-cols-1 md:grid-cols-2 auto-rows-min mt-10 bg-primary-500 dark:bg-primary-700 dark:text-primary-200 overflow-hidden">
+    <div class="grid grid-cols-1 xl:grid-cols-2 auto-rows-min mt-10 bg-primary-500 dark:bg-primary-700 dark:text-primary-200 overflow-hidden">
       <div class="items-center md:flex md:p-10">
         <div class="p-10 text-center md:text-left md:max-w-lg">
           <client-only>

@@ -1,7 +1,7 @@
 <template>
   <volt-card class="bg-surface-500/10 has-[p]:leading-8">
     <template #content>
-      <div class="grid md:grid-rows-1 md:grid-cols-2 gap-10">
+      <div class="grid grid-cols-1 xl:grid-cols-2 gap-10">
         <div v-show="!invert">
           <nuxt-img src="/hero/hair10.jpg" class="aspect-square object-cover rounded-lg" alt="" />
         </div>

@@ -2,11 +2,27 @@
   <footer class="relative bg-primary-800 dark:bg-primary-900 w-full">
     <div class="w-full px-8 mx-auto max-w-7xl">
       <div class="grid justify-between grid-cols-1 gap-4 p-10 md:grid-cols-2 md:p-20">
-        <nuxt-link-locale to="/">
-          <h5 class="mb-6 text-xl font-semibold text-primary-100 dark:text-primary-200 uppercase">
-            {{ businessDetails.legalName }}
-          </h5>
-        </nuxt-link-locale>
+        <div class="mb-5 md:mb-0">
+          <nuxt-link-locale to="/">
+            <h5 class="mb-6 text-xl font-semibold text-primary-100 dark:text-primary-200 uppercase">
+              {{ businessDetails.legalName }}
+            </h5>
+          </nuxt-link-locale>
+          
+          <div class="flex gap-2">
+            <nuxt-link-locale to="/" locale="fr">
+              <volt-secondary-button>
+                <icon name="i-circle-flags:fr" />
+              </volt-secondary-button>
+            </nuxt-link-locale>
+  
+            <nuxt-link-locale to="/" locale="en">
+              <volt-secondary-button>
+                <icon name="i-circle-flags:uk" />
+              </volt-secondary-button>
+            </nuxt-link-locale>
+          </div>
+        </div>
 
         <div class="grid justify-between grid-rows-2 grid-cols-none gap-4 md:grid-cols-2 md:grid-rows-none">
           <ul v-for="(section, idx) in footer.sections" :id="`footer-section-${idx + 1}`" :key="section.title">

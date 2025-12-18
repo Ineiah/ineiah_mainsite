@@ -146,6 +146,8 @@ export default defineNuxtConfig({
     pages: {
       'nos-prestations': { fr: '/nos-prestations', en: '/our-services' },
       'notre-histoire': { fr: '/notre-histoire', en: '/our-story' },
+      'galerie': { fr: '/galerie', en: '/gallery' },
+      'faq': { fr: '/faq', en: '/faq' },
       'contact': { fr: '/contact', en: '/contact' }
     },
     locales: [

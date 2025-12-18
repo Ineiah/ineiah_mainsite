@@ -18,7 +18,7 @@
               <p>Dénomination ou raison sociale: {{ businessDetails.legalName }}</p>
               <p>Adresse du siège social: {{ businessDetails.address }}</p>
               <p>Capital social : {{ businessDetails.shareCapital || '-' }}</p>
-              <p>Numéro d'identification au Registre du Commerce et des Sociétés (RCS) : {{ businessDetails.rcs }}</p>
+              <p>Numéro d'identification au Registre du Commerce et des Sociétés (RCS) : {{ businessDetails.rcs || '-' }}</p>
             </div>
 
             <div class="my-2 has-[p]:mb-5">

@@ -10,11 +10,8 @@
 
         <p class="font-light max-w-lg mx-auto">
           <slot>
-            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Velit enim eu lorem placerat consequat fusce
-            suspendisse ornare duis eget. Varius aliquet ad non fermentum sociosqu praesent litora dolor dapibus varius.
-            Quisque pellentesque vivamus odio taciti risus rutrum ipsum lacus eleifend erat. Ornare congue mauris habitant
-            vestibulum platea pretium feugiat pharetra primis dictumst. Blandit quam vestibulum ante class nec convallis
-            orci etiam vestibulum netus. Phasellus laoreet faucibus vel ac natoque vel fermentum accumsan taciti enim.
+            Un simple appel suffit pour échanger, poser tes questions et réserver ton moment. 
+            Parlons de tes cheveux, de tes envies, et créons ensemble le style qui te ressemble.
           </slot>
         </p>
 

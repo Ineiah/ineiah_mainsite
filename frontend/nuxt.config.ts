@@ -182,9 +182,9 @@ export default defineNuxtConfig({
     identity: defineOrganization({
       '@type': 'HairSalon',
       name: "La beauté d'Inéïah",
-      legalName: 'Inéïah',
+      legalName: 'Société Morel',
       alternateName: 'Inéïah Beauté',
-      description: 'Institut de beauté spécialisé en soins naturels et bien-être à Lille.',
+      description: 'Salon de coiffure multiculturel spécialisé dans tous types de cheveux : crépus, bouclés, lisses. Soins, coupes et styles sur-mesure.',
       logo: 'https://example.com/logo.png',
       sameAs: [
         'https://www.facebook.com/ineiah',
@@ -196,21 +196,21 @@ export default defineNuxtConfig({
         'https://yourdomain.com/images/service-coloring.jpg'
       ],
       priceRange: '$$',
-      foundingDate: '2022-05-01',
+      foundingDate: '2013-01-28',
       foundingLocation: {
         '@type': 'Place',
         name: 'Lille, France'
       },
       founder: {
         '@type': 'Person',
-        name: 'Natasha Mory',
+        name: 'Natacha Morel',
         jobTitle: 'Founder & CEO',
-        description: 'Natasha Morel is a certified hair stylist and wellness expert with over 10 years of experience in the beauty industry.',
-        image: 'https://yourdomain.com/images/founder-natasha.jpg',
+        description: "Natacha Morel est une coiffeuse certifiée et experte en bien-être avec plus de 10 ans d'expérience dans l'industrie de la beauté.",
+        image: 'https://yourdomain.com/images/founder-natacha.jpg',
         url: 'https://yourdomain.com/about',
         sameAs: [
-          'https://www.linkedin.com/in/natashamory',
-          'https://www.instagram.com/natasha.mory'
+          'https://www.linkedin.com/in/natachamorel',
+          'https://www.instagram.com/natacha.morel'
         ],
         worksFor: {
           '@type': 'Organization',

@@ -47,7 +47,13 @@
 </template>
 
 <script setup lang="ts">
-import { businessDetails, policies } from '~/data'
+import { businessDetails, loadPolicies } from '~/data'
+
+const policies = await loadPolicies()
+
+/**
+ * SEO Meta
+ */
 
 const i18n = useI18n()
 

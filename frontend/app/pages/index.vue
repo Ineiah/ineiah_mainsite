@@ -59,7 +59,7 @@
 
           <nuxt-link-locale to="/notre-histoire">
             <volt-button size="large" class="mt-10" rounded>
-              Découvrir
+              {{ $t("Découvrir") }}
               <icon name="fa7-solid:arrow-right" />
             </volt-button>
           </nuxt-link-locale>
@@ -76,7 +76,7 @@
     <!-- Brands -->
     <div class="my-5 md:p-10">
       <h3 class="text-center text-3xl font-bold text-primary-500 mb-5 md:mb-0">
-        Nos marques
+        {{ $t('Nos marques partenaires') }}
       </h3>
 
       <div class="grid grid-cols-2 grid-rows-2 gap-4 md:grid-cols-4 md:grid-rows-none md:p-10">

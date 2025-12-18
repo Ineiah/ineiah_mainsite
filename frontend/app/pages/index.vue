@@ -21,17 +21,15 @@
             </h2>
 
             <p>
-              Lorem ipsum dolor sit amet consectetur adipisicing elit.
-              Perspiciatis accusamus possimus, consequuntur totam minus et, eaque placeat quo
-              tempora voluptatem saepe praesentium animi, asperiores exercitationem commodi!
-              Facere maiores quidem minima.
+              Ici, chaque rendez-vous est un moment pour soi. On prend le temps de t’écouter, de 
+              comprendre tes cheveux, ton style et ton histoire. Que tes cheveux soient crépus, bouclés ou lisses, 
+              tu repars avec bien plus qu’une coiffure : confiance, bien-être et une vraie reconnexion à toi-même.
             </p>
 
             <p>
-              Lorem ipsum dolor sit amet consectetur adipisicing elit.
-              Perspiciatis accusamus possimus, consequuntur totam minus et, eaque placeat quo
-              tempora voluptatem saepe praesentium animi, asperiores exercitationem commodi!
-              Facere maiores quidem minima.
+              Au-delà du résultat, c’est l’expérience qui compte : un espace bienveillant, sans jugement, où chaque 
+              texture est respectée et chaque personne valorisée. Un lieu où tu peux enfin te sentir comprise, libre d’être toi, 
+              et pleinement mise en lumière.
             </p>
 
             <div id="cta-1" class="mt-10">
@@ -53,9 +51,10 @@
           </client-only>
 
           <p class="font-light">
-            Lorem ipsum dolor sit amet, consectetur adipisicing elit.
-            Omnis obcaecati beatae velit ipsa quos sapiente at sunt. Ut blanditiis
-            dolorem, magnam animi, doloribus error dolores possimus quia eos voluptatum in!
+            Notre histoire, c’est avant tout une histoire humaine. Une histoire de passion, de transmission et 
+            d’amour du cheveu sous toutes ses formes. Derrière chaque geste se cache un parcours, une vision et l’envie 
+            profonde de créer un lieu où chacun peut se sentir reconnu, respecté et valorisé. Découvre comment cette aventure 
+            est née et ce qui l’anime au quotidien.
           </p>
 
           <nuxt-link-locale to="/notre-histoire">

@@ -2,11 +2,11 @@
   <div ref="heroEl" class="w-full h-[98vh] bg-center bg-no-repeat bg-cover flex items-center" :style="{ backgroundImage: `url(/testimages/jpeg/customer18.jpg)` }">
     <div id="lead" class="md:max-w-5xl md:mx-auto text-left md:text-center text-primary-50 dark:text-primary-200 p-5 md:p-10">
       <h1 class="text-6xl md:text-7xl dark:text-primary-200 font-bold mb-5 animate animate-fade-up">
-        Sublime ta singularité
+        Ici, on coiffe tous les cheveux
       </h1>
 
       <p class="text-2xl font-normal dark:text-primary-200">
-        Lorem ipsum dolor sit, amet consectetur adipisicing elit. Maiores, consectetur. Alias saepe assumenda numquam inventore vel
+        Cheveux crépus, bouclés, lisses ou texturés ? Chaque chevelure est célébrée
       </p>
 
       <div class="flex flex-wrap justify-start md:flex-nowrap md:justify-center items-center md:space-x-5">

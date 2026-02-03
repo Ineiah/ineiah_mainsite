@@ -105,3 +105,20 @@ export const businessDetails: BusinessDetails = {
     }
   }
 }
+
+type BusinessDetailsKeys = keyof BusinessDetails
+
+type BusinessDetailsKeyValue = {
+  [K in BusinessDetailsKeys]: BusinessDetails[K]
+}
+
+export async function useBusinessDetails() {
+  function get<K extends BusinessDetailsKeys>(key: K): BusinessDetailsKeyValue[K] {
+    return businessDetails[key]
+  }
+
+  return {
+    businessDetails,
+    get
+  }
+}

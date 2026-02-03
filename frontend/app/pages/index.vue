@@ -10,14 +10,15 @@
       <div class="grid grid-cols-1 xl:grid-cols-2 gap-10">
         <div class="transition-all ease-in has-[img]:hover:zoom-in-20">
           <client-only>
-            <nuxt-img v-motion-slide-visible-left :delay="200" src="/hero/hair10.jpg" class="rounded-lg aspect-square object-cover" alt="" />
+            <nuxt-img v-motion-slide-visible-left :delay="200" src="/kira/DSC05436.jpg" class="rounded-lg aspect-square object-cover w-full" alt="" />
           </client-only>
         </div>
 
         <client-only>
           <div v-motion-slide-visible-right :delay="400" class="flex flex-col justify-center dark:text-primary-200">
             <h2 class="text-5xl font-bold mb-10 text-primary-500 font-title leading-15">
-              Plus q'un salon, une <span class="text-primary-800 dark:text-primary-400">expérience</span> de vie
+              <!-- Plus q'un salon, une <span class="text-primary-800 dark:text-primary-400">expérience</span> de vie -->
+               La coiffure pensée pour <span class="text-primary-800 dark:text-primary-400">tous</span> les types de cheveux
             </h2>
 
             <p>
@@ -68,7 +69,7 @@
 
       <div class="h-auto">
         <client-only>
-          <nuxt-img v-motion-fade-visible :delay="600" src="/hero/hair10.jpg" class="aspect-square object-cover w-full" alt="" />
+          <nuxt-img v-motion-fade-visible :delay="600" src="/kira/DSC05626.jpg" class="aspect-square object-cover w-full" alt="" />
         </client-only>
       </div>
     </div>

@@ -16,19 +16,11 @@ export const faqList: FAQSection[] = [
     questions: [
       {
         question: 'Comment prendre rendez-vous ?',
-        answer: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Metus tempus velit mi tincidunt auctor mus urna. Condimentum bibendum justo malesuada nostra diam vitae proin.'
+        answer: 'Vous pouvez prendre rendez-vous directement en ligne via le numéro indiqué sur notre site ou par email.'
       },
       {
         question: 'Puis-je prendre rendez-vous par téléphone ou par message ?',
-        answer: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Metus tempus velit mi tincidunt auctor mus urna. Condimentum bibendum justo malesuada nostra diam vitae proin.'
-      },
-      {
-        question: 'Quand le planning s’ouvre-t-il ?',
-        answer: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Metus tempus velit mi tincidunt auctor mus urna. Condimentum bibendum justo malesuada nostra diam vitae proin.'
-      },
-      {
-        question: 'Que faire si aucune date n’est disponible ?',
-        answer: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Metus tempus velit mi tincidunt auctor mus urna. Condimentum bibendum justo malesuada nostra diam vitae proin.'
+        answer: 'Oui, vous pouvez également prendre rendez-vous par téléphone ou par message en utilisant les coordonnées fournies sur notre site.'
       }
     ]
   },
@@ -38,15 +30,15 @@ export const faqList: FAQSection[] = [
     questions: [
       {
         question: "Dois-je payer à l'avance ?",
-        answer: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Metus tempus velit mi tincidunt auctor mus urna. Condimentum bibendum justo malesuada nostra diam vitae proin.'
+        answer: "Oui. Le paiement à l'avance est requis pour confirmer votre rendez-vous. Le montant de l'acompte sera déduit du total de votre service le jour du rendez-vous et s'élève à 30€."
       },
       {
         question: "Proposez-vous le paiement en plusieurs fois ?",
-        answer: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Metus tempus velit mi tincidunt auctor mus urna. Condimentum bibendum justo malesuada nostra diam vitae proin.'
+        answer: 'Oui, nous proposons le paiement en 3 fois sans frais pour les services supérieurs à 150€. Veuillez nous contacter pour plus de détails.'
       },
       {
         question: "J’ai payé mon acompte, mais je dois annuler. Est-ce remboursable ?",
-        answer: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Metus tempus velit mi tincidunt auctor mus urna. Condimentum bibendum justo malesuada nostra diam vitae proin.'
+        answer: "L'acompte n'est généralement pas remboursable en cas d'annulation. Veuillez consulter nos conditions d'annulation pour plus de détails."
       }
     ]
   },
@@ -56,11 +48,11 @@ export const faqList: FAQSection[] = [
     questions: [
       {
         question: 'Dois-je venir les cheveux lavés ?',
-        answer: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Metus tempus velit mi tincidunt auctor mus urna. Condimentum bibendum justo malesuada nostra diam vitae proin.'
+        answer: 'Il est préférable de venir les cheveux propres et démêlés pour votre rendez-vous afin de garantir les meilleurs résultats possibles.'
       },
       {
         question: 'Je ne suis pas sûre de ce que je veux, puis-je venir pour un conseil ?',
-        answer: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Metus tempus velit mi tincidunt auctor mus urna. Condimentum bibendum justo malesuada nostra diam vitae proin.'
+        answer: 'Oui, vous pouvez venir pour un conseil afin de discuter de vos besoins et de vos préférences avec moi. Le rendez-vous de conseil peut être facturé séparément. Le montant pour une séance de conseil est de 15€.'
       }
     ]
   },
@@ -70,7 +62,7 @@ export const faqList: FAQSection[] = [
     questions: [
       {
         question: 'Prenez-vous les mineur(e)s ?',
-        answer: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Metus tempus velit mi tincidunt auctor mus urna. Condimentum bibendum justo malesuada nostra diam vitae proin.'
+        answer: 'Les mineur(e)s sont les bienvenu(e)s, mais doivent être accompagné(e)s d’un(e) parent ou tuteur(trice) légal(e) qui devra signer une autorisation parentale avant le début du rendez-vous.'
       }
     ]
   }

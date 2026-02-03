@@ -10,7 +10,7 @@
       <div class="grid grid-cols-1 xl:grid-cols-2 gap-10">
         <div class="transition-all ease-in has-[img]:hover:zoom-in-20">
           <client-only>
-            <nuxt-img v-motion-slide-visible-left :delay="200" src="/kira/DSC05436.jpg" class="rounded-lg aspect-square object-cover w-full" alt="" />
+            <nuxt-img v-motion-slide-visible-left :delay="200" src="/kira/DSC05656.jpg" class="rounded-lg aspect-square object-cover w-full" alt="" />
           </client-only>
         </div>
 

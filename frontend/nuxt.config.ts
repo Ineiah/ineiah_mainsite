@@ -192,9 +192,9 @@ export default defineNuxtConfig({
       description: 'Salon de coiffure multiculturel spécialisé dans tous types de cheveux : crépus, bouclés, lisses. Soins, coupes et styles sur-mesure.',
       logo: 'https://example.com/logo.png',
       sameAs: [
-        'https://www.facebook.com/ineiah',
-        'https://www.instagram.com/ineiah',
-        'https://www.linkedin.com/company/ineiah'
+        'https://fr.pinterest.com/labeautedineiah',
+        'https://facebook.com/labeautedineiah',
+        'https://www.instagram.com/ineiah'
       ],
       image: [
         'https://yourdomain.com/images/service-haircut.jpg',
@@ -214,8 +214,7 @@ export default defineNuxtConfig({
         image: 'https://yourdomain.com/images/founder-natacha.jpg',
         url: 'https://yourdomain.com/about',
         sameAs: [
-          'https://www.linkedin.com/in/natachamorel',
-          'https://www.instagram.com/natacha.morel'
+          'https://www.instagram.com/ineiah'
         ],
         worksFor: {
           '@type': 'Organization',

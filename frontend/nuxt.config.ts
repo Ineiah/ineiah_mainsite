@@ -130,7 +130,7 @@ export default defineNuxtConfig({
 
   ganalytics: {
     ga4: {
-      id: 'G-JX1R9P5Y54',
+      id: 'G-LK89FQLZWP',
       enableDebug: true
     },
     gtm: {

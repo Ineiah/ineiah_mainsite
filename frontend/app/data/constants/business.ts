@@ -41,8 +41,11 @@ export interface BusinessDetails {
   priceRange: '$' | '$$' | '$$$'
   foundingDate: string
   foundingLocation: string
+  founderImage: Nullable<string>
   shareCapital: Nullable<string>
   founder: string
+  founderDescription: string
+  founderKnowsAbout: string[]
   webContentManager: string
   publishingDirector: string
   editorInChief: string
@@ -75,8 +78,16 @@ export const businessDetails: BusinessDetails = {
   priceRange: '$$',
   foundingDate: '2013-01-28',
   foundingLocation: 'Lille, France',
+  founderImage: null,
   shareCapital: null,
   founder: 'Natacha Morel',
+  founderDescription: "Natacha Morel est une coiffeuse certifiée et experte en bien-être avec plus de 20 ans d'expérience dans l'industrie de la beauté.",
+  founderKnowsAbout: [
+    'Cheveux crépus',
+    'Cheveux bouclés',
+    'Coiffure multiculturelle',
+    'Soins capillaires'
+  ],
   webContentManager: 'Natacha Morel',
   publishingDirector: 'Natacha Morel',
   editorInChief: 'Natacha Morel',

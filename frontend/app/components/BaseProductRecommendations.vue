@@ -9,7 +9,7 @@
         <template #content>
           <div class="grid grid-cols-2 md:grid-cols-1 md:items-center md:text-center">
             <a :href="recommendation.url" target="_blank" rel="noopener noreferrer">
-              <nuxt-img :src="recommendation.image" :alt="`${businessDetails.legalName} recommande ${recommendation.name}`" />
+              <nuxt-img :src="recommendation.image" :alt="`${get('legalName')} recommande ${recommendation.name}`" />
             </a>
 
             <div class="flex-row content-center">
@@ -27,7 +27,9 @@
 </template>
 
 <script setup lang="ts">
-import { businessDetails } from '~/data'
+import { businessDetails, useBusinessDetails } from '~/data'
+
+const { get } = await useBusinessDetails()
 
 interface Recommendation {
   name: string

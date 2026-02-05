@@ -57,4 +57,19 @@ defineOgImageComponent('NuxtSeo', {
   theme: '#ff0000',
   colorMode: 'dark',
 })
+
+useSchemaOrg(
+  [
+    defineBreadcrumb({
+      itemListElement: [
+        {
+          '@type': 'ListItem',
+          position: 2,
+          name: titles[i18n.locale.value],
+          item: `${useBrowserLocation().value.origin}${useRoute().fullPath}`
+        }
+      ]
+    })
+  ]
+)
 </script>

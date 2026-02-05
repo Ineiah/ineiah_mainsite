@@ -17,7 +17,7 @@
 
               <div class="flex justify-end">
                 <volt-button id="submit-contact-us" :disabled="true" class="my-10 place-self-start" rounded @click="handleSendMessage">
-                  Soumettre
+                  {{ $t("Soumettre") }}
                 </volt-button>
               </div>
             </form>
@@ -33,31 +33,26 @@
 
           <volt-card class="mt-5 bg-surface-100 shadow-none">
             <template #content>
-              <p class="font-bold uppercase text-primary-500 dark:text-primary-200">Natasha Morel</p>
-              <p>{{ businessDetails.address }}</p>
+              <p class="font-bold uppercase text-primary-500 dark:text-primary-200">{{ get('legalName') }}</p>
+              <p>{{ get('address') }}</p>
 
-              <p class="font-light mt-5 italic">Du Lundi au Vendredi - Déplacement à domicile</p>
+              <p class="font-light mt-5 italic">{{ $t("Du Lundi au Vendredi - Déplacement à domicile") }}</p>
 
-              <div class="space-x-2">
-                <a href="tel:+33">
-                  <volt-button id="tel-contact-us" class="mt-5" rounded>
-                    <Icon name="fa-solid:phone" />
-                    Téléphone
-                  </volt-button>
-                </a>
+              <div class="space-x- flex gap-2 mt-5">
+                <base-telephone-button size="large" />
 
-                <a href="mail:example@gmail.com">
-                  <volt-button id="email-contact-us" class="mt-5" rounded>
+                <a :href="`mailto:${get('contact').email}`">
+                  <volt-button id="email-contact-us" size="large" class="mt-5" rounded>
                     <Icon name="fa-solid:envelope" />
-                    Email
+                    {{ $t("Email") }}
                   </volt-button>
                 </a>
               </div>
 
               <div class="inline-flex gap-2 mt-5 shadow-none">
-                <a v-for="social in footer.socials" :id="`social-${social.name.toLowerCase()}`" :key="social.name" :href="social.url" target="_blank">
+                <a v-for="social in activeSocials" :id="`social-${social}`" :key="social" :href="getSocial(social)?.url" target="_blank">
                   <volt-secondary-button size="small" rounded>
-                    <icon :name="`fa-brands:${social.icon}`" :alt="`${businessDetails.name} - ${social.name}`" class="text-brand-500" size="20" />
+                    <icon :name="getSocialIcon(social)" :alt="`${get('legalName')} - ${social}`" class="text-brand-500" size="20" />
                   </volt-secondary-button>
                 </a>
               </div>
@@ -71,12 +66,14 @@
 
 <script setup lang="ts">
 import { doc, setDoc } from 'firebase/firestore'
-import { businessDetails, footer } from '~/data'
+import { businessDetails, footer, useBusinessDetails } from '~/data'
 import type { PageTitleOrDescription } from '~/types'
 
 definePageMeta({
   title: 'Contact'
 })
+
+const { get, activeSocials, getSocialIcon, getSocial } = await useBusinessDetails()
 
 /**
  * Contact form

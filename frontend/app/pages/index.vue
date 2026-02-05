@@ -47,7 +47,7 @@
     </div>
 
     <!-- Intermediate-2 -->
-    <div class="grid grid-cols-1 xl:grid-cols-2 auto-rows-min mt-10 bg-primary-500 dark:bg-primary-700 dark:text-primary-200 overflow-hidden">
+    <div class="grid grid-cols-1 md:grid-cols-2 auto-rows-min mt-10 bg-primary-500 dark:bg-primary-700 dark:text-primary-200 overflow-hidden">
       <div class="items-center md:flex md:p-10">
         <div class="p-10 text-center md:text-left md:max-w-lg">
           <client-only>
@@ -74,7 +74,7 @@
 
       <div class="h-auto">
         <client-only>
-          <nuxt-img v-motion-fade-visible :delay="600" src="/kira/DSC05626.jpg" class="aspect-square object-cover w-full" alt="" />
+          <nuxt-img v-motion-fade-visible :delay="600" :alt="get('founder')" src="/kira/DSC05626.jpg" class="aspect-square object-cover h-full xl:w-full" />
         </client-only>
       </div>
     </div>
@@ -204,7 +204,7 @@ definePageMeta({
  * Socials
  */
 
-const { getSocial, reactiveGet } = await useBusinessDetails()
+const { getSocial, reactiveGet, get } = await useBusinessDetails()
 const legalName = reactiveGet('legalName')
 
 /**

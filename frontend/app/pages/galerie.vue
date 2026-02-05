@@ -14,7 +14,7 @@
             <volt-input-text v-model="search" :placeholder="$t('Rechercher une coupe ou un style')" class="w-full md:w-100" />
             
             <div class="hidden justify-start gap-2 xl:flex">
-              <volt-tag v-for="idx in 5" :key="idx" value="Cheveux italiens" class="cursor-pointer" severity="contrast" />
+              <volt-tag v-for="keyword in keywords.slice(0, 4)" :key="keyword" :value="keyword" class="cursor-pointer" severity="contrast" @click="() => search = keyword" />
             </div>
           </div>
         </div>
@@ -27,82 +27,18 @@
 </template>
 
 <script setup lang="ts">
-import { faqList, useBusinessDetails } from '~/data'
-import type { Arrayable, GalleryImage, PageTitleOrDescription } from '~/types'
+import { faqList, useBusinessDetails, useImageGallery } from '~/data'
+import type { PageTitleOrDescription } from '~/types'
 
 definePageMeta({
   title: 'Gallery'
 })
 
-const testImages: Arrayable<GalleryImage> = [
-  {
-    name: 'Lissage brésilien',
-    image: '/hero/hair6.jpg'
-  },
-  {
-    name: 'Boucles naturelles',
-    image: '/testimages/jpeg/customer10.jpg'
-  },
-  {
-    name: 'Coupe pixie moderne',
-    image: '/hero/hair10.jpg'
-  },
-  {
-    name: 'Brushing volumineux',
-    image: '/testimages/jpeg/customer18.jpg'
-  },
-  {
-    name: 'Coupe dégradée',
-    image: '/testimages/jpeg/customer6.jpg'
-  },
-  {
-    name: 'Chignon élégant',
-    image: '/hero/hair12.jpg'
-  },
-  {
-    name: 'Nom de la coupe',
-    image: '/hero/hair6.jpg'
-  },
-  {
-    name: 'Coupe chignon',
-    image: '/testimages/jpeg/customer15.jpg'
-  },
-  {
-    name: 'Coupe afro',
-    image: '/testimages/jpeg/customer11.jpg'
-  },
-  {
-    name: 'Coupe undercut',
-    image: [
-      '/testimages/jpeg/customer13.jpg',
-      '/testimages/jpeg/customer14.jpg',
-      '/testimages/jpeg/customer17.jpg'
-    ]
-  },
-  {
-    name: 'Coupe bob asymétrique',
-    image: '/hero/hair10.jpg'
-  },
-  {
-    name: 'Coupe tresse',
-    image: [
-      '/testimages/jpeg/customer4.jpg',
-      '/testimages/jpeg/customer5.jpg'
-    ]
-  }
-]
+/**
+ * Images
+ */
 
-const search = ref('')
-
-const filteredImages = computed(() => {
-  return testImages.filter(img => img.name.toLowerCase().includes(search.value.toLowerCase())) // Currently returns all images
-})
-
-// const imagesNames = computed(() => new Set(testImages.map(img => img.name)))
-
-// function setSearch(name: string) {
-//   search.value = name
-// }
+const { images, search, filteredImages, keywords } = useImageGallery()
 
 /**
  * SEO
@@ -130,26 +66,35 @@ useSeoMeta({
   ogImage: 'https://dev-client.gency313.fr/hero/hair1.jpg'
 })
 
-const questionsList = computed(() => faqList.flatMap(x => [...x.questions]))
-
-useSchemaOrg([
-  {
-    '@type': 'FAQPage',
-    mainEntity: questionsList.value.map(item => ({
-      '@type': 'Question',
-      name: item.question,
-      acceptedAnswer: {
-        '@type': 'Answer',
-        text: item.answer
-      }
-    }))
-  }
-])
-
 defineOgImageComponent('NuxtSeo', {
   title: titles[i18n.locale.value],
   description: descriptions[i18n.locale.value],
   theme: '#ff0000',
   colorMode: 'dark'
 })
+
+useSchemaOrg(
+  [
+    {
+      '@type': 'ImageGallery',
+      name: titles[i18n.locale.value],
+      description: descriptions[i18n.locale.value],
+      image: images.value.map(img => ({
+        '@type': 'ImageObject',
+        url: img.image,
+        name: img.name
+      }))
+    },
+    defineBreadcrumb({
+      itemListElement: [
+        {
+          '@type': 'ListItem',
+          position: 2,
+          name: titles[i18n.locale.value],
+          item: `${useBrowserLocation().value.origin}${useRoute().fullPath}`
+        }
+      ]
+    })
+  ]
+)
 </script>

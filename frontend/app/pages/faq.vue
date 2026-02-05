@@ -92,7 +92,17 @@ useSchemaOrg([
         text: item.answer
       }
     }))
-  }
+  },
+  defineBreadcrumb({
+    itemListElement: [
+      {
+        '@type': 'ListItem',
+        position: 2,
+        name: titles[i18n.locale.value],
+        item: `${useBrowserLocation().value.origin}${useRoute().fullPath}`
+      }
+    ]
+  })
 ])
 
 defineOgImageComponent('NuxtSeo', {

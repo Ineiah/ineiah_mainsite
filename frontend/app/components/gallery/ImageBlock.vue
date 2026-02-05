@@ -1,8 +1,8 @@
 <template>
-  <div ref="imageEl" :class="theme" class="group overflow-hidden rounded-xl transition-all duration-300 relative cursor-pointer">
+  <article ref="imageEl" :class="theme" class="group overflow-hidden rounded-xl transition-all duration-300 relative cursor-pointer">
     <!-- Image -->
     <gallery-slider v-if="isSlider" :images="image.image" />
-    <nuxt-img v-else :src="typeof image.image === 'string' && image.image" class="hover:scale-105 hover:rotate-2 transition-all ease-in-out aspect-square object-cover w-full" alt="" @click.stop="() => toggleSelected()" />
+    <nuxt-img v-else :src="typeof image.image === 'string' ? image.image : ''" :alt="`Cliente de ${get('legalName')}`" class="hover:scale-105 hover:rotate-2 transition-all ease-in-out aspect-square object-cover w-full" @click.stop="() => toggleSelected()" />
 
     <!-- Mask -->
     <!-- <div v-if="isHovered && !isSelected && !isMobile" class="bg-primary-900/10 absolute top-0 left-0 w-full h-full" @click.stop="() => toggleSelected()" /> -->
@@ -11,7 +11,7 @@
     <div class="absolute left-5 bottom-5 space-y-1">
       <h3 class="text-primary-100 text-xl font-semibold">{{ image.name }}</h3>
       <transition enter-from-class="opacity-0" enter-to-class="opacity-100 animate-fadeindown">
-        <p v-if="isHovered && !isMobile" class="text-primary-50 text-sm font-thin">En savoir plus
+        <p v-if="isHovered && !isMobile" class="text-primary-50 text-sm font-thin">{{ $t("En savoir plus") }}
           <icon name="i-fa6:fullscreen" />
         </p>
       </transition>
@@ -27,14 +27,17 @@
         </volt-secondary-button>
       </div>
     </div>
-  </div>
+  </article>
 </template>
 
 <script setup lang="ts">
 import { Share } from '@capacitor/share'
+import { useBusinessDetails } from '~/data'
 import type { GalleryImage } from '~/types'
 
 const props = defineProps<{ image: GalleryImage }>()
+
+const { get } = await useBusinessDetails()
 
 /**
  * Slider

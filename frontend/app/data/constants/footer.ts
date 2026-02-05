@@ -17,6 +17,9 @@ export interface FooterSection {
     title: string
     links: FooterLinks[]
   }[]
+  /**
+   * @deprecated
+   */
   socials: SocialLinks[]
 }
 
@@ -87,9 +90,6 @@ export const footer: FooterSection = {
       ]
     }
   ],
-  /**
-   * @deprecated
-   */
   socials: [
     {
       name: 'Facebook',

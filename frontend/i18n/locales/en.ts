@@ -93,5 +93,9 @@ export default defineI18nLocale(async _locale => {
     "Mixte": "Mixed",
     'Transformation': 'Transformation',
     "L'art de coiffer toutes les textures": "The art of styling all textures",
+    "Du Lundi au Vendredi - Déplacement à domicile": "Monday to Friday - Home service",
+    "Soumettre": "Submit",
+    "Email": "Email",
+    "Téléphone": "Phone",
   }
 })

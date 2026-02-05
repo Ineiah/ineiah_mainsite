@@ -1,7 +1,7 @@
 import { useBusinessDetails, useServices } from "~/data"
 
 export default defineNuxtPlugin(async () => {
-  const { get } = await useBusinessDetails()
+  const { get, getSocial } = await useBusinessDetails()
   const { services } = useServices()
 
   useSchemaOrg(
@@ -130,6 +130,55 @@ export default defineNuxtPlugin(async () => {
             }
           }
         ]
+      }),
+
+      defineWebSite({
+        '@type': 'WebSite',
+        '@id': useRuntimeConfig().public.prodDomain + '#website',
+        url: useRuntimeConfig().public.prodDomain,
+        name: get('legalName'),
+        description: get('description'),
+        publisher: {
+          '@id': useRuntimeConfig().public.prodDomain + '#organization'
+        },
+        potentialAction: {
+          '@type': 'SearchAction',
+          target: {
+            '@type': 'EntryPoint',
+            urlTemplate: useRuntimeConfig().public.prodDomain + '/search?q={search_term_string}'
+          },
+          'query-input': 'required name=search_term_string'
+        }
+      }),
+
+      defineBreadcrumb({
+        '@type': 'BreadcrumbList',
+        itemListElement: [
+          {
+            '@type': 'ListItem',
+            position: 1,
+            name: 'Accueil',
+            item: useRuntimeConfig().public.prodDomain + '/'
+          }
+        ]
+      }),
+
+      definePerson({
+        '@type': 'Person',
+        name: get('founder'),
+        jobTitle: 'Coiffeuse professionnelle & Fondatrice',
+        description: get('founderDescription'),
+        image: get('founderImage'),
+        url: useRuntimeConfig().public.prodDomain + '/notre-histoire',
+        sameAs: [
+            getSocial('instagram')?.url,
+            getSocial('facebook')?.url
+        ],
+        worksFor: {
+          '@type': 'Organization',
+          '@id': useRuntimeConfig().public.prodDomain + '#organization',
+        },
+        knowsAbout: get('founderKnowsAbout')
       })
     ]
   )

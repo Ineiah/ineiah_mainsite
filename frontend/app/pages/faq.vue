@@ -29,7 +29,7 @@
         </div>
       </div>
 
-      <card-call-to-action id="tel-faq-section" class="mt-15">
+      <card-call-to-action id="tel-call-us-faq" class="mt-15">
         <template #title>
           {{ $t('Des questions ?') }}
         </template>

@@ -17,7 +17,7 @@
       <StoryCard class="shadow-none" />
 
       <div class="mt-10">
-        <card-call-to-action id="tel-story" />
+        <card-call-to-action id="tel-call-us-story" />
       </div>
     </div>
   </section>

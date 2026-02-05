@@ -26,7 +26,7 @@
               </ul>
             </div>
 
-            <base-telephone-button class="hidden md:flex ml-auto" />
+            <base-telephone-button id="tel-call-us-navbar" class="hidden md:flex ml-auto" />
           </div>
         </div>
       </div>

@@ -39,7 +39,7 @@
               <p class="font-light mt-5 italic">{{ $t("Du Lundi au Vendredi - Déplacement à domicile") }}</p>
 
               <div class="space-x- flex gap-2 mt-5">
-                <base-telephone-button size="large" />
+                <base-telephone-button id="tel-call-us-contact" size="large" />
 
                 <a :href="`mailto:${get('contact').email}`">
                   <volt-button id="email-contact-us" size="large" class="mt-5" rounded>

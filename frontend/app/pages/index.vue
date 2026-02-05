@@ -39,7 +39,7 @@
             </p>
 
             <div id="cta-1" class="mt-10">
-              <base-telephone-button id="tel-intermadiate-1" :with-icon="true" size="large" text="Je veux me faire belle" />
+              <base-telephone-button id="tel-call-us-intermediate-1" :with-icon="true" size="large" text="Je veux me faire belle" />
             </div>
           </div>
         </client-only>

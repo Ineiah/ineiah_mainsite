@@ -42,13 +42,13 @@
       <div class="flex flex-col items-center justify-center w-full py-4 mt-12 border-t border-brand-200 md:flex-row md:justify-between">
         <client-only>
           <p class="block mb-4 text-sm text-center text-primary-200 dark:text-primary-300 md:mb-0">
-            © {{ currentYear }} <nuxt-link-locale to="/">{{ businessDetails.legalName }}</nuxt-link-locale>. {{ $t('Réalisé par') }} <a :href="businessDetails.websiteProvider.url">{{ businessDetails.websiteProvider.legalName }}</a>
+            © {{ currentYear }} <nuxt-link-locale to="/">{{ get('legalName') }}</nuxt-link-locale>. {{ $t('Réalisé par') }} <a :href="get('websiteProvider').url">{{ get('websiteProvider').legalName }}</a>
           </p>
         </client-only>
 
         <div class="flex gap-4 text-primary-200 sm:justify-center">
-          <a v-for="social in footer.socials" :id="`footer-social-${social.name.toLowerCase()}`" :key="social.name" :href="social.url" class="block transition-opacity text-inherit hover:opacity-80">
-            <Icon :name="`fa-brands:${social.icon}`" :alt="`${businessDetails.name} - ${social.name.toLowerCase()}`" />
+          <a v-for="social in activeSocials" :id="`footer-social-${social}`" :key="social" :href="getSocial(social)?.url" class="block transition-opacity text-inherit hover:opacity-80">
+            <icon :name="getSocialIcon(social)" :alt="`${businessDetails.name} - ${social}`" />
           </a>
         </div>
       </div>
@@ -57,9 +57,10 @@
 </template>
 
 <script setup lang="ts">
-import { businessDetails, footer } from '~/data'
+import { businessDetails, footer, useBusinessDetails } from '~/data'
 
 const { $dayjs } = useNuxtApp()
-
 const currentYear = ref($dayjs().year())
+
+const { getSocial, getSocialIcon, activeSocials, get } = await useBusinessDetails()
 </script>

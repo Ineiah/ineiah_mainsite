@@ -20,7 +20,7 @@ export interface Service {
   /**
    * Brief description of the service
    */
-  description: string
+  description: Nullable<string>
   /**
    * Detailed description of the actions that will be
    * performed during the service. This is a specific
@@ -55,10 +55,22 @@ export interface ServiceSection {
    */
   services: Service[]
   /**
+   * A global description that can be used to provide more context for all the
+   * services within the package. This is a global attribute that can be used to provide 
+   * more context for all the services within the package, and can be used to highlight common 
+   * features or benefits of the services included in the package.
+    For example, if the package includes several hair care services, the global description could 
+    emphasize the use of high-quality products, personalized consultations, 
+    or a relaxing salon environment. This helps potential customers understand the 
+    overall value and experience they can expect from the package, beyond just the 
+    individual services offered.
+   */
+  globalDescription: Nullable<string>
+  /**
    * Detailed description of the actions that will be
    * performed during the service. This a global attribute
    * that can be used to provide more context for all the
    * services within the package
    */
-  includes?: string[]
+  includes: string[]
 }

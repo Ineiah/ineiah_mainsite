@@ -90,5 +90,7 @@ export default defineI18nLocale(async _locale => {
     'Cheveux secs': 'Cheveux secs',
     'XL': 'XL',
     'Transformation': 'Transformation',
+    'Mes recommendations produits': 'Mes recommendations produits',
+    "L'art de coiffer toutes les textures": "L'art de coiffer toutes les textures"
   }
 })

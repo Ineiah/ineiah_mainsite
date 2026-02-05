@@ -1,4 +1,4 @@
-import type { Nullable } from "~/types"
+import type { Nullable } from '~/types'
 
 export interface FooterLinks {
   name: string
@@ -87,6 +87,9 @@ export const footer: FooterSection = {
       ]
     }
   ],
+  /**
+   * @deprecated
+   */
   socials: [
     {
       name: 'Facebook',

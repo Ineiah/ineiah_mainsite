@@ -10,13 +10,13 @@
           </nuxt-link-locale>
           
           <div class="flex gap-2">
-            <nuxt-link-locale to="/" locale="fr">
+            <nuxt-link-locale to="/" locale="fr" aria-label="Français">
               <volt-secondary-button>
                 <icon name="i-circle-flags:fr" />
               </volt-secondary-button>
             </nuxt-link-locale>
   
-            <nuxt-link-locale to="/" locale="en">
+            <nuxt-link-locale to="/" locale="en" aria-label="English">
               <volt-secondary-button>
                 <icon name="i-circle-flags:uk" />
               </volt-secondary-button>

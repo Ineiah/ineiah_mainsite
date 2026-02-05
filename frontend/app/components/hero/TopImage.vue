@@ -16,7 +16,7 @@
           </nuxt-link-locale>
         </volt-button>
 
-        <base-telephone-button class="mt-5 w-full md:w-auto" size="large" />
+        <base-telephone-button id="tel-call-us-hero" class="mt-5 w-full md:w-auto" size="large" />
       </div>
     </div>
   </div>

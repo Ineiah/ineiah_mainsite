@@ -72,6 +72,7 @@
 <script setup lang="ts">
 import { doc, setDoc } from 'firebase/firestore'
 import { businessDetails, footer } from '~/data'
+import type { PageTitleOrDescription } from '~/types'
 
 definePageMeta({
   title: 'Contact'
@@ -117,20 +118,22 @@ const handleSendMessage = useThrottleFn(_sendMessage, 5000)
 
 const i18n = useI18n()
 
-const titles: Record<typeof i18n.locale.value, string> = {
+const titles: PageTitleOrDescription<typeof i18n.locale.value> = {
   fr: 'Contact',
   en: 'Contact us'
 }
 
-const descriptions: Record<typeof i18n.locale.value, string> = {
-  fr: 'Sublime ta singularité',
-  en: 'Sublime your uniqueness'
+const descriptions: PageTitleOrDescription<typeof i18n.locale.value> = {
+  fr: 'Contactez-moi pour toute question ou demande de rendez-vous',
+  en: 'Contact us for any questions or appointment requests'
 }
 
 useSeoMeta({
   title: titles[i18n.locale.value],
   description: descriptions[i18n.locale.value],
   titleTemplate: `%s | ${businessDetails.legalName}`,
+  twitterTitle: titles[i18n.locale.value],
+  twitterDescription: descriptions[i18n.locale.value],
   ogImage: 'https://dev-client.gency313.fr/hero/hair1.jpg'
 })
 

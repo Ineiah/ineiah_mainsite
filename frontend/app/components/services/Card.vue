@@ -1,7 +1,7 @@
 <template>
-  <div :id="`service-${index + 1}`" class="relative bg-surface-200 cursor-pointer" @click="() => toggleServiceDetails()">
+  <article :id="`service-${index + 1}`" class="relative bg-surface-200 cursor-pointer" @click="() => toggleServiceDetails()">
     <div v-if="!showServiceDetails" ref="serviceEl" class="p-0 rounded-lg overflow-hidden">
-      <nuxt-img :src="service.image || '/hero/hair12.jpg'" class="transition-all ease-in-out xl:hover:scale-105 xl:hover:rotate-2 aspect-square object-cover rounded-lg w-75" :alt="service.name" />
+      <nuxt-img :src="service.image || '/hero/hair12.jpg'" class="transition-all ease-in-out xl:hover:scale-105 xl:hover:rotate-2 aspect-square object-cover rounded-lg w-75" :alt="`${service.category} - ${service.name} - ${service.gender} - ${get('legalName')}`" />
 
       <div class="absolute bottom-0 left-0 p-5 text-primary-50">
         <p v-if="service.category === 'Coupe'" class="font-light text-sm">{{ $t('Coupe sur cheveux') }}</p>
@@ -23,14 +23,16 @@
       <services-card-info v-if="serviceSection" :index="index" :service="service" :service-section="serviceSection" />
       <volt-skeleton v-else class="h-75 w-75 rounded-lg" />
     </template>
-  </div>
+  </article>
 </template>
 
 <script setup lang="ts">
-import { serviceSectionKey } from '~/data'
+import { serviceSectionKey, useBusinessDetails } from '~/data'
 import type { Service, ServiceSection } from '~/types'
 
 defineProps<{ index: number, service: Service }>()
+
+const { get } = await useBusinessDetails()
 
 /**
  * Mobile

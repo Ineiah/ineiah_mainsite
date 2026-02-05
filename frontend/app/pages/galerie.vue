@@ -27,7 +27,8 @@
 </template>
 
 <script setup lang="ts">
-import type { Arrayable, GalleryImage } from '~/types'
+import { faqList, useBusinessDetails } from '~/data'
+import type { Arrayable, GalleryImage, PageTitleOrDescription } from '~/types'
 
 definePageMeta({
   title: 'Gallery'
@@ -102,4 +103,53 @@ const filteredImages = computed(() => {
 // function setSearch(name: string) {
 //   search.value = name
 // }
+
+/**
+ * SEO
+ */
+
+const { businessDetails } = await useBusinessDetails()
+const i18n = useI18n()
+
+const titles: PageTitleOrDescription<typeof i18n.locale.value> = {
+  fr: 'Galerie de coupes et styles',
+  en: 'Gallery of cuts and styles'
+}
+
+const descriptions: PageTitleOrDescription<typeof i18n.locale.value> = {
+  fr: 'Découvrez notre collection de coupes et styles réalisés par nos experts.',
+  en: 'Discover our collection of cuts and styles created by our experts.'
+}
+
+useSeoMeta({
+  title: titles[i18n.locale.value],
+  description: descriptions[i18n.locale.value],
+  titleTemplate: `%s | ${businessDetails.legalName}`,
+  twitterTitle: titles[i18n.locale.value],
+  twitterDescription: descriptions[i18n.locale.value],
+  ogImage: 'https://dev-client.gency313.fr/hero/hair1.jpg'
+})
+
+const questionsList = computed(() => faqList.flatMap(x => [...x.questions]))
+
+useSchemaOrg([
+  {
+    '@type': 'FAQPage',
+    mainEntity: questionsList.value.map(item => ({
+      '@type': 'Question',
+      name: item.question,
+      acceptedAnswer: {
+        '@type': 'Answer',
+        text: item.answer
+      }
+    }))
+  }
+])
+
+defineOgImageComponent('NuxtSeo', {
+  title: titles[i18n.locale.value],
+  description: descriptions[i18n.locale.value],
+  theme: '#ff0000',
+  colorMode: 'dark'
+})
 </script>

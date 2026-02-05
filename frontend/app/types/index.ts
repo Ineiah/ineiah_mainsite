@@ -14,3 +14,7 @@ export interface GalleryImage {
   name: string
   image: string | Arrayable<string>
 }
+
+export type Locale = 'fr' | 'en'
+
+export type PageTitleOrDescription<T extends string> = Record<T, string>

@@ -25,28 +25,34 @@
 
 <script setup lang="ts">
 import { businessDetails } from '~/data'
+import type { PageTitleOrDescription } from '~/types'
 
 definePageMeta({
   title: 'Our Story'
 })
 
+/**
+ * SEO
+ */
 
 const i18n = useI18n()
 
-const titles: Record<typeof i18n.locale.value, string> = {
+const titles: PageTitleOrDescription<typeof i18n.locale.value> = {
   fr: 'Notre histoire',
   en: 'Our Story'
 }
 
-const descriptions: Record<typeof i18n.locale.value, string> = {
-  fr: 'Sublime ta singularité',
-  en: 'Sublime your uniqueness'
+const descriptions: PageTitleOrDescription<typeof i18n.locale.value> = {
+  fr: 'Découvrez notre histoire et la création de notre salon.',
+  en: 'Discover our story and the creation of our salon.'
 }
 
 useSeoMeta({
   title: titles[i18n.locale.value],
   description: descriptions[i18n.locale.value],
   titleTemplate: `%s | ${businessDetails.legalName}`,
+  twitterTitle: titles[i18n.locale.value],
+  twitterDescription: descriptions[i18n.locale.value],
   ogImage: 'https://dev-client.gency313.fr/hero/hair1.jpg'
 })
 

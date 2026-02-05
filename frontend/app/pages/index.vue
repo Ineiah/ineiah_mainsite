@@ -52,7 +52,7 @@
         <div class="p-10 text-center md:text-left md:max-w-lg">
           <client-only>
             <h2 v-motion-slide-visible-right :delay="400" class="text-3xl font-bold mb-4 md:text-5xl text-primary-800 dark:text-primary-400 font-title leading-10 md:leading-15">
-              L'histoire de <span class="italic">{{ businessDetails.legalName }}</span>
+              L'histoire de <span class="italic">{{ legalName }}</span>
             </h2>
           </client-only>
 
@@ -132,7 +132,7 @@
           <div role="contentinfo">
             <div class="p-20 text-center text-primary-500 dark:text-primary-200">
               <p class="font-bold mb-3 text-4xl">Rejoint le <span class="text-primary-800 dark:text-primary-400">#curlymouvement</span></p>
-              <p class="text-md">Retrouvez-nous sur instagram <a :href="businessDetails.socials.instagram.url" :title="businessDetails.socials.instagram.url">{{ businessDetails.socials.instagram.handle }}</a></p>
+              <p class="text-md">Retrouvez-nous sur instagram <a :href="getSocial('instagram')?.url" :title="getSocial('instagram')?.url">{{ getSocial('instagram')?.handle }}</a></p>
             </div>
           </div>
         </div>
@@ -193,11 +193,19 @@
 </template>
 
 <script setup lang="ts">
-import { businessDetails } from '~/data'
+import { useBusinessDetails } from '~/data'
+import type { PageTitleOrDescription } from '~/types'
 
 definePageMeta({
   title: 'Home'
 })
+
+/**
+ * Socials
+ */
+
+const { getSocial, reactiveGet } = await useBusinessDetails()
+const legalName = reactiveGet('legalName')
 
 /**
  * Template settings
@@ -215,16 +223,24 @@ const { darkMode } = useDarkModeComposable()
 
 /**
  * SEO
- */
+ */   
 
-const titles: Record<string, string> = {
-  fr: 'Coupe et coiffures tout type de cheveux'
+const titles: PageTitleOrDescription<typeof i18n.locale.value> = {
+  fr: 'Coupe et coiffures tout type de cheveux',
+  en: 'Haircuts and hairstyles for all hair types'
+}
+
+const descriptions: PageTitleOrDescription<typeof i18n.locale.value> = {
+  fr: 'Sublime ta singularité',
+  en: 'Sublime your singularity'
 }
 
 useSeoMeta({
   title: titles[i18n.locale.value],
-  description: 'Sublime ta singularité',
-  titleTemplate: `%s | ${businessDetails.legalName}`,
+  description: descriptions[i18n.locale.value],
+  titleTemplate: `%s | ${legalName.value}`,
+  twitterTitle: titles[i18n.locale.value],
+  twitterDescription: descriptions[i18n.locale.value],
   ogImage: '/hero/hair10.jpg'
 })
 
@@ -232,14 +248,14 @@ useHead({
   link: [
     {
       rel: 'canonical',
-      href: 'https://example.com/'
+      href: useRuntimeConfig().public.siteUrl + useRoute().path
     }
   ]
 })
 
 defineOgImageComponent('NuxtSeo', {
   title: titles[i18n.locale.value],
-  description: 'Sublime ta singularité',
+  description: descriptions[i18n.locale.value],
   theme: '#ff0000',
   colorMode: 'dark'
 })

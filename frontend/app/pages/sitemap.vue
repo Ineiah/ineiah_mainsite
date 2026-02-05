@@ -18,9 +18,43 @@
 </template>
 
 <script setup lang="ts">
-import { footer } from '~/data'
+import { footer, useBusinessDetails } from '~/data'
+import type { PageTitleOrDescription } from '~/types'
 
 definePageMeta({
   name: 'sitemap'
+})
+
+/**
+ * SEO
+ */
+
+const { businessDetails } = await useBusinessDetails()
+const i18n = useI18n()
+
+const titles: PageTitleOrDescription<typeof i18n.locale.value> = {
+  fr: 'Plan du site',
+  en: 'Sitemap'
+}
+
+const descriptions: PageTitleOrDescription<typeof i18n.locale.value> = {
+  fr: 'Découvrez la structure de notre site et accédez facilement à toutes les pages importantes.',
+  en: 'Discover the structure of our site and easily access all important pages.'
+}
+
+useSeoMeta({
+  title: titles[i18n.locale.value],
+  description: descriptions[i18n.locale.value],
+  titleTemplate: `%s | ${businessDetails.legalName}`,
+  twitterTitle: titles[i18n.locale.value],
+  twitterDescription: descriptions[i18n.locale.value],
+  ogImage: 'https://dev-client.gency313.fr/hero/hair1.jpg'
+})
+
+defineOgImageComponent('NuxtSeo', {
+  title: titles[i18n.locale.value],
+  description: descriptions[i18n.locale.value],
+  theme: '#ff0000',
+  colorMode: 'dark',
 })
 </script>

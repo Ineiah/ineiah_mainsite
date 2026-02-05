@@ -13,7 +13,6 @@
 </template>
 
 <script setup lang="ts">
-// import { serviceSectionFixtures } from '~/data/fixtures/services'
 import { businessDetails, defaultServices } from '~/data'
 
 definePageMeta({
@@ -32,14 +31,16 @@ const titles: Record<typeof i18n.locale.value, string> = {
 }
 
 const descriptions: Record<typeof i18n.locale.value, string> = {
-  fr: 'Sublime ta singularité',
-  en: 'Sublime your uniqueness'
+  fr: 'La liste de nos prestations de coiffure et de soins capillaires, adaptées à vos besoins et à vos envies.',
+  en: 'The list of our hairdressing and hair care services, tailored to your needs and desires.'
 }
 
 useSeoMeta({
   title: titles[i18n.locale.value],
   description: descriptions[i18n.locale.value],
   titleTemplate: `%s | ${businessDetails.legalName}`,
+  twitterTitle: titles[i18n.locale.value],
+  twitterDescription: descriptions[i18n.locale.value],
   ogImage: 'https://dev-client.gency313.fr/hero/hair1.jpg'
 })
 

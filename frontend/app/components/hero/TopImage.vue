@@ -10,11 +10,11 @@
       </p>
 
       <div class="flex flex-wrap justify-start md:flex-nowrap md:justify-center items-center md:space-x-5">
-        <volt-button id="link-offer-hero" size="large" class="mt-10 md:mt-5 w-full md:w-auto" rounded>
-          <nuxt-link-locale to="/nos-prestations">
+        <nuxt-link-locale id="link-offer-hero" to="/nos-prestations">
+          <volt-button size="large" class="mt-10 md:mt-5 w-full md:w-auto" rounded>
             {{ $t("Prestations") }}
-          </nuxt-link-locale>
-        </volt-button>
+          </volt-button>
+        </nuxt-link-locale>
 
         <base-telephone-button id="tel-call-us-hero" class="mt-5 w-full md:w-auto" size="large" />
       </div>

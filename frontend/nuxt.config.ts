@@ -172,30 +172,35 @@ export default defineNuxtConfig({
   },
 
   image: {
-    // TODO: Activate when the project images backend
-    // is set correctly to cloudefare/aws
-    // https://image.nuxt.com/providers/cloudflare
     provider: 'none'
-
-    // provider: 'cloudfront',
+    // https://image.nuxt.com/providers/cloudflare
+    // provider: process.env.NODE_ENV === 'production' ? 'cloudfront' : 'none',
     // providers: {
-    //   cloudfront: {}
+    //   cloudfront: {
+    //     baseURL: process.env.NUXT_PUBLIC_CLOUDFRONT_URL
+    //   },
+
+    //   formats: ['webp', 'avif', 'jpeg'],
+
+    //   // screens: {
+    //   //   xs: 320,
+    //   //   sm: 640,
+    //   //   md: 768,
+    //   //   lg: 1024,
+    //   //   xl: 1280,
+    //   //   xxl: 1536,
+    //   // },
+
+    //   // quality: 80,
+
+    //   // ...(process.env.NODE_ENV === 'production' && {
+    //   //   modifiers: {
+    //   //     format: 'webp',
+    //   //     fit: 'cover',
+    //   //   }
+    //   // })
     // }
   },
-
-  // gtag: {
-  //   id: 'G-CVKFG2XPVG',
-  //   initCommands: [
-  //     ['config', 'default', {
-  //       debug: 'true',
-  //       currency: 'EUR',
-  //       ad_storage: 'denied',
-  //       ad_user_data: 'denied',
-  //       ad_personalization: 'denied',
-  //       analytics_storage: 'denied'
-  //     }]
-  //   ]
-  // },
 
   nitro: {
     storage: {

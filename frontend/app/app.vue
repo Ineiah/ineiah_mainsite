@@ -51,7 +51,7 @@ useHead({
   link: [
     {
       rel: 'canonical',
-      href: useRuntimeConfig().public.prodDomain
+      href: useRuntimeConfig().public.siteUrl
     }
   ]
 })

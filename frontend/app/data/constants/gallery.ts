@@ -68,7 +68,7 @@ const galleryImages: Arrayable<GalleryImage> = [
     }
   },
   {
-    name: 'Chignon élégant',
+    name: 'Coupe homme',
     image: '/images/gallery/customer7.jpg',
     category: 'image',
     url: null,
@@ -80,7 +80,7 @@ const galleryImages: Arrayable<GalleryImage> = [
     }
   },
   {
-    name: 'Chignon élégant',
+    name: 'Coupe homme',
     image: '/images/gallery/customer8.jpg',
     category: 'image',
     url: null,

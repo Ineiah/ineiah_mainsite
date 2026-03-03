@@ -208,6 +208,12 @@ const { getSocial, reactiveGet, get } = await useBusinessDetails()
 const legalName = reactiveGet('legalName')
 
 /**
+ * Utils
+ */
+
+const { instagram } = useSocialLinks()
+
+/**
  * Template settings
  */
 

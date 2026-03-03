@@ -1,6 +1,6 @@
 <template>
   <section id="story">
-    <base-jumbotron src="/testimages/jpeg/customer2.jpg" :lead="$t('Notre histoire')" :subtitle="$t('Découvrez notre histoire et la création de notre salon')" :position-y="30" />
+    <base-jumbotron src="/images/banners/img1.jpg" :lead="$t('Notre histoire')" :subtitle="$t('Découvrez notre histoire et la création de notre salon')" :position-y="30" />
 
     <!-- Quote TODO: Component -->
     <div class="p-10 md:p-20 bg-primary-500 text-primary-700 dark:bg-primary-700 dark:text-primary-200 w-full text-center">

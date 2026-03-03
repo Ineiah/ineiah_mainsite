@@ -1,5 +1,7 @@
 import { useColorMode } from '@vueuse/core'
 
+export * from './socials'
+
 /**
  * Composable to generate dynamic IDs from string values
  */

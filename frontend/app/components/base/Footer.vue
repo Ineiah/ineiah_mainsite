@@ -4,9 +4,9 @@
       <div class="grid justify-between grid-cols-1 gap-4 p-10 md:grid-cols-2 md:p-20">
         <div class="mb-5 md:mb-0">
           <nuxt-link-locale to="/">
-            <h5 class="text-xl font-semibold text-primary-100 dark:text-primary-200 uppercase">
+            <h4 class="text-xl font-semibold text-primary-100 dark:text-primary-200 uppercase">
               {{ get('legalName') }}
-            </h5>
+            </h4>
             <a href="https://www.seventiescoiffurelille.fr/services" target="_blank" rel="noopener noreferrer" class="text-sm text-primary-100 dark:text-primary-200 underline">
               chez 70's coiffure
             </a>

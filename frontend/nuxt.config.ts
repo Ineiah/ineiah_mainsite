@@ -52,11 +52,11 @@ export default defineNuxtConfig({
 
   routeRules: {
     '/': { swr: 16*60 },
-    '/faq': { swr: 30*60 },
+    '/faq': { prerender: true },
     '/nos-prestations': { swr: 15*60 },
     '/notre-histoire': { prerender: true },
     '/legal/**': { prerender: true },
-    '/contact': { swr: true },
+    '/contact': { prerender: true },
     '/galerie': { ssr: false },
     '/sitemap': { prerender: true },
     '/admin/**': { ssr: false }

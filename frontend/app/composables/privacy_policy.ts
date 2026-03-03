@@ -1,5 +1,3 @@
-import { businessDetails } from '~/data'
-
 export interface Policy {
   title: string
   titleEn?: string
@@ -12,6 +10,8 @@ export interface Policy {
 }
 
 export async function loadPolicies(): Promise<Policy[]> {
+  const { get } = useBusinessDetails()
+
   return [
     {
       title: 'Utilisation des données personnelles',
@@ -75,7 +75,7 @@ export async function loadPolicies(): Promise<Policy[]> {
       content: [
         {
           type: 'paragraph',
-          text: "Les données personnelles des utilisateurs peuvent être partagées avec des tiers dans les cas suivants :"
+          text: `Les données personnelles des utilisateurs peuvent être partagées avec des tiers dans les cas suivants :`
         },
         {
           type: 'list',
@@ -120,7 +120,7 @@ export async function loadPolicies(): Promise<Policy[]> {
       content: [
         {
           type: 'paragraph',
-          text: `En application de la réglementation applicable aux données à caractère personnel, les utilisateurs disposent des droits suivants, qu'ils peuvent exercer en faisant leur demande à l'adresse suivante : ${businessDetails.address}.`
+          text: `En application de la réglementation applicable aux données à caractère personnel, les utilisateurs disposent des droits suivants, qu'ils peuvent exercer en faisant leur demande à l'adresse suivante : ${get('address')}.`
         },
         {
           type: 'list',

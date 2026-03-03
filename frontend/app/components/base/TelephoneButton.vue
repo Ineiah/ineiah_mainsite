@@ -10,9 +10,10 @@
 </template>
 
 <script setup lang="ts">
-import type { ButtonProps } from 'primevue/button';
-import { businessDetails } from '~/data'
-import type { Nullable } from '~/types';
+import type { ButtonProps } from 'primevue/button'
+import type { Nullable } from '~/types'
+
+const { businessDetails } = useBusinessDetails()
 
 const {
   telephone = null,

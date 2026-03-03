@@ -14,8 +14,6 @@
 </template>
 
 <script setup lang="ts">
-import BaseTelephoneLink from './BaseTelephoneLink.vue'
-
 const reassurance = [
   {
     title: 'Une équipe à ton écoute',

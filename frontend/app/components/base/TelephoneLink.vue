@@ -1,5 +1,5 @@
 <template>
-  <a :href="`tel:${telephone}`">
+  <a :href="`tel:${telephone || businessDetails.contact.telephone}`">
     <icon v-if="withIcon" name="i-fa7-solid:phone" />
 
     <slot>
@@ -9,10 +9,14 @@
 </template>
 
 <script setup lang="ts">
-import { businessDetails } from '~/data'
+/**
+ * Business details
+ */
+
+const { businessDetails } = useBusinessDetails()
 
 const {
-  telephone = businessDetails.contact.telephone, 
+  telephone, 
   text = 'Nous appeler',
   withIcon = true
 } = defineProps<{ telephone?: string, text?: string, withIcon?: boolean }>()

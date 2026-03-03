@@ -9,7 +9,5 @@
 </template>
 
 <script setup lang="ts">
-import { useBusinessDetails } from '~/data'
-
-const { getSocial, getSocialIcon, activeSocials, get } = await useBusinessDetails()
+const { getSocial, getSocialIcon, activeSocials, get } = useBusinessDetails()
 </script>

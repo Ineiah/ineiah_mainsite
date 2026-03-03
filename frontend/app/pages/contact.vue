@@ -66,14 +66,13 @@
 
 <script setup lang="ts">
 import { doc, setDoc } from 'firebase/firestore'
-import { businessDetails, footer, useBusinessDetails } from '~/data'
 import type { PageTitleOrDescription } from '~/types'
 
 definePageMeta({
   title: 'Contact'
 })
 
-const { get, activeSocials, getSocialIcon, getSocial } = await useBusinessDetails()
+const { get, activeSocials, getSocialIcon, getSocial } = useBusinessDetails()
 
 /**
  * Contact form

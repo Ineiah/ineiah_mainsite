@@ -47,12 +47,18 @@
 </template>
 
 <script setup lang="ts">
-import { businessDetails, faqList } from '~/data'
 import type { PageTitleOrDescription } from '~/types'
 
 definePageMeta({
   name: 'FAQ'
 })
+
+/**
+ * Business details
+ */
+
+const { businessDetails } = useBusinessDetails()
+const { faqList } = useFaq()
 
 /**
  * SEO

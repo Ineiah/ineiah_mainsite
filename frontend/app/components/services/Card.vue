@@ -34,12 +34,15 @@
 </template>
 
 <script setup lang="ts">
-import { serviceSectionKey, useBusinessDetails } from '~/data'
+import { serviceSectionKey } from '~/data'
 import type { Service, ServiceSection } from '~/types'
 
 defineProps<{ index: number, service: Service }>()
 
-const { get } = await useBusinessDetails()
+/**
+ * Busness details
+ */
+const { get } = useBusinessDetails()
 
 /**
  * Mobile

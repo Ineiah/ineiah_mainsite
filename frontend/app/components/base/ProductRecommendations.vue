@@ -38,9 +38,8 @@
 
 <script setup lang="ts">
 import type { EventParameters } from 'nuxt-ganalytics'
-import { useBusinessDetails } from '~/data'
 
-const { get } = await useBusinessDetails()
+const { get } = useBusinessDetails()
 
 interface Recommendation {
   name: string

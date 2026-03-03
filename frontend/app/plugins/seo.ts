@@ -1,7 +1,5 @@
-import { useBusinessDetails, useServices } from "~/data"
-
 export default defineNuxtPlugin(async () => {
-  const { get, getSocial } = await useBusinessDetails()
+  const { get, getSocial } = useBusinessDetails()
   const { services } = useServices()
 
   const siteUrl = useRuntimeConfig().public.siteUrl

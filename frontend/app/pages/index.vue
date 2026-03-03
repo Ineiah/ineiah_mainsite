@@ -193,7 +193,6 @@
 </template>
 
 <script setup lang="ts">
-import { useBusinessDetails } from '~/data'
 import type { PageTitleOrDescription } from '~/types'
 
 definePageMeta({
@@ -204,7 +203,7 @@ definePageMeta({
  * Socials
  */
 
-const { getSocial, reactiveGet, get } = await useBusinessDetails()
+const { getSocial, reactiveGet, get } = useBusinessDetails()
 const legalName = reactiveGet('legalName')
 
 /**

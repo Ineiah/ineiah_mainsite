@@ -12,7 +12,7 @@
           <div class="hidden xl:flex flex-1 items-center justify-center sm:items-stretch sm:justify-start text-primary-50 dark:text-primary-200">
             <div class="flex shrink-0 items-center">
               <nuxt-link-locale id="link-home-nav" to="/" aria-label="Go to homepage">
-                <nuxt-img class="h-8 w-auto" src="https://tailwindcss.com/plus-assets/img/logos/mark.svg?color=indigo&shade=500" :alt="businessDetails.name" />
+                <nuxt-img class="h-8 w-auto" src="https://tailwindcss.com/plus-assets/img/logos/mark.svg?color=indigo&shade=500" :alt="get('legalName')" />
               </nuxt-link-locale>
             </div>
 
@@ -36,12 +36,17 @@
 
 <script setup lang="ts">
 import { useScroll } from '@vueuse/core'
-import { businessDetails } from '~/data'
 import type { BaseRoute } from '~/types'
 
 defineEmits<{ 'mobile-menu': [] }>()
 
 const route = useRoute()
+
+/**
+ * Business details
+ */
+
+const { get } = useBusinessDetails()
 
 /**
  * Mobile

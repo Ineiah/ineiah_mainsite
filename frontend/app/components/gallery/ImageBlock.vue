@@ -33,12 +33,11 @@
 
 <script setup lang="ts">
 import { Share } from '@capacitor/share'
-import { useBusinessDetails } from '~/data'
 import type { GalleryImage } from '~/types'
 
 const props = defineProps<{ image: GalleryImage }>()
 
-const { get } = await useBusinessDetails()
+const { get } = useBusinessDetails()
 
 /**
  * Slider
@@ -81,7 +80,7 @@ const theme = computed(() => {
 async function share() {
   await Share.share({
     title: props.image.name,
-    text: 'Really awesome thing you need to see right meow',
+    text: `Découvrez cette création de ${get('legalName')}`,
     url: window.location.href,
     dialogTitle: 'Partagez cette coupe'
   })

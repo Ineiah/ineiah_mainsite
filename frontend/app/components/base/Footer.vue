@@ -5,7 +5,7 @@
         <div class="mb-5 md:mb-0">
           <nuxt-link-locale to="/">
             <h5 class="text-xl font-semibold text-primary-100 dark:text-primary-200 uppercase">
-              {{ businessDetails.legalName }}
+              {{ get('legalName') }}
             </h5>
             <a href="https://www.seventiescoiffurelille.fr/services" target="_blank" rel="noopener noreferrer" class="text-sm text-primary-100 dark:text-primary-200 underline">
               chez 70's coiffure
@@ -51,7 +51,7 @@
 
         <div class="flex gap-4 text-primary-200 sm:justify-center">
           <a v-for="social in activeSocials" :id="`footer-social-${social}`" :key="social" :href="getSocial(social)?.url" class="block transition-opacity text-inherit hover:opacity-80">
-            <icon :name="getSocialIcon(social)" :alt="`${businessDetails.name} - ${social}`" />
+            <icon :name="getSocialIcon(social)" :alt="`${get('name')} - ${social}`" />
           </a>
         </div>
       </div>
@@ -60,10 +60,10 @@
 </template>
 
 <script setup lang="ts">
-import { businessDetails, footer, useBusinessDetails } from '~/data'
+import { footer } from '~/data'
 
 const { $dayjs } = useNuxtApp()
 const currentYear = ref($dayjs().year())
 
-const { getSocial, getSocialIcon, activeSocials, get } = await useBusinessDetails()
+const { getSocial, getSocialIcon, activeSocials, get } = useBusinessDetails()
 </script>

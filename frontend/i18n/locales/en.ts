@@ -109,6 +109,10 @@ export default defineI18nLocale(async _locale => {
     "Plus d'options": "More Options",
     "Accepter tout": "Accept All",
     "Refuser tout": "Reject All",
-    "Enregistrer les préférences": "Save Preferences"
+    "Enregistrer les préférences": "Save Preferences",
+    "Dois-je arriver les cheveux attaché ?": "Should I come with tied hair?",
+    "Il est préférable de venir les cheveux attachés pour votre rendez-vous afin de garantir les meilleurs résultats possibles.": "It is best to come with tied hair for your appointment to ensure the best possible results.",
+    "Coupe seule": "Cut only",
+
   }
 })

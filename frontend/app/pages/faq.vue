@@ -1,6 +1,6 @@
 <template>
   <section id="faq">
-    <base-jumbotron src="/hero/hair4.jpg" lead="FAQ" subtitle="Nous répondons à vos questions" />
+    <base-jumbotron src="/images/dev/hair4.jpg" lead="FAQ" subtitle="Nous répondons à vos questions" />
 
     <div class="px-5 md:px-10 my-10">
       <div class="max-w-3xl mx-auto">

@@ -246,7 +246,7 @@ useSeoMeta({
   titleTemplate: `%s | ${legalName.value}`,
   twitterTitle: titles[i18n.locale.value],
   twitterDescription: descriptions[i18n.locale.value],
-  ogImage: '/hero/hair10.jpg'
+  ogImage: '/images/dev/hair10.jpg'
 })
 
 useHead({

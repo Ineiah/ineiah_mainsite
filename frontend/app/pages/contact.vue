@@ -1,6 +1,6 @@
 <template>
   <section id="contact">
-    <base-jumbotron src="/hero/hair4.jpg" lead="Contact" subtitle="Toutes nos informations de contact" />
+    <base-jumbotron src="/images/dev/hair4.jpg" lead="Contact" subtitle="Toutes nos informations de contact" />
 
     <div class="px-5 md:px-10 my-10">
       <div class="max-w-4xl mx-auto">
@@ -27,7 +27,7 @@
         <div class="grid grid-rows-2 gap-2 md:grid-rows-none md:grid-cols-2 md:gap-8">
           <volt-card class="mt-5 bg-surface-100 shadow-none">
             <template #content>
-              <nuxt-img src="/map.jpg" class="rounded-lg" alt="" />
+              <nuxt-img src="/images/dev/map.jpg" class="rounded-lg" alt="" />
             </template>
           </volt-card>
 

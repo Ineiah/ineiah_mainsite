@@ -19,7 +19,7 @@ export const defaultServices: ServiceSection[] = [
         description: null,
         includes: [],
         duration: 60,
-        image: '/testimages/jpeg/customer15.jpg',
+        image: '/images/services/customer15.jpg',
         category: 'Coupe'
       },
       {
@@ -30,7 +30,7 @@ export const defaultServices: ServiceSection[] = [
         description: null,
         includes: [],
         duration: 90,
-        image: '/testimages/jpeg/customer18.jpg',
+        image: '/images/services/customer18.jpg',
         category: 'Coupe'
       },
       {
@@ -41,7 +41,7 @@ export const defaultServices: ServiceSection[] = [
         description: null,
         includes: [],
         duration: 120,
-        image: '/testimages/jpeg/customer1.jpg',
+        image: '/images/services/customer1.jpg',
         category: 'Coupe'
       },
       {
@@ -52,7 +52,7 @@ export const defaultServices: ServiceSection[] = [
         description: null,
         includes: [],
         duration: 120,
-        image: '/testimages/jpeg/customer2.jpg',
+        image: '/images/services/customer2.jpg',
         category: 'Coupe'
       }
     ]
@@ -74,7 +74,7 @@ export const defaultServices: ServiceSection[] = [
         description: null,
         includes: [],
         duration: 45,
-        image: '/testimages/jpeg/customer15.jpg',
+        image: '/images/services/customer15.jpg',
         category: 'Coupe'
       },
       {
@@ -85,7 +85,7 @@ export const defaultServices: ServiceSection[] = [
         description: null,
         includes: [],
         duration: 60,
-        image: '/testimages/jpeg/customer15.jpg',
+        image: '/images/services/customer15.jpg',
         category: 'Coupe'
       },
       {
@@ -96,7 +96,7 @@ export const defaultServices: ServiceSection[] = [
         description: null,
         includes: [],
         duration: 90,
-        image: '/testimages/jpeg/customer15.jpg',
+        image: '/images/services/customer15.jpg',
         category: 'Coupe'
       },
       {
@@ -107,7 +107,7 @@ export const defaultServices: ServiceSection[] = [
         description: null,
         includes: [],
         duration: 120,
-        image: '/testimages/jpeg/customer15.jpg',
+        image: '/images/services/customer15.jpg',
         category: 'Coupe'
       }
     ]
@@ -129,7 +129,7 @@ export const defaultServices: ServiceSection[] = [
         description: null,
         includes: [],
         duration: null,
-        image: '/testimages/jpeg/customer15.jpg',
+        image: '/images/services/customer15.jpg',
         category: 'Coupe'
       }
     ]
@@ -149,7 +149,7 @@ export const defaultServices: ServiceSection[] = [
         description: null,
         includes: [],
         duration: 60,
-        image: '/testimages/jpeg/customer15.jpg',
+        image: '/images/services/customer15.jpg',
         category: 'Soin'
       },
       {
@@ -160,7 +160,7 @@ export const defaultServices: ServiceSection[] = [
         description: null,
         includes: [],
         duration: 60,
-        image: '/testimages/jpeg/customer15.jpg',
+        image: '/images/services/customer15.jpg',
         category: 'Soin'
 
       },
@@ -172,7 +172,7 @@ export const defaultServices: ServiceSection[] = [
         description: null,
         includes: [],
         duration: 60,
-        image: '/testimages/jpeg/customer15.jpg',
+        image: '/images/services/customer15.jpg',
         category: 'Soin'
       },
       {
@@ -183,7 +183,7 @@ export const defaultServices: ServiceSection[] = [
         description: null,
         includes: [],
         duration: 60,
-        image: '/testimages/jpeg/customer15.jpg',
+        image: '/images/services/customer15.jpg',
         category: 'Soin'
       }
     ]
@@ -203,7 +203,7 @@ export const defaultServices: ServiceSection[] = [
         description: null,
         includes: [],
         duration: 30,
-        image: '/testimages/jpeg/customer15.jpg',
+        image: '/images/services/customer15.jpg',
         category: 'Soin'
       },
       {
@@ -214,7 +214,7 @@ export const defaultServices: ServiceSection[] = [
         description: null,
         includes: [],
         duration: 50,
-        image: '/testimages/jpeg/customer15.jpg',
+        image: '/images/services/customer15.jpg',
         category: 'Soin'
       },
       {
@@ -225,7 +225,7 @@ export const defaultServices: ServiceSection[] = [
         description: null,
         includes: [],
         duration: 70,
-        image: '/testimages/jpeg/customer15.jpg',
+        image: '/images/services/customer15.jpg',
         category: 'Soin'
       },
       {
@@ -236,7 +236,7 @@ export const defaultServices: ServiceSection[] = [
         description: null,
         includes: [],
         duration: 90,
-        image: '/testimages/jpeg/customer15.jpg',
+        image: '/images/services/customer15.jpg',
         category: 'Soin'
       }
     ]
@@ -256,7 +256,7 @@ export const defaultServices: ServiceSection[] = [
         description: null,
         includes: [],
         duration: 30,
-        image: '/services/hair1.jpg',
+        image: '/images/services/hair1.jpg',
         category: 'Coloration'
       },
       {
@@ -267,7 +267,7 @@ export const defaultServices: ServiceSection[] = [
         description: null,
         includes: [],
         duration: 50,
-        image: '/services/hair1.jpg',
+        image: '/images/services/hair1.jpg',
         category: 'Coloration'
       },
       {
@@ -278,7 +278,7 @@ export const defaultServices: ServiceSection[] = [
         description: null,
         includes: [],
         duration: 70,
-        image: '/services/hair1.jpg',
+        image: '/images/services/hair1.jpg',
         category: 'Coloration'
       },
       {
@@ -289,7 +289,7 @@ export const defaultServices: ServiceSection[] = [
         description: null,
         includes: [],
         duration: 90,
-        image: '/services/hair1.jpg',
+        image: '/images/services/hair1.jpg',
         category: 'Coloration'
       }
     ]
@@ -309,7 +309,7 @@ export const defaultServices: ServiceSection[] = [
         description: null,
         includes: [],
         duration: 30,
-        image: '/testimages/jpeg/customer15.jpg',
+        image: '/images/services/customer15.jpg',
         category: 'Hair Contouring'
       },
       {
@@ -320,7 +320,7 @@ export const defaultServices: ServiceSection[] = [
         description: null,
         includes: [],
         duration: 50,
-        image: '/testimages/jpeg/customer15.jpg',
+        image: '/images/services/customer15.jpg',
         category: 'Hair Contouring'
       },
       {
@@ -331,7 +331,7 @@ export const defaultServices: ServiceSection[] = [
         description: null,
         includes: [],
         duration: 70,
-        image: '/testimages/jpeg/customer15.jpg',
+        image: '/images/services/customer15.jpg',
         category: 'Hair Contouring'
       },
       {
@@ -342,7 +342,7 @@ export const defaultServices: ServiceSection[] = [
         description: null,
         includes: [],
         duration: 90,
-        image: '/testimages/jpeg/customer15.jpg',
+        image: '/images/services/customer15.jpg',
         category: 'Hair Contouring'
       }
     ]
@@ -364,7 +364,7 @@ export const defaultServices: ServiceSection[] = [
         description: null,
         includes: [],
         duration: null,
-        image: '/testimages/jpeg/customer15.jpg',
+        image: '/images/services/customer15.jpg',
         category: 'Coupe'
       }
     ]

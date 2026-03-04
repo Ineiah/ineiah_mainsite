@@ -1,9 +1,11 @@
 <template>
   <section class="px-5 py-20 md:p-20 text-primary-100 bg-primary-500">
     <div class="mb-10 text-center max-w-3xl mx-auto">
-      <h3 class="text-3xl xl:text-5xl mb-5">
-        {{ $t("Ce que pensent mes clients") }}
-      </h3>
+      <client-only>
+        <h3 v-motion-slide-visible-once-bottom :delay="400" :enter="{ transition: { type: 'spring', stiffness: 20 } }" class="text-3xl xl:text-5xl mb-5">
+          {{ $t("Ce que pensent mes clients") }}
+        </h3>
+      </client-only>
 
       <p>
         {{ $t("Voici ce que nos clients pensent de nous. Nous sommes toujours à la recherche de moyens pour nous améliorer. Si vous avez une expérience positive avec nous, laissez un avis.") }}

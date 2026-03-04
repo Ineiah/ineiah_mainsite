@@ -1,8 +1,10 @@
 <template>
   <section id="recommended-products" class="px-5 py-20 md:p-20">
-    <h3 class="text-center text-3xl xl:text-5xl mb-10 text-primary-500">
-      {{ $t("Mes recommendations produits") }}
-    </h3>
+    <client-only>
+      <h3 v-motion-slide-visible-once-bottom :delay="400" :enter="{ transition: { type: 'spring', stiffness: 20 } }" class="text-center text-3xl xl:text-5xl mb-10 text-primary-500">
+        {{ $t("Mes recommendations produits") }}
+      </h3>
+    </client-only>
 
     <div class="grid grid-rows-1 md:grid-cols-3 xl:grid-cols-5 gap-5">
       <client-only>

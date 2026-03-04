@@ -3,7 +3,7 @@
     <div class="items-center md:flex md:p-10">
       <div class="p-10 text-center md:text-left md:max-w-lg">
         <client-only>
-          <h2 v-motion-slide-visible-right :delay="400" class="text-3xl font-bold mb-4 md:text-5xl text-primary-800 dark:text-primary-400 font-title leading-10 md:leading-15">
+          <h2 v-motion-slide-visible-once-bottom :delay="600" :enter="{ transition: { type: 'spring', stiffness: 20 } }" class="text-3xl font-bold mb-4 md:text-5xl text-primary-800 dark:text-primary-400 font-title leading-10 md:leading-15">
             L'histoire de <span class="italic">{{ get('legalName') }}</span>
           </h2>
 
@@ -32,7 +32,7 @@
 
     <div class="h-auto">
       <client-only>
-        <nuxt-img v-motion-fade-visible :delay="600" :alt="`${get('founder')}`" src="/images/kira/photoshoot40.jpg" class="aspect-square object-cover h-full xl:w-full" />
+        <nuxt-img v-motion-fade-once-visible :delay="600" :alt="`${get('founder')}`" src="/images/kira/photoshoot40.jpg" class="aspect-square object-cover h-full xl:w-full" />
       </client-only>
     </div>
   </div>

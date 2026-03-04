@@ -3,7 +3,6 @@
     <!-- Hero -->
     <hero-top-image v-if="showImage" :image="`/images/hero/customer18.jpg`" />
     <hero-top-video v-else-if="showVideo" />
-    <hero-top-carousel v-else-if="showCarousel" />
 
     <!-- Intermediate-1 -->
     <div class="p-5 md:p-15 overflow-hidden">
@@ -104,6 +103,9 @@
     <!-- Product Recommendations -->
     <base-product-recommendations />
 
+    <!-- Reviews -->
+    <base-reviews />
+
     <dev-only>
       <!-- VideoCall -->
       <client-only>
@@ -176,13 +178,7 @@
           </client-only>
         </volt-label>
 
-        <volt-label label-for="show-carousel" label="Show Carousel">
-          <client-only>
-            <volt-toggle-switch id="show-carousel" v-model="showCarousel" />
-          </client-only>
-        </volt-label>
-
-        <volt-label label-for="show-carousel" label="Show video call">
+        <volt-label label-for="show-video-call" label="Show video call">
           <client-only>
             <volt-toggle-switch id="show-video-call" v-model="showVideoBlock" />
           </client-only>
@@ -216,7 +212,7 @@ const { instagram } = useSocialLinks()
  * Template settings
  */
 
-const { showImage, showCarousel, showVideo, showVideoBlock } = useDevComposable()
+const { showImage, showVideo, showVideoBlock } = useDevComposable()
 
 const i18n = useI18n()
 

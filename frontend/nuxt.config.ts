@@ -29,7 +29,6 @@ export default defineNuxtConfig({
     'nuxt-schema-org',
     'nuxt-og-image',
     'nuxt-vuefire',
-    // 'nuxt-gtag',
     'nuxt-ganalytics',
     'nuxt-link-checker'
   ],
@@ -68,7 +67,9 @@ export default defineNuxtConfig({
 
   vite: {
     plugins: [
-      tailwindcss()
+      tailwindcss({
+        optimize: false
+      })
     ]
   },
 

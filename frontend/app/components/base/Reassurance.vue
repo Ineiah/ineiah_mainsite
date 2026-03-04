@@ -21,11 +21,11 @@ const reassurance = [
   },
   {
     title: 'Un service client réactif',
-    icon: 'i-lucide-shopping-bag'
+    icon: 'i-lucide-phone'
   },
   {
     title: 'Des conseils personnalisés',
-    icon: 'i-lucide-table'
+    icon: 'i-lucide-shopping-bag'
   }
 ]
 </script>

@@ -32,7 +32,7 @@
 
     <div class="h-auto">
       <client-only>
-        <nuxt-img v-motion-fade-once-visible :delay="600" :alt="`${get('founder')}`" src="/images/kira/photoshoot40.jpg" class="aspect-square object-cover h-full xl:w-full" />
+        <nuxt-img v-motion-fade-visible-once :delay="600" :alt="`${get('founder')}`" src="/images/kira/photoshoot40.jpg" class="aspect-square object-cover h-full xl:w-full" />
       </client-only>
     </div>
   </div>

@@ -18,9 +18,11 @@
 
             <div class="flex-row content-center">
               <h4 class="font-semibold truncate" :title="recommendation.name">{{ recommendation.name }}</h4>
+              
               <client-only>
                 <p :title="recommendation.description" class="font-light text-sm overflow-hidden text-ellipsis max-h-10">{{ recommendation.description }}</p>
               </client-only>
+
               <nuxt-analytics event="view_item_list" :params="{ items: _analyticsItems }">
                 <template #default="{ attrs }">
                   <a :id="`link-product-recommendation-link-${recommendation.name.replace(/\s+/g, '-').toLowerCase()}`" :href="recommendation.url" target="_blank" rel="noopener noreferrer" class="text-primary-500 underline underline-offset-2 text-sm mt-2 inline-block" @click="attrs.sendTemplateEvent">

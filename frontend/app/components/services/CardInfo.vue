@@ -13,7 +13,7 @@
 
     <nuxt-analytics event="generate_lead" :params="{ event_label: `${serviceSection.name} - ${service.name}`, event_category: 'telephone', value: service.price || 0 }">
       <template #default="{ attrs }">
-        <base-telephone-button :id="`tel-service-${props.index + 1}`" class="mt-5" @click="async () => await attrs.sendTemplateEvent()" />
+        <base-telephone-button :id="`tel-service-${props.index + 1}`" button-class="mt-5" @click="async () => await attrs.sendTemplateEvent()" />
       </template>
     </nuxt-analytics>
   </div>

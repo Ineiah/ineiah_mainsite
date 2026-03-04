@@ -1,24 +1,25 @@
 <template>
   <footer class="relative bg-primary-800 dark:bg-primary-900 w-full">
-    <div class="w-full px-8 mx-auto max-w-7xl">
+    <div class="w-full mx-auto max-w-7xl">
       <div class="grid justify-between grid-cols-1 gap-4 p-10 md:grid-cols-2 md:p-20">
         <div class="mb-5 md:mb-0">
           <nuxt-link-locale to="/">
             <h4 class="text-xl font-semibold text-primary-100 dark:text-primary-200 uppercase">
               {{ get('legalName') }}
             </h4>
-            <a href="https://www.seventiescoiffurelille.fr/services" target="_blank" rel="noopener noreferrer" class="text-sm text-primary-100 dark:text-primary-200 underline">
-              chez 70's coiffure
-            </a>
           </nuxt-link-locale>
-          
+
+          <a href="https://www.seventiescoiffurelille.fr/services" target="_blank" rel="noopener noreferrer" class="text-sm text-primary-100 dark:text-primary-200 underline">
+            chez 70's coiffure
+          </a>
+
           <div class="flex gap-2 mt-5">
             <nuxt-link-locale to="/" locale="fr">
               <volt-secondary-button aria-label="Français">
                 <icon name="i-circle-flags:fr" />
               </volt-secondary-button>
             </nuxt-link-locale>
-  
+
             <nuxt-link-locale to="/" locale="en">
               <volt-secondary-button aria-label="English">
                 <icon name="i-circle-flags:uk" />
@@ -63,7 +64,7 @@
 import { footer } from '~/data'
 
 const { $dayjs } = useNuxtApp()
-const currentYear = ref($dayjs().year())
+const currentYear = $dayjs().year()
 
 const { getSocial, getSocialIcon, activeSocials, get } = useBusinessDetails()
 </script>

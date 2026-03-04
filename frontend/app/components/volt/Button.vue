@@ -14,7 +14,7 @@ import { ptViewMerge } from './utils'
 interface Props extends /* @vue-ignore */ ButtonProps { }
 defineProps<Props>()
 
-const theme = ref<ButtonPassThroughOptions>({
+const theme: ButtonPassThroughOptions = {
   root: `inline-flex cursor-pointer select-none items-center justify-center overflow-hidden relative
         px-3 py-2 gap-2 rounded-md disabled:pointer-events-none disabled:opacity-60 transition-colors duration-200
         bg-primary enabled:hover:bg-primary-emphasis enabled:active:bg-primary-emphasis-alt text-primary-contrast
@@ -46,5 +46,5 @@ const theme = ref<ButtonPassThroughOptions>({
   pcBadge: {
     root: `min-w-4 h-4 leading-4 bg-primary-contrast rounded-full text-primary text-xs font-bold`
   }
-})
+}
 </script>

@@ -14,7 +14,7 @@
           </slot>
         </p>
 
-        <base-telephone-button :id="id" size="large" class="mt-10" :with-icon="true">
+        <base-telephone-button :id="id" size="large" button-class="mt-10" :with-icon="true">
           <template #default>
             Obtenir mon moment plaisir
           </template>

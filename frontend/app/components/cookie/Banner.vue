@@ -15,26 +15,26 @@
             <path fill="#644647" d="M33.129 29.18l-2.803 1.065a.953.953 0 00-.053 1.764.957.957 0 00.73.022l2.803-1.065a.953.953 0 00-.677-1.783v-.003zm24.373-3.628l-2.167.823a.956.956 0 00-.054 1.764.954.954 0 00.73.021l2.169-.823a.954.954 0 10-.678-1.784v-.001z" />
           </svg>
         </span>
-  
+
         <h5 class="text-sm font-semibold mb-2 text-left mr-auto text-surface-700 dark:text-surface-50">
           {{ $t("Votre vie privée est importante pour nous") }}
         </h5>
-  
+
         <p class="w-full mb-4 text-sm text-justify text-surface-800 dark:text-surface-50">
           {{ $t("Nous traitons vos informations personnelles afin de mesurer et d'améliorer nos sites et services, de soutenir nos campagnes et de vous proposer des contenus personnalisés.") }}
         </p>
-  
+
         <p class="w-full mb-6 text-sm text-justify text-surface-800 dark:text-surface-50">
-          {{ $t("Pour plus d'informations, consultez notre Politique de confidentialité.") }} <nuxt-link class="text-surface-600 hover:text-surface-700 hover:underline underline-offset-2" href="/privacy-policy">
+          {{ $t("Pour plus d'informations, consultez notre Politique de confidentialité.") }} <nuxt-link class="text-surface-600 hover:text-surface-700 hover:underline underline-offset-2" href="/legal/confidentialite">
             {{ $t("Politique de confidentialité") }}
           </nuxt-link>
         </p>
-  
+
         <div class="grid grid-cols-2 w-full content-center">
           <button class="text-sm text-surface-600 cursor-pointer font-semibold transition-colors hover:text-surface-700 hover:underline underline-offset-2" @click="() => toggleShowOptions()">
             {{ $t("Plus d'options") }}
           </button>
-  
+
           <!-- cursor-pointer py-2 px-8 w-max break-keep text-sm rounded-lg transition-colors text-[#634647] hover:text-[#ddad81] bg-[#ddad81] hover:bg-[#634647] -->
           <volt-contrast-button class="font-semibold" @click="() => accept()">
             {{ $t("Accepter tout") }}

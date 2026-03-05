@@ -4,9 +4,6 @@
     <gallery-slider v-if="isSlider" :images="image.image" />
     <nuxt-img v-else :src="typeof image.image === 'string' ? image.image : ''" :alt="`Cliente de ${get('legalName')}`" class="hover:scale-105 hover:rotate-2 transition-all ease-in-out aspect-square object-cover w-full" @click.stop="() => toggleSelected()" />
 
-    <!-- Mask -->
-    <!-- <div v-if="isHovered && !isSelected && !isMobile" class="bg-primary-900/10 absolute top-0 left-0 w-full h-full" @click.stop="() => toggleSelected()" /> -->
-
     <!-- Infos -->
     <div class="absolute left-5 bottom-5 space-y-1">
       <h3 class="text-primary-100 text-xl font-semibold">{{ image.name }}</h3>

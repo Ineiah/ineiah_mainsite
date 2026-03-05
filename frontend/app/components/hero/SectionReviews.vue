@@ -13,23 +13,27 @@
     </div>
 
     <div class="flex flex-wrap justify-center text-left gap-5 xl:gap-10 text-primary-500">
-      <article v-for="(review, idx) in reviews" :key="idx" class="flex flex-col justify-left shadow-md rounded-xl bg-primary-200 dark:bg-primary-800">
-        <div id="review" class="flex flex-col p-5 max-w-70">
+      <article v-for="(review, idx) in reviews" :ref="reviewEls.set" :key="idx" class="flex flex-col justify-left shadow-md rounded-xl bg-primary-200 dark:bg-primary-800" @click="selectReview(review)">
+        <div id="review" class="flex flex-col justify-between p-5 max-w-70">
           <div id="review-rating">
             <icon v-for="i in review.rating" :key="i" name="lucide:star" />
           </div>
 
-          <p class="font-thin leading-5 text-sm">
+          <div v-if="hasSelection && selectedReview.reviewer.name === review.reviewer.name" class="font-thin leading-5 text-sm w-full h-25 overflow-scroll" @click="selectReview(null)">
             "{{ review.comment }}"
-          </p>
+          </div>
+
+          <div v-else class="font-thin leading-5 text-sm w-full h-25 overflow-hidden text-ellipsis">
+            "{{ review.comment }}"
+          </div>
 
           <volt-divider />
 
           <div class="flex items-center space-x-5 mt-5">
-            <volt-avatar :image="review.reviewer.avatar" size="large" />
-            <div>
+            <nuxt-img :src="review.reviewer.avatar || '/placeholder2.svg'" size="large" class="w-10 h-10 rounded-full" />
+            <div class="space-y-0">
               <h2 class="font-bold">{{ review.reviewer.name }}</h2>
-              <p class="text-sm font-thin">{{ review.reviewer.title }}</p>
+              <p v-if="review.reviewer.title" class="text-sm font-thin">{{ review.reviewer.title }}</p>
             </div>
           </div>
         </div>
@@ -39,50 +43,19 @@
 </template>
 
 <script lang="ts" setup>
-function useReviews() {
-  return {
-    reviews: [
-      {
-        rating: 5,
-        comment: "lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
-        reviewer: {
-          name: "Johanna Gantois",
-          title: "CEO, Company Name",
-          avatar: "https://raw.githubusercontent.com/prebuiltui/prebuiltui/main/assets/userImage/userImage1.png"
-        }
-      },
-      {
-        rating: 5,
-        comment: "lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
-        reviewer: {
-          name: "Johanna Gantois",
-          title: "CEO, Company Name",
-          avatar: "https://raw.githubusercontent.com/prebuiltui/prebuiltui/main/assets/userImage/userImage1.png"
-        }
-      },
-      {
-        rating: 5,
-        comment: "lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
-        reviewer: {
-          name: "Johanna Gantois",
-          title: "CEO, Company Name",
-          avatar: "https://raw.githubusercontent.com/prebuiltui/prebuiltui/main/assets/userImage/userImage1.png"
-        }
-      },
-      {
-        rating: 5,
-        comment: "lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
-        reviewer: {
-          name: "Johanna Gantois",
-          title: "CEO, Company Name",
-          avatar: "https://raw.githubusercontent.com/prebuiltui/prebuiltui/main/assets/userImage/userImage1.png"
-        }
-      }
-    ]
-  }
-}
+/**
+ * Reviews
+ */
 
-const { reviews } = useReviews()
+const { reviews, selectedReview, hasSelection, selectReview } = useReviewsComposable()
+
+const reviewEls = useTemplateRefsList()
+
+reviewEls.value.forEach((el) => {
+  onClickOutside(el, () => {
+    selectReview(null)
+  })
+})
 
 /**
  * SEO

@@ -11,11 +11,11 @@
 
       <div class="flex flex-wrap space-y-2 w-full md:space-y-0 md:flex-nowrap justify-center md:items-center md:space-x-5">
         <nuxt-link-locale nuxt-link-locale id="link-offer-hero" class="block cursor-pointer" to="/nos-prestations">
-          <hero-buttons-glass text="Prestations" icon="lucide:arrow-right" />
+          <hero-buttons-glass text="Prestations" icon-name="lucide:arrow-up-right" />
         </nuxt-link-locale>
 
         <a :href="`tel:${fallbackTelephone}`" class="block cursor-pointer">
-          <hero-buttons-glass text="Nous appeler" icon="lucide:phone" />
+          <hero-buttons-glass text="Nous appeler" icon-name="lucide:phone" />
         </a>
       </div>
     </div>

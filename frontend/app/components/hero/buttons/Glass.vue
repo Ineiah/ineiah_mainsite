@@ -3,11 +3,14 @@
     {{ $t(text) }}
 
     <div class="rounded-full bg-primary-200/20 absolute top-2 right-2 w-8 h-8 flex items-center justify-center text-primary-50 text-sm">
-      <icon :name="icon" />
+      <icon :name="iconName" :alt="iconName" />
     </div>
   </div>
 </template>
 
 <script setup lang="ts">
-defineProps<{ text: string, icon: string }>()
+defineProps<{ 
+  text: string, 
+  iconName: string
+  }>()
 </script>

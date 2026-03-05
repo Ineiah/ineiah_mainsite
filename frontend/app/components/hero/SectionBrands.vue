@@ -8,9 +8,9 @@
 
     <div class="grid grid-cols-2 grid-rows-2 gap-4 md:grid-cols-4 md:grid-rows-none md:p-10">
       <hero-brand src="/brands/Bouclème.png" alt="Logo de la marque Bouclème" />
-      <hero-brand src="/brands/Bouclème.png" alt="Logo de la marque Bouclème" />
-      <hero-brand src="/brands/Bouclème.png" alt="Logo de la marque Bouclème" />
-      <hero-brand src="/brands/Bouclème.png" alt="Logo de la marque Bouclème" />
+      <hero-brand src="/brands/olaplex.svg" alt="Logo de la marque Olaplex" />
+      <hero-brand src="/brands/les_secrets_de_loly.png" alt="Logo de la marque Les Secrets de Loly" />
+      <hero-brand src="/brands/vegetalement_provence/vegetalement_provence.png" alt="Logo de la marque Végétalement Provence" />
     </div>
   </div>
 </template>

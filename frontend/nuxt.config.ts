@@ -131,7 +131,10 @@ export default defineNuxtConfig({
 
   ganalytics: {
     ga4: {
-      id: 'G-LK89FQLZWP',
+      id: [
+        'G-LK89FQLZWP',
+        'G-769ND3ZXSC'
+      ],
       enableDebug: true
     },
     gtm: {

@@ -1,7 +1,7 @@
 <template>
   <section id="hero" class="has-[p]:space-y-5 has-[p]:leading-8 has-[h2]:leading-15 relative">
     <!-- Hero -->
-    <hero-bottom-cta v-if="showImage" :image="`/images/hero/customer18.jpg`" />
+    <hero-bottom-cta v-if="showImage" :image="`/images/hero/customer18-small.webp`" />
     <hero-top-video v-else-if="showVideo" />
 
     <!-- Intermediate-1 -->

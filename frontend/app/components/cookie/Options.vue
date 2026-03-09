@@ -25,7 +25,7 @@ const cookies = ref([
     required: false
   },
   {
-    namee: 'Advertising Cookies',
+    name: 'Advertising Cookies',
     description: 'These cookies are used to deliver advertisements that are more relevant to you and your interests. They are also used to limit the number of times you see an advertisement as well as help measure the effectiveness of the advertising campaign.',
     required: false
   }

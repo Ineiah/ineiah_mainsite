@@ -10,7 +10,7 @@ export default defineI18nLocale(async _locale => {
     'Je veux me faire belle': 'Make me a princess',
     'Découvrir': 'Discover',
     'Nos marques partenaires': 'Our Partner Brands',
-    'Mes recommendations produits': 'My Product Recommendations',
+    'Mes recommandations produits': 'My Product Recommendations',
     'Voir le produit': 'View Product',
     'Nous contacter': 'Contact Us',
     'Une équipe à ton écoute': 'A Team That Listens to You',

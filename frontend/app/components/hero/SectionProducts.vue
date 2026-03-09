@@ -2,7 +2,7 @@
   <section id="recommended-products" class="px-5 py-20 md:p-20">
     <client-only>
       <h3 v-motion-slide-visible-once-bottom :delay="400" :enter="{ transition: { type: 'spring', stiffness: 20 } }" class="text-center text-3xl xl:text-5xl mb-10 text-primary-500">
-        {{ $t("Mes recommendations produits") }}
+        {{ $t("Mes recommandations produits") }}
       </h3>
     </client-only>
 

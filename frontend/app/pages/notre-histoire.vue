@@ -1,6 +1,6 @@
 <template>
   <section id="story">
-    <base-jumbotron src="/images/banners/img1.jpg" :lead="$t('Notre histoire')" :subtitle="$t('Découvrez notre histoire et la création de notre salon')" :position-y="30" />
+    <base-jumbotron src="/images/banners/banner1-small.webp" :lead="$t('Notre histoire')" :subtitle="$t('Découvrez notre histoire et la création de notre salon')" :position-y="30" />
 
     <!-- Quote TODO: Component -->
     <base-quote>
@@ -8,7 +8,7 @@
     </base-quote>
 
     <div class="px-2 md:px-10 my-10 space-y-5">
-      <story-card :invert="true" :image="'/images/natachamorel/img1.jpg'" class="shadow-none">
+      <story-card :invert="false" :image="'/images/natachamorel/img1.jpg'" class="shadow-none">
         <template #title>
           <span class="italic text-primary-700 dark:text-primary-300">Qui</span> suis-je ?
         </template>
@@ -24,9 +24,9 @@
         </p>
       </story-card>
 
-      <story-card :image="'/images/natachamorel/img2.jpg'" class="shadow-none">
+      <story-card :invert="true" :image="'/images/natachamorel/img2.jpg'" class="shadow-none">
         <template #title>
-          Parcours <span class="italic text-primary-700 dark:text-primary-300">professionnelle</span>
+          Parcours <span class="italic text-primary-700 dark:text-primary-300">professionnel</span>
         </template>
 
         <p>
@@ -40,7 +40,7 @@
         </p>
       </story-card>
 
-      <story-card :image="'/images/natachamorel/img3.jpg'" class="shadow-none">
+      <story-card :invert="false" :image="'/images/natachamorel/img3.jpg'" class="shadow-none">
         <template #title>
           Mon <span class="italic text-primary-700 dark:text-primary-300">expertise</span>
         </template>

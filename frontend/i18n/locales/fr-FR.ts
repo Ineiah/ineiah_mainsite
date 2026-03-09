@@ -98,7 +98,6 @@ export default defineI18nLocale(async _locale => {
     "Mi-Long": "Mi-Long",
     "Mixte": "Mixte",
     'Transformation': 'Transformation',
-    'Mes recommendations produits': 'Mes recommendations produits',
     "L'art de coiffer toutes les textures": "L'art de coiffer toutes les textures",
     "Du Lundi au Vendredi - Déplacement à domicile": "Du Lundi au Vendredi - Déplacement à domicile",
     "Soumettre": "Soumettre",

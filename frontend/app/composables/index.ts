@@ -87,9 +87,13 @@ export const useCookieComposable = createGlobalState(() => {
   const toggleShowBanner = useToggle(showBanner)
   const toggleShowOptions = useToggle(showOptions)
 
-  function accept() {
+  function accept(callback?: () => void) {
     cookieAccepted.value = true
     showBanner.value = false
+
+    if (isDefined(callback)) {
+      callback()
+    }
   }
 
   return {

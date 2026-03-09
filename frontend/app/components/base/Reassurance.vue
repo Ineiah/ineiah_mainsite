@@ -7,7 +7,7 @@
           {{ $t(item.title) }}
         </p>
 
-        <base-telephone-link :id="`tel-reassurance-${idx}`" :with-icon="false" text="Nous contacter" class="text-primary-600 dark:text-primary-200 underline underline-offset-7" />
+        <base-telephone-link :id="`tel-reassurance-${idx}`" :with-icon="false" text="Nous contacter" class="text-primary-600 hover:text-primary-700 dark:text-primary-200 underline underline-offset-7" />
       </div>
     </div>
   </div>

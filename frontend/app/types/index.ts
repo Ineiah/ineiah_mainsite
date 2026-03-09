@@ -33,3 +33,9 @@ export type Photocall = {
   subtitle: 'Coupe' | 'Soin'
   title: string
 }
+
+export type CookieValue = {
+  name: string
+  description: string
+  required: boolean
+}

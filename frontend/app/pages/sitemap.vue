@@ -64,6 +64,7 @@ useSchemaOrg(
       itemListElement: [
         {
           '@type': 'ListItem',
+          '@id': `${useBrowserLocation().value.origin}/`,
           position: 2,
           name: titles[i18n.locale.value],
           item: `${useBrowserLocation().value.origin}${useRoute().fullPath}`

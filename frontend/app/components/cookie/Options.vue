@@ -2,18 +2,20 @@
   <client-only>
     <volt-dialog v-model:visible="show" class="w-200" title="Customize your cookie preferences">
       <p>We respect your right to privacy. You can choose not to allow some types of cookies. Your cookie preferences will apply across our website.</p>
-      <cookie-block v-for="item in cookies" :key="item.name" :cookie-value="item" />
+      <cookie-block v-for="item in cookies" :key="item.name" :cookie-value="item" @update:cookie-value="(value) => updateCookieValue(value)" />
     </volt-dialog>
   </client-only>
 </template>
 
 <script setup lang="ts">
+import type { CookieValue, Arrayable } from '~/types'
+
 const show = defineModel('show', {
   type: Boolean,
   required: true
 })
 
-const cookies = ref([
+const cookies = ref<Arrayable<CookieValue>>([
   {
     name: 'Necessary Cookies',
     description: 'These cookies are essential for the website to function properly. They enable basic functions like page navigation and access to secure areas of the website. The website cannot function properly without these cookies.',
@@ -30,4 +32,20 @@ const cookies = ref([
     required: false
   }
 ])
+
+/**
+ * Analytics Consent
+ */
+
+const { acceptAll, denyAll } = useConsent()
+
+function updateCookieValue(value: CookieValue) {
+  if (value.name === 'Analytics Cookies') {
+    if (value.required) {
+      acceptAll()
+    } else {
+      denyAll()
+    }
+  }
+}
 </script>

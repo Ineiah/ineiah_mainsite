@@ -19,12 +19,18 @@
 </template>
 
 <script setup lang="ts">
+import type { CookieValue } from '~/types'
+
 const props = defineProps<{
-  cookieValue: {
+  cookieValue: CookieValue
+}>()
+
+const emit = defineEmits<{
+  'update:cookieValue': [{
     name: string,
     description: string,
     required: boolean
-  }
+  }]
 }>()
 
 const cookie = computed({
@@ -32,5 +38,9 @@ const cookie = computed({
   set: (value) => {
     useCookie(props.cookieValue.name).value = value.required ? 'true' : 'false'
   }
+})
+
+watch(cookie, () => {
+  emit('update:cookieValue', cookie.value)
 })
 </script>

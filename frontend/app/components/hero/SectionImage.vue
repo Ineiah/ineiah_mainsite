@@ -3,11 +3,11 @@
     <div class="grid grid-cols-1 xl:grid-cols-2 gap-10">
       <client-only>
         <div class="transition-all ease-in has-[img]:hover:zoom-in-20">
-          <nuxt-img v-motion-slide-visible-once-left :delay="200" :alt="`Séance photo de ${get('legalName')}`" src="/images/kira/photoshoot46.jpg" class="rounded-lg aspect-square object-cover w-full" />
+          <nuxt-img v-motion-slide-visible-once-left :delay="200" :alt="`Séance photo de ${get('legalName')}`" src="/images/kira/photoshoot46-small.webp" class="rounded-lg aspect-square object-cover w-full" />
         </div>
 
         <template #fallback>
-          Something went wrong while loading the image.
+          Loading image...
         </template>
       </client-only>
 

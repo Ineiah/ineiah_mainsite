@@ -61,12 +61,19 @@ const { reviews, selectedReview, hasSelection, selectReview } = useReviewsCompos
  * SEO
  */
 
+const { get } = useBusinessDetails()
+ 
 useSchemaOrg(
   reviews.map(review => defineReview({
     author: {
       '@type': "Person",
       givenName: review.reviewer.givenName,
-      familyName: review.reviewer.familyName
+      familyName: review.reviewer.familyName,
+      name: review.reviewer.name
+    },
+    itemReviewed: {
+      "@type": "BeautySalon",
+      name: get('legalName')
     },
     reviewBody: review.comment,
     reviewRating: {

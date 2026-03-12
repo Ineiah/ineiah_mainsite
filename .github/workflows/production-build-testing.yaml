@@ -38,7 +38,6 @@ jobs:
       # - name: "Install dependencies"
       #   run: npx nypm@latest i
 
-
       # - name: Install Nuxt
       #   run: pnpm install
 

@@ -1,0 +1,39 @@
+# on:
+#   workflow_dispatch:
+#     inputs:
+#       environment:
+#         description: 'Deploy application to the specified environment'
+#         required: true
+#         default: 'production'
+#         type: choice
+#         options:
+#           - production
+#           - staging
+
+on:
+  push:
+    branches:
+      - develop
+    tags:
+      - v1.0.0-rc.*
+    
+jobs:
+  build-and-deploy:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+
+      - name: Set up Node.js
+        uses: actions/setup-node@v3
+        with:
+          node-version: '24.x'
+
+      - name: Install pnpm
+        run: npm install -g pnpm
+
+      - name: Install dependencies
+        run: pnpm install
+      
+      - name: Build application
+        run: pnpm run build

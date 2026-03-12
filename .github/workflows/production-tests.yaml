@@ -20,16 +20,13 @@ jobs:
       - name: Set up Node.js
         uses: actions/setup-node@v3
         with:
-          node-version: '18'
+          node-version: '24.x'
 
       - name: Install pnpm
         run: npm install -g pnpm
 
       - name: Install dependencies
         run: pnpm install
-
-      - name: Build application
-        run: pnpm run build
 
       - name: Deploy to environment
         run: |
@@ -41,3 +38,6 @@ jobs:
             echo "Deploying to staging environment..."
             # Add your staging deployment commands here
           fi
+      
+      - name: Build application
+        run: pnpm run build

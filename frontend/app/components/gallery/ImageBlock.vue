@@ -19,11 +19,9 @@
 
       <!-- CTA -->
       <div class="flex gap-2">
-        <volt-button v-if="isSelected" rounded>
-          <icon name="i-fa6-solid:phone" />
-        </volt-button>
+        <lazy-base-telephone-button v-if="isSelected" :id="createElementId('tel-service-gallery', null, image.name)" text="Choisir cette coupe" />
 
-        <volt-secondary-button v-if="isSelected" severity="info" rounded @click.stop="share()">
+        <volt-secondary-button v-if="isSelected" :id="createElementId('link-share', null, image.name)" severity="info" rounded @click.stop="share()">
           <icon name="i-fa6-solid:share" />
         </volt-secondary-button>
       </div>
@@ -77,6 +75,12 @@ const theme = computed(() => {
  * Sharing
  */
 
+/**
+ * Analytics
+ */
+
+const { sendEvent } = useAnalyticsEvent()
+
 async function share() {
   await Share.share({
     title: props.image.name,
@@ -84,5 +88,12 @@ async function share() {
     url: window.location.href,
     dialogTitle: 'Partagez cette coupe'
   })
+
+  sendEvent(
+    defineAnalyticsEvent('share', {
+      imageName: props.image.name,
+      imageUrl: props.image.url || ''
+    })
+  )
 }
 </script>

@@ -36,11 +36,31 @@ const props = defineProps<{ images: GalleryImage['image'] }>()
 const sliderEl = useTemplateRef('sliderEl')
 
 /**
+ * Analytics
+ */
+
+const { sendEvent } = useAnalyticsEvent()
+
+/**
  * Cycle
  */
 
 const _images = computed(() => Array.isArray(props.images) ? props.images : [])
 const { index, next, prev } = useCycleList(_images)
+
+watchDebounced(index, (newValue, oldValue) => {
+  if (newValue != oldValue) {
+    sendEvent(
+      defineAnalyticsEvent(
+        'cycle_slider',
+        {
+          slideIndex: index.value,
+          imageItems: props.images
+        }
+      )
+    )
+  }
+}, { debounce: 2000 })
 
 /**
  * Mobile
@@ -69,5 +89,4 @@ watch(isSwiping, (newValue) => {
  */
 
 const isHovered = useElementHover(sliderEl)
-
 </script>

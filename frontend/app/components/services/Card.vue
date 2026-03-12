@@ -37,7 +37,7 @@
 import { serviceSectionKey } from '~/data'
 import type { Service, ServiceSection } from '~/types'
 
-defineProps<{ index: number, service: Service }>()
+const props = defineProps<{ index: number, service: Service }>()
 
 /**
  * Busness details
@@ -55,6 +55,25 @@ const isMobile = useMediaQuery('(max-width: 768px)')
  */
 
 const [showServiceDetails, toggleServiceDetails] = useToggle<boolean>(false)
+
+/**
+ * Analytics
+ */
+
+const { sendEvent } = useAnalyticsEvent()
+
+whenever(showServiceDetails, () => {
+  sendEvent(
+    defineAnalyticsEvent(
+      'open_service_details',
+      {
+        item_index: props.index,
+        item_name: `${props.service.category} - ${props.service.name} - ${props.service.gender}`,
+        item_value: props.service.price || 0
+      }
+    )
+  )
+})
 
 /**
  * Click outside

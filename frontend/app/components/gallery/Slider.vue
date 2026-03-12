@@ -24,7 +24,7 @@
 
     <!-- Indicators -->
     <div v-if="images.length > 1" class="absolute top-5 left-1/2 -translate-x-1/2 flex gap-2">
-      <span v-for="(image, i) in images" :key="i" :class="['w-3 h-3 rounded-full transition-all duration-300', i === index ? 'bg-primary-100' : 'bg-primary-50/50']" />
+      <span v-for="(_, i) in images" :key="i" :class="['w-3 h-3 rounded-full transition-all duration-300', i === index ? 'bg-primary-100' : 'bg-primary-50/50']" />
     </div>
   </div>
 </template>
@@ -39,7 +39,8 @@ const sliderEl = useTemplateRef('sliderEl')
  * Cycle
  */
 
-const { index, next, prev } = useCycleList(props.images)
+const _images = computed(() => Array.isArray(props.images) ? props.images : [])
+const { index, next, prev } = useCycleList(_images)
 
 /**
  * Mobile

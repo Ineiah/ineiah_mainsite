@@ -1,5 +1,5 @@
 <template>
-  <article ref="imageEl" :class="theme" class="group overflow-hidden rounded-xl transition-all duration-300 relative cursor-pointer">
+  <article ref="imageEl" :id="createElementId('gallery-image', null, image.name)" :class ="theme" class="group overflow-hidden rounded-xl transition-all duration-300 relative cursor-pointer">
     <!-- Image -->
     <gallery-slider v-if="isSlider" :images="image.image" />
     <nuxt-img v-else :src="typeof image.image === 'string' ? image.image : ''" :alt="`Cliente de ${get('legalName')}`" class="hover:scale-105 hover:rotate-2 transition-all ease-in-out aspect-square object-cover w-full" @click.stop="() => toggleSelected()" />

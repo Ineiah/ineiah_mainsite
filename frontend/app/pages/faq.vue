@@ -29,7 +29,8 @@
         </div>
       </div>
 
-      <card-call-to-action id="tel-call-us-faq" class="mt-15">
+      <!-- CTA -->
+      <lazy-card-call-to-action id="tel-call-us-faq" class="mt-15" hydrate-on-idle>
         <template #title>
           {{ $t('Des questions ?') }}
         </template>
@@ -41,7 +42,7 @@
         <template #action>
           Nous contacter
         </template>
-      </card-call-to-action>
+      </lazy-card-call-to-action>
     </div>
   </section>
 </template>
@@ -76,13 +77,21 @@ const descriptions: PageTitleOrDescription<typeof i18n.locale.value> = {
   en: 'Find answers to your most frequently asked questions'
 }
 
+const url = useRuntimeConfig().public.siteUrl
+const shareImage = getOgImageImageUrl('/images/hero/customer18-small.webp')
+
 useSeoMeta({
   title: titles[i18n.locale.value],
   description: descriptions[i18n.locale.value],
   titleTemplate: `%s | ${businessDetails.legalName}`,
   twitterTitle: titles[i18n.locale.value],
   twitterDescription: descriptions[i18n.locale.value],
-  ogImage: 'https://dev-client.gency313.fr/hero/hair1.jpg'
+  ogImage: shareImage,
+  twitterImage: shareImage,
+  twitterCard: 'summary_large_image',
+  ogTitle: titles[i18n.locale.value],
+  ogDescription: descriptions[i18n.locale.value],
+  ogUrl: url + useRoute().path
 })
 
 const questionsList = computed(() => faqList.flatMap(x => [...x.questions]))

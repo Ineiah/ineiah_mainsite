@@ -11,13 +11,13 @@
     <hero-section-color />
 
     <!-- Brands -->
-    <hero-section-brands />
+    <lazy-hero-section-brands hydrate-on-idle />
 
     <!-- Photocall -->
-    <hero-section-photocall />
+    <lazy-hero-section-photocall hydrate-on-idle />
 
     <!-- Product Recommendations -->
-    <hero-section-products />
+    <lazy-hero-section-products hydrate-on-visible />
 
     <!-- Reviews -->
     <hero-section-reviews />

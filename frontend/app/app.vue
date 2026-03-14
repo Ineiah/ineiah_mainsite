@@ -8,7 +8,7 @@
 
       <dev-only>
         <cookie-banner />
-        <cookie-options :show="showOptions" />
+        <lazy-cookie-options :show="showOptions" :hydrate-when="showOptions" />
       </dev-only>
     </nuxt-layout>
   </section>

@@ -1,10 +1,8 @@
 <template>
-  <client-only>
-    <volt-dialog v-model:visible="show" class="w-200" title="Customize your cookie preferences">
-      <p>We respect your right to privacy. You can choose not to allow some types of cookies. Your cookie preferences will apply across our website.</p>
-      <cookie-block v-for="item in cookies" :key="item.name" :cookie-value="item" @update:cookie-value="(value) => updateCookieValue(value)" />
-    </volt-dialog>
-  </client-only>
+  <volt-dialog v-model:visible="show" class="w-200" title="Customize your cookie preferences">
+    <p>We respect your right to privacy. You can choose not to allow some types of cookies. Your cookie preferences will apply across our website.</p>
+    <cookie-block v-for="item in cookies" :key="item.name" :cookie-value="item" @update:cookie-value="(value) => updateCookieValue(value)" />
+  </volt-dialog>
 </template>
 
 <script setup lang="ts">

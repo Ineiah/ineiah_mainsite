@@ -34,11 +34,11 @@ export default defineI18nLocale(async _locale => {
     'Rechercher une coupe ou un style': 'Rechercher une coupe ou un style',
     'Découvrez notre histoire et la création de notre salon': 'Découvrez notre histoire et la création de notre salon',
     'Shampoings coupes coiffage': 'Shampoings coupes coiffage',
-    'Shampoings • Coupes • Mise en forme': 'Shampoos Cuts Styling',
-    "Shampoings • Mise en forme": "Shampoos Styling",
-    "25 à 45€": "25 to 45€",
-    "15 à 25€": "15 to 25€",
-    "Tarifs enfants": "Children's Prices",
+    'Shampoings • Coupes • Mise en forme': 'Shampoings • Coupes • Mise en forme',
+    "Shampoings • Mise en forme": "Shampoings • Mise en forme",
+    "25 à 45€": "25 à 45€",
+    "15 à 25€": "15 à 25€",
+    "Tarifs enfants": "Tarifs enfants",
     "Hair Contouring": "Hair Contouring",
     'Soins et traitements': 'Soins et traitements',
     'Coloration et mèches': 'Coloration et mèches',
@@ -116,5 +116,6 @@ export default defineI18nLocale(async _locale => {
     "Coupe seule": "Coupe seule",
     "Ce que pensent mes clients": "Ce que pensent mes clients",
     "Voici ce que nos clients pensent de nous. Nous sommes toujours à la recherche de moyens pour nous améliorer. Si vous avez une expérience positive avec nous, laissez un avis.": "Voici ce que nos clients pensent de nous. Nous sommes toujours à la recherche de moyens pour nous améliorer. Si vous avez une expérience positive avec nous, laissez un avis.",
+    "Soin": "Soin",
   }
 })

@@ -23,26 +23,27 @@ env:
 jobs:
   build-and-deploy:
     runs-on: ubuntu-latest
-    steps:
 
+    defaults:
+      run:
+        working-directory: ./frontend
+
+    steps:
       - uses: actions/checkout@v4
       - uses: actions/setup-node@v4
         with:
           node-version: '>=24'
                   
       - run: npm i -g --force corepack@latest && corepack enable
-
-      - name: "Move to frontend"
-        run: ls -Fal --color && cd frontend
           
-      # - name: "Install dependencies"
-      #   run: npx nypm@latest i
+      - name: "Install dependencies"
+        run: npx nypm@latest i
 
-      # - name: Install Nuxt
-      #   run: pnpm install
+      - name: Install Nuxt
+        run: pnpm install
 
-      # - name: Lint
-      #   run: pnpm run lint
+      - name: Lint
+        run: pnpm run lint
       
-      # - name: Build
-      #   run: pnpm run build
+      - name: Build
+        run: pnpm run build

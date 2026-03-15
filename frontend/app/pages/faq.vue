@@ -29,7 +29,8 @@
         </div>
       </div>
 
-      <card-call-to-action id="tel-call-us-faq" class="mt-15">
+      <!-- CTA -->
+      <lazy-card-call-to-action id="tel-call-us-faq" class="mt-15" hydrate-on-idle>
         <template #title>
           {{ $t('Des questions ?') }}
         </template>
@@ -41,12 +42,13 @@
         <template #action>
           Nous contacter
         </template>
-      </card-call-to-action>
+      </lazy-card-call-to-action>
     </div>
   </section>
 </template>
 
 <script setup lang="ts">
+import { B } from 'vue-router/dist/index-DFCq6eJK.js'
 import type { PageTitleOrDescription } from '~/types'
 
 definePageMeta({
@@ -57,7 +59,7 @@ definePageMeta({
  * Business details
  */
 
-const { businessDetails } = useBusinessDetails()
+const { businessDetails, get } = useBusinessDetails()
 const { faqList } = useFaq()
 
 /**
@@ -76,13 +78,21 @@ const descriptions: PageTitleOrDescription<typeof i18n.locale.value> = {
   en: 'Find answers to your most frequently asked questions'
 }
 
+const url = useRuntimeConfig().public.siteUrl
+const shareImage = getOgImageImageUrl('/images/hero/customer18-small.webp')
+
 useSeoMeta({
   title: titles[i18n.locale.value],
   description: descriptions[i18n.locale.value],
   titleTemplate: `%s | ${businessDetails.legalName}`,
   twitterTitle: titles[i18n.locale.value],
   twitterDescription: descriptions[i18n.locale.value],
-  ogImage: 'https://dev-client.gency313.fr/hero/hair1.jpg'
+  twitterImage: shareImage,
+  twitterCard: 'summary_large_image',
+  ogImage: shareImage,
+  ogTitle: titles[i18n.locale.value],
+  ogDescription: descriptions[i18n.locale.value],
+  ogUrl: url + useRoute().path
 })
 
 const questionsList = computed(() => faqList.flatMap(x => [...x.questions]))
@@ -111,10 +121,9 @@ useSchemaOrg([
   })
 ])
 
-defineOgImageComponent('NuxtSeo', {
-  title: titles[i18n.locale.value],
-  description: descriptions[i18n.locale.value],
-  theme: '#ff0000',
-  colorMode: 'dark'
+defineOgImage('NuxtSeoTakumi', {
+  title: titles[i18n.locale.value] || undefined,
+  description: descriptions[i18n.locale.value] || undefined,
+  author: get('legalName')
 })
 </script>

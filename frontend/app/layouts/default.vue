@@ -15,7 +15,7 @@
     <base-reassurance />
 
     <!-- Footer -->
-    <base-footer />
+    <lazy-base-footer hydrate-on-idle />
   </section>
 </template>
 

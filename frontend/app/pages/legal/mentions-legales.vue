@@ -158,7 +158,7 @@ useSeoMeta({
   ogImage: shareImage
 })
 
-defineOgImage('Base', {
+defineOgImage('NuxtSeoTakumi', {
   title: titles[i18n.locale.value] || undefined,
   description: descriptions[i18n.locale.value] || undefined,
   author: get('legalName')

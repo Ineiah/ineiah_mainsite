@@ -1,4 +1,13 @@
-export default defineI18nLocale(async _locale => {
+export default defineI18nLocale(async () => {
+  const faq = {
+    "Quels shampoings et soins recommandés pour cheveux afros très secs ?": "Quels shampoings et soins recommandés pour cheveux afros très secs ?",
+    "Il est recommandé de ne pas attacher vos cheveux pour votre rendez-vous, afin de permettre une meilleure évaluation de la texture et de la condition de vos cheveux. Cependant, assurez-vous qu'ils soient bien démêlés et propres.": "Il est recommandé de ne pas attacher vos cheveux pour votre rendez-vous, afin de permettre une meilleure évaluation de la texture et de la condition de vos cheveux. Cependant, assurez-vous qu'ils soient bien démêlés et propres.",
+    "Valeurs & Engagements": "Valeurs & Engagements",
+    "Utilisez-vous des produits respectueux de l'environnement ?": "Utilisez-vous des produits respectueux de l'environnement ?",
+    "L'éco-responsabilité fait partie intégrante de ma façon de travailler. Je sélectionne avec soin des produits capillaires naturels et respectueux de l'environnement — des marques comme Végétalement Provence ou Les Secrets de Loly, reconnues pour leur formulation saine, sans sulfates ni silicones agressifs, et engagées dans une démarche durable. Au-delà des produits, j'applique des pratiques responsables au quotidien : réduction des déchets, utilisation raisonnée de l'eau et choix de marques dont les valeurs environnementales correspondent aux miennes. Prendre soin de tes cheveux ne devrait pas se faire au détriment de la planète.": "L'éco-responsabilité fait partie intégrante de ma façon de travailler. Je sélectionne avec soin des produits capillaires naturels et respectueux de l'environnement — des marques comme Végétalement Provence ou Les Secrets de Loly, reconnues pour leur formulation saine, sans sulfates ni silicones agressifs, et engagées dans une démarche durable. Au-delà des produits, j'applique des pratiques responsables au quotidien : réduction des déchets, utilisation raisonnée de l'eau et choix de marques dont les valeurs environnementales correspondent aux miennes. Prendre soin de tes cheveux ne devrait pas se faire au détriment de la planète.",
+    "Je recommande d’utiliser des shampoings et soins spécialement formulés pour les cheveux afros très secs, qui contiennent des ingrédients hydratants et nourrissants tels que l’huile de coco, le beurre de karité et l’huile d’argan. Je peux vous conseiller des produits spécifiques lors de votre rendez-vous.": "Je recommande d’utiliser des shampoings et soins spécialement formulés pour les cheveux afros très secs, qui contiennent des ingrédients hydratants et nourrissants tels que l’huile de coco, le beurre de karité et l’huile d’argan. Je peux vous conseiller des produits spécifiques lors de votre rendez-vous."
+  }
+
   return {
     'Accueil': 'Accueil',
     'Prestations': 'Prestations',
@@ -128,5 +137,6 @@ export default defineI18nLocale(async _locale => {
     "Découvrez ma collection de coupes et de styles.": "Découvrez ma collection de coupes et de styles.",
     "Découvrez mes prestations de coiffure et de soins capillaires, adaptées à vos besoins et à vos envies.": "Découvrez mes prestations de coiffure et de soins capillaires, adaptées à vos besoins et à vos envies.",
     "Des marques sélectionnées pour leur excellence sur cheveux bouclés, crépus et texturés.": "Des marques sélectionnées pour leur excellence sur cheveux bouclés, crépus et texturés.",
+    ...faq
   }
 })

@@ -51,7 +51,18 @@ export default defineNuxtConfig({
       titleTemplate: "%s %separator %siteName",
       templateParams: {
         separator: '-',
-        siteName: "La Beauté D'Inéïah"
+        siteName: "La Beauté D'Inéïah",
+        meta: [
+          { 
+            name: 'theme-color', 
+            content: '#96726a'
+          },
+          {
+            name: 'theme-color',
+            content: '#5e4842',
+            media: '(prefers-color-scheme: dark)'
+          }
+        ]
       }
     }
   },

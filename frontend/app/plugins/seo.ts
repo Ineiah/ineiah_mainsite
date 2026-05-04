@@ -71,7 +71,11 @@ export default defineNuxtPlugin(() => {
         'currenciesAccepted': 'EUR',
         'areaServed': {
           '@type': 'Place',
-          'name': 'Lille, France'
+          'name': {
+            '@type': 'City',
+            'name': get('address').city,
+            'addressCountry': 'FR'
+          }
         },
         'paymentAccepted': [
           'Credit Card',
@@ -137,24 +141,9 @@ export default defineNuxtPlugin(() => {
         },
         'potentialAction': {
           '@type': 'SearchAction',
-          'target': {
-            '@type': 'EntryPoint',
-            'urlTemplate': siteUrl + '/search?q={search_term_string}'
-          },
+          'target': siteUrl + '/search?q={search_term_string}',
           'query-input': 'required name=search_term_string'
         }
-      }),
-
-      defineBreadcrumb({
-        '@type': 'BreadcrumbList',
-        'itemListElement': [
-          {
-            '@type': 'ListItem',
-            'position': 1,
-            'name': 'Accueil',
-            'item': siteUrl + '/'
-          }
-        ]
       }),
 
       definePerson({
@@ -167,21 +156,12 @@ export default defineNuxtPlugin(() => {
         'sameAs': [
           getSocial('instagram')?.url,
           getSocial('facebook')?.url
-        ],
+        ].filter(Boolean),
         'worksFor': {
           '@type': 'Organization',
           '@id': siteUrl + '#organization'
         },
         'knowsAbout': get('founderKnowsAbout')
-      }),
-
-      defineSearchAction({
-        '@type': 'SearchAction',
-        'target': {
-          '@type': 'EntryPoint',
-          'urlTemplate': siteUrl + '/search?q={search_term_string}'
-        },
-        'query-input': 'required name=search_term_string'
       })
     ]
   )

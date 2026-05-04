@@ -5,7 +5,7 @@
       <source :src="image.image || ''" type="video/webm">
       <source :src="image.image || ''" type="video/ogg">
       <source :src="image.image || ''" type="video/mov">
-      {{ $t("Votre navigateur ne supporte pas la lecture de cette vidéo.") }} 
+      {{ $t("Votre navigateur ne supporte pas la lecture de cette vidéo.") }}
     </video>
   </div>
 </template>
@@ -18,7 +18,7 @@ defineProps<{ image: GalleryImage }>()
 const videoEl = useTemplateRef<HTMLVideoElement>('videoEl')
 
 const isPlaying = ref(false)
-  
+
 function playVideo() {
   if (isDefined(videoEl)) {
     if (isPlaying.value) {

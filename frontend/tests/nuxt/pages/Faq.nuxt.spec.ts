@@ -1,6 +1,6 @@
 import AccordionContent from '../../../app/components/volt/AccordionContent.vue'
 import { mountSuspended, renderSuspended } from '@nuxt/test-utils/runtime'
-import { fireEvent, within } from '@testing-library/vue'
+// import { fireEvent, within } from '@testing-library/vue'
 import { describe, expect, it } from 'vitest'
 import {  useFaq } from '../../../app/composables'
 import Faq from '../../../app/pages/Faq.vue'

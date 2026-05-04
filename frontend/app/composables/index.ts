@@ -2,10 +2,11 @@ export * from './business'
 export * from './dark_mode'
 export * from './faq'
 export * from './gallery'
-export * from './privacy_policy'
 export * from './socials'
 export * from './reviews'
-export * from './search'
+export * from './services'
+export * from './google_search'
+export * from './legal'
 
 /**
  * Composable to generate dynamic IDs from string values

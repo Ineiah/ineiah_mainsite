@@ -1,7 +1,7 @@
 <template>
   <div class="">
-    <volt-container size="sm" class="mt-30">
-      <volt-card>
+    <volt-container size="sm">
+      <volt-card class="mt-35">
         <template #content>
           <!-- Search input -->
           <div class="relative mb-6">
@@ -22,6 +22,8 @@
           </p>        
         </template>
       </volt-card>
+
+      {{ items }}
       
       <ul v-if="searchedItems.length > 0" class="space-y-1 my-20">
         <li v-for="item in searchedItems" :key="item.id">
@@ -55,6 +57,8 @@
 </template>
 
 <script setup lang="ts">
+import type { ServiceSection, Arrayable } from '~/types'
+
 definePageMeta({
   label: 'Search'
 })
@@ -66,6 +70,33 @@ definePageMeta({
 const { googleSearchResolver } = useServices()
 const { googleSearchResolver: _privacyGoogleSearchResolver } = useWebsitePolicies()
 const { query, activeType, searchedItems } = useGoogleSearch(googleSearchResolver, _privacyGoogleSearchResolver)
+
+const { services } = useServices()
+
+/**
+ * Search 2
+ */
+
+const resolvedServices = objectResolver<ServiceSection>(services, (item) => {
+  return {
+    id: item.name,
+    title: item.name,
+    description: item.globalDescription,
+    to: '/services',
+    type: 'service',
+    slug: item.name,
+    tags: []
+  }
+})
+
+const items = useGoogleSearchComposable({
+  activeType: ref('all'),
+  resolvers: [
+    useGoogleSearchItems(resolvedServices, query, (item, searchValue) => {
+      return item.title.toLowerCase().includes(searchValue)
+    })
+  ]
+})
 
 /**
  * SEO

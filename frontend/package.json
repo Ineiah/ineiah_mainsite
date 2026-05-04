@@ -29,7 +29,7 @@
     "test:watch": "vitest --watch",
     "test:ui": "vitest --ui",
     "lint": "oxlint lint .",
-    "lint:fix": "oxlint --fix",
+    "fix": "oxlint . --fix && eslint . --fix",
     "lint:eslint": "eslint ."
   },
   "dependencies": {

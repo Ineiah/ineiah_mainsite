@@ -19,12 +19,11 @@ definePageMeta({
   label: 'Services'
 })
 
-
 /**
  * Business details
  */
 
-const { businessDetails, get } = useBusinessDetails()
+const { get } = useBusinessDetails()
 const { services } = useServices()
 
 /**

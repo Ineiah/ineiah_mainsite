@@ -12,14 +12,14 @@
 
           <div class="mt-5 flex justify-start gap-5 flex-wrap md:flex-nowrap">
             <volt-input-text v-model="search" :placeholder="$t('Rechercher une coupe ou un style')" class="w-full md:w-100" />
-            
+
             <div class="hidden justify-start gap-2 xl:flex">
               <volt-tag v-for="keyword in keywords" :key="keyword" :value="keyword" class="cursor-pointer" severity="contrast" @click="() => search = keyword" />
             </div>
           </div>
         </div>
       </div>
-      
+
       <!-- Images -->
       <gallery-base :images="filteredImages" />
     </div>
@@ -79,21 +79,21 @@ useSchemaOrg(
   [
     {
       '@type': 'ImageGallery',
-      name: titles[i18n.locale.value],
-      description: descriptions[i18n.locale.value],
-      image: images.value.map(img => ({
+      'name': titles[i18n.locale.value],
+      'description': descriptions[i18n.locale.value],
+      'image': images.value.map(img => ({
         '@type': 'ImageObject',
-        url: img.image,
-        name: img.name
+        'url': img.image,
+        'name': img.name
       }))
     },
     defineBreadcrumb({
       itemListElement: [
         {
           '@type': 'ListItem',
-          position: 2,
-          name: titles[i18n.locale.value],
-          item: `${useBrowserLocation().value.origin}${useRoute().fullPath}`
+          'position': 2,
+          'name': titles[i18n.locale.value],
+          'item': `${useBrowserLocation().value.origin}${useRoute().fullPath}`
         }
       ]
     })

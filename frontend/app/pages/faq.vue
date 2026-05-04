@@ -95,12 +95,12 @@ const questionsList = computed(() => faqList.flatMap(x => [...x.questions]))
 useSchemaOrg([
   computed(() => ({
     '@type': 'FAQPage',
-    mainEntity: questionsList.value.map(item => ({
+    'mainEntity': questionsList.value.map(item => ({
       '@type': 'Question',
-      name: item.question,
-      acceptedAnswer: {
+      'name': item.question,
+      'acceptedAnswer': {
         '@type': 'Answer',
-        text: item.answer
+        'text': item.answer
       }
     }))
   })),
@@ -108,9 +108,9 @@ useSchemaOrg([
     itemListElement: [
       {
         '@type': 'ListItem',
-        position: 2,
-        name: titles[i18n.locale.value],
-        item: `${useBrowserLocation().value.origin}${useRoute().fullPath}`
+        'position': 2,
+        'name': titles[i18n.locale.value],
+        'item': `${useBrowserLocation().value.origin}${useRoute().fullPath}`
       }
     ]
   })

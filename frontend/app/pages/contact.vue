@@ -32,10 +32,14 @@
 
           <volt-card class="mt-5 bg-surface-100 shadow-none">
             <template #content>
-              <p class="font-bold uppercase text-primary-500 dark:text-primary-200">{{ get('legalName') }}</p>
+              <p class="font-bold uppercase text-primary-500 dark:text-primary-200">
+                {{ get('legalName') }}
+              </p>
               <p>{{ address }}</p>
 
-              <p class="font-light mt-5 italic">{{ $t("Du Lundi au Vendredi - Déplacement à domicile") }}</p>
+              <p class="font-light mt-5 italic">
+                {{ $t("Du Lundi au Vendredi - Déplacement à domicile") }}
+              </p>
 
               <div class="space-x- flex gap-2 mt-5">
                 <base-telephone-button id="tel-call-us-contact" size="large" />
@@ -90,7 +94,7 @@ async function _sendMessage() {
     email: email.value,
     telephone: telephone.value,
     message: message.value,
-    timestamp: new Date().toISOString(),
+    timestamp: new Date().toISOString()
   }
 
   try {
@@ -102,7 +106,7 @@ async function _sendMessage() {
 
   email.value = ''
   telephone.value = ''
-  message.value  = ''
+  message.value = ''
 }
 
 const handleSendMessage = useThrottleFn(_sendMessage, 5000)

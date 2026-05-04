@@ -54,7 +54,7 @@
 </template>
 
 <script setup lang="ts">
-import type { ServiceSection, Arrayable, GalleryImage } from '~/types'
+import type { ServiceSection, GalleryImage } from '~/types'
 
 definePageMeta({
   label: 'Search'
@@ -151,6 +151,6 @@ const { query, allItems } = useGoogleSearchComposable({
 
 useSeoMeta({
   title: query.value ? `Search: ${query.value}` : 'Search',
-  robots: 'noindex', // search pages shouldn't be indexed
+  robots: 'noindex' // search pages shouldn't be indexed
 })
 </script>

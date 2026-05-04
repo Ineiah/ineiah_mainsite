@@ -30,7 +30,7 @@
     "test:ui": "vitest --ui",
     "lint": "oxlint lint .",
     "lint:fix": "oxlint --fix",
-    "lint:eslint": "eslint --ext .ts,.vue ."
+    "lint:eslint": "eslint ."
   },
   "dependencies": {
     "@capacitor/app": "8.1.0",
@@ -118,7 +118,7 @@
     "vaul-vue": "^0.4.1",
     "vitest": "^4.1.5",
     "vue-router-mock": "^2.0.2",
-    "zod": "^4.4.2"
+    "zod": "^4.4.3"
   },
   "packageManager": "pnpm@10.32.1+sha512.a706938f0e89ac1456b6563eab4edf1d1faf3368d1191fc5c59790e96dc918e4456ab2e67d613de1043d2e8c81f87303e6b40d4ffeca9df15ef1ad567348f2be"
 }

@@ -12,9 +12,7 @@ export default defineNuxtConfig({
   },
 
   modules: [
-    '@nuxt/eslint',
     '@nuxt/fonts',
-    // '@nuxt/hints',
     '@nuxt/icon',
     '@nuxt/image',
     '@nuxt/scripts',
@@ -24,6 +22,7 @@ export default defineNuxtConfig({
     '@pinia/nuxt',
     '@vueuse/nuxt',
     '@vueuse/motion/nuxt',
+    '@nuxt/eslint',
     'nuxt-vuefire',
     'nuxt-ganalytics'
   ],
@@ -207,6 +206,17 @@ export default defineNuxtConfig({
         name: 'English'
       }
     ]
+  },
+
+  eslint: {
+    config: {
+      stylistic: {
+        commaDangle: 'never'
+      },
+      typescript: {
+        tsconfigPath: './tsconfig.json'
+      },
+    }
   },
 
   image: {

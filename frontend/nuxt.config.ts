@@ -32,8 +32,8 @@ export default defineNuxtConfig({
   },
 
   site: {
-    url: process.env.NUXT_PUBLIC_SITE_URL || 'http://localhost:3000',
-    name: process.env.NUXT_PUBLIC_SITE_NAME || "La Beauté D'Inéïah"
+    url: process.env.NUXT_PUBLIC_SITE_URL,
+    name: process.env.NUXT_PUBLIC_SITE_NAME
   },
 
   seo: {
@@ -124,8 +124,8 @@ export default defineNuxtConfig({
 
   runtimeConfig: {
     public: {
-      siteUrl: process.env.NUXT_PUBLIC_SITE_URL || 'http://localhost:3000',
-      siteName: process.env.NUXT_PUBLIC_SITE_NAME || "La Beauté D'Inéïah",
+      siteUrl: process.env.NUXT_PUBLIC_SITE_URL,
+      siteName: process.env.NUXT_PUBLIC_SITE_NAME,
 
       // Stripe
       stripeTestSecretKey: process.env.NUXT_PUBLIC_STRIPE_TEST_SECRET_KEY,
@@ -137,7 +137,7 @@ export default defineNuxtConfig({
       whatsAppUrl: process.env.NUXT_PUBLIC_WHATS_APP_URL,
 
       // Cloudfront
-      cdnBaseUrl: process.env.NUXT_PUBLIC_CLOUDFRONT_URL || '',
+      cdnBaseUrl: process.env.NUXT_PUBLIC_CLOUDFRONT_URL,
 
       // Twilio
       twilioAccountSid: process.env.NUXT_PUBLIC_TWILIO_ACCOUNT_SID,

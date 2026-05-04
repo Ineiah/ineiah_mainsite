@@ -80,13 +80,21 @@ const origin = useBrowserLocation().value.origin || ''
 useSchemaOrg(
   [
     {
-      '@type': 'ImageGallery',
+      '@type': 'CollectionPage',
       'name': titles[i18n.locale.value],
       'description': descriptions[i18n.locale.value],
-      'image': images.value.map(img => ({
+      'hasPart': images.value.map(img => ({
         '@type': 'ImageObject',
         'url': img.image,
-        'name': img.name
+        'contentUrl': img.image,
+        'name': img.name,
+        'description': '',
+        'license': origin + '/legal/mentions-legales',
+        'acquireLicensePage': origin + '/contact',
+        'creator': {
+          '@type': 'Organization',
+          'name': get('legalName')
+        }
       }))
     },
     defineBreadcrumb({

@@ -105,11 +105,22 @@ useSeoMeta({
 defineOgImage('NuxtSeoTakumi', {
   title: titles[i18n.locale.value],
   description: descriptions[i18n.locale.value],
-  author: get('legalName'),
+  author: get('legalName')
 })
 
 useSchemaOrg(
   [
+    defineBreadcrumb({
+      '@type': 'BreadcrumbList',
+      'itemListElement': [
+        {
+          '@type': 'ListItem',
+          'position': 1,
+          'name': titles[i18n.locale.value],
+          'item': `${origin}/`
+        }
+      ]
+    }),
     defineBreadcrumb({
       itemListElement: [
         {

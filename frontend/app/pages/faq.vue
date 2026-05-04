@@ -105,6 +105,17 @@ useSchemaOrg([
     }))
   })),
   defineBreadcrumb({
+    '@type': 'BreadcrumbList',
+    'itemListElement': [
+      {
+        '@type': 'ListItem',
+        'position': 1,
+        'name': titles[i18n.locale.value],
+        'item': `${origin}/`
+      }
+    ]
+  }),
+  defineBreadcrumb({
     itemListElement: [
       {
         '@type': 'ListItem',

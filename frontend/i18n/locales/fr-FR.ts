@@ -1,4 +1,4 @@
-export default defineI18nLocale(async () => {
+export default defineI18nLocale(() => {
   const faq = {
     'Quels shampoings et soins recommandés pour cheveux afros très secs ?': 'Quels shampoings et soins recommandés pour cheveux afros très secs ?',
     'Il est recommandé de ne pas attacher vos cheveux pour votre rendez-vous, afin de permettre une meilleure évaluation de la texture et de la condition de vos cheveux. Cependant, assurez-vous qu\'ils soient bien démêlés et propres.': 'Il est recommandé de ne pas attacher vos cheveux pour votre rendez-vous, afin de permettre une meilleure évaluation de la texture et de la condition de vos cheveux. Cependant, assurez-vous qu\'ils soient bien démêlés et propres.',

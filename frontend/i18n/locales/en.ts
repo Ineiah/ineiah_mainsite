@@ -1,4 +1,4 @@
-export default defineI18nLocale(async () => {
+export default defineI18nLocale(() => {
   const faq = {
     'Quels shampoings et soins recommandés pour cheveux afros très secs ?': 'What shampoos and treatments do you recommend for very dry afro hair?',
     'Il est recommandé de ne pas attacher vos cheveux pour votre rendez-vous, afin de permettre une meilleure évaluation de la texture et de la condition de vos cheveux. Cependant, assurez-vous qu\'ils soient bien démêlés et propres.': 'It is recommended not to tie your hair for your appointment, to allow for a better assessment of the texture and condition of your hair. However, make sure they are well detangled and clean.',

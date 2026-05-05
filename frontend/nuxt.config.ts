@@ -2,15 +2,6 @@ import tailwindcss from '@tailwindcss/vite'
 
 // https://nuxt.com/docs/api/configuration/nuxt-config
 export default defineNuxtConfig({
-  compatibilityDate: '2025-07-15',
-  debug: true,
-  devtools: {
-    enabled: true,
-
-    timeline: {
-      enabled: true
-    }
-  },
 
   modules: [
     '@nuxt/fonts',
@@ -27,18 +18,12 @@ export default defineNuxtConfig({
     'nuxt-vuefire',
     'nuxt-ganalytics'
   ],
+  devtools: {
+    enabled: true,
 
-  ogImage: {
-    componentDirs: [ 'og-image' ]
-  },
-
-  site: {
-    url: process.env.NUXT_PUBLIC_SITE_URL,
-    name: process.env.NUXT_PUBLIC_SITE_NAME
-  },
-
-  seo: {
-    fallbackTitle: true
+    timeline: {
+      enabled: true
+    }
   },
 
   app: {
@@ -48,13 +33,13 @@ export default defineNuxtConfig({
     },
 
     head: {
-      titleTemplate: "%s %separator %siteName",
+      titleTemplate: '%s %separator %siteName',
       templateParams: {
         separator: '-',
-        siteName: "La Beauté D'Inéïah",
+        siteName: 'La Beauté D\'Inéïah',
         meta: [
-          { 
-            name: 'theme-color', 
+          {
+            name: 'theme-color',
             content: '#96726a'
           },
           {
@@ -71,56 +56,9 @@ export default defineNuxtConfig({
     '~/assets/css/tailwind.css'
   ],
 
-  routeRules: {
-    '/': { prerender: true },
-    '/faq': { prerender: true },
-    '/nos-prestations': { swr: 15*60 },
-    '/notre-histoire': { prerender: true },
-    '/legal/**': { prerender: true },
-    '/contact': { prerender: true },
-    '/galerie': { ssr: false },
-    '/sitemap': { prerender: true },
-    '/admin/**': { ssr: false }
-  },
-
-  vite: {
-    plugins: [
-      tailwindcss({
-        optimize: false
-      })
-    ],
-    optimizeDeps: {
-      include: [
-        'vuefire',
-        'dayjs', // CJS
-        'dayjs/plugin/calendar', // CJS
-        'dayjs/plugin/duration', // CJS
-        'dayjs/plugin/relativeTime', // CJS
-        'dayjs/plugin/timezone', // CJS
-        'dayjs/plugin/utc', // CJS
-        'primevue/config',
-        'primevue/card',
-        'tailwind-merge',
-        'primevue/button',
-        '@unhead/bundler',
-        'reka-ui',
-        'clsx',
-        'primevue/skeleton',
-      ]
-    }
-  },
-
-  vuefire: {
-    config: {
-      apiKey: process.env.NUXT_PUBLIC_FIREBASE_API_KEY,
-      authDomain: process.env.NUXT_PUBLIC_FIREBASE_AUTH_DOMAIN,
-      dbUrl: process.env.NUXT_PUBLIC_FIREBASE_DB_URL,
-      storageBucket: process.env.NUXT_PUBLIC_FIREBASE_STORAGE_BUCKET,
-      appId: process.env.NUXT_PUBLIC_FIREBASE_APP_ID,
-      measurementId: process.env.NUXT_PUBLIC_FIREBASE_MEASUREMENT_ID,
-      messageSenderId: process.env.NUXT_PUBLIC_FIREBASE_MESSAGE_SENDER_ID,
-      projectId: process.env.NUXT_PUBLIC_FIREBASE_PROJECT_ID
-    }
+  site: {
+    url: process.env.NUXT_PUBLIC_SITE_URL,
+    name: process.env.NUXT_PUBLIC_SITE_NAME
   },
 
   runtimeConfig: {
@@ -145,6 +83,77 @@ export default defineNuxtConfig({
       twilioAuthToken: process.env.NUXT_PUBLIC_TWILIO_AUTH_TOKEN,
       twilioPhoneNumber: process.env.NUXT_PUBLIC_TWILIO_PHONE_NUMBER,
       twilioToPhoneNumber: process.env.NUXT_PUBLIC_TWILIO_TO_PHONE_NUMBER
+    }
+  },
+
+  routeRules: {
+    '/': { prerender: true },
+    '/faq': { prerender: true },
+    '/nos-prestations': { swr: 15 * 60 },
+    '/notre-histoire': { prerender: true },
+    '/legal/**': { prerender: true },
+    '/contact': { prerender: true },
+    '/galerie': { ssr: false },
+    '/sitemap': { prerender: true },
+    '/admin/**': { ssr: false }
+  },
+  compatibilityDate: '2025-07-15',
+
+  nitro: {
+    storage: {
+      redis: {
+        driver: 'redis',
+        host: process.env.NUXT_PUBLIC_REDIS_HOST,
+        port: 6379,
+        username: '',
+        password: process.env.NUXT_PUBLIC_REDIS_PASSWORD
+      }
+    }
+    // devStorage: {
+    //   file: {
+    //     driver: 'fs',
+    //     base: './data/storage'
+    //   }
+    // }
+  },
+
+  vite: {
+    plugins: [
+      tailwindcss({
+        optimize: false
+      })
+    ],
+    optimizeDeps: {
+      include: [
+        'vuefire',
+        'dayjs', // CJS
+        'dayjs/plugin/calendar', // CJS
+        'dayjs/plugin/duration', // CJS
+        'dayjs/plugin/relativeTime', // CJS
+        'dayjs/plugin/timezone', // CJS
+        'dayjs/plugin/utc', // CJS
+        'primevue/config',
+        'primevue/card',
+        'tailwind-merge',
+        'primevue/button',
+        '@unhead/bundler',
+        'reka-ui',
+        'clsx',
+        'primevue/skeleton'
+      ]
+    }
+  },
+  debug: false,
+
+  eslint: {
+    config: {
+      stylistic: {
+        commaDangle: 'never',
+        braceStyle: '1tbs'
+      },
+      typescript: {
+        tsconfigPath: './tsconfig.json'
+      }
     }
   },
 
@@ -192,7 +201,7 @@ export default defineNuxtConfig({
       'nos-prestations': { fr: '/nos-prestations', en: '/our-services' },
       'notre-histoire': { fr: '/notre-histoire', en: '/our-story' },
       'legal/confidentialite': { fr: '/legal/confidentialite', en: '/legal/privacy-policy' },
-      'legal/mentions-legales': { fr: '/legal/mentions-legales', en: '/legal/legal-notices' },
+      'legal/mentions-legales': { fr: '/legal/mentions-legales', en: '/legal/legal-notices' }
     },
     locales: [
       {
@@ -210,18 +219,6 @@ export default defineNuxtConfig({
         name: 'English'
       }
     ]
-  },
-
-  eslint: {
-    config: {
-      stylistic: {
-        commaDangle: 'never',
-        braceStyle: '1tbs'
-      },
-      typescript: {
-        tsconfigPath: './tsconfig.json'
-      },
-    }
   },
 
   image: {
@@ -255,21 +252,24 @@ export default defineNuxtConfig({
     // }
   },
 
-  nitro: {
-    storage: {
-      redis: {
-        driver: 'redis',
-        host: process.env.NUXT_PUBLIC_REDIS_HOST,
-        port: 6379,
-        username: '',
-        password: process.env.NUXT_PUBLIC_REDIS_PASSWORD
-      }
+  ogImage: {
+    componentDirs: ['og-image']
+  },
+
+  seo: {
+    fallbackTitle: true
+  },
+
+  vuefire: {
+    config: {
+      apiKey: process.env.NUXT_PUBLIC_FIREBASE_API_KEY,
+      authDomain: process.env.NUXT_PUBLIC_FIREBASE_AUTH_DOMAIN,
+      dbUrl: process.env.NUXT_PUBLIC_FIREBASE_DB_URL,
+      storageBucket: process.env.NUXT_PUBLIC_FIREBASE_STORAGE_BUCKET,
+      appId: process.env.NUXT_PUBLIC_FIREBASE_APP_ID,
+      measurementId: process.env.NUXT_PUBLIC_FIREBASE_MEASUREMENT_ID,
+      messageSenderId: process.env.NUXT_PUBLIC_FIREBASE_MESSAGE_SENDER_ID,
+      projectId: process.env.NUXT_PUBLIC_FIREBASE_PROJECT_ID
     }
-    // devStorage: {
-    //   file: {
-    //     driver: 'fs',
-    //     base: './data/storage'
-    //   }
-    // }
   }
 })

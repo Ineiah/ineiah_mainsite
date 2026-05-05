@@ -24,7 +24,7 @@ function playVideo() {
     if (isPlaying.value) {
       videoEl.value.pause()
     } else {
-      videoEl.value.play()
+      void videoEl.value.play()
     }
     isPlaying.value = !isPlaying.value
   }

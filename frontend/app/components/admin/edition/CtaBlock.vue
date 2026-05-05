@@ -20,5 +20,5 @@
 </template>
 
 <script setup lang="ts">
-const { blockTitle, richText = false } = defineProps<{ blockTitle: string, richText?: boolean }>()
+const { blockTitle, richText } = defineProps<{ blockTitle: string, richText?: boolean }>()
 </script>

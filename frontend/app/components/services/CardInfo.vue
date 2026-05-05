@@ -33,6 +33,6 @@ const props = defineProps<{ index: number, service: Service, serviceSection: Ser
 // Merge includes from the specific service and
 // with the ones from the service section
 const serviceIncludes = computed(() => {
-  return [...props.service.includes, ...props.serviceSection.includes || []]
+  return [...props.service.includes, ...props.serviceSection.includes]
 })
 </script>

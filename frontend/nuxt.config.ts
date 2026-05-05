@@ -90,13 +90,22 @@ export default defineNuxtConfig({
   routeRules: {
     '/': { prerender: true },
     '/faq': { prerender: true },
-    '/nos-prestations': { swr: 15 * 60 },
+    '/nos-prestations': { ssr: true },
     '/notre-histoire': { prerender: true },
     '/legal/**': { prerender: true },
     '/contact': { prerender: true },
-    '/galerie': { ssr: false },
+    '/galerie': { ssr: true },
     '/sitemap': { prerender: true },
-    '/admin/**': { ssr: false }
+
+    // Route rules for English pages
+    '/en/': { prerender: true },
+    '/en/faq': { prerender: true },
+    '/en/our-services': { ssr: true },
+    '/en/our-story': { prerender: true },
+    '/en/legal/**': { prerender: true },
+    '/en/contact': { prerender: true },
+    '/en/gallery': { ssr: true },
+    '/en/sitemap': { prerender: true }
   },
   compatibilityDate: '2025-07-15',
 

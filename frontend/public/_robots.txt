@@ -3,4 +3,5 @@ Allow: /
 Disallow: /search?q=
 Content-Usage: bots=y, train-ai=y
 Content-Signal: ai-train=yes, search=yes
+
 Sitemap: https://labeautedineiah.com/sitemap.xml

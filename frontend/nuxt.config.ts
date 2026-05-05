@@ -16,8 +16,14 @@ export default defineNuxtConfig({
     '@vueuse/motion/nuxt',
     '@nuxt/eslint',
     'nuxt-vuefire',
-    'nuxt-ganalytics'
+    'nuxt-ganalytics',
+    'nuxt-ai-ready',
+    'nuxt-skew-protection',
+    'nuxt-schema-org'
   ],
+
+  ssr: true,
+
   devtools: {
     enabled: true,
 
@@ -58,7 +64,10 @@ export default defineNuxtConfig({
 
   site: {
     url: process.env.NUXT_PUBLIC_SITE_URL,
-    name: process.env.NUXT_PUBLIC_SITE_NAME
+    name: process.env.NUXT_PUBLIC_SITE_NAME,
+    description: 'Salon de coiffure multiculturel spécialisé dans tous types de cheveux : crépus, bouclés, lisses. Soins, coupes et styles sur-mesure',
+    defaultLocale: 'fr',
+    trailingSlash: true
   },
 
   runtimeConfig: {
@@ -110,15 +119,15 @@ export default defineNuxtConfig({
   compatibilityDate: '2025-07-15',
 
   nitro: {
-    storage: {
-      redis: {
-        driver: 'redis',
-        host: process.env.NUXT_PUBLIC_REDIS_HOST,
-        port: 6379,
-        username: '',
-        password: process.env.NUXT_PUBLIC_REDIS_PASSWORD
-      }
-    }
+    // storage: {
+    //   redis: {
+    //     driver: 'redis',
+    //     host: process.env.NUXT_PUBLIC_REDIS_HOST,
+    //     port: 6379,
+    //     username: '',
+    //     password: process.env.NUXT_PUBLIC_REDIS_PASSWORD
+    //   }
+    // },
     // devStorage: {
     //   file: {
     //     driver: 'fs',
@@ -149,11 +158,16 @@ export default defineNuxtConfig({
         '@unhead/bundler',
         'reka-ui',
         'clsx',
-        'primevue/skeleton'
+        'primevue/skeleton',
+        'primevue/toggleswitch',
+        'primevue/divider',
+        '@primevue/icons/times',
+        'primevue/drawer'
       ]
     }
   },
-  debug: false,
+
+  debug: true,
 
   eslint: {
     config: {

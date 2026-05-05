@@ -262,6 +262,13 @@ export default defineNuxtConfig({
     // }
   },
 
+  linkChecker: {
+    report: {
+      html: true,
+      publish: true
+    }
+  },
+
   ogImage: {
     componentDirs: ['og-image']
   },

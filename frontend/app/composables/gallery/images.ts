@@ -234,7 +234,7 @@ export const galleryImages: Arrayable<GalleryImage> = [
     alt: 'Styling XL',
     image: [
       '/images/gallery/customer29.jpg',
-      '/images/gallery/customer30.jpg',
+      '/images/gallery/customer30.jpg'
     ],
     category: 'image',
     url: null,
@@ -255,7 +255,7 @@ export const galleryImages: Arrayable<GalleryImage> = [
     alt: 'Coloration repousse longueur cheveux mi-longs',
     image: [
       '/images/gallery/customer24.jpg',
-      '/images/gallery/customer25.jpg',
+      '/images/gallery/customer25.jpg'
     ],
     category: 'image',
     url: null,
@@ -357,7 +357,7 @@ export const galleryImages: Arrayable<GalleryImage> = [
     image: [
       '/images/gallery/customer36-small.webp',
       '/images/gallery/customer37-small.webp',
-      '/images/gallery/customer38-small.webp',
+      '/images/gallery/customer38-small.webp'
     ],
     category: 'image',
     url: null,

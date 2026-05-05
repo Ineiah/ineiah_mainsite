@@ -1,7 +1,9 @@
 <template>
   <volt-card>
     <template #content>
-      <h3 class="font-bold text-3xl">{{ blockTitle }}</h3>
+      <h3 class="font-bold text-3xl">
+        {{ blockTitle }}
+      </h3>
 
       <div class="flex justify-start space-y-2 gap-2">
         <volt-input-text placeholder="Brand Name" />

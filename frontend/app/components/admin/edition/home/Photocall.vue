@@ -15,23 +15,23 @@
 <script setup lang="ts">
 const items = ref([
   {
-    title: "",
-    subtitle: "",
+    title: '',
+    subtitle: '',
     image: null
   },
   {
-    title: "",
-    subtitle: "",
+    title: '',
+    subtitle: '',
     image: null
   },
   {
-    title: "",
-    subtitle: "",
+    title: '',
+    subtitle: '',
     image: null
   },
   {
-    title: "",
-    subtitle: "",
+    title: '',
+    subtitle: '',
     image: null
   }
 ])

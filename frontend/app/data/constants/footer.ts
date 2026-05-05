@@ -88,10 +88,10 @@ export const footer: FooterSection = {
   ]
 }
 
-export const mobileLinks: FooterLinks[] = footer.sections.reduce((acc, section) => {
+export const mobileLinks: FooterLinks[] = footer.sections.reduce<FooterLinks[]>((acc, section) => {
   const mobileSectionLinks = section.links.filter(link => link.showOnMobile)
   return acc.concat(mobileSectionLinks)
-}, [] as FooterLinks[]).sort((a, b) => {
+}, []).sort((a, b) => {
   const posA = a.linkPosition ?? Number.MAX_SAFE_INTEGER
   const posB = b.linkPosition ?? Number.MAX_SAFE_INTEGER
   return posA - posB

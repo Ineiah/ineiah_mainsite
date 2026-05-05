@@ -44,7 +44,7 @@ export type ActiveType = 'all' | 'product' | 'page' | 'content'
 
 export function useGoogleSearchComposable<T extends { activeType: Ref<ActiveType>, resolvers: ReturnType<typeof useGoogleSearchItems>[] }>(options: T) {
   const query = ref<string>('')
-  const searchParams = useUrlSearchParams('history').params as { q: string }
+  const searchParams = useUrlSearchParams('history', { initialValue: { q: '' }, removeNullishValues: true })
 
   const loweredQuery = computed(() => query.value.toLowerCase())
 

@@ -66,5 +66,5 @@ export interface BusinessDetails {
 export type BusinessDetailsKeys = keyof BusinessDetails
 
 export type BusinessDetailsKeyValue = {
-  [ K in BusinessDetailsKeys ]: BusinessDetails[ K ]
+  [ K in BusinessDetailsKeys ]: BusinessDetails[K]
 }

@@ -1,14 +1,14 @@
 export default defineNuxtPlugin({
   name: 'pinterest',
   parallel: true,
-  async setup() {
+  setup() {
     useHead({
       meta: [
         {
-          // @ts-ignore
+          // @ts-expect-error Keys are not default
           name: 'p:domain_verify',
+          // @ts-expect-error Keys are not default
           content: '4fe3486c456fa2f68f9f31cab6823a51',
-          // @ts-ignore
           crossorigin: 'anonymous'
         }
       ]

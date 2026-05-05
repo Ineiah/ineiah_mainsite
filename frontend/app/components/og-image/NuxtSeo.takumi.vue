@@ -5,7 +5,7 @@
 
     <div class="relative flex flex-col items-center text-center gap-5 lg:gap-8">
       <!-- Logo -->
-      <div class="flex items-center gap-3">        
+      <div class="flex items-center gap-3">
         <span class="text-[32px] lg:text-[42px] font-bold tracking-tight uppercase">
           {{ get('legalName') }}
         </span>
@@ -28,14 +28,14 @@
 
 <script setup lang="ts">
 const {
-  colorMode = "light",
-  title = "title",
+  colorMode = 'light',
+  title = 'title',
   description,
-  isPro = false,
+  isPro,
   width = 1200,
   height = 600,
-  author = "author",
-  image = "/images/hero/customer18-small.webp"
+  author,
+  image = '/images/hero/customer18-small.webp'
 } = defineProps<{
   colorMode?: string
   title?: string
@@ -43,7 +43,7 @@ const {
   isPro?: boolean
   width?: number
   height?: number
-  image?: string,
+  image?: string
   author: string | null
 }>()
 

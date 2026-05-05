@@ -105,10 +105,10 @@ const { defaultPolicies } = useWebsitePolicies()
 const resolvedPolicies = objectResolver<Policy>(defaultPolicies, (item) => {
   const description = item.content.reduce((acc, block) => {
     if (block.type == 'paragraph') {
-      return acc + block.text + ' '
+      return acc + (block.text || '') + ' '
     } else if (block.type == 'list') {
       if (isDefined(block.items)) {
-        return acc + block.items.map(item => item.text).join(' ') + ' '
+        return acc + block.items.map(item => item.text || '').join(' ') + ' '
       }
     }
   }, '')
@@ -140,7 +140,7 @@ const { query, allItems } = useGoogleSearchComposable({
       return item.title.toLowerCase().includes(searchValue)
     }),
     useGoogleSearchItems(resolvedPolicies, (item, searchValue) => {
-      return item.title.toLowerCase().includes(searchValue) || item.description.toLowerCase().includes(searchValue)
+      return item.title.toLowerCase().includes(searchValue) || (item.description || '').toLowerCase().includes(searchValue)
     })
   ]
 })

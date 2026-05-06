@@ -113,20 +113,20 @@ const descriptions: PageTitleOrDescription<typeof i18n.locale.value> = {
 
 const url = useRequestURL()
 
-// useSeoMeta({
-//   title: titles[i18n.locale.value],
-//   description: descriptions[i18n.locale.value],
-//   author: get('legalName'),
-//   twitterDescription: descriptions[i18n.locale.value],
-//   twitterCard: 'summary_large_image',
-//   ogTitle: titles[i18n.locale.value],
-//   ogDescription: descriptions[i18n.locale.value],
-//   ogUrl: url.href
-// })
+useSeoMeta({
+  title: titles[i18n.locale.value],
+  description: descriptions[i18n.locale.value],
+  author: get('legalName'),
+  twitterDescription: descriptions[i18n.locale.value],
+  twitterCard: 'summary_large_image',
+  ogTitle: titles[i18n.locale.value],
+  ogDescription: descriptions[i18n.locale.value],
+  ogUrl: url.href
+})
 
-// defineOgImage('NuxtSeoTakumi', {
-//   title: titles[i18n.locale.value],
-//   description: descriptions[i18n.locale.value],
-//   author: get('legalName')
-// })
+defineOgImage('NuxtSeoTakumi', {
+  title: titles[i18n.locale.value],
+  description: descriptions[i18n.locale.value],
+  author: get('legalName')
+})
 </script>

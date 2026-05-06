@@ -9,9 +9,9 @@ export default defineNuxtConfig({
   },
 
   modules: [
-    '@nuxt/a11y',
+    // '@nuxt/a11y',
     '@nuxt/eslint',
-    '@nuxt/hints',
+    // '@nuxt/hints',
     '@nuxt/image',
     '@nuxt/fonts',
     '@nuxt/icon',
@@ -24,9 +24,9 @@ export default defineNuxtConfig({
     '@vueuse/nuxt',
     '@vueuse/motion/nuxt',
     'nuxt-vuefire',
-    'nuxt-ganalytics',
-    'nuxt-ai-ready',
-    'nuxt-skew-protection'
+    'nuxt-ganalytics'
+    // 'nuxt-ai-ready'
+    // 'nuxt-skew-protection'
   ],
 
   ssr: true,
@@ -142,12 +142,12 @@ export default defineNuxtConfig({
     // ],
     optimizeDeps: {
       include: [
-        'dayjs',
-        'dayjs/plugin/calendar',
-        'dayjs/plugin/duration',
-        'dayjs/plugin/relativeTime',
-        'dayjs/plugin/timezone',
-        'dayjs/plugin/utc',
+        'dayjs', // CJS
+        'dayjs/plugin/calendar', // CJS
+        'dayjs/plugin/duration', // CJS
+        'dayjs/plugin/relativeTime', // CJS
+        'dayjs/plugin/timezone', // CJS
+        'dayjs/plugin/utc', // CJS
         'primevue/config',
         'primevue/card',
         'tailwind-merge',
@@ -157,12 +157,16 @@ export default defineNuxtConfig({
         'primevue/skeleton',
         'primevue/toggleswitch',
         'primevue/divider',
-        'primevue/drawer'
+        'primevue/drawer',
+        'primevue/dialog',
+        'primevue/inputtext',
+        'primevue/tag',
+        '@capacitor/share'
       ]
     }
   },
 
-  debug: true,
+  debug: false,
 
   eslint: {
     config: {

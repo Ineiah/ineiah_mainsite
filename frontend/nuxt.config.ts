@@ -116,7 +116,7 @@ export default defineNuxtConfig({
     '/en/gallery': { ssr: true },
     '/en/sitemap': { prerender: true }
   },
-  compatibilityDate: '2025-07-15',
+  compatibilityDate: '2026-03-11',
 
   nitro: {
     // storage: {

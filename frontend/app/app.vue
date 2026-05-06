@@ -52,39 +52,39 @@ onUnmounted(() => {
 
 const { geoLocation, get } = useBusinessDetails()
 
-useHead({
-  meta: [
-    {
-      name: 'geo.region',
-      content: 'FR-HDF'
-    },
-    {
-      name: 'geo.placename',
-      content: get('address').city
-    },
-    {
-      name: 'geo.position',
-      content: geoLocation.value
-    },
-    {
-      name: 'ICBM',
-      content: geoLocation.value
-    }
-  ]
-})
+// useHead({
+//   meta: [
+//     {
+//       name: 'geo.region',
+//       content: 'FR-HDF'
+//     },
+//     {
+//       name: 'geo.placename',
+//       content: get('address').city
+//     },
+//     {
+//       name: 'geo.position',
+//       content: geoLocation.value
+//     },
+//     {
+//       name: 'ICBM',
+//       content: geoLocation.value
+//     }
+//   ]
+// })
 
-useHead({
-  htmlAttrs: {
-    lang: locale.value
-  },
-  link: [
-    {
-      rel: 'icon',
-      type: 'image/png',
-      href: '/favicon.png'
-    }
-  ]
-})
+// useHead({
+//   htmlAttrs: {
+//     lang: locale.value
+//   },
+//   link: [
+//     {
+//       rel: 'icon',
+//       type: 'image/png',
+//       href: '/favicon.png'
+//     }
+//   ]
+// })
 </script>
 
 <style lang="scss">

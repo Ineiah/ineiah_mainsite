@@ -9,7 +9,7 @@
       </div>
 
       <!-- Socials -->
-      <base-socials />
+      <lazy-base-socials hydrate-on-visible />
     </div>
   </volt-drawer>
 </template>

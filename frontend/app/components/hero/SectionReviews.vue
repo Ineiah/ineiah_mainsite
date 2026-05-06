@@ -57,26 +57,26 @@ const { reviews, selectedReview, selectReview } = useReviewsComposable()
  * SEO
  */
 
-const { get } = useBusinessDetails()
+// const { get } = useBusinessDetails()
 
-useSchemaOrg(
-  reviews.map(review => defineReview({
-    author: {
-      '@type': 'Person',
-      'givenName': review.reviewer.givenName,
-      'familyName': review.reviewer.familyName,
-      'name': review.reviewer.name
-    },
-    itemReviewed: {
-      '@type': 'BeautySalon',
-      'name': get('legalName')
-    },
-    reviewBody: review.comment,
-    reviewRating: {
-      ratingValue: review.rating.toString(),
-      bestRating: review.rating.toString(),
-      worstRating: '1'
-    }
-  }))
-)
+// useSchemaOrg(
+//   reviews.map(review => defineReview({
+//     author: {
+//       '@type': 'Person',
+//       'givenName': review.reviewer.givenName,
+//       'familyName': review.reviewer.familyName,
+//       'name': review.reviewer.name
+//     },
+//     itemReviewed: {
+//       '@type': 'BeautySalon',
+//       'name': get('legalName')
+//     },
+//     reviewBody: review.comment,
+//     reviewRating: {
+//       ratingValue: review.rating.toString(),
+//       bestRating: review.rating.toString(),
+//       worstRating: '1'
+//     }
+//   }))
+// )
 </script>

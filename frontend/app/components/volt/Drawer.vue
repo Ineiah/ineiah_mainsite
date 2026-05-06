@@ -1,11 +1,11 @@
 <template>
   <Drawer unstyled :pt="theme" :pt-options="{ mergeProps: ptViewMerge }">
     <template #closebutton="{ closeCallback }">
-      <SecondaryButton variant="text" rounded @click="closeCallback" autofocus>
+      <lazy-secondary-button variant="text" hydrate-on-visible rounded autofocus @click="closeCallback">
         <template #icon>
           <TimesIcon />
         </template>
-      </SecondaryButton>
+      </lazy-secondary-button>
     </template>
     <template v-for="(_, slotName) in $slots" #[slotName]="slotProps">
       <slot :name="slotName" v-bind="slotProps ?? {}" />

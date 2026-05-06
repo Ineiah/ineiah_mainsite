@@ -26,7 +26,7 @@ export default defineNuxtConfig({
     'nuxt-vuefire',
     'nuxt-ganalytics',
     'nuxt-ai-ready',
-    'nuxt-skew-protection',
+    'nuxt-skew-protection'
   ],
 
   ssr: true,
@@ -142,24 +142,21 @@ export default defineNuxtConfig({
     // ],
     optimizeDeps: {
       include: [
-        'vuefire',
-        'dayjs', // CJS
-        'dayjs/plugin/calendar', // CJS
-        'dayjs/plugin/duration', // CJS
-        'dayjs/plugin/relativeTime', // CJS
-        'dayjs/plugin/timezone', // CJS
-        'dayjs/plugin/utc', // CJS
+        'dayjs',
+        'dayjs/plugin/calendar',
+        'dayjs/plugin/duration',
+        'dayjs/plugin/relativeTime',
+        'dayjs/plugin/timezone',
+        'dayjs/plugin/utc',
         'primevue/config',
         'primevue/card',
         'tailwind-merge',
         'primevue/button',
-        '@unhead/bundler',
         'reka-ui',
         'clsx',
         'primevue/skeleton',
         'primevue/toggleswitch',
         'primevue/divider',
-        '@primevue/icons/times',
         'primevue/drawer'
       ]
     }
@@ -172,10 +169,10 @@ export default defineNuxtConfig({
       stylistic: {
         commaDangle: 'never',
         braceStyle: '1tbs'
-      },
-      typescript: {
-        tsconfigPath: './tsconfig.json'
       }
+      // typescript: {
+      //   tsconfigPath: './tsconfig.json'
+      // }
     }
   },
 

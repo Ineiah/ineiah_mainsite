@@ -20,7 +20,6 @@
 </template>
 
 <script setup lang="ts">
-import { footer } from '~/data'
 import type { PageTitleOrDescription } from '~/types'
 
 definePageMeta({

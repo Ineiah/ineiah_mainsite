@@ -68,6 +68,7 @@
     "@vueuse/math": "^14.3.0",
     "@vueuse/motion": "^3.0.3",
     "@vueuse/nuxt": "^14.3.0",
+    "better-sqlite3": "^12.9.0",
     "clsx": "^2.1.1",
     "eslint": "^10.3.0",
     "firebase-admin": "^13.8.0",
@@ -79,6 +80,7 @@
     "oxfmt": "^0.48.0",
     "oxlint-tsgolint": "^0.22.1",
     "primevue": "^4.5.5",
+    "reka-ui": "^2.9.7",
     "sass-embedded": "^1.99.0",
     "tailwind-merge": "^3.5.0",
     "tailwindcss": "^4.2.4",
@@ -86,5 +88,6 @@
     "typescript": "^6.0.3",
     "vitest": "^4.1.5",
     "zod": "^4.4.3"
-  }
+  },
+  "packageManager": "pnpm@10.33.4+sha512.1c67b3b359b2d408119ba1ed289f34b8fc3c6873412bec6fd264fbdc82489e510fcbecb9ce9d22dae7f3b76269d8441046014bdca53b9979cd7a561ad631b800"
 }

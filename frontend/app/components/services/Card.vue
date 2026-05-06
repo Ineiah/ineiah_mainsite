@@ -42,7 +42,6 @@
 </template>
 
 <script setup lang="ts">
-import { serviceSectionKey } from '~/data'
 import type { Service, ServiceSection } from '~/types'
 
 const props = defineProps<{ index: number, service: Service }>()

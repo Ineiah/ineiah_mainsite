@@ -89,8 +89,8 @@ useSchemaOrg(
         'contentUrl': img.image,
         'name': img.name,
         'description': '',
-        'license': origin + '/legal/mentions-legales',
-        'acquireLicensePage': origin + '/contact',
+        'license': origin + '/legal/mentions-legales/',
+        'acquireLicensePage': origin + '/contact/',
         'creator': {
           '@type': 'Organization',
           'name': get('legalName')

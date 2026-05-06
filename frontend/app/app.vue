@@ -52,6 +52,14 @@ onUnmounted(() => {
 
 const { geoLocation, get } = useBusinessDetails()
 
+const { services } = useServices()
+
+const { workingDays, days } = useWorkingDaysComposable({
+  only: 'Weekdays',
+  startTime: '09:00',
+  endTime: '17:00'
+})
+
 useHead({
   meta: [
     {
@@ -85,8 +93,6 @@ useHead({
     }
   ]
 })
-
-const { services } = useServices()
 
 useSchemaOrg(
   [
@@ -168,37 +174,12 @@ useSchemaOrg(
         'Apple Pay',
         'Google Pay'
       ],
-      'openingHoursSpecification': [
-        {
-          '@type': 'OpeningHoursSpecification',
-          'dayOfWeek': 'Monday',
-          'opens': '09:00:00',
-          'closes': '17:00:00'
-        },
-        { '@type': 'OpeningHoursSpecification',
-          'dayOfWeek': 'Tuesday',
-          'opens': '09:00:00',
-          'closes': '17:00:00'
-        },
-        {
-          '@type': 'OpeningHoursSpecification',
-          'dayOfWeek': 'Wednesday',
-          'opens': '09:00:00',
-          'closes': '17:00:00'
-        },
-        {
-          '@type': 'OpeningHoursSpecification',
-          'dayOfWeek': 'Thursday',
-          'opens': '09:00:00',
-          'closes': '15:00:00'
-        },
-        {
-          '@type': 'OpeningHoursSpecification',
-          'dayOfWeek': 'Friday',
-          'opens': '09:00:00',
-          'closes': '15:00:00'
-        }
-      ],
+      'openingHoursSpecification': workingDays.value.map(item => ({
+        '@type': 'OpeningHoursSpecification',
+        'dayOfWeek': item.day,
+        'opens': item.startTime,
+        'closes': item.endTime
+      })),
       'contactPoint': [
         {
           '@type': 'ContactPoint',
@@ -208,7 +189,7 @@ useSchemaOrg(
           'availableLanguage': ['English', 'French'],
           'hoursAvailable': {
             '@type': 'OpeningHoursSpecification',
-            'dayOfWeek': ['Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday'],
+            'dayOfWeek': days.value,
             'opens': '09:00:00',
             'closes': '15:00:00'
           }

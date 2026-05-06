@@ -1,6 +1,7 @@
 import type { Nullable } from '~/types'
 
 export * from './base'
+export * from './working_hours'
 
 export interface WebsiteProvider {
   legalName: string

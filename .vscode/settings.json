@@ -11,8 +11,8 @@
     ],
     "tailwind-fold.autoFold": false,
     "oxc.enable.oxfmt": true,
-    "eslint.enable": true,
-    "eslint.workingDirectories": [
-        "${workspaceFolder}/frontend"
-    ]
+    // "eslint.enable": true,
+    // "eslint.workingDirectories": [
+    //     "${workspaceFolder}/frontend"
+    // ]
 }

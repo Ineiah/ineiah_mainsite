@@ -26,7 +26,7 @@ export const footer: FooterSection = {
       links: [
         {
           name: 'Contact',
-          to: '/contact',
+          to: '/contact/',
           showOnMobile: true,
           linkPosition: 4
         },
@@ -41,7 +41,7 @@ export const footer: FooterSection = {
         // },
         {
           name: 'Plan du site',
-          to: '/sitemap',
+          to: '/sitemap/',
           showOnMobile: false
         },
         {
@@ -51,7 +51,7 @@ export const footer: FooterSection = {
         },
         {
           name: 'Mentions légales',
-          to: '/legal/mentions-legales',
+          to: '/legal/mentions-legales/',
           showOnMobile: false
         }
       ]
@@ -67,13 +67,13 @@ export const footer: FooterSection = {
         },
         {
           name: 'Nos prestations',
-          to: '/nos-prestations',
+          to: '/nos-prestations/',
           showOnMobile: true,
           linkPosition: 1
         },
         {
           name: 'Notre histoire',
-          to: '/notre-histoire',
+          to: '/notre-histoire/',
           showOnMobile: true,
           linkPosition: 2
         },

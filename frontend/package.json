@@ -15,7 +15,7 @@
     "test:ui": "vitest --ui",
     "lint": "oxlint lint .",
     "fix": "oxlint . --fix && eslint . --fix",
-    "lint:eslint": "eslint ."
+    "lint:eslint": "eslint --ext .ts,.vue ."
   },
   "dependencies": {
     "@capacitor/app": "8.1.0",

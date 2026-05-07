@@ -36,6 +36,7 @@
         "javascript",
         "javascriptreact",
         "vue",
-        "typescript"
+        "typescript",
+        "typescriptreact"
     ],
 }

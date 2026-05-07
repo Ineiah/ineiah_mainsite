@@ -168,17 +168,14 @@ export default defineNuxtConfig({
 
   debug: false,
 
-  // eslint: {
-  //   config: {
-  //     stylistic: {
-  //       commaDangle: 'never',
-  //       braceStyle: '1tbs'
-  //     }
-  //     // typescript: {
-  //     //   tsconfigPath: './tsconfig.json'
-  //     // }
-  //   }
-  // },
+  eslint: {
+    config: {
+      stylistic: {
+        commaDangle: 'never',
+        braceStyle: '1tbs'
+      }
+    }
+  },
 
   fonts: {
     provider: 'google',

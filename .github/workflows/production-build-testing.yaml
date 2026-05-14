@@ -20,5 +20,10 @@ jobs:
         node: [24]
         
     steps:
-      - name: Check current dir
-        run: pwd && ls -la && ls -la ..
+      - name: Checkout
+        uses: actions/checkout@v6
+
+      - name: Install pnpm
+        uses: pnpm/action-setup@v6
+        with:
+          version: 11.x

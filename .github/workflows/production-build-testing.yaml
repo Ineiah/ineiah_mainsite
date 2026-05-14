@@ -6,7 +6,7 @@ on:
     branches:
       - develop
       - main
-      
+
 env:
   FORCE_JAVASCRIPT_ACTIONS_TO_NODE24: true
 
@@ -18,10 +18,16 @@ jobs:
       matrix:
         os: [ubuntu-latest]
         node: [24]
-        
+
+    defaults:
+      run:
+        working-directory: frontend
+
     steps:
       - name: Checkout
         uses: actions/checkout@v6
+        with:
+          path: frontend
 
       - name: Install pnpm
         uses: pnpm/action-setup@v6
@@ -36,13 +42,10 @@ jobs:
           cache-dependency-path: frontend/pnpm-lock.yaml
 
       - name: Install dependencies
-        run: pnpm install
+        run: pnpm install --frozen-lockfile
 
       - name: Lint
         run: pnpm run lint
-
-      # - name: Test
-      #   run: pnpm run test
 
       - name: Build
         run: pnpm run build

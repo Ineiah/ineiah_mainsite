@@ -18,6 +18,10 @@ jobs:
       matrix:
         os: [ubuntu-latest]
         node: [24]
+
+    defaults:
+      run:
+        working-directory: frontend
         
     steps:
       - name: Checkout
@@ -33,7 +37,6 @@ jobs:
         with:
           node-version: ${{ matrix.node }}
           cache: pnpm
-          cache-dependency-path: frontend/pnpm-lock.yaml
 
       - name: Install dependencies
         run: pnpm install

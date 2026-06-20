@@ -50,7 +50,7 @@ onUnmounted(() => {
  * General SEO Tags
  */
 
-const { geoLocation, get } = useBusinessDetails()
+const { geoLocation, founderImage, organizationLogo, organizationImages, get } = useBusinessDetails()
 
 const { services } = useServices()
 
@@ -102,11 +102,11 @@ useSchemaOrg(
       'legalName': get('legalName'),
       'alternateName': 'Inéïah Beauté',
       'description': get('description'),
-      'logo': get('logo'),
+      'logo': organizationLogo.value,
       'email': get('contact').email,
       'telephone': get('contact').telephone,
       'sameAs': get('sameAs'),
-      'image': get('image'),
+      'image': organizationImages.value,
       'priceRange': '$$',
       'foundingDate': get('foundingDate'),
       'foundingLocation': {
@@ -118,7 +118,7 @@ useSchemaOrg(
         'name': get('founder'),
         'jobTitle': 'Founder & CEO',
         'description': get('founderDescription'),
-        'image': get('founderImage'),
+        'image': founderImage.value,
         'url': null,
         'sameAs': get('sameAs'),
         'worksFor': {
@@ -136,6 +136,7 @@ useSchemaOrg(
         'itemListElement': services.value.flatMap((service) => {
           return service.services.map(subService => ({
             '@type': 'Offer',
+            '@id': useSlug(service.name, subService.name || '', subService.gender),
             'price': subService.price,
             'priceCurrency': 'EUR',
             'availability': 'https://schema.org/InStock',

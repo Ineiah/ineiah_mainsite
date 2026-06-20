@@ -82,6 +82,7 @@ useSchemaOrg(
       '@type': 'CollectionPage',
       'name': titles[i18n.locale.value],
       'description': descriptions[i18n.locale.value],
+      'copyrightNotice': get('legalName'),
       'hasPart': images.value.map(img => ({
         '@type': 'ImageObject',
         'url': img.image,
@@ -90,6 +91,7 @@ useSchemaOrg(
         'description': '',
         'license': origin + '/legal/mentions-legales/',
         'acquireLicensePage': origin + '/contact/',
+        'creditText': useCustomArrayJoin(',', get('legalName'), img.author.name),
         'creator': {
           '@type': 'Organization',
           'name': get('legalName')

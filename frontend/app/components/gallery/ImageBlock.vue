@@ -55,7 +55,6 @@ const isMobile = useMediaQuery('(max-width: 768px)')
  */
 
 const [isSelected, toggleSelected] = useToggle()
-console.log('isSelected GA GA', isSelected.value)
 
 const imageEl = useTemplateRef('imageEl')
 onClickOutside(imageEl, () => isSelected.value = false)

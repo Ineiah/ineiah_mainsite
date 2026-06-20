@@ -12,7 +12,8 @@
           <div class="hidden xl:flex flex-1 items-center justify-center sm:items-stretch sm:justify-start text-primary-50 dark:text-primary-200">
             <div class="flex shrink-0 items-center">
               <nuxt-link-locale id="link-home-nav" to="/" aria-label="Go to homepage">
-                <nuxt-img class="h-8 w-auto" src="https://tailwindcss.com/plus-assets/img/logos/mark.svg?color=indigo&shade=500" :alt="get('legalName')" />
+                <nuxt-img v-if="showBackground" class="h-8 w-auto" src="logos/ineiah-light-small.png" :alt="get('legalName')" />
+                <nuxt-img v-else class="h-8 w-auto" src="logos/ineiah-dark-small.png" :alt="get('legalName')" />
               </nuxt-link-locale>
             </div>
   

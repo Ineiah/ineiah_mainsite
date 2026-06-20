@@ -8,7 +8,7 @@
     </base-quote>
 
     <div class="px-2 md:px-10 my-10 space-y-5">
-      <story-card :invert="false" :image="'/images/natachamorel/img1.jpg'" class="shadow-none">
+      <story-card :invert="false" :image="'/images/natachamorel/natacha-morel-coiffiure.jpg'" class="shadow-none">
         <template #title>
           <span class="italic text-primary-700 dark:text-primary-300">Qui</span> suis-je ?
         </template>
@@ -24,7 +24,7 @@
         </p>
       </story-card>
 
-      <story-card :invert="true" :image="'/images/natachamorel/img2.jpg'" class="shadow-none">
+      <story-card :invert="true" :image="'/images/natachamorel/natacha-morel-parcours.jpg'" class="shadow-none">
         <template #title>
           Parcours <span class="italic text-primary-700 dark:text-primary-300">professionnel</span>
         </template>
@@ -40,7 +40,7 @@
         </p>
       </story-card>
 
-      <story-card :invert="false" :image="'/images/natachamorel/img3.jpg'" class="shadow-none">
+      <story-card :invert="false" :image="'/images/natachamorel/natacha-morel-expertise.jpg'" class="shadow-none">
         <template #title>
           Mon <span class="italic text-primary-700 dark:text-primary-300">expertise</span>
         </template>

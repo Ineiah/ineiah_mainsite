@@ -14,14 +14,18 @@ export const businessDetails: BusinessDetails = {
   numberoTVA: 'FR29790849574',
   creationDate: '2024-12-14',
   description: 'Salon de coiffure multiculturel spécialisé dans tous types de cheveux : crépus, bouclés, lisses. Soins, coupes et styles sur-mesure',
-  logo: '',
+  logo: '/logos/ineiah-dark-small.png',
   sameAs: [
     'https://fr.pinterest.com/labeautedineiah',
     'https://facebook.com/labeautedineiah',
     'https://www.instagram.com/ineiah'
   ],
   image: [
-
+    '/images/natachamorel/natacha-morel-coiffure.jpg',
+    '/logos/ineiah-dark-small.png',
+    '/logos/ineiah-light-small.png',
+    '/images/kira/photoshoot46-small.webp',
+    '/images/gallery/customer41-small.webp'
   ],
   rcs: '',
   address: {
@@ -34,7 +38,7 @@ export const businessDetails: BusinessDetails = {
   priceRange: '$$',
   foundingDate: '2024-12-14',
   foundingLocation: 'Lille, France',
-  founderImage: null,
+  founderImage: '/images/natachamorel/natacha-morel-coiffure.jpg',
   shareCapital: null,
   founder: 'Natacha Morel',
   founderDescription: 'Natacha Morel est une coiffeuse certifiée et experte en bien-être avec plus de 20 ans d\'expérience dans l\'industrie de la beauté.',
@@ -136,6 +140,27 @@ export function useBusinessDetails() {
     return `${name ?? ''}${separator}${legalName}`
   }
 
+  function _buildPath(path: Nullable<string>): Nullable<string> {
+    if (!isDefined(path)) {
+      return null
+    } else {
+      const rootUrl = useRuntimeConfig().public.siteUrl
+      return new URL(path, rootUrl).toString()
+    }
+  }
+
+  const founderImage = computed(() => {
+    return _buildPath(get('founderImage'))
+  })
+
+  const organizationLogo = computed(() => {
+    return _buildPath(get('logo'))
+  })
+
+  const organizationImages = computed(() => {
+    return get('image').map((image: string) => _buildPath(image))
+  })
+
   return {
     /**
      * The business details object containing all relevant information about the business,
@@ -159,6 +184,21 @@ export function useBusinessDetails() {
      * "0,0"
      */
     geoLocation,
+    /**
+     * A computed property that returns the full URL of the founder's 
+     * image, constructed from the base site URL and the relative path provided in the business details.
+     */
+    founderImage,
+    /**
+     * A computed property that returns the full URL of the organization's logo,
+     * constructed from the base site URL and the relative path provided in the business details.
+     */
+    organizationLogo,
+    /**
+     * A computed property that returns an array of full URLs for the organization's images,
+     * constructed from the base site URL and the relative paths provided in the business details.
+     */
+    organizationImages,
     /**
      * A function that appends the legal name of the business to a given name,
      * separated by a specified separator (default is ' - ').

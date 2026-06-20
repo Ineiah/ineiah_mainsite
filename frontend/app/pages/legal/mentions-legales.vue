@@ -157,8 +157,7 @@ useSeoMeta({
 
 defineOgImage('NuxtSeoTakumi', {
   title: titles[i18n.locale.value],
-  description: descriptions[i18n.locale.value],
-  author: get('legalName')
+  description: descriptions[i18n.locale.value]
 })
 
 const url = useRequestURL()

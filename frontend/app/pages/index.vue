@@ -124,9 +124,10 @@ useSeoMeta({
   ogUrl: url.href
 })
 
-defineOgImage('NuxtSeoTakumi', {
-  title: titles[i18n.locale.value],
-  description: descriptions[i18n.locale.value],
-  author: get('legalName')
-})
+if (import.meta.env.PROD) {
+  defineOgImage('NuxtSeoTakumi', {
+    title: titles[i18n.locale.value],
+    description: descriptions[i18n.locale.value]
+  })
+}
 </script>

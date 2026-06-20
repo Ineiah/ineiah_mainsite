@@ -3,7 +3,7 @@
     <client-only>
       <motion-group preset="fadeVisibleOnce">
         <article v-for="item in items" :key="item.title" :delay="randomMotionDelays()">
-          <hero-photo-call :item="item" :alt="` Service de ${item.subtitle} - ${item.title} de la ${get('legalName')}`" />
+          <hero-photo-call :item="item" :alt="`Service de ${item.subtitle} - ${item.title} de la ${get('legalName')}`" />
         </article>
       </motion-group>
     </client-only>
@@ -12,6 +12,8 @@
 
 <script setup lang="ts">
 import type { Arrayable, Photocall } from '~/types'
+
+console.log('Mocked', randomMotionDelays)
 
 const { get } = useBusinessDetails()
 const items: Arrayable<Photocall> = [

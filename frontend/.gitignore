@@ -27,3 +27,5 @@ logs
 
 *.mp4
 *.mov
+
+__snapshots__

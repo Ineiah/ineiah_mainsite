@@ -1,13 +1,20 @@
 import type { Arrayable } from '~/types'
-import { galleryImages } from './images'
+import { galleryImages } from '../../../public/images/gallery/photoshoots/other/images'
 
 /**
  * Custom composable to manage the image gallery state and filtering logic.
  * Currently, it returns all images without filtering, but it can be extended to implement search functionality.
  */
-export function useImageGallery() {
-  const _images = ref(galleryImages)
-  const images = refDefault(_images, []) // Ensure images is always an array
+export function useImageGallery(rootDir = '/images/gallery') {
+  const _images = computed(() => {
+    return galleryImages.map(img => {
+      const newImg = { ...img }
+      newImg.image = img.image.map(imagePath => `${rootDir}/${imagePath}`)
+      return newImg
+    })
+  })
+
+  const images = useCached(_images, (newValue, oldValue) => newValue === oldValue)
 
   const search = ref<string>('')
   const query = useUrlSearchParams()

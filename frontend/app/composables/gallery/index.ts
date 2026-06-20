@@ -1,2 +1,2 @@
 export * from './base'
-export * from './images'
+export * from '../../../public/images/gallery/photoshoots/other/images'

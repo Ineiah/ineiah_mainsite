@@ -19,7 +19,7 @@
           </div>
         </div>
       </div>
-
+      
       <!-- Images -->
       <gallery-base :images="filteredImages" />
     </div>

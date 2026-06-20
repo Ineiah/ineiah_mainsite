@@ -3,7 +3,7 @@
     <!-- Image -->
     <gallery-slider v-if="isSlider" :alt="suffixLegalName(image.alt)" :images="image.image" />
     <!-- <lazy-gallery-video-block v-else-if="image.category === 'video'" :image="image" hydrate-on-idle /> -->
-    <nuxt-img v-else :src="typeof image.image === 'string' ? image.image : ''" :alt="suffixLegalName(image.alt)" class="hover:scale-105 hover:rotate-2 transition-all ease-in-out aspect-square object-cover w-full" @click.stop="() => toggleSelected()" />
+    <nuxt-img v-else :src="image.image[0] || ''" :alt="suffixLegalName(image.alt)" class="hover:scale-105 hover:rotate-2 transition-all ease-in-out aspect-square object-cover w-full" @click.stop="() => toggleSelected()" />
 
     <!-- Infos -->
     <div class="absolute left-5 bottom-5 space-y-1">
@@ -27,9 +27,11 @@
 
 <script setup lang="ts">
 import { Share } from '@capacitor/share'
-import type { GalleryImage } from '~/types'
+import type { GalleryImage, Arrayable } from '~/types'
 
-const props = defineProps<{ image: GalleryImage }>()
+const props = defineProps<{
+  image: GalleryImage
+  }>()
 
 /**
  * Utils
@@ -42,7 +44,7 @@ const { get, suffixLegalName } = useBusinessDetails()
 /**
  * Slider
  */
-const isSlider = computed(() => Array.isArray(props.image.image) && props.image.image.length > 1)
+const isSlider = computed(() => props.image.image.length > 1)
 
 /**
  * Media Query

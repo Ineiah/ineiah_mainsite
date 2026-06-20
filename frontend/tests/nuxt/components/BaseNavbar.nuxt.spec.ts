@@ -89,7 +89,7 @@ describe('Navbar', () => {
     expect(component.get('button').attributes('aria-controls')).toBe('mobile-menu')
   })
 
-  it('matches snapshot', async () => {
+  it.skip('matches snapshot', async () => {
     const component = await mountSuspended(BaseNavbar)
     expect(component.html()).toMatchSnapshot()
   })

@@ -1,5 +1,5 @@
 import type { Arrayable } from '~/types'
-import { galleryImages } from '../../../public/images/gallery/photoshoots/other/images'
+import { galleryImages } from  './images'
 
 /**
  * Custom composable to manage the image gallery state and filtering logic.

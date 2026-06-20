@@ -435,8 +435,8 @@ export const galleryImages: Arrayable<GalleryImage> = [
     brands: []
   },
   {
-    name: 'Mise en forme boucles 3',
-    alt: 'Mise en forme boucles 3',
+    name: 'Mise en forme boucles',
+    alt: 'Mise en forme boucles',
     image: [
       'photoshoots/other/styling-1.jpg',
       'photoshoots/other/styling-2.webp',

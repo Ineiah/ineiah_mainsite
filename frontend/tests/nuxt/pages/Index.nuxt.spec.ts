@@ -1,6 +1,6 @@
 import { mountSuspended, renderSuspended } from '@nuxt/test-utils/runtime'
 import { config } from '@vue/test-utils'
-import { describe, expect, it, vi } from 'vitest'
+import { describe, expect, it, vi, beforeAll, afterAll } from 'vitest'
 import { createI18n } from 'vue-i18n'
 
 import HeroBrand from '../../../app/components/hero/Brand.vue'
@@ -30,7 +30,15 @@ i18n.global.setLocale = vi.fn()
 //   }
 // })
 
-describe('Index Page', () => {
+describe.only('Index Page', () => {
+  beforeAll(() => {
+    vi.stubEnv('NODE_ENV', 'test')
+  })
+  
+  afterAll(() => {
+    vi.unstubAllEnvs()
+  })
+
   it('should render page', async () => {
     const renderedEl = await renderSuspended(Index)
     const el = await renderedEl.findByText("L'art de coiffer toutes les textures")

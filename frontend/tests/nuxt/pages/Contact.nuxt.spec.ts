@@ -7,8 +7,8 @@ import Contact from '../../../app/pages/contact.vue'
 
 vi.stubGlobal('$fetch', vi.fn(() => Promise.resolve({ success: true })))
 
-describe.skip('Nos Préférences Page', () => {
-  it('should render page', async () => {
+describe('Nos Préférences Page', () => {
+  it.only('should render page', async () => {
     const component = await mountSuspended(Contact)
     expect(component.text()).toContain('Toutes nos informations de contact')
 

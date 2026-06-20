@@ -3,7 +3,7 @@ import { screen } from '@testing-library/vue'
 import { describe, expect, it } from 'vitest'
 import BaseHero from '../../../app/components/base/Hero.vue'
 
-describe.only('Base Hero', () => {
+describe('Base Hero', () => {
   it('renders correctly with default props', async () => {
     const { container } = await renderSuspended(BaseHero, {
       props: {

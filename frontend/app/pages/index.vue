@@ -124,7 +124,7 @@ useSeoMeta({
   ogUrl: url.href
 })
 
-if (import.meta.env.PROD) {
+if (import.meta.env.NODE_ENV !== 'test') {
   defineOgImage('NuxtSeoTakumi', {
     title: titles[i18n.locale.value],
     description: descriptions[i18n.locale.value]

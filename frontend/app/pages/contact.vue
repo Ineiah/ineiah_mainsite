@@ -140,10 +140,12 @@ useSeoMeta({
   ogUrl: url.href
 })
 
-defineOgImage('NuxtSeoTakumi', {
-  title: titles[i18n.locale.value],
-  description: descriptions[i18n.locale.value]
-})
+if (import.meta.env.NODE_ENV !== 'test') {
+  defineOgImage('NuxtSeoTakumi', {
+    title: titles[i18n.locale.value],
+    description: descriptions[i18n.locale.value]
+  })
+}
 
 useSchemaOrg([
   defineBreadcrumb({

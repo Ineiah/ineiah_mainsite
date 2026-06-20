@@ -30,7 +30,7 @@ i18n.global.setLocale = vi.fn()
 //   }
 // })
 
-describe.only('Index Page', () => {
+describe('Index Page', () => {
   beforeAll(() => {
     vi.stubEnv('NODE_ENV', 'test')
   })

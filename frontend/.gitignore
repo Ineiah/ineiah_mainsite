@@ -29,3 +29,5 @@ logs
 *.mov
 
 __snapshots__
+
+coverage/

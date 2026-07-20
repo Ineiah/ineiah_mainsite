@@ -1,4 +1,3 @@
-import { NuxtLinkLocale } from '#components'
 import { mountSuspended } from '@nuxt/test-utils/runtime'
 import { describe, expect, it, vi } from 'vitest'
 import { mockNuxtImport } from '@nuxt/test-utils/runtime'
@@ -37,7 +36,7 @@ describe('Navbar', () => {
 
   it('should contain call to action', async () => {
     const component = await mountSuspended(BaseNavbar, { props: { id: 'navbar', buttonClass: '' } })
-    const cta = component.find(`[id="tel-call-us-navbar"]`)
+    const cta = component.find(`[id="tel-navbar__call-us"]`)
 
     expect(cta.exists()).toBeTruthy()
 
@@ -56,10 +55,12 @@ describe('Navbar', () => {
 
   it('has all expected links', async () => {
     const component = await mountSuspended(BaseNavbar)
-    const links = component.findAllComponents(NuxtLinkLocale)
+    const links = component.findAll('ul a[id^="link-navbar__"]')
 
     const linkTexts = links.map(link => link.text())
     const expectedTexts = [ 'Accueil', 'Prestations', 'Notre histoire' ]
+
+    console.log(linkTexts)
 
     expectedTexts.forEach((text) => {
       expect(linkTexts).toContain(text)
@@ -74,7 +75,7 @@ describe('Navbar', () => {
     expect(component.get('button').attributes('aria-controls')).toBe('mobile-menu')
   })
 
-  it.skip('matches snapshot', async () => {
+  it.todo('matches snapshot', async () => {
     const component = await mountSuspended(BaseNavbar)
     expect(component.html()).toMatchSnapshot()
   })

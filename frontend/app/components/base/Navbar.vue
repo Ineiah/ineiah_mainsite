@@ -27,7 +27,7 @@
               </ul>
             </div>
   
-            <base-telephone-button :id="createElementId('link', 'navbar', 'tel-call-us')" class="hidden md:flex ml-auto" />
+            <base-telephone-button :id="createElementId('tel', 'navbar', 'call-us')" class="hidden md:flex ml-auto" />
           </div>
         </div>
       </div>

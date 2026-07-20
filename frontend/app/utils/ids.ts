@@ -39,14 +39,12 @@ export type IdLocation = 'navbar' | 'footer' | (string & {})
  * @param idType The type of the element ID.
  * @param location The location of the element ID.
  * @param args Additional strings to include in the element ID.
- * @returns The generated element ID.
  */
-// export function createElementId(name: string, separator?: Nullable<string>, ...args: string[]) {
-//   const _args = args.map(x => x.toLowerCase().replace(/\s/g, '-'))
-//   return `${name}${separator ?? '__'}${_args.join('-')}`
-// }
-
 export function createElementId(idType: IdTypes, location: IdLocation, ...args: string[]): string {
-  const _args = args.map(x => x.toLowerCase().replace(/\s/g, '-'))
+  const _args = args
+    .map(x => x.toLowerCase().replace(/\s/g, '-'))
+    .map(x => x.normalize('NFD').replace(/[\u0300-\u036f]/g, ''))
+    .map(x => x.replace(/[^a-z0-9-]/g, ''))
+
   return `${idType}-${location}__${_args.join('-')}`
 }

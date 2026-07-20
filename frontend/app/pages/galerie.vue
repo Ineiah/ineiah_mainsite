@@ -37,7 +37,7 @@ definePageMeta({
  * Images
  */
 
-const { images, search, filteredImages, keywords } = useImageGallery()
+const { images, search, filteredImages, keywords } = useGalleryImages()
 
 /**
  * SEO

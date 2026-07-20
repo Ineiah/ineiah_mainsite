@@ -20,7 +20,9 @@ const image: GalleryImage = {
 
   },
   category: 'image',
-  image: '/images/landscape.jpg',
+  image: [
+    '/images/landscape.jpg'
+  ],
   name: 'Landscape',
   url: '/images/landscape.jpg'
 }
@@ -39,11 +41,9 @@ describe('Gallery Image Block', () => {
       }
     })
 
-    console.log(component.html())
-
     const imageEl = component.get('img')
     expect(imageEl).toBeDefined()
-    expect(imageEl.attributes('src')).toBe(image.image)
+    expect(imageEl.attributes('src')).toBe(image.image[0])
     expect(imageEl.attributes('alt')).toBeDefined()
   })
   

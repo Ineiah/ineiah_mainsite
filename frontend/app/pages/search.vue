@@ -133,12 +133,8 @@ const activeType = ref<ActiveType>('all')
 const { query, allItems } = useGoogleSearchComposable({
   activeType,
   resolvers: [
-    defineSearchResolver(resolvedServices, (item, searchValue) => {
-      return item.title.toLowerCase().includes(searchValue)
-    }),
-    defineSearchResolver(resolvedGallery, (item, searchValue) => {
-      return item.title.toLowerCase().includes(searchValue)
-    }),
+    defineSearchResolver(resolvedServices, googleSearchTitleHelper),
+    defineSearchResolver(resolvedGallery, googleSearchTitleHelper),
     defineSearchResolver(resolvedPolicies, (item, searchValue) => {
       return item.title.toLowerCase().includes(searchValue) || (item.description || '').toLowerCase().includes(searchValue)
     })

@@ -1,6 +1,6 @@
 import { describe, expect, it, vi, beforeEach } from 'vitest'
 import { mountSuspended } from '@nuxt/test-utils/runtime'
-import { objectResolver, SearchItem, defineSearchResolver, useGoogleSearchComposable } from '../../../app/composables/google_search'
+import { objectResolver, SearchItem, defineSearchResolver, useGoogleSearchComposable, GoogleSearchOptions } from '../../../app/composables/google_search'
 import { defineComponent, ref } from 'vue'
 
 const testData: SearchItem[] = [
@@ -8,19 +8,19 @@ const testData: SearchItem[] = [
   { id: '2', title: 'Page 1', description: 'Description for Page 1', slug: 'page-1', type: 'page', to: '/page-1', tags: [ 'tag3' ] }
 ]
 
-const mockFunction = vi.fn((_query: string): SearchItem[] => {
-  return [
-    {
-      id: '1',
-      title: 'Product 1',
-      description: 'Description for Product 1',
-      slug: 'product-1',
-      type: 'product',
-      to: '/product-1',
-      tags: ['tag1', 'tag2']
-    }
-  ]
-})
+// const mockFunction = vi.fn((_query: string): SearchItem[] => {
+//   return [
+//     {
+//       id: '1',
+//       title: 'Product 1',
+//       description: 'Description for Product 1',
+//       slug: 'product-1',
+//       type: 'product',
+//       to: '/product-1',
+//       tags: ['tag1', 'tag2']
+//     }
+//   ]
+// })
 
 vi.mock('@vueuse/core', async (actualImport) => {
   const original = await actualImport<typeof import('@vueuse/core')>()
@@ -108,17 +108,20 @@ describe('defineSearchResolver', () => {
 })
 
 describe.only('useGoogleSearchComposable', () => {
+  let options: GoogleSearchOptions = { activeType: ref<'all' | 'product' | 'page' | 'content'>('all'), resolvers: [] }
   let result: ReturnType<typeof useGoogleSearchComposable> | undefined
 
   beforeEach(async () => {
     await mountSuspended(defineComponent({
       template: '<div></div>',
       setup() {
-        const activeType = ref<'all' | 'product' | 'page' | 'content'>('all')
         const resolvers = [
           defineSearchResolver(testData, (item, searchValue) => item.title.toLowerCase().includes(searchValue))
         ]
-        result = useGoogleSearchComposable({ activeType, resolvers })
+
+        options.resolvers = resolvers
+
+        result = useGoogleSearchComposable(options)
         return {
           query: result.query,
           allItems: result.allItems
@@ -132,6 +135,23 @@ describe.only('useGoogleSearchComposable', () => {
     if (result) {
       expect(result.query.value).toBe('')
       expect(result.allItems.value).toHaveLength(2)
+    }
+  })
+
+  it('should return an empty array when query does not match any item', async () => {
+    expect(result).toBeDefined()
+    if (result) {
+      result.query.value = 'Non-existing product'
+      expect(result.query.value).toBe('Non-existing product')
+      expect(result.allItems.value).toHaveLength(0)
+    }
+  })
+
+  it('should return filtered items when activeType is set to all', async () => {
+    expect(result).toBeDefined()
+    if (result) {
+      options.activeType.value = 'all'
+      expect(result.allItems.value).toHaveLength(1)
     }
   })
 })

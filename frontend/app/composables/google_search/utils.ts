@@ -48,13 +48,18 @@ export function defineSearchResolver(items: ReturnType<typeof objectResolver>, s
 
 export type ActiveType = 'all' | 'product' | 'page' | 'content'
 
+export type GoogleSearchOptions = {
+  activeType: Ref<ActiveType>
+  resolvers: ReturnType<typeof defineSearchResolver>[]
+}
+
 /**
  * A composable function that resolves the results for multiple search resolvers into
  * a single array of SearchItems. It takes an object with an activeType and an array of resolvers,
  * and returns a reactive object containing the search query and the resolved items based on the active type.
  * @param options The options object containing the active type and the array of search resolvers.
  */
-export function useGoogleSearchComposable<T extends { activeType: Ref<ActiveType>, resolvers: ReturnType<typeof defineSearchResolver>[] }>(options: T) {
+export function useGoogleSearchComposable<T extends GoogleSearchOptions>(options: T) {
   const query = ref<string>('')
   const loweredQuery = computed(() => query.value.toLowerCase())
   
@@ -83,4 +88,14 @@ export function useGoogleSearchComposable<T extends { activeType: Ref<ActiveType
      */
     allItems
   }
+}
+
+/**
+ * A helper function that checks if the title of a SearchItem includes the search value.
+ * @param item The SearchItem to be checked.
+ * @param searchValue The search value to check against the item's title.
+ * @returns A boolean indicating whether the item's title includes the search value.
+ */
+export function googleSearchTitleHelper(item: SearchItem, searchValue: string) {
+  return item.title.toLowerCase().includes(searchValue)
 }

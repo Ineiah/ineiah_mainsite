@@ -82,7 +82,7 @@ const resolvedServices = objectResolver<ServiceSection>(services, (item) => {
  * Gallery
  */
 
-const { images } = useImageGallery()
+const { images } = useGalleryImages()
 
 const resolvedGallery = objectResolver<GalleryImage>(images, (item) => {
   return {
@@ -133,13 +133,13 @@ const activeType = ref<ActiveType>('all')
 const { query, allItems } = useGoogleSearchComposable({
   activeType,
   resolvers: [
-    useGoogleSearchItems(resolvedServices, (item, searchValue) => {
+    defineSearchResolver(resolvedServices, (item, searchValue) => {
       return item.title.toLowerCase().includes(searchValue)
     }),
-    useGoogleSearchItems(resolvedGallery, (item, searchValue) => {
+    defineSearchResolver(resolvedGallery, (item, searchValue) => {
       return item.title.toLowerCase().includes(searchValue)
     }),
-    useGoogleSearchItems(resolvedPolicies, (item, searchValue) => {
+    defineSearchResolver(resolvedPolicies, (item, searchValue) => {
       return item.title.toLowerCase().includes(searchValue) || (item.description || '').toLowerCase().includes(searchValue)
     })
   ]

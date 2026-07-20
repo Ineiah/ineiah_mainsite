@@ -1,26 +1,27 @@
 import { describe, expect, it, vi, beforeEach } from 'vitest'
 import { mountSuspended } from '@nuxt/test-utils/runtime'
-import { objectResolver, SearchItem, defineSearchResolver, useGoogleSearchComposable, GoogleSearchOptions } from '../../../app/composables/google_search'
+import { objectResolver, SearchItem, defineSearchResolver, useGoogleSearchComposable, GoogleSearchOptions, googleSearchTitleHelper } from '../../../app/composables/google_search'
 import { defineComponent, ref } from 'vue'
 
 const testData: SearchItem[] = [
-  { id: '1', title: 'Product 1', description: 'Description for Product 1', slug: 'product-1', type: 'product', to: '/product-1', tags: [ 'tag1', 'tag2' ] },
-  { id: '2', title: 'Page 1', description: 'Description for Page 1', slug: 'page-1', type: 'page', to: '/page-1', tags: [ 'tag3' ] }
+  { 
+    id: '1',
+    title: 'Product 1',
+    description: 'Description for Product 1',
+    slug: 'product-1',
+    type: 'product',
+    to: '/product-1',
+    tags: [ 'tag1', 'tag2' ]
+  },
+  { 
+    id: '2',
+    title: 'Page 1',
+    description: 'Description for Page 1',
+    slug: 'page-1',
+    type: 'page',
+    to: '/page-1', tags: [ 'tag3' ]
+  }
 ]
-
-// const mockFunction = vi.fn((_query: string): SearchItem[] => {
-//   return [
-//     {
-//       id: '1',
-//       title: 'Product 1',
-//       description: 'Description for Product 1',
-//       slug: 'product-1',
-//       type: 'product',
-//       to: '/product-1',
-//       tags: ['tag1', 'tag2']
-//     }
-//   ]
-// })
 
 vi.mock('@vueuse/core', async (actualImport) => {
   const original = await actualImport<typeof import('@vueuse/core')>()
@@ -33,50 +34,6 @@ vi.mock('@vueuse/core', async (actualImport) => {
     })
   }
 })
-
-// describe('useGoogleSearch', () => {
-//   let result: ReturnType<typeof useGoogleSearch> | undefined
-  
-//   beforeEach(async () => {
-//     await mountSuspended(defineComponent({
-//       template: '<div></div>',
-//       setup() {
-//         result = useGoogleSearch(mockFunction)
-//         return {
-//           result
-//         }
-//       }
-//     }))
-//   })
-
-//   it('should return all items when query is empty', async () => {
-//     expect(result).toBeDefined()
-
-//     if (result) {
-//       expect(result).toHaveProperty('activeType')
-//       expect(result).toHaveProperty('query')
-//       expect(result).toHaveProperty('allItems')
-//       expect(result).toHaveProperty('searchedItems')
-  
-//       expect(result.query.value).toBe('')
-//       expect(result.searchedItems.value.length).toBe(1)
-//     }
-//   })
-
-//   it('should return searched element', async () => {
-//     expect(result).toBeDefined()
-
-//     if (result) {
-//       result.query.value = 'Product 1'
-//       expect(result.query.value).toBe('Product 1')
-//       expect(result.searchedItems.value.length).toBe(1)
-
-//       result.query.value = 'Non-existing product'
-//       expect(result.query.value).toBe('Non-existing product')
-//       expect(result.searchedItems.value.length).toBe(0)
-//     }
-//   })
-// })
 
 describe('objectResolver', () => {
   it('should resolve objects to SearchItem array', () => {
@@ -107,7 +64,7 @@ describe('defineSearchResolver', () => {
   })
 })
 
-describe.only('useGoogleSearchComposable', () => {
+describe('useGoogleSearchComposable', () => {
   let options: GoogleSearchOptions = { activeType: ref<'all' | 'product' | 'page' | 'content'>('all'), resolvers: [] }
   let result: ReturnType<typeof useGoogleSearchComposable> | undefined
 
@@ -151,7 +108,32 @@ describe.only('useGoogleSearchComposable', () => {
     expect(result).toBeDefined()
     if (result) {
       options.activeType.value = 'all'
+      expect(result.allItems.value).toHaveLength(2)
+    }
+  })
+
+  it('should return filtered items when activeType is set to all', async () => {
+    expect(result).toBeDefined()
+    if (result) {
+      options.activeType.value = 'product'
       expect(result.allItems.value).toHaveLength(1)
     }
+  })
+})
+
+describe('googleSearchTitleHelper', () => {
+  it('should return true if the title includes the search value', () => {
+    const item: SearchItem = {
+      id: '1',
+      title: 'Product 1',
+      description: 'Description for Product 1',
+      slug: 'product-1',
+      type: 'product',
+      to: '/product-1',
+      tags: [ 'tag1', 'tag2' ]
+    }
+
+    const result = googleSearchTitleHelper(item, 'product')
+    expect(result).toBe(true)
   })
 })

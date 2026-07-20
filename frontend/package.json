@@ -11,7 +11,7 @@
     "sync:s3": "aws s3 sync .output/public/ s3://reka.app --delete --acl public-read",
     "test": "vitest",
     "test:co": "vitest --coverage",
-    "test:watch": "vitest --watch",
+    "test:watch": "vitest --watch --coverage",
     "test:ui": "vitest --ui",
     "lint": "oxlint lint .",
     "fix": "oxlint . --fix && eslint . --fix",

@@ -53,10 +53,10 @@ import { defineVitestProject } from '@nuxt/test-utils/config'
 
 export default defineConfig({
   test: {
-    // exclude: [
-    //   '**/node_modules/**',
-    //   'test/e2e/**'
-    // ],
+    exclude: [
+      '**/node_modules/**',
+      // 'test/e2e/**'
+    ],
     coverage: {
       enabled: true,
       provider: 'v8',
@@ -69,7 +69,7 @@ export default defineConfig({
       await defineVitestProject({
         test: {
           name: 'unit',
-          include: [ 'test/{unit}/**/*.{test,spec}.ts' ],
+          include: [ 'test/unit/**/*.{test,spec}.ts' ],
           environment: 'node',
           testTimeout: 20000,
           tags: [

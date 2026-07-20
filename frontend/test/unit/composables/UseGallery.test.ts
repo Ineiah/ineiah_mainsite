@@ -1,5 +1,5 @@
 import { describe, it, expect } from 'vitest'
-import { useGalleryImages } from '../../app/composables/gallery/index'
+import { useGalleryImages } from '../../../app/composables/gallery/index'
 
 describe('useGalleryImages', () => {
   it('should return an array of images with the correct root directory', () => {

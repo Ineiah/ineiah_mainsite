@@ -1,6 +1,6 @@
 import { describe, expect, it, vi } from 'vitest'
-import { useBusinessDetails, useWorkingDaysComposable } from '../../app/composables/business'
-import type { Days, WorkingDay, WorkingDaysOptions } from '../../app/composables/business'
+import { useBusinessDetails, useWorkingDaysComposable } from '../../../app/composables/business'
+import type { Days, WorkingDay, WorkingDaysOptions } from '../../../app/composables/business'
 import type { ComputedRef } from 'vue'
 
 vi.mock('@vueuse/core', () => {
@@ -11,7 +11,7 @@ vi.mock('@vueuse/core', () => {
       return fn
     },
     createGlobalState: (fn: (options: WorkingDaysOptions) => { workingDays: ComputedRef<WorkingDay[]>, days: ComputedRef<Days[]>, getDay: (day: Days) => WorkingDay | undefined }) => {
-      return fn()
+      return (options: WorkingDaysOptions) => fn(options)
     }
   }
 })

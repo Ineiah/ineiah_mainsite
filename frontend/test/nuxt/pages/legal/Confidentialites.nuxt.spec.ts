@@ -12,7 +12,5 @@ describe('Confidentialité Page', () => {
       expect(titleEl).toBeDefined()
       expect(titleEl.attributes('id')).toBeDefined()
     })
-
-    console.log(component.html())
   })
 })

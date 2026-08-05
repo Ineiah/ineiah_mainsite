@@ -1,5 +1,5 @@
 <template>
-  <article :id="createElementId('image', 'gallery', image.name)" ref="imageEl" :class="theme" class="group overflow-hidden rounded-xl transition-all duration-300 relative cursor-pointer">
+  <article :id="createElementId('gallery-image', 'image-block', image.name)" ref="imageEl" :class="theme" class="group overflow-hidden rounded-xl transition-all duration-300 relative cursor-pointer">
     <!-- Image -->
     <gallery-slider v-if="isSlider" :alt="suffixLegalName(image.alt)" :images="image.image" />
     <!-- <lazy-gallery-video-block v-else-if="image.category === 'video'" :image="image" hydrate-on-idle /> -->
@@ -15,9 +15,9 @@
 
       <!-- CTA -->
       <div class="flex gap-2">
-        <lazy-base-telephone-button v-if="isSelected" :id="createElementId('tel', 'gallery', 'service', image.name)" text="Choisir cette coupe" />
+        <lazy-base-telephone-button v-if="isSelected" :id="createElementId('tel', 'image-block', image.name)" text="Choisir cette coupe" />
 
-        <volt-secondary-button v-if="isSelected" :id="createElementId('link', 'gallery', 'share', image.name)" severity="info" rounded @click.stop="share()">
+        <volt-secondary-button v-if="isSelected" :id="createElementId('link', 'image-block', image.name)" severity="info" rounded @click.stop="share()">
           <icon name="i-fa6-solid:share" />
         </volt-secondary-button>
       </div>

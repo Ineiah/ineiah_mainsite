@@ -16,6 +16,7 @@
 
 <script setup lang="ts">
 import type { ServiceSection } from '~/types'
+import { serviceSectionKey } from '~/constants/symbols'
 
 const props = defineProps<{ index: number, section: ServiceSection }>()
 

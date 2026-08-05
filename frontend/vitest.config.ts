@@ -17,7 +17,8 @@ export default defineConfig({
       reporter: [ 'text', 'json', 'html' ]
     },
     env: {
-      NODE_ENV: 'test'
+      NODE_ENV: 'test',
+      MODE: 'test'
     },
     projects: [
       await defineVitestProject({

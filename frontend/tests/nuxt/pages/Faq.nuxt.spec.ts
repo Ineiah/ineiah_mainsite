@@ -36,10 +36,6 @@ describe.only('FAQ Page', () => {
       const sectionEl = component.find(`#faq-${section.id}`)
       expect(sectionEl.exists()).toBe(true)
       expect(sectionEl.text()).toContain(section.title)
-
-      // const accordionItems = sectionEl.findAll(`[id^="action-faq-"]`)
-      // console.log(component.html())
-      // expect(accordionItems).toHaveLength(section.questions.length)
     })
   })
 
@@ -49,7 +45,7 @@ describe.only('FAQ Page', () => {
       
       const accordionEl = component.findComponent(AccordionContent)
       const firstTriggerEl = accordionEl.find('div:first-child')
-      // console.log(firstTriggerEl.html())
+
       expect(firstTriggerEl.exists()).toBe(true)
       expect(firstTriggerEl.attributes('data-p-active')).toBe('false')
             

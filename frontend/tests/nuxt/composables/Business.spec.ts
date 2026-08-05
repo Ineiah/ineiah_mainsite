@@ -1,6 +1,6 @@
 import { describe, expect, it, vi } from 'vitest'
-import { useBusinessDetails, useWorkingDaysComposable } from '../../app/composables/business'
-import type { Days, WorkingDay, WorkingDaysOptions } from '../../app/composables/business'
+import { useBusinessDetails, useWorkingDaysComposable } from '~/composables/business'
+import type { Days, WorkingDay, WorkingDaysOptions } from '~/composables/business'
 import type { ComputedRef } from 'vue'
 
 vi.mock('@vueuse/core', () => {

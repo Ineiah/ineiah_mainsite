@@ -2,7 +2,7 @@ import { mountSuspended, mockNuxtImport } from '@nuxt/test-utils/runtime'
 import { describe, expect, it, vi } from 'vitest'
 import ImageBlock from '../../../app/components/gallery/ImageBlock.vue'
 import GallerySlider from '../../../app/components/gallery/Slider.vue'
-import type { GalleryImage } from '../../../app/types/index.ts'
+import type { GalleryImage } from '../../../app/types'
 import BaseTelephoneButton from '../../../app/components/base/TelephoneButton.vue'
 
 const image: GalleryImage = {
@@ -20,9 +20,7 @@ const image: GalleryImage = {
 
   },
   category: 'image',
-  image: [
-    '/images/landscape.jpg'
-  ],
+  image: '/images/landscape.jpg',
   name: 'Landscape',
   url: '/images/landscape.jpg'
 }
@@ -43,7 +41,7 @@ describe('Gallery Image Block', () => {
 
     const imageEl = component.get('img')
     expect(imageEl).toBeDefined()
-    expect(imageEl.attributes('src')).toBe(image.image[0])
+    expect(imageEl.attributes('src')).toBe(image.image)
     expect(imageEl.attributes('alt')).toBeDefined()
   })
   

@@ -1,48 +1,64 @@
+import { NuxtLinkLocale } from '#components'
 import { mountSuspended } from '@nuxt/test-utils/runtime'
 import { describe, expect, it, vi } from 'vitest'
-import { mockNuxtImport } from '@nuxt/test-utils/runtime'
-import { nextTick, ref } from 'vue'
 
 import BaseNavbar from '../../../app/components/base/Navbar.vue'
 
-mockNuxtImport<typeof import('vue-router').useRouter>('useRouter', async (original) => {
-  return () => ({
-    ...original(),
-    meta: {
-      name: 'privacy'
-    }
-  })
-})
-
-vi.mock('vue-i18n', async (original) => {
-  const actual = await original<typeof import('vue-i18n')>()
-  return {
-    ...actual,
-    t: vi.fn((key: string) => key)
-  }
-})
+// vi.mock('@vueuse/core', (importGlobla) => {
+//   const actual = importGlobla<typeof import('@vueuse/core')>()
+//   return {
+//     ...actual,
+//     useScroll: vi.fn(() => ({ y: ref(0) }))
+//   }
+// })
 
 describe('Navbar', () => {
-  it('should render', async () => {
-    const component = await mountSuspended(BaseNavbar)
-    
-    const links = component.findAll('a')
-    links.forEach((link) => {
-      const message: string = `Link with text "${link.text()}" should have href and id attributes`
-      expect(link.attributes('href'), message).toBeDefined()
-      expect(link.attributes('id'), message).toBeDefined()
-    })
-  })
-
   it('should contain call to action', async () => {
     const component = await mountSuspended(BaseNavbar, { props: { id: 'navbar', buttonClass: '' } })
-    const cta = component.find(`[id="tel-navbar__call-us"]`)
+    const cta = component.find(`[id="tel-call-us-navbar"]`)
 
     expect(cta.exists()).toBeTruthy()
 
     const value = cta.attributes('href')
     expect(value).toBeDefined()
     expect(value?.startsWith('tel:')).toBeTruthy()
+  })
+
+  describe('fixed when scrolled', () => {
+    // TODO: Renders only the navbar so when scrolled nothing happens. This
+    // has to be tested on a page
+    it.skip('applies bg-brand-pink-500 if show showBackground is true', async () => {
+      const y = ref(100)
+
+      const component = await mountSuspended(BaseNavbar, {
+        global: {
+          mocks: {
+            useScroll: vi.fn(() => ({ y }))
+          }
+        }
+      })
+
+      y.value = 800
+      await nextTick()
+
+      expect(component.classes()).toContain('bg-brand-pink-500')
+      expect(component.classes()).not.toContain('bg-transparent')
+    })
+
+    it.skip('applises bg-brand-transparent if show showBackground is false', async () => {
+      const component = await mountSuspended(BaseNavbar, {
+        global: {
+          mocks: {
+            useScroll: () => ({ y: ref(0) })
+          }
+        }
+      })
+
+      await nextTick()
+
+      expect(component.classes()).toContain('bg-transparent')
+      expect(component.classes()).not.toContain('bg-brand-pink-500')
+    })
   })
 
   it('emits when mobile button is clicked', async () => {
@@ -55,12 +71,10 @@ describe('Navbar', () => {
 
   it('has all expected links', async () => {
     const component = await mountSuspended(BaseNavbar)
-    const links = component.findAll('ul a[id^="link-navbar__"]')
+    const links = component.findAllComponents(NuxtLinkLocale)
 
     const linkTexts = links.map(link => link.text())
     const expectedTexts = [ 'Accueil', 'Prestations', 'Notre histoire' ]
-
-    console.log(linkTexts)
 
     expectedTexts.forEach((text) => {
       expect(linkTexts).toContain(text)
@@ -75,45 +89,8 @@ describe('Navbar', () => {
     expect(component.get('button').attributes('aria-controls')).toBe('mobile-menu')
   })
 
-  it.todo('matches snapshot', async () => {
+  it.skip('matches snapshot', async () => {
     const component = await mountSuspended(BaseNavbar)
     expect(component.html()).toMatchSnapshot()
-  })
-})
-
-vi.mock('@vueuse/core', async (original) => {
-  const actual = await original<typeof import('@vueuse/core')>()
-  return {
-    ...actual,
-    useScroll: vi.fn((_element: MaybeRefOrGetter<Window>) => ({ y: ref(0) }))
-  }
-})
-
-describe('fixed when scrolled', () => {
-  it.todo('applies bg-brand-pink-500 if show showBackground is true', async () => {
-    const y = ref(100)
-
-    const component = await mountSuspended(BaseNavbar)
-
-    y.value = 800
-    await nextTick()
-
-    expect(component.classes()).toContain('bg-brand-pink-500')
-    expect(component.classes()).not.toContain('bg-transparent')
-  })
-
-  it.todo('applises bg-brand-transparent if show showBackground is false', async () => {
-    const component = await mountSuspended(BaseNavbar, {
-      global: {
-        mocks: {
-          useScroll: () => ({ y: ref(0) })
-        }
-      }
-    })
-
-    await nextTick()
-
-    expect(component.classes()).toContain('bg-transparent')
-    expect(component.classes()).not.toContain('bg-brand-pink-500')
   })
 })

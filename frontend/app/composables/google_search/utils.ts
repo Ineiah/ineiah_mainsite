@@ -94,8 +94,8 @@ export function useGoogleSearchComposable<T extends GoogleSearchOptions>(options
  * A helper function that checks if the title of a SearchItem includes the search value.
  * @param item The SearchItem to be checked.
  * @param searchValue The search value to check against the item's title.
- * @returns A boolean indicating whether the item's title includes the search value.
  */
 export function googleSearchTitleHelper(item: SearchItem, searchValue: string) {
-  return item.title.toLowerCase().includes(searchValue)
+  if (searchValue === '') return false
+  return item.title.toLocaleLowerCase().includes(searchValue.toLocaleLowerCase())
 }

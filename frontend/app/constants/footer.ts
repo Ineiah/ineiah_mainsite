@@ -88,7 +88,7 @@ export const FOOTER_LINKS: FooterSection = {
   ]
 }
 
-export const MOBILE_LINKS: FooterLinks[] = footer.sections.reduce<FooterLinks[]>((acc, section) => {
+export const MOBILE_LINKS: FooterLinks[] = FOOTER_LINKS.sections.reduce<FooterLinks[]>((acc, section) => {
   const mobileSectionLinks = section.links.filter(link => link.showOnMobile)
   return acc.concat(mobileSectionLinks)
 }, []).sort((a, b) => {

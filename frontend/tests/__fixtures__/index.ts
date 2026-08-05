@@ -1,4 +1,6 @@
 import type { GalleryImage, Service, ServiceSection } from '../../app/types'
+import type { SearchItem } from '../../app/composables/google_search'
+
 // import faker from '@faker-js/faker'
 
 export const serviceFixture: Service = {
@@ -28,7 +30,9 @@ export const serviceSectionFixture: ServiceSection = {
 
 export const galleryImageFixture: GalleryImage = {
   name: 'Coupe courte femme',
-  image: '/images/gallery/customer15.jpg',
+  image: [
+    '/images/gallery/customer15.jpg'
+  ],
   category: 'image',
   url: null,
   alt: 'Coupe courte femme',
@@ -49,3 +53,24 @@ export const galleryImageFixture: GalleryImage = {
     }
   ]
 }
+
+const testSearchItems: SearchItem[] = [
+  {
+    id: '1',
+    title: 'Test Product 1',
+    type: 'product',
+    slug: 'test-product-1',
+    to: '/product/1',
+    tags: [ 'tag1', 'tag2' ],
+    description: 'Description for Test Product 1'
+  },
+  {
+    id: '1',
+    title: 'Test Product 1',
+    type: 'product',
+    slug: 'test-product-1',
+    to: '/product/1',
+    tags: [ 'tag1', 'tag2' ],
+    description: 'Description for Test Product 1'
+  }
+]

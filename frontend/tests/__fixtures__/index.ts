@@ -1,4 +1,4 @@
-import type { Service, ServiceSection } from '../../app/types'
+import type { GalleryImage, Service, ServiceSection } from '../../app/types'
 // import faker from '@faker-js/faker'
 
 export const serviceFixture: Service = {
@@ -23,5 +23,29 @@ export const serviceSectionFixture: ServiceSection = {
   ],
   services: [
     serviceFixture
+  ]
+}
+
+export const galleryImageFixture: GalleryImage = {
+  name: 'Coupe courte femme',
+  image: '/images/gallery/customer15.jpg',
+  category: 'image',
+  url: null,
+  alt: 'Coupe courte femme',
+  isVisible: true,
+  author: {
+    name: 'John Doe',
+    website: null,
+    instagram: 'johndoe',
+    username: 'johndoe'
+  },
+  model: {
+    instagram: 'modelinstagram'
+  },
+  brands: [
+    {
+      name: 'Brand Name',
+      website: 'https://brandwebsite.com'
+    }
   ]
 }

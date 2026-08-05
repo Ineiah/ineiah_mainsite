@@ -1,4 +1,4 @@
-import type { Service } from '../../app/types'
+import type { Service, ServiceSection } from '../../app/types'
 // import faker from '@faker-js/faker'
 
 export const serviceFixture: Service = {
@@ -11,4 +11,17 @@ export const serviceFixture: Service = {
   duration: 60,
   image: '/images/services/customer15.jpg',
   category: 'Coupe'
+}
+
+export const serviceSectionFixture: ServiceSection = {
+  name: 'Shampoings • Coupes • Mise en forme',
+  globalDescription: 'Rafraîchissez votre coupe et donnez-lui un coup de fraîcheur avec la restructuration, qui vous apportera forme et volume en quelques coups de ciseaux ! La coupe sur cheveux secs permet de rééquilibrer les volumes, la longueur et le style de la coupe (faire une frange, couper les pointes…)',
+  includes: [
+    'Diagnostic / Conseils',
+    'Shampooing conditionner',
+    'Séchage (naturel ou brushing)'
+  ],
+  services: [
+    serviceFixture
+  ]
 }

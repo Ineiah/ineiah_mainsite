@@ -311,4 +311,10 @@ export default defineNuxtConfig({
       projectId: process.env.NUXT_PUBLIC_FIREBASE_PROJECT_ID
     }
   },
+
+  imports: {
+    dirs: [
+      '~/constants/**'
+    ]
+  }
 })

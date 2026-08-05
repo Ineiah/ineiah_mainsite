@@ -1,3 +1,23 @@
+export type IdAction = 'link' | 'cta' | 'image' | 'service' | 'product' | 'tel' | (string & {})
+
+export type IdLocation = 'header' | 'footer' | 'sidebar' | 'content' | 'navbar' | (string & {})
+
+/**
+ * Creates a unique element ID by combining a base string with additional parts.
+ * @param base The base of the id, usually the component name.
+ * @param location The location of the element, usually the section of the page.
+ * @param parts The parts to be added to the id, usually the props of the component.
+ */
+export function createElementId(base: IdAction, location: IdLocation, ...parts: Array<string | number | undefined | null>): string {
+  const _parts = parts
+    .filter(p => p !== undefined && p !== null)
+    .map(p => (p || '')
+    .toString().
+    replace(/ /g, '-'))
+    .join('__')
+  return `${base}-${location}-${_parts}`
+}
+
 /**
  * Composable to generate dynamic IDs from string values
  */
@@ -27,24 +47,4 @@ export function useDynamicId() {
      */
     create
   }
-}
-
-export type IdTypes = 'action' | 'link' | 'cta' | 'form' | 'image' | 'tel' | (string & {})
-
-export type IdLocation = 'navbar' | 'footer' | (string & {})
-
-/**
- * Helper function to create a unique element ID by combining a base name with additional arguments.
- * The additional arguments are converted to lowercase and spaces are replaced with hyphens.
- * @param idType The type of the element ID.
- * @param location The location of the element ID.
- * @param args Additional strings to include in the element ID.
- */
-export function createElementId(idType: IdTypes, location: IdLocation, ...args: string[]): string {
-  const _args = args
-    .map(x => x.toLowerCase().replace(/\s/g, '-'))
-    .map(x => x.normalize('NFD').replace(/[\u0300-\u036f]/g, ''))
-    .map(x => x.replace(/[^a-z0-9-]/g, ''))
-
-  return `${idType}-${location}__${_args.join('-')}`
 }

@@ -1,12 +1,18 @@
 import { describe, expect, it } from 'vitest'
-import { renderSuspended } from '@nuxt/test-utils/runtime'
+import { mountSuspended } from '@nuxt/test-utils/runtime'
 
 import Confidentialites from '~/pages/legal/confidentialite.vue'
 
-describe.skip('Confidentialité Page', () => {
+describe('Confidentialité Page', () => {
   it('should render page', async () => {
-    const component = await renderSuspended(Confidentialites)
-    const pageLead = await component.findByText('Nuxt')
-    expect(pageLead).toBeDefined()
+    const component = await mountSuspended(Confidentialites)
+    
+    const titleEls = component.findAll('h1')
+    titleEls.forEach(titleEl => {
+      expect(titleEl).toBeDefined()
+      expect(titleEl.attributes('id')).toBeDefined()
+    })
+
+    console.log(component.html())
   })
 })

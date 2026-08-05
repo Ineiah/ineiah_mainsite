@@ -91,7 +91,10 @@ export default defineNuxtConfig({
       twilioAccountSid: '',
       twilioAuthToken: '',
       twilioPhoneNumber: '',
-      twilioToPhoneNumber: ''
+      twilioToPhoneNumber: '',
+
+      // Primevue
+      primeVueLicenseKey: process.env.NUXT_PRIME_VUE_LICENSE_KEY
     }
   },
 

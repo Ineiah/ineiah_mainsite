@@ -2,7 +2,7 @@ import { mountSuspended, mockNuxtImport } from '@nuxt/test-utils/runtime'
 import { describe, expect, it, vi } from 'vitest'
 import ImageBlock from '../../../app/components/gallery/ImageBlock.vue'
 import GallerySlider from '../../../app/components/gallery/Slider.vue'
-import type { GalleryImage } from '../../../app/types'
+import type { GalleryImage } from '../../../app/types/index.ts'
 import BaseTelephoneButton from '../../../app/components/base/TelephoneButton.vue'
 
 const image: GalleryImage = {

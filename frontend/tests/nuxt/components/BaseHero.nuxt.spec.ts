@@ -1,7 +1,7 @@
 import { renderSuspended } from '@nuxt/test-utils/runtime'
 import { screen } from '@testing-library/vue'
 import { describe, expect, it } from 'vitest'
-import BaseHero from '../../../app/components/base/Hero.vue'
+import BaseHero from '~/components/base/Hero.vue'
 
 describe('Base Hero', () => {
   it('renders correctly with default props', async () => {

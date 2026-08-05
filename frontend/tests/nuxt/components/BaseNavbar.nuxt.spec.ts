@@ -2,15 +2,7 @@ import { NuxtLinkLocale } from '#components'
 import { mountSuspended } from '@nuxt/test-utils/runtime'
 import { describe, expect, it, vi } from 'vitest'
 
-import BaseNavbar from '../../../app/components/base/Navbar.vue'
-
-// vi.mock('@vueuse/core', (importGlobla) => {
-//   const actual = importGlobla<typeof import('@vueuse/core')>()
-//   return {
-//     ...actual,
-//     useScroll: vi.fn(() => ({ y: ref(0) }))
-//   }
-// })
+import BaseNavbar from '~/components/base/Navbar.vue'
 
 describe('Navbar', () => {
   it('should contain call to action', async () => {

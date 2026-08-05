@@ -1,6 +1,6 @@
 import { describe, it, expect } from 'vitest'
 import { mountSuspended } from '@nuxt/test-utils/runtime'
-import HeroBottomCta from '../../../app/components/hero/BottomCta.vue'
+import HeroBottomCta from '~/components/hero/BottomCta.vue'
 
 describe("HeroBottomCta", () => {
   describe('call to actions', () => {

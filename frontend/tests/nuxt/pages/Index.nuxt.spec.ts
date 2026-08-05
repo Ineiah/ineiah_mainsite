@@ -1,34 +1,13 @@
 import { mountSuspended, renderSuspended } from '@nuxt/test-utils/runtime'
-import { config } from '@vue/test-utils'
 import { describe, expect, it, vi, beforeAll, afterAll } from 'vitest'
-import { createI18n } from 'vue-i18n'
 
-import HeroBrand from '../../../app/components/hero/Brand.vue'
-import HeroPhotoCall from '../../../app/components/hero/PhotoCall.vue'
-import Index from '../../../app/pages/index.vue'
-import HeroSectionBrands from '../../../app/components/hero/SectionBrands.vue'
-import HeroSectionPhotocall from '../../../app/components/hero/SectionPhotocall.vue'
-import HerSectionProducts from '../../../app/components/hero/SectionProducts.vue'
-import HeroSectionReviews from '../../../app/components/hero/SectionReviews.vue'
-
-const i18n = createI18n({
-  legacy: false,
-  locale: 'en',
-  globalInjection: true,
-  missing: (_: unknown, key: string) => key
-})
-
-config.global.plugins.push(i18n)
-i18n.global.setLocale = vi.fn()
-
-// vi.mock('../../../app/utils/index', async () => {
-//   const actual = await vi.importActual('../../../app/utils/index')
-
-//   return {
-//     ...actual,
-//     randomMotionDelays: vi.fn().mockReturnValue(0)
-//   }
-// })
+import HeroBrand from '~/components/hero/Brand.vue'
+import HeroPhotoCall from '~//components/hero/PhotoCall.vue'
+import Index from '~/pages/index.vue'
+import HeroSectionBrands from '~/components/hero/SectionBrands.vue'
+import HeroSectionPhotocall from '~/components/hero/SectionPhotocall.vue'
+import HerSectionProducts from '~/components/hero/SectionProducts.vue'
+import HeroSectionReviews from '~/components/hero/SectionReviews.vue'
 
 describe('Index Page', () => {
   beforeAll(() => {

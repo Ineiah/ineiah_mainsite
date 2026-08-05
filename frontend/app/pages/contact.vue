@@ -44,7 +44,7 @@
               <div class="space-x- flex gap-2 mt-5">
                 <base-telephone-button id="tel-call-us-contact" size="large" />
 
-                <a :href="`mailto:${get('contact').email}`">
+                <a :id="createElementId('cta', 'content', 'contact', 'email')" :href="`mailto:${get('contact').email}`">
                   <volt-button id="email-contact-us" size="large" class="mt-5" rounded>
                     <icon name="fa-solid:envelope" />
                     {{ $t("Email") }}

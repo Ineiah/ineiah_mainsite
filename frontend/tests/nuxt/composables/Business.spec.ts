@@ -10,19 +10,6 @@ vi.mock('@vueuse/core', async (original) => {
   }
 })
 
-// vi.mock('@vueuse/core', () => {
-//   const actual = vi.importActual<typeof import('@vueuse/core')>('@vueuse/core')
-//   return {
-//     ...actual,
-//     reactify: (fn: unknown) => {
-//       return fn
-//     },
-//     createGlobalState: (fn: (options: WorkingDaysOptions) => { workingDays: ComputedRef<WorkingDay[]>, days: ComputedRef<Days[]>, getDay: (day: Days) => WorkingDay | undefined }) => {
-//       return fn()
-//     }
-//   }
-// })
-
 describe('useBusinessDetails', async () => {
   it('should return the correct business details', () => {
     const { businessDetails } = useBusinessDetails()
@@ -46,6 +33,20 @@ describe('useBusinessDetails', async () => {
     const { getSocial, getSocialIcon } = useBusinessDetails()
     expect(getSocial('instagram')).toBeTypeOf('object')
     expect(getSocialIcon('instagram')).toBeTypeOf('string')
+  })
+
+  it('composables should return default values', () => {
+    const { activeSocials, address, geoLocation, founderImage, organizationLogo, organizationImages, suffixLegalName } = useBusinessDetails()
+    expect(toValue(activeSocials)).toBeTypeOf('object')
+    expect(toValue(address)).toBeTypeOf('string')
+    expect(toValue(geoLocation)).toBeTypeOf('string')
+    expect(toValue(founderImage)).toBeTypeOf('string')
+    expect(toValue(organizationLogo)).toBeTypeOf('string')
+    expect(toValue(organizationImages)).toBeTypeOf('object')
+
+    const result = suffixLegalName('Test Name')
+    expect(result).toBeTypeOf('string')
+    expect(result).toContain('Test Name')
   })
 })
 

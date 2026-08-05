@@ -144,8 +144,12 @@ export function useBusinessDetails() {
     if (!isDefined(path)) {
       return null
     } else {
-      const rootUrl = useRuntimeConfig().public.siteUrl
-      return new URL(path, rootUrl).toString()
+      try {
+        const rootUrl = useRuntimeConfig().public.siteUrl
+        return new URL(path, rootUrl).toString()
+      } catch {
+        return path
+      }
     }
   }
 

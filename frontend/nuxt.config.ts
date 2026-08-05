@@ -310,5 +310,11 @@ export default defineNuxtConfig({
       messageSenderId: process.env.NUXT_PUBLIC_FIREBASE_MESSAGE_SENDER_ID,
       projectId: process.env.NUXT_PUBLIC_FIREBASE_PROJECT_ID
     }
-  }
+  },
+
+  // imports: {
+  //   dirs: [
+  //     '~/constants/**'
+  //   ]
+  // }
 })

@@ -1,4 +1,4 @@
-export * from './constants'
+export * from '../constants'
 
 /**
  * Generate a random delay for motion animations, up to 300 milliseconds.

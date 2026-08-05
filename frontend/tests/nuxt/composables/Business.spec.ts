@@ -2,20 +2,26 @@ import { describe, expect, it, vi } from 'vitest'
 import { useBusinessDetails, useWorkingDaysComposable } from '~/composables/business'
 
 import type { Days, WorkingDay, WorkingDaysOptions } from '~/composables/business'
-import type { ComputedRef } from 'vue'
 
-vi.mock('@vueuse/core', () => {
-  const actual = vi.importActual<typeof import('@vueuse/core')>('@vueuse/core')
+vi.mock('@vueuse/core', async (original) => {
+  const actual = await original<typeof import('@vueuse/core')>()
   return {
     ...actual,
-    reactify: (fn: unknown) => {
-      return fn
-    },
-    createGlobalState: (fn: (options: WorkingDaysOptions) => { workingDays: ComputedRef<WorkingDay[]>, days: ComputedRef<Days[]>, getDay: (day: Days) => WorkingDay | undefined }) => {
-      return fn()
-    }
   }
 })
+
+// vi.mock('@vueuse/core', () => {
+//   const actual = vi.importActual<typeof import('@vueuse/core')>('@vueuse/core')
+//   return {
+//     ...actual,
+//     reactify: (fn: unknown) => {
+//       return fn
+//     },
+//     createGlobalState: (fn: (options: WorkingDaysOptions) => { workingDays: ComputedRef<WorkingDay[]>, days: ComputedRef<Days[]>, getDay: (day: Days) => WorkingDay | undefined }) => {
+//       return fn()
+//     }
+//   }
+// })
 
 describe('useBusinessDetails', async () => {
   it('should return the correct business details', () => {
@@ -32,8 +38,8 @@ describe('useBusinessDetails', async () => {
   
   it('should return reactive value', () => {
     const { reactiveGet } = useBusinessDetails()
-    expect(reactiveGet('legalName')).toBeTypeOf('string')
-    expect(reactiveGet('address')).toBeTypeOf('object')
+    expect(toValue(reactiveGet('legalName'))).toBeTypeOf('string')
+    expect(toValue(reactiveGet('address'))).toBeTypeOf('object')
   })
 
   it('should return active socials', () => {

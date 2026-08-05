@@ -39,8 +39,6 @@ describe('Gallery Image Block', () => {
       }
     })
 
-    console.log(component.html())
-
     const imageEl = component.get('img')
     expect(imageEl).toBeDefined()
     expect(imageEl.attributes('src')).toBe(image.image)

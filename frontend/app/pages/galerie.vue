@@ -69,10 +69,12 @@ useSeoMeta({
   ogUrl: url.href
 })
 
-defineOgImage('NuxtSeoTakumi', {
-  title: titles[i18n.locale.value] || undefined,
-  description: descriptions[i18n.locale.value] || undefined
-})
+if (import.meta.env.PROD) {
+  defineOgImage('NuxtSeoTakumi', {
+    title: titles[i18n.locale.value] || undefined,
+    description: descriptions[i18n.locale.value] || undefined
+  })
+}
 
 const origin = useBrowserLocation().value.origin || ''
 

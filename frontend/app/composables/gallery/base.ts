@@ -1,4 +1,4 @@
-import type { Arrayable, GalleryImage } from '~/types'
+import type { Arrayable } from '~/types'
 import { galleryImages } from  './images'
 
 /**

@@ -7,7 +7,7 @@
 <script setup lang="ts">
 import type { WithClassAsProps } from './interface'
 import { cn } from '~/lib/utils'
-import { useCarousel } from './useCarousel'
+import { useCarousel } from '~/components/volt/custom/useCarousel'
 
 const props = defineProps<WithClassAsProps>()
 

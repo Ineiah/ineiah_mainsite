@@ -43,7 +43,7 @@ import AngleRightIcon from '@primevue/icons/angleright'
 import DataView, { type DataViewPassThroughOptions, type DataViewProps } from 'primevue/dataview'
 import { ref } from 'vue'
 import SecondaryButton from './SecondaryButton.vue'
-import { ptViewMerge } from './utils'
+import { ptViewMerge } from '~/components/volt/utils'
 
 interface Props extends /* @vue-ignore */ DataViewProps { }
 defineProps<Props>()

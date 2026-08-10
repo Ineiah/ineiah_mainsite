@@ -97,7 +97,7 @@ import ChevronUpIcon from '@primevue/icons/chevronup'
 import DatePicker from 'primevue/datepicker'
 import { ref } from 'vue'
 import SecondaryButton from './SecondaryButton.vue'
-import { ptViewMerge } from './utils'
+import { ptViewMerge } from '~/components/volt/utils'
 
 const theme = ref({
   root: `inline-flex max-w-full relative p-fluid:flex`,

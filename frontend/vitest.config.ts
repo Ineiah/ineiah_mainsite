@@ -14,7 +14,8 @@ export default defineConfig({
     coverage: {
       enabled: true,
       provider: 'v8',
-      reporter: [ 'text', 'json', 'html' ]
+      reporter: ['text', 'json', 'html'],
+      exclude: ['**/tests/**', '**/node_modules/**', '**/.nuxt/**', '**/dist/**'],
     },
     env: {
       NODE_ENV: 'test',

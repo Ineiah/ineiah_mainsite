@@ -70,6 +70,7 @@
     "@nuxtjs/i18n": "10.6.0",
     "@pinia/nuxt": "1.0.1",
     "@playwright/test": "^1.62.1",
+    "@primeicons/vue": "^8.0.0",
     "@sentry/nuxt": "^10.69.0",
     "@tailwindcss/vite": "^4.3.3",
     "@takumi-rs/core": "^2.6.1",

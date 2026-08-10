@@ -13,7 +13,7 @@
 import TimesIcon from '@primevue/icons/times'
 import Toast, { type ToastPassThroughOptions, type ToastProps } from 'primevue/toast'
 import { ref } from 'vue'
-import { ptViewMerge } from './utils'
+import { ptViewMerge } from '~/components/volt/utils'
 
 interface Props extends /* @vue-ignore */ ToastProps { }
 defineProps<Props>()

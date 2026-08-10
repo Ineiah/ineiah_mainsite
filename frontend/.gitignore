@@ -32,3 +32,4 @@ __snapshots__
 
 coverage/
 playwright-*
+e2e-results/

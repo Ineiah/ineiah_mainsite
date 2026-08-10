@@ -25,7 +25,7 @@ import SpinnerIcon from '@primevue/icons/spinner'
 import TimesIcon from '@primevue/icons/times'
 import Select, { type SelectPassThroughOptions, type SelectProps } from 'primevue/select'
 import { ref } from 'vue'
-import { ptViewMerge } from './utils'
+import { ptViewMerge } from '~/components/volt/utils'
 
 interface Props extends /* @vue-ignore */ SelectProps { }
 defineProps<Props>()

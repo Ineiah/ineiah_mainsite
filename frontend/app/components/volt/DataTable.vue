@@ -47,7 +47,7 @@ import SpinnerIcon from '@primevue/icons/spinner'
 import DataTable, { type DataTablePassThroughOptions, type DataTableProps } from 'primevue/datatable'
 import { ref } from 'vue'
 import SecondaryButton from './SecondaryButton.vue'
-import { ptViewMerge } from './utils'
+import { ptViewMerge } from '~/components/volt/utils'
 
 interface Props extends /* @vue-ignore */ DataTableProps { }
 defineProps<Props>()

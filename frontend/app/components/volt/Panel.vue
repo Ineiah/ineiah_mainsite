@@ -20,7 +20,7 @@ import PlusIcon from '@primevue/icons/plus'
 import Panel, { type PanelPassThroughOptions, type PanelProps } from 'primevue/panel'
 import { ref } from 'vue'
 import SecondaryButton from './SecondaryButton.vue'
-import { ptViewMerge } from './utils'
+import { ptViewMerge } from '~/components/volt/utils'
 
 interface Props extends /* @vue-ignore */ PanelProps { }
 defineProps<Props>()

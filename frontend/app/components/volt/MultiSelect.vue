@@ -25,7 +25,7 @@ import SpinnerIcon from '@primevue/icons/spinner'
 import TimesIcon from '@primevue/icons/times'
 import MultiSelect, { type MultiSelectPassThroughOptions, type MultiSelectProps } from 'primevue/multiselect'
 import { ref } from 'vue'
-import { ptViewMerge } from './utils'
+import { ptViewMerge } from '~/components/volt/utils'
 
 interface Props extends /* @vue-ignore */ MultiSelectProps { }
 defineProps<Props>()

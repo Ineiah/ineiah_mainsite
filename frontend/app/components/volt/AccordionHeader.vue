@@ -13,7 +13,7 @@ import ChevronUpIcon from '@primevue/icons/chevrondown'
 import ChevronDownIcon from '@primevue/icons/chevronup'
 import AccordionHeader, { type AccordionHeaderPassThroughOptions, type AccordionHeaderProps } from 'primevue/accordionheader'
 import { ref } from 'vue'
-import { ptViewMerge } from './utils'
+import { ptViewMerge } from '~/components/volt/utils'
 
 interface Props extends /* @vue-ignore */ AccordionHeaderProps { }
 defineProps<Props>()

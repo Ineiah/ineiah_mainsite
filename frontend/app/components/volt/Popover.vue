@@ -9,7 +9,7 @@
 <script setup lang="ts">
 import Popover, { type PopoverPassThroughOptions, type PopoverProps } from 'primevue/popover'
 import { ref } from 'vue'
-import { ptViewMerge } from './utils'
+import { ptViewMerge } from '~/components/volt/utils'
 
 interface Props extends /* @vue-ignore */ PopoverProps { }
 defineProps<Props>()

@@ -28,7 +28,7 @@ import ConfirmDialog, { type ConfirmDialogPassThroughOptions, type ConfirmDialog
 import { ref } from 'vue'
 import Button from './Button.vue'
 import SecondaryButton from './SecondaryButton.vue'
-import { ptViewMerge } from './utils'
+import { ptViewMerge } from '~/components/volt/utils'
 
 interface Props extends /* @vue-ignore */ ConfirmDialogProps { }
 defineProps<Props>()

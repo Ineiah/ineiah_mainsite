@@ -6,7 +6,7 @@
 
 <script setup lang="ts">
 import { cn } from '~/lib/utils'
-import type { CarouselEmits, CarouselProps, WithClassAsProps } from './interface'
+import type { CarouselEmits, CarouselProps, WithClassAsProps } from '~/components/volt/custom/interface'
 import { useProvideCarousel } from '~/components/volt/custom/useCarousel'
 
 const props = withDefaults(defineProps<CarouselProps & WithClassAsProps>(), {

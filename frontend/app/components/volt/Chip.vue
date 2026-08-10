@@ -10,7 +10,7 @@
 </template>
 
 <script setup lang="ts">
-import TimesCircleIcon from '@primevue/icons/timescircle'
+import TimesCircleIcon from '@primeicons/vue/timescircle'
 import Chip, { type ChipPassThroughOptions, type ChipProps } from 'primevue/chip'
 import { ref } from 'vue'
 import { ptViewMerge } from '~/components/volt/utils'

@@ -9,8 +9,8 @@
 </template>
 
 <script setup lang="ts">
-import ChevronUpIcon from '@primevue/icons/chevrondown'
-import ChevronDownIcon from '@primevue/icons/chevronup'
+import ChevronUpIcon from '@primeicons/vue/chevrondown'
+import ChevronDownIcon from '@primeicons/vue/chevronup'
 import AccordionHeader, { type AccordionHeaderPassThroughOptions, type AccordionHeaderProps } from 'primevue/accordionheader'
 import { ref } from 'vue'
 import { ptViewMerge } from '~/components/volt/utils'

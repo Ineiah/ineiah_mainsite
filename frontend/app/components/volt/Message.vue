@@ -10,7 +10,7 @@
 </template>
 
 <script setup lang="ts">
-import TimesIcon from '@primevue/icons/times'
+import TimesIcon from '@primeicons/vue/times'
 import Message, { type MessagePassThroughOptions, type MessageProps } from 'primevue/message'
 import { ref } from 'vue'
 import { ptViewMerge } from '~/components/volt/utils'

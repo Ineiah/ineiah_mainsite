@@ -1,5 +1,5 @@
 <script setup lang="ts">
-import type { WithClassAsProps } from './interface'
+import type { WithClassAsProps } from '~/components/volt/custom/interface'
 import { cn } from '~/lib/utils'
 import { useCarousel } from '~/components/volt/custom/useCarousel'
 

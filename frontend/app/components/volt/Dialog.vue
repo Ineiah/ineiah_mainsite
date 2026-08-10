@@ -23,11 +23,11 @@
 
 <script setup lang="ts">
 import TimesIcon from '@primeicons/vue/times'
-import WindowMaximizeIcon from '@primeicons/vue/windowmaximize'
-import WindowMinimizeIcon from '@primeicons/vue/windowminimize'
+import WindowMaximizeIcon from '@primeicons/vue/window-maximize'
+import WindowMinimizeIcon from '@primeicons/vue/window-minimize'
 import Dialog, { type DialogPassThroughOptions, type DialogProps } from 'primevue/dialog'
 import { ref } from 'vue'
-import SecondaryButton from './SecondaryButton.vue'
+import SecondaryButton from '~/components/volt/SecondaryButton.vue'
 import { ptViewMerge } from '~/components/volt/utils'
 
 interface Props extends /* @vue-ignore */ DialogProps { }

@@ -10,7 +10,7 @@
 </template>
 
 <script setup lang="ts">
-import SearchIcon from '@primevue/icons/search'
+import SearchIcon from '@primeicons/vue/search'
 import Listbox, { type ListboxPassThroughOptions, type ListboxProps } from 'primevue/listbox'
 import { ref } from 'vue'
 import { ptViewMerge } from '~/components/volt/utils'

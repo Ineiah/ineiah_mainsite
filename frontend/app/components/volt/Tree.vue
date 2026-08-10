@@ -14,9 +14,9 @@
 </template>
 
 <script setup lang="ts">
-import ChevronDownIcon from '@primevue/icons/chevrondown'
-import ChevronRightIcon from '@primevue/icons/chevronright'
-import SearchIcon from '@primevue/icons/search'
+import ChevronDownIcon from '@primeicons/vue/chevrondown'
+import ChevronRightIcon from '@primeicons/vue/chevronright'
+import SearchIcon from '@primeicons/vue/search'
 import Tree, { type TreePassThroughOptions, type TreeProps } from 'primevue/tree'
 import { ref } from 'vue'
 import { ptViewMerge } from '~/components/volt/utils'

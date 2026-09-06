@@ -19,7 +19,7 @@
 </template>
 
 <script setup lang="ts">
-import ChevronDownIcon from '@primeicons/vue/chevrondown'
+import ChevronDownIcon from '@primeicons/vue/chevron-down'
 import SearchIcon from '@primeicons/vue/search'
 import SpinnerIcon from '@primeicons/vue/spinner'
 import TimesIcon from '@primeicons/vue/times'

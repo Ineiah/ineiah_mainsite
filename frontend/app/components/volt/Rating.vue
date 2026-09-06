@@ -14,7 +14,7 @@
 
 <script setup lang="ts">
 import StarIcon from '@primeicons/vue/star'
-import StarFillIcon from '@primeicons/vue/starfill'
+import StarFillIcon from '@primeicons/vue/star-fill'
 import Rating, { type RatingPassThroughOptions, type RatingProps } from 'primevue/rating'
 import { ref } from 'vue'
 import { ptViewMerge } from '~/components/volt/utils'

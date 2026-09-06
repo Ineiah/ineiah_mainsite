@@ -37,8 +37,8 @@ const theme = ref<PopoverPassThroughOptions>({
 
 const el = ref()
 defineExpose({
-  toggle: (event, target) => el.value.toggle(event, target),
-  show: (event, target) => el.value.show(event, target),
-  hide: () => el.value.toggle()
+  toggle: (event: Event, target: HTMLElement) => el.value.toggle(event, target),
+  show: (event: Event, target: HTMLElement) => el.value.show(event, target),
+  hide: () => el.value.hide()
 })
 </script>

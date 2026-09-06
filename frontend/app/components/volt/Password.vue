@@ -14,7 +14,7 @@
 
 <script setup lang="ts">
 import EyeIcon from '@primeicons/vue/eye'
-import EyeSlashIcon from '@primeicons/vue/eyeslash'
+import EyeSlashIcon from '@primeicons/vue/eye-slash'
 import Password, { type PasswordPassThroughOptions, type PasswordProps } from 'primevue/password'
 import { ref } from 'vue'
 import { ptViewMerge } from '~/components/volt/utils'

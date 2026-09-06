@@ -14,8 +14,8 @@
 </template>
 
 <script setup lang="ts">
-import ChevronDownIcon from '@primeicons/vue/chevrondown'
-import ChevronRightIcon from '@primeicons/vue/chevronright'
+import ChevronDownIcon from '@primeicons/vue/chevron-down'
+import ChevronRightIcon from '@primeicons/vue/chevron-right'
 import SearchIcon from '@primeicons/vue/search'
 import Tree, { type TreePassThroughOptions, type TreeProps } from 'primevue/tree'
 import { ref } from 'vue'

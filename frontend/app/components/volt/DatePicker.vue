@@ -90,10 +90,10 @@
 
 <script setup>
 import CalendarIcon from '@primeicons/vue/calendar'
-import ChevronDownIcon from '@primeicons/vue/chevrondown'
+import ChevronDownIcon from '@primeicons/vue/chevron-down'
 import ChevronLeftIcon from '@primeicons/vue/chevronleft'
 import ChevronRightIcon from '@primeicons/vue/chevronright'
-import ChevronUpIcon from '@primeicons/vue/chevronup'
+import ChevronUpIcon from '@primeicons/vue/chevron-up'
 import DatePicker from 'primevue/datepicker'
 import { ref } from 'vue'
 import SecondaryButton from '~/components/volt/SecondaryButton.vue'

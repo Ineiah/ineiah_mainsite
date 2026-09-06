@@ -10,7 +10,7 @@
 </template>
 
 <script setup lang="ts">
-import ChevronDownIcon from '@primeicons/vue/chevrondown'
+import ChevronDownIcon from '@primeicons/vue/chevron-down'
 import AutoComplete, { type AutoCompletePassThroughOptions, type AutoCompleteProps } from 'primevue/autocomplete'
 import { ref } from 'vue'
 import { ptViewMerge } from '~/components/volt/utils'

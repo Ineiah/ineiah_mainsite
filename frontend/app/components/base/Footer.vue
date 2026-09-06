@@ -30,7 +30,7 @@
         </div>
 
         <div class="grid justify-between grid-rows-2 grid-cols-none gap-4 md:grid-cols-2 md:grid-rows-none">
-          <ul v-for="(section, idx) in footer.sections" :id="`footer-section-${idx + 1}`" :key="section.title">
+          <ul v-for="(section, idx) in FOOTER_LINKS.sections" :id="`footer-section-${idx + 1}`" :key="section.title">
             <p class="block mb-1 text-lg font-bold text-primary-100 dark:text-primary-300 uppercase">
               {{ $t(section.title) }}
             </p>

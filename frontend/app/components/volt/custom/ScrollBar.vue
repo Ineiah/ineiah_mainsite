@@ -11,7 +11,11 @@ import type { ScrollAreaScrollbarProps } from 'reka-ui'
 import type { HTMLAttributes } from 'vue'
 import { cn } from '~/lib/utils'
 
-const props = withDefaults(defineProps<ScrollAreaScrollbarProps & { class?: HTMLAttributes['class'] }>(), {
+interface Props extends ScrollAreaScrollbarProps {
+  class?: HTMLAttributes['class']
+}
+
+const props = withDefaults(defineProps<Props>(), {
   orientation: 'vertical'
 })
 

@@ -5,12 +5,18 @@
     </h2>
 
     <!-- Scrollable Area -->
-    <volt-custom-scroll-area class="whitespace-nowrap">
+    <!-- <volt-custom-scroll-area class="whitespace-nowrap">
       <div class="flex p-4 space-x-4 w-max">
         <services-card v-for="(service, serviceIndex) in section.services" :key="service.name || serviceIndex" :service="service" :index="serviceIndex" />
       </div>
       <volt-custom-scroll-bar orientation="horizontal" />
-    </volt-custom-scroll-area>
+    </volt-custom-scroll-area> -->
+    
+    <div class="w-full p-2">
+      <div class="flex gap-2 w-400 overflow-x-scroll">
+        <services-card v-for="(service, serviceIndex) in section.services" :key="service.name || serviceIndex" :service="service" :index="serviceIndex" />
+      </div>
+    </div>
   </div>
 </template>
 

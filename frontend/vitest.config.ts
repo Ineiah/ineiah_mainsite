@@ -15,7 +15,13 @@ export default defineConfig({
       enabled: true,
       provider: 'v8',
       reporter: ['text', 'json', 'html'],
-      exclude: ['**/tests/**', '**/node_modules/**', '**/.nuxt/**', '**/dist/**'],
+      exclude: [
+        '**/tests/**', 
+        '**/node_modules/**', 
+        '**/.nuxt/**',
+        '**/dist/**',
+        '**/test/e2e/**'
+      ],
     },
     env: {
       NODE_ENV: 'test',
@@ -43,7 +49,7 @@ export default defineConfig({
         test: {
           name: 'integration',
           include: [ 'test/integration/**/*.{test,spec}.ts' ],
-          environment: 'node',
+          environment: 'nuxt',
           testTimeout: 20000,
           tags: [
             {

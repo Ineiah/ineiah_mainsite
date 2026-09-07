@@ -3,13 +3,11 @@ import { expect, test } from '@playwright/test'
 test.describe('customer wants to see proposed services', async () => {
   test.describe.configure({ timeout: 60000 })
 
-  test.beforeEach(async ({ page }) => {
+  test('Customer wants to see the proposed services', async ({ page }) => {
     await page.goto('/')
     await page.waitForSelector('nav', { state: 'visible' })
     await page.waitForSelector('h1', { state: 'visible' })
-  })
 
-  test('Customer wants to see the proposed services', async ({ page }) => {
     await page.waitForLoadState('networkidle')
     
     const link = page.getByRole('link', { name: 'Services', exact: true })
@@ -37,5 +35,9 @@ test.describe('customer wants to see proposed services', async () => {
     // const ctaButton = page.locator('#tel-service-1')
     // await expect(ctaButton).toBeVisible()
     // await expect(ctaButton).toBeEnabled()
+  })
+
+  test('Customer should be able to go from home page to services section', async ({ page }) => {
+    await page.goto('/')
   })
 })

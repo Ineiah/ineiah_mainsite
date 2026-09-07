@@ -70,6 +70,7 @@ export default defineNuxtConfig({
   },
 
   runtimeConfig: {
+    firebaseProjectId: '',
     firebaseClientEmail: process.env.NUXT_FIREBASE_CLIENT_EMAIL,
     firebasePrivateKey: process.env.NUXT_FIREBASE_PRIVATE_KEY,
 
@@ -97,10 +98,7 @@ export default defineNuxtConfig({
       twilioToPhoneNumber: '',
 
       // Primevue
-      primeVueLicenseKey: process.env.NUXT_PRIME_VUE_LICENSE_KEY,
-
-      // Firebase
-      firebaseProjectId: ''
+      primeVueLicenseKey: process.env.NUXT_PRIME_VUE_LICENSE_KEY
     }
   },
 
